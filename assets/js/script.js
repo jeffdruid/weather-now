@@ -22,4 +22,15 @@ function getLocation() {
     }
 }
 
+/**
+ * Get the current time and display it.
+ */
+function showCurrentTime() {
+    var currentTime = new Date();
+    console.log("Current time: " + currentTime);
+    document.getElementById("current-time").innerHTML = "Current time: " + currentTime;
+}
+
+showCurrentTime();
+
 getLocation();
