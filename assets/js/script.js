@@ -30,7 +30,6 @@ function showCurrentTime() {
     console.log("Current time: " + currentTime);
     document.getElementById("current-time").innerHTML = "Current time: " + currentTime;
 }
-
 showCurrentTime();
 
 getLocation();
