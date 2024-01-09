@@ -34,7 +34,7 @@ showCurrentTime();
 
 getLocation();
 
-const apiKey = '10b01580cf1723c01c311fb7cca8e196';
+const apiKey = process.env.API_KEY;
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
