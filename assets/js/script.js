@@ -33,3 +33,5 @@ function showCurrentTime() {
 showCurrentTime();
 
 getLocation();
+
+// apiKey = '10b01580cf1723c01c311fb7cca8e196';
