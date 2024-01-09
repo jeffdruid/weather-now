@@ -34,8 +34,16 @@ showCurrentTime();
 
 getLocation();
 
-// apiKey = '10b01580cf1723c01c311fb7cca8e196';
+const apiKey = '10b01580cf1723c01c311fb7cca8e196';
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-// apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=brazil&appid=10b01580cf1723c01c311fb7cca8e196&units=metric';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=Brazil';
+
+async function getWeather() {
+    const response = await fetch(apiUrl + '&appid=' + apiKey);
+    var data = await response.json();
+    console.log(data);
+}
+
+getWeather();
