@@ -15,6 +15,7 @@ function showPosition(position) {
  * Get the user's location.
  */
 function getLocation() {
+    // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -30,9 +31,6 @@ function showCurrentTime() {
     console.log("Current time: " + currentTime);
     document.getElementById("current-time").innerHTML = "Current time: " + currentTime;
 }
-showCurrentTime();
-
-getLocation();
 
 // TODO - Hide apiKeys in the .env file. Temp API key.
 const apiKey = `API_KEY_HERE`;
@@ -41,6 +39,9 @@ const apiKey = `API_KEY_HERE`;
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=Brazil';
 
+/**
+ * Get the weather data from the API.
+ */
 async function getWeather() {
     const response = await fetch(apiUrl + `&appid=${apiKey}`);
     var data = await response.json();
@@ -60,3 +61,5 @@ async function getWeather() {
 }
 
 getWeather();
+showCurrentTime();
+getLocation(); 
