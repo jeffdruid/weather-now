@@ -48,15 +48,15 @@ async function getWeather() {
     console.log(data);
 
     document.getElementById("location").innerHTML = data.name;
-    document.getElementById("temperature").innerHTML = data.main.temp;
-    document.getElementById("feels-like").innerHTML = data.main.feels_like;
-    document.getElementById("max-temp").innerHTML = data.main.temp_max;
-    document.getElementById("min-temp").innerHTML = data.main.temp_min;
+    document.getElementById("temperature").innerHTML = Math.round(data.main.temp) + "°C";
+    document.getElementById("feels-like").innerHTML = Math.round(data.main.feels_like) + "°C";
+    document.getElementById("max-temp").innerHTML = Math.round(data.main.temp_max) + "°C";
+    document.getElementById("min-temp").innerHTML = Math.round(data.main.temp_min) + "°C";
     document.getElementById("sun-rise").innerHTML = data.sys.sunrise;
     document.getElementById("sun-set").innerHTML = data.sys.sunset;
     document.getElementById("weather-desc").innerHTML = data.weather[0].description;
-    document.getElementById("wind").innerHTML = data.wind.speed;
-    document.getElementById("humidity").innerHTML = data.main.humidity;
+    document.getElementById("wind").innerHTML = data.wind.speed + " km/h";
+    document.getElementById("humidity").innerHTML = data.main.humidity + "%";
 
 }
 
