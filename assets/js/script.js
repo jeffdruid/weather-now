@@ -38,14 +38,18 @@ const apiKey = `your-api-key-here`;
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=Brazil';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+
+const searchBox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
 
 /**
  * Get the weather data from the API.
  */
-async function getWeather() {
-    const response = await fetch(apiUrl + `&appid=${apiKey}`);
+async function getWeather(location) {
+    const response = await fetch(apiUrl + location + `&appid=${apiKey}`);
     var data = await response.json();
+
     console.log(data);
 
     document.getElementById("location").innerHTML = data.name;
@@ -55,13 +59,17 @@ async function getWeather() {
     document.getElementById("min-temp").innerHTML = Math.round(data.main.temp_min) + "°C";
     document.getElementById("sun-rise").innerHTML = data.sys.sunrise + " UTC";
     document.getElementById("sun-set").innerHTML = data.sys.sunset + " UTC";
-    document.getElementById("weather-icon").src = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
     document.getElementById("weather-desc").innerHTML = data.weather[0].description;;
     document.getElementById("wind").innerHTML = data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = data.main.humidity + "%";
 
 }
 
-getWeather();
 showCurrentTime();
-getLocation(); 
+getLocation();
+
+if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+        getWeather(searchBox.value);
+    });
+}
