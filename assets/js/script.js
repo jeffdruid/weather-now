@@ -34,16 +34,29 @@ showCurrentTime();
 
 getLocation();
 
-const apiKey = process.env.API_KEY;
+// TODO - Hide apiKeys in the .env file. Temp API key.
+const apiKey = `API_KEY_HERE`;
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=Brazil';
 
 async function getWeather() {
-    const response = await fetch(apiUrl + '&appid=' + apiKey);
+    const response = await fetch(apiUrl + `&appid=${apiKey}`);
     var data = await response.json();
     console.log(data);
+
+    document.getElementById("location").innerHTML = data.name;
+    document.getElementById("temperature").innerHTML = data.main.temp;
+    document.getElementById("feels-like").innerHTML = data.main.feels_like;
+    document.getElementById("max-temp").innerHTML = data.main.temp_max;
+    document.getElementById("min-temp").innerHTML = data.main.temp_min;
+    document.getElementById("sun-rise").innerHTML = data.sys.sunrise;
+    document.getElementById("sun-set").innerHTML = data.sys.sunset;
+    document.getElementById("weather-desc").innerHTML = data.weather[0].description;
+    document.getElementById("wind").innerHTML = data.wind.speed;
+    document.getElementById("humidity").innerHTML = data.main.humidity;
+
 }
 
 getWeather();
