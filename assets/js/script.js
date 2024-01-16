@@ -48,11 +48,11 @@ async function getWeather(location) {
     console.log(weatherIcon.alt);
 }
 
-
 if (searchBox) {
     searchBox.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
             getWeather(searchBox.value);
+            searchBox.value = '';
         }
     });
 }
