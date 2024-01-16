@@ -63,13 +63,19 @@ showCurrentTime();
 
 // TODO - Add error handling for invalid city names.
 // TODO - Add weather icons.
-// TODO - Add a background image that changes depending on the weather.
-// TODO - Add a 5 day forecast.
-// TODO - Add a map that shows the location of the city.
 // TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
-// TODO - Update the UI.
+// TODO - Add a background image that changes depending on the weather.
+// TODO - Add a map that shows the location of the city.
 // TODO - Add a loading spinner.
-// TODO - Update current time every second.
 // TODO - Add autocomplete for the search box.
 // TODO - Hide the search input, display search icon instead. When the icon is clicked, the search input is displayed.
+// TODO - Add a 5 day forecast.
+// TODO - Void the search if the search box is empty.
+// TODO - Void the search if the search box contains invalid characters.
+// TODO - Void the search if the search box contains a number.
+// TODO - Void the search if the search box contains a special character.
+// TODO - Add a button that displays the weather for the user's current location.
 // TODO - Clear the search box after the search is complete.
+// TODO - Update the UI.
+// TODO - Void holding the enter key.
+// TODO - Update current time every second.
