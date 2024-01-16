@@ -1,27 +1,3 @@
-/**
- * Show the user's location.
- */
-function showPosition(position) {
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-
-    console.log("Latitude: " + latitude);
-    console.log("Longitude: " + longitude);
-
-    document.getElementById("location").innerHTML = "Latitude: " + latitude + "<br>Longitude: " + longitude;
-}
-
-/**
- * Get the user's location.
- */
-function getLocation() {
-    // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        document.getElementById("location").innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
 
 /**
  * Get the current time and display it.
@@ -34,7 +10,7 @@ function showCurrentTime() {
 }
 
 // TODO - Hide apiKeys in the .env file. Temp API key.
-const apiKey = `your-api-key-here`;
+const apiKey = `10b01580cf1723c01c311fb7cca8e196`;
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
@@ -53,20 +29,18 @@ async function getWeather(location) {
     console.log(data);
 
     document.getElementById("location").innerHTML = data.name;
-    document.getElementById("temperature").innerHTML = Math.round(data.main.temp) + "°C";
-    document.getElementById("feels-like").innerHTML = Math.round(data.main.feels_like) + "°C";
-    document.getElementById("max-temp").innerHTML = Math.round(data.main.temp_max) + "°C";
-    document.getElementById("min-temp").innerHTML = Math.round(data.main.temp_min) + "°C";
-    document.getElementById("sun-rise").innerHTML = data.sys.sunrise + " UTC";
-    document.getElementById("sun-set").innerHTML = data.sys.sunset + " UTC";
-    document.getElementById("weather-desc").innerHTML = data.weather[0].description;;
-    document.getElementById("wind").innerHTML = data.wind.speed + " km/h";
-    document.getElementById("humidity").innerHTML = data.main.humidity + "%";
-
+    document.getElementById("temperature").innerHTML = "Temperature: " + Math.round(data.main.temp) + "°C";
+    document.getElementById("feels-like").innerHTML = "Feels like: " + Math.round(data.main.feels_like) + "°C";
+    document.getElementById("max-temp").innerHTML = "Maximum Temperature: " + Math.round(data.main.temp_max) + "°C";
+    document.getElementById("min-temp").innerHTML = "Minimum Temperature: " + Math.round(data.main.temp_min) + "°C";
+    document.getElementById("sun-rise").innerHTML = "Sunrise Time: " + new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("sun-set").innerHTML = "Sunset Time: " + new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("weather-desc").innerHTML = "Description: " + data.weather[0].description;;
+    document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
+    document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
 }
 
 showCurrentTime();
-getLocation();
 
 if (searchBtn) {
     searchBtn.addEventListener("click", () => {
