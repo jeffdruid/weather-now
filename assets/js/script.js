@@ -53,6 +53,7 @@ async function getWeather(location) {
 if (searchBox) {
     searchBox.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
+            document.querySelector(".weather-container").style.display = "flex";
             getWeather(searchBox.value);
             searchBox.value = '';
         }
