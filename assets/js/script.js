@@ -51,7 +51,7 @@ async function getWeather(location) {
 }
 
 if (searchBox) {
-    searchBox.addEventListener("keydown", (event) => {
+    searchBox.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
             getWeather(searchBox.value);
             searchBox.value = '';
