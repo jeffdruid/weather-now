@@ -3,10 +3,12 @@
  * Get the current time and display it.
  */
 function showCurrentTime() {
-    var currentTime = new Date();
-    var formattedTime = currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-    console.log("Current time: " + formattedTime);
-    document.getElementById("current-time").innerHTML = "Current time: " + formattedTime;
+    setInterval(() => {
+        var currentTime = new Date();
+        var formattedTime = currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+        console.log("Current time: " + formattedTime);
+        document.getElementById("current-time").innerHTML = "Current time: " + formattedTime;
+    }, 1000);
 }
 
 // TODO - Hide apiKeys in the .env file. Temp API key.
