@@ -49,3 +49,10 @@ if (searchBox) {
 }
 
 showCurrentTime();
+
+// TODO - Add error handling for invalid city names.
+// TODO - Add weather icons.
+// TODO - Add a background image that changes depending on the weather.
+// TODO - Add a 5 day forecast.
+// TODO - Add a map that shows the location of the city.
+// TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
