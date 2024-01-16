@@ -56,3 +56,7 @@ showCurrentTime();
 // TODO - Add a 5 day forecast.
 // TODO - Add a map that shows the location of the city.
 // TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
+// TODO - Update the UI.
+// TODO - Add a loading spinner.
+// TODO - Update current time every second.
+// TODO - Add autocomplete for the search box.

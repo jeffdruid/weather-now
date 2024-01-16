@@ -1,3 +1,33 @@
 body {
     background-color: wheat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: rgba(255, 176, 176, 0.3);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#current-time {
+    text-align: center;
 }
