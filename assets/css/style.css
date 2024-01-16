@@ -24,6 +24,15 @@ body {
     padding: 2rem 2rem 1rem 2rem;
 }
 
+.container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.9);
+    text-shadow: 0 4px 30px rgb(255, 255, 255, 1);
+}
+
 /* Main styles */
 .search {
     display: flex;
