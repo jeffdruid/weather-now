@@ -1,4 +1,3 @@
-
 /**
  * Get the current time and display it.
  */
@@ -17,9 +16,7 @@ const apiKey = `10b01580cf1723c01c311fb7cca8e196`;
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
-
 const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
 
 /**
  * Get the weather data from the API.
@@ -63,7 +60,6 @@ if (searchBox) {
 showCurrentTime();
 
 // TODO - Add error handling for invalid city names.
-// TODO - Add weather icons.
 // TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
 // TODO - Add a background image that changes depending on the weather.
 // TODO - Add a map that shows the location of the city.
@@ -78,6 +74,9 @@ showCurrentTime();
 // TODO - Void the search if the search box contains a number.
 // TODO - Void the search if the search box contains a special character.
 // TODO - Add a button that displays the weather for the user's current location.
+// TODO - Add a button that displays the weather for the user's favorite locations.
+
+// TODO - Add weather icons.
 // TODO - Clear the search box after the search is complete.
 // TODO - Update the UI.
 // TODO - Void holding the enter key.
