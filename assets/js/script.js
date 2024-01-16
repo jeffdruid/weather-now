@@ -38,7 +38,16 @@ async function getWeather(location) {
     document.getElementById("weather-desc").innerHTML = "Description: " + data.weather[0].description;;
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
+
+    // TODO - Add weather icons.
+    const weatherIcon = document.getElementById("weather-icon");
+    weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    weatherIcon.alt = data.weather[0].description;
+    console.log(weatherIcon);
+    console.log(weatherIcon.src);
+    console.log(weatherIcon.alt);
 }
+
 
 if (searchBox) {
     searchBox.addEventListener("keydown", (event) => {
@@ -61,3 +70,4 @@ showCurrentTime();
 // TODO - Update current time every second.
 // TODO - Add autocomplete for the search box.
 // TODO - Hide the search input, display search icon instead. When the icon is clicked, the search input is displayed.
+// TODO - Clear the search box after the search is complete.
