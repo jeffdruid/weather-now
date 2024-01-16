@@ -40,10 +40,12 @@ async function getWeather(location) {
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
 }
 
-showCurrentTime();
-
-if (searchBtn) {
-    searchBtn.addEventListener("click", () => {
-        getWeather(searchBox.value);
+if (searchBox) {
+    searchBox.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            getWeather(searchBox.value);
+        }
     });
 }
+
+showCurrentTime();
