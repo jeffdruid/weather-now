@@ -70,6 +70,8 @@ showCurrentTime();
 // TODO - Add autocomplete for the search box.
 // TODO - Hide the search input, display search icon instead. When the icon is clicked, the search input is displayed.
 // TODO - Add a 5 day forecast.
+// TODO - Add a refresh button.
+// TODO - Add last updated time.
 // TODO - Void the search if the search box is empty.
 // TODO - Void the search if the search box contains invalid characters.
 // TODO - Void the search if the search box contains a number.
