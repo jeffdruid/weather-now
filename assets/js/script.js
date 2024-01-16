@@ -60,3 +60,4 @@ showCurrentTime();
 // TODO - Add a loading spinner.
 // TODO - Update current time every second.
 // TODO - Add autocomplete for the search box.
+// TODO - Hide the search input, display search icon instead. When the icon is clicked, the search input is displayed.

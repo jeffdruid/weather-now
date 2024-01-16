@@ -1,3 +1,11 @@
+/* Reset defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
 body {
     background-color: wheat;
     display: flex;
@@ -5,29 +13,69 @@ body {
     min-height: 100vh;
 }
 
+/* Header styles */
 .container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 3rem;
 }
 
-footer {
-    flex-shrink: 0;
-    background-color: rgba(255, 176, 176, 0.3);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 10px;
-}
-
+/* Main styles */
 .search {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+input {
+    background: rgba(255, 255, 255, 0.5);
+    padding: .75rem;
+    border-radius: 10px;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+}
+
 #current-time {
     text-align: center;
+    position: fixed;
+    bottom: 2.5rem;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* Description styles */
+.weather-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.weather-container div {
+    padding: .25rem;
+}
+
+#location {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#weather-desc {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: wheat;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
 }
