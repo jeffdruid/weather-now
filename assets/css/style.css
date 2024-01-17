@@ -51,6 +51,8 @@ input {
     width: 90%;
 }
 
+/* Weather info styles */
+
 #current-time,
 #current-location,
 #temperature-now {
@@ -128,6 +130,18 @@ input {
     position: absolute;
     bottom: 0;
     right: 2rem;
+}
+
+#temperature-toggle-btn {
+    background: 0;
+    padding: .35rem;
+    border: 0;
+    margin: 0 auto;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: .2rem;
+    font-size: 1.25rem;
 }
 
 /* Footer Styles */
