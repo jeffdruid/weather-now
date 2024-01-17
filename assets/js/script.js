@@ -89,9 +89,12 @@ async function getWeather(location) {
     console.log(weatherIcon);
 
     // Refresh Button
+
     const refreshButton = document.getElementById("refresh-button");
     refreshButton.addEventListener("click", () => {
+        const location = document.getElementById("location").innerHTML;
         getWeather(location);
+        console.log("Weather data refreshed for location:", location);
     });
 }
 
