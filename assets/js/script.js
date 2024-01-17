@@ -5,7 +5,6 @@ function showCurrentTime() {
     setInterval(() => {
         var currentTime = new Date();
         var formattedTime = currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-        console.log("Current time: " + formattedTime);
         document.getElementById("current-time").innerHTML = "Time: " + formattedTime;
     }, 1000);
 }
