@@ -37,6 +37,7 @@ async function getWeather(location) {
     document.getElementById("weather-desc").innerHTML = "Description: " + data.weather[0].description;;
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
+    // document.getElementById("country").innerHTML = "Country: " + data.sys.country;
 
     // TODO - Add weather icons.
     const weatherIcon = document.getElementById("weather-icon");
@@ -73,8 +74,9 @@ showCurrentTime();
 // TODO - Void the search if the search box contains invalid characters.
 // TODO - Void the search if the search box contains a number.
 // TODO - Void the search if the search box contains a special character.
-// TODO - Add a button that displays the weather for the user's current location.
-// TODO - Add a button that displays the weather for the user's favorite locations.
+// TODO - Displays the weather for the user's current location.
+// TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
+// TODO - Handle duplicate city names.
 
 // TODO - Add weather icons.
 // TODO - Clear the search box after the search is complete.
