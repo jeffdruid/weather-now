@@ -77,7 +77,6 @@ showCurrentTime();
 // TODO - Add a loading spinner.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
-// TODO - Add a refresh button.
 // TODO - Add last updated time.
 // TODO - Displays the weather for the user's current location.
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
@@ -85,6 +84,7 @@ showCurrentTime();
 // TODO - shake Animation when the search box is invalid.
 
 // DONE
+// TODO - Add a refresh button.
 // TODO - Void the search if the search box is empty.
 // TODO - Void the search if the search box contains invalid characters.
 // TODO - Void the search if the search box contains a number.

@@ -59,3 +59,4 @@
 - [Free Frontend](https://freefrontend.com/css-input-text/)
 - [Yusuf önaldı](https://freedesignresources.net/34-weather-icon-pack/)
 - [Glass Effect](https://webdesign.tutsplus.com/how-to-create-a-frosted-glass-effect-in-css--cms-32535t)
+- [Font Awesome](https://fontawesome.com)
