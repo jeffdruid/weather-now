@@ -107,7 +107,8 @@ let isCelsius = true; // Variable to track the temperature unit
 
 /**
  * Toggle between Celsius and Fahrenheit temperature units.
- */function toggleTemperatureUnit() {
+ */
+function toggleTemperatureUnit() {
     const temperatureElement = document.getElementById("temperature");
     const feelsLikeElement = document.getElementById("feels-like");
     const maxTempElement = document.getElementById("max-temp");
@@ -128,14 +129,21 @@ let isCelsius = true; // Variable to track the temperature unit
         return toCelsius ? fahrenheitToCelsius(value) : celsiusToFahrenheit(value);
     }
 
-    isCelsius = !isCelsius; // Toggle the temperature unit
+    const initialTemperature = parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", ""));
+
+    if (isNaN(initialTemperature)) {
+        console.error("Invalid temperature value: " + initialTemperature);
+        return;
+    }
+
+    console.log("Initial temperature: " + initialTemperature);
+    console.log("Converted temperature: " + convertTemperature(initialTemperature, isCelsius));
+
+    // Toggle the temperature unit
+    isCelsius = !isCelsius;
 
     console.log("Temperature unit changed to " + (isCelsius ? "Celsius" : "Fahrenheit"));
-    // TODO
-    console.log("Temperature: " + temperatureElement.innerText);
-    console.log("feelsLike: " + feelsLikeElement.innerText);
-    console.log("maxTemp: " + maxTempElement.innerText);
-    console.log("minTemp: " + minTempElement.innerText);
+
 }
 
 // Add the button click event listener
