@@ -17,6 +17,7 @@ const apiKey = `10b01580cf1723c01c311fb7cca8e196`;
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
 const searchBox = document.querySelector(".search input");
+let lastUpdatedTime = '';
 
 /**
  * Get the weather data from the API.
@@ -43,13 +44,15 @@ async function getWeather(location) {
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
     // document.getElementById("country").innerHTML = "Country: " + data.sys.country;
-
+    lastUpdatedTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("last-updated").innerHTML = "Last Updated: " + lastUpdatedTime;
     // Weather icons.
     const weatherIcon = document.getElementById("weather-icon");
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     weatherIcon.alt = data.weather[0].description;
     console.log(weatherIcon);
 
+    // Refresh Button
     const refreshButton = document.getElementById("refresh-button");
     refreshButton.addEventListener("click", () => {
         getWeather(location);
