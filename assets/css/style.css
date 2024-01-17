@@ -68,7 +68,7 @@ input {
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -78,7 +78,7 @@ input {
 }
 
 .weather-container div {
-    padding: .25rem;
+    padding: .2rem;
 }
 
 #location {
