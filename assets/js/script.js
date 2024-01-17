@@ -71,8 +71,8 @@ async function getWeather(location) {
     document.getElementById("feels-like").innerHTML = "Feels like: " + Math.round(data.main.feels_like) + "°C";
     document.getElementById("max-temp").innerHTML = "Maximum: " + Math.round(data.main.temp_max) + "°C";
     document.getElementById("min-temp").innerHTML = "Minimum: " + Math.round(data.main.temp_min) + "°C";
-    document.getElementById("sun-rise").innerHTML = "Sunrise: " + new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-    document.getElementById("sun-set").innerHTML = "Sunset: " + new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("sun-rise").innerHTML = "Sunrise: " + new Date((data.sys.sunrise + data.timezone) * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    document.getElementById("sun-set").innerHTML = "Sunset: " + new Date((data.sys.sunset + data.timezone) * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     document.getElementById("weather-desc").innerHTML = data.weather[0].description;;
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
