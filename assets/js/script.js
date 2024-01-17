@@ -49,8 +49,11 @@ async function getWeather(location) {
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     weatherIcon.alt = data.weather[0].description;
     console.log(weatherIcon);
-    console.log(weatherIcon.src);
-    console.log(weatherIcon.alt);
+
+    const refreshButton = document.getElementById("refresh-button");
+    refreshButton.addEventListener("click", () => {
+        getWeather(location);
+    });
 }
 
 if (searchBox) {
@@ -70,19 +73,19 @@ showCurrentTime();
 // TODO - Add a map that shows the location of the city.
 // TODO - Add a loading spinner.
 // TODO - Add autocomplete for the search box.
-// TODO - Hide the search input, display search icon instead. When the icon is clicked, the search input is displayed.
 // TODO - Add a 5 day forecast.
 // TODO - Add a refresh button.
 // TODO - Add last updated time.
-// TODO - Void the search if the search box is empty.
-// TODO - Void the search if the search box contains invalid characters.
-// TODO - Void the search if the search box contains a number.
-// TODO - Void the search if the search box contains a special character.
 // TODO - Displays the weather for the user's current location.
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
 
+// DONE
+// TODO - Void the search if the search box is empty.
+// TODO - Void the search if the search box contains invalid characters.
+// TODO - Void the search if the search box contains a number.
+// TODO - Void the search if the search box contains a special character.
 // TODO - Add error handling for invalid city names.
 // TODO - Add weather icons.
 // TODO - Clear the search box after the search is complete.
