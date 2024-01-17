@@ -107,17 +107,16 @@ getWeatherForCurrentLocation();
 // TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
 // TODO - Add a background image that changes depending on the weather.
 // TODO - Add a map that shows the location of the city.
-// TODO - Add a loading spinner.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
-// TODO - Add last updated time.
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
-// TODO - Displays the weather for the user's current location.
 // TODO - Add carrousel animation displaying the user's current weather information.
 
 // DONE
+// TODO - Displays the weather for the user's current location.
+// TODO - Add last updated time.
 // TODO - Add a refresh button.
 // TODO - Void the search if the search box is empty.
 // TODO - Void the search if the search box contains invalid characters.

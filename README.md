@@ -60,3 +60,4 @@
 - [Yusuf önaldı](https://freedesignresources.net/34-weather-icon-pack/)
 - [Glass Effect](https://webdesign.tutsplus.com/how-to-create-a-frosted-glass-effect-in-css--cms-32535t)
 - [Font Awesome](https://fontawesome.com)
+- [search Icon inside input box](https://nikitahl.com/search-icon-inside-input)
