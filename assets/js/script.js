@@ -154,15 +154,11 @@ temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
 showCurrentTime();
 getWeatherForCurrentLocation();
 
-// TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
 // TODO - Add a background image that changes depending on the weather.
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???)
 // TODO - Handle duplicate city names.
-// TODO - shake Animation when the search box is invalid.
 // TODO - Add scroll animation displaying the user's current weather information.
 // TODO - Fix bug when user toggle the temperature unit and search for a new city
-// TODO - Clear container after user enter invalid city name.
-// TODO - Fix sunset and sunrise time to not display current time.
