@@ -25,6 +25,11 @@ async function getWeather(location) {
     const response = await fetch(apiUrl + location + `&appid=${apiKey}`);
     var data = await response.json();
 
+    if (data.cod === "404") {
+        document.getElementById("location").innerHTML = "Invalid city name";
+        return;
+    }
+
     console.log(data);
 
     document.getElementById("location").innerHTML = data.name;
@@ -77,6 +82,7 @@ showCurrentTime();
 // TODO - Displays the weather for the user's current location.
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
 // TODO - Handle duplicate city names.
+// TODO - shake Animation when the search box is invalid.
 
 // TODO - Add weather icons.
 // TODO - Clear the search box after the search is complete.
