@@ -119,10 +119,25 @@ function toggleTemperatureUnit() {
 
     if (isCelsius) {
         const temperatureFahrenheit = parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
+        const feelsLikeFahrenheit = parseFloat(feelsLikeElement.innerText.replace("Feels like: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
+        const maxTempFahrenheit = parseFloat(maxTempElement.innerText.replace("Maximum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
+        const minTempFahrenheit = parseFloat(minTempElement.innerText.replace("Minimum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
+
         temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
+        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
+        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
+        minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
+
     } else {
         const temperatureCelsius = ((parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
+        const feelsLikeCelsius = ((parseFloat(feelsLikeElement.innerText.replace("Feels like: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
+        const maxTempCelsius = ((parseFloat(maxTempElement.innerText.replace("Maximum: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
+        const minTempCelsius = ((parseFloat(minTempElement.innerText.replace("Minimum: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
+
         temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureCelsius) + "°C";
+        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeCelsius) + "°C";
+        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
+        minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
     }
 
     // Toggle the temperature unit
