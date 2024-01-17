@@ -86,7 +86,6 @@ async function getWeather(location) {
     const weatherIcon = document.getElementById("weather-icon");
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     weatherIcon.alt = data.weather[0].description;
-    console.log(weatherIcon);
 
     // Refresh Button
 
