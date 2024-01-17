@@ -100,8 +100,8 @@ if (searchBox) {
         }
     });
 }
-// ...
 
+// Temperature unit toggle button
 let isCelsius = true; // Variable to track the temperature unit
 
 /**
@@ -112,6 +112,31 @@ function toggleTemperatureUnit() {
     const feelsLikeElement = document.getElementById("feels-like");
     const maxTempElement = document.getElementById("max-temp");
     const minTempElement = document.getElementById("min-temp");
+    if (isCelsius) {
+        // Convert Celsius to Fahrenheit
+        const temperatureFahrenheit = (parseFloat(temperatureElement.innerText) * 9) / 5 + 32;
+        const feelsLikeFahrenheit = (parseFloat(feelsLikeElement.innerText) * 9) / 5 + 32;
+        const maxTempFahrenheit = (parseFloat(maxTempElement.innerText) * 9) / 5 + 32;
+        const minTempFahrenheit = (parseFloat(minTempElement.innerText) * 9) / 5 + 32;
+
+        // Update the temperature elements with Fahrenheit values
+        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
+        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
+        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
+        minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
+    } else {
+        // Convert Fahrenheit to Celsius
+        const temperatureCelsius = ((parseFloat(temperatureElement.innerText) - 32) * 5) / 9;
+        const feelsLikeCelsius = ((parseFloat(feelsLikeElement.innerText) - 32) * 5) / 9;
+        const maxTempCelsius = ((parseFloat(maxTempElement.innerText) - 32) * 5) / 9;
+        const minTempCelsius = ((parseFloat(minTempElement.innerText) - 32) * 5) / 9;
+
+        // Update the temperature elements with Celsius values
+        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureCelsius) + "°C";
+        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeCelsius) + "°C";
+        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
+        minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
+    }
 
     if (isCelsius) {
         // Convert Celsius to Fahrenheit
@@ -145,8 +170,6 @@ function toggleTemperatureUnit() {
     // TODO
     console.log("Temperature: " + temperatureElement.innerText);
 }
-
-// ...
 
 // Add the button click event listener
 const temperatureToggleBtn = document.getElementById("temperature-toggle-btn");

@@ -61,3 +61,4 @@
 - [Glass Effect](https://webdesign.tutsplus.com/how-to-create-a-frosted-glass-effect-in-css--cms-32535t)
 - [Font Awesome](https://fontawesome.com)
 - [search Icon inside input box](https://nikitahl.com/search-icon-inside-input)
+- [How to Convert Celcius to Fahrenheit (°C to °F)](https://www.thoughtco.com/celcius-to-farenheit-formula-609227)
