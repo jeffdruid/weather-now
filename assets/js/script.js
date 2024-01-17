@@ -59,12 +59,12 @@ async function getWeather(location) {
     var data = await response.json();
 
     if (data.cod === "404" || data.cod === "400") {
-        document.getElementById("location404").innerHTML = "Invalid city name";
+        document.getElementById("location404").style.display = "flex";
         document.querySelector(".weather-container").style.display = "none";
         return;
     }
     document.querySelector(".weather-container").style.display = "flex";
-    document.getElementById("location404").innerHTML = "";
+    document.getElementById("location404").style.display = "none";
 
     console.log(data);
 
