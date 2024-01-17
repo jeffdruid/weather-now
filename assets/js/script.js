@@ -6,7 +6,7 @@ function showCurrentTime() {
         var currentTime = new Date();
         var formattedTime = currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
         console.log("Current time: " + formattedTime);
-        document.getElementById("current-time").innerHTML = "Current time: " + formattedTime;
+        document.getElementById("current-time").innerHTML = "Time: " + formattedTime;
     }, 1000);
 }
 
@@ -30,7 +30,9 @@ function getWeatherForCurrentLocation() {
             const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
             const data = await response.json();
             displayWeatherData(data);
-            document.getElementById("temperature-now").innerHTML = "Current Temperature: " + Math.round(data.main.temp) + "°C";
+            document.getElementById("temperature-now").innerHTML = "Temp: " + Math.round(data.main.temp) + "°C";
+            document.getElementById("current-location").innerHTML = data.name;
+
 
         }, (error) => {
             console.error(error);
@@ -113,6 +115,7 @@ getWeatherForCurrentLocation();
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
 // TODO - Displays the weather for the user's current location.
+// TODO - Add carrousel animation displaying the user's current weather information.
 
 // DONE
 // TODO - Add a refresh button.

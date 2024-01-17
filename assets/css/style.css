@@ -52,6 +52,7 @@ input {
 }
 
 #current-time,
+#current-location,
 #temperature-now {
     text-align: center;
     position: fixed;
@@ -59,6 +60,11 @@ input {
     color: rgba(0, 0, 0, 0.9);
     text-transform: capitalize;
     font-size: .9rem;
+}
+
+#current-location {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #temperature-now {
