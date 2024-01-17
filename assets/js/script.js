@@ -53,7 +53,7 @@ let lastUpdatedTime = '';
  * Get the weather data from the API.
  */
 async function getWeather(location) {
-    const response = await fetch(apiUrl + location + `&appid=${apiKey}`);
+    const response = await fetch(apiUrl + `q=` + location + `&appid=${apiKey}`);
     var data = await response.json();
 
     if (data.cod === "404" || data.cod === "400") {
