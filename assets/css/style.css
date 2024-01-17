@@ -62,6 +62,10 @@ input {
     font-size: .9rem;
 }
 
+#current-time {
+    left: .5rem;
+}
+
 #current-location {
     left: 50%;
     transform: translateX(-50%);
