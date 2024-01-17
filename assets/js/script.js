@@ -100,6 +100,57 @@ if (searchBox) {
         }
     });
 }
+// ...
+
+let isCelsius = true; // Variable to track the temperature unit
+
+/**
+ * Toggle between Celsius and Fahrenheit temperature units.
+ */
+function toggleTemperatureUnit() {
+    const temperatureElement = document.getElementById("temperature");
+    const feelsLikeElement = document.getElementById("feels-like");
+    const maxTempElement = document.getElementById("max-temp");
+    const minTempElement = document.getElementById("min-temp");
+
+    if (isCelsius) {
+        // Convert Celsius to Fahrenheit
+        const temperatureFahrenheit = (parseFloat(temperatureElement.innerText) * 9) / 5 + 32;
+        const feelsLikeFahrenheit = (parseFloat(feelsLikeElement.innerText) * 9) / 5 + 32;
+        const maxTempFahrenheit = (parseFloat(maxTempElement.innerText) * 9) / 5 + 32;
+        const minTempFahrenheit = (parseFloat(minTempElement.innerText) * 9) / 5 + 32;
+
+        // Update the temperature elements with Fahrenheit values
+        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
+        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
+        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
+        minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
+    } else {
+        // Convert Fahrenheit to Celsius
+        const temperatureCelsius = ((parseFloat(temperatureElement.innerText) - 32) * 5) / 9;
+        const feelsLikeCelsius = ((parseFloat(feelsLikeElement.innerText) - 32) * 5) / 9;
+        const maxTempCelsius = ((parseFloat(maxTempElement.innerText) - 32) * 5) / 9;
+        const minTempCelsius = ((parseFloat(minTempElement.innerText) - 32) * 5) / 9;
+
+        // Update the temperature elements with Celsius values
+        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureCelsius) + "°C";
+        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeCelsius) + "°C";
+        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
+        minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
+    }
+
+    isCelsius = !isCelsius; // Toggle the temperature unit
+
+    console.log("Temperature unit changed to " + (isCelsius ? "Celsius" : "Fahrenheit"));
+    // TODO
+    console.log("Temperature: " + temperatureElement.innerText);
+}
+
+// ...
+
+// Add the button click event listener
+const temperatureToggleBtn = document.getElementById("temperature-toggle-btn");
+temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
 
 showCurrentTime();
 getWeatherForCurrentLocation();
@@ -112,19 +163,4 @@ getWeatherForCurrentLocation();
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
-// TODO - Add carrousel animation displaying the user's current weather information.
-
-// DONE
-// TODO - Displays the weather for the user's current location.
-// TODO - Add last updated time.
-// TODO - Add a refresh button.
-// TODO - Void the search if the search box is empty.
-// TODO - Void the search if the search box contains invalid characters.
-// TODO - Void the search if the search box contains a number.
-// TODO - Void the search if the search box contains a special character.
-// TODO - Add error handling for invalid city names.
-// TODO - Add weather icons.
-// TODO - Clear the search box after the search is complete.
-// TODO - Update the UI.
-// TODO - Void holding the enter key.
-// TODO - Update current time every second.
+// TODO - Add scroll animation displaying the user's current weather information.
