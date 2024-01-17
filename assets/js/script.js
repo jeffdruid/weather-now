@@ -25,7 +25,7 @@ async function getWeather(location) {
     const response = await fetch(apiUrl + location + `&appid=${apiKey}`);
     var data = await response.json();
 
-    if (data.cod === "404") {
+    if (data.cod === "404" || data.cod === "400") {
         document.getElementById("location").innerHTML = "Invalid city name";
         return;
     }
@@ -44,7 +44,7 @@ async function getWeather(location) {
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
     // document.getElementById("country").innerHTML = "Country: " + data.sys.country;
 
-    // TODO - Add weather icons.
+    // Weather icons.
     const weatherIcon = document.getElementById("weather-icon");
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     weatherIcon.alt = data.weather[0].description;
@@ -65,7 +65,6 @@ if (searchBox) {
 
 showCurrentTime();
 
-// TODO - Add error handling for invalid city names.
 // TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
 // TODO - Add a background image that changes depending on the weather.
 // TODO - Add a map that shows the location of the city.
@@ -84,6 +83,7 @@ showCurrentTime();
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
 
+// TODO - Add error handling for invalid city names.
 // TODO - Add weather icons.
 // TODO - Clear the search box after the search is complete.
 // TODO - Update the UI.
