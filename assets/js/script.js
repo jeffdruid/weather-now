@@ -16,7 +16,6 @@ function showCurrentTime() {
 function displayWeatherData(data) {
     // Display weather data on the UI
     console.log(data);
-    // Add code to display weather data on the UI
 }
 
 /**
@@ -32,7 +31,6 @@ function getWeatherForCurrentLocation() {
             displayWeatherData(data);
             document.getElementById("temperature-now").innerHTML = "Temp: " + Math.round(data.main.temp) + "°C";
             document.getElementById("current-location").innerHTML = data.name;
-
 
         }, (error) => {
             console.error(error);
@@ -63,6 +61,7 @@ async function getWeather(location) {
         document.querySelector(".weather-container").style.display = "none";
         return;
     }
+
     document.querySelector(".weather-container").style.display = "flex";
     document.getElementById("location404").style.display = "none";
 
@@ -79,8 +78,10 @@ async function getWeather(location) {
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
     // document.getElementById("country").innerHTML = "Country: " + data.sys.country;
+
     lastUpdatedTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     document.getElementById("last-updated").innerHTML = "Last Updated: " + lastUpdatedTime;
+
     // Weather icons.
     const weatherIcon = document.getElementById("weather-icon");
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
@@ -157,9 +158,10 @@ getWeatherForCurrentLocation();
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
-// TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
+// TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???)
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
 // TODO - Add scroll animation displaying the user's current weather information.
 // TODO - Fix bug when user toggle the temperature unit and search for a new city
 // TODO - Clear container after user enter invalid city name.
+// TODO - Fix sunset and sunrise time to not display current time.
