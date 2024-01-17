@@ -76,7 +76,7 @@ async function getWeather(location) {
     document.getElementById("weather-desc").innerHTML = data.weather[0].description;;
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
-    // document.getElementById("country").innerHTML = "Country: " + data.sys.country;
+    document.getElementById("country").innerHTML = data.sys.country;
 
     lastUpdatedTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     document.getElementById("last-updated").innerHTML = "Last Updated: " + lastUpdatedTime;
