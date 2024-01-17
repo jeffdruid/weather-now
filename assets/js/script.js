@@ -101,8 +101,11 @@ if (searchBox) {
     searchBox.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
             document.querySelector(".weather-container").style.display = "flex";
-            if (toggleTemperatureUnit(isCelsius) === false) {
-                toggleTemperatureUnit(!isCelsius);
+            if (isCelsius === !isCelsius) {
+                isCelsius = false;
+                // toggleTemperatureUnit(!isCelsius);
+            } else {
+                isCelsius = true;
             }
             getWeather(searchBox.value);
             searchBox.value = '';
