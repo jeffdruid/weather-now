@@ -91,6 +91,7 @@ async function getWeather(location) {
     });
 }
 
+// Search box event listener
 if (searchBox) {
     searchBox.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
@@ -106,62 +107,25 @@ let isCelsius = true; // Variable to track the temperature unit
 
 /**
  * Toggle between Celsius and Fahrenheit temperature units.
- */
-function toggleTemperatureUnit() {
+ */function toggleTemperatureUnit() {
     const temperatureElement = document.getElementById("temperature");
     const feelsLikeElement = document.getElementById("feels-like");
     const maxTempElement = document.getElementById("max-temp");
     const minTempElement = document.getElementById("min-temp");
-    if (isCelsius) {
-        // Convert Celsius to Fahrenheit
-        const temperatureFahrenheit = (parseFloat(temperatureElement.innerText) * 9) / 5 + 32;
-        const feelsLikeFahrenheit = (parseFloat(feelsLikeElement.innerText) * 9) / 5 + 32;
-        const maxTempFahrenheit = (parseFloat(maxTempElement.innerText) * 9) / 5 + 32;
-        const minTempFahrenheit = (parseFloat(minTempElement.innerText) * 9) / 5 + 32;
 
-        // Update the temperature elements with Fahrenheit values
-        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
-        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
-        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
-        minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
-    } else {
-        // Convert Fahrenheit to Celsius
-        const temperatureCelsius = ((parseFloat(temperatureElement.innerText) - 32) * 5) / 9;
-        const feelsLikeCelsius = ((parseFloat(feelsLikeElement.innerText) - 32) * 5) / 9;
-        const maxTempCelsius = ((parseFloat(maxTempElement.innerText) - 32) * 5) / 9;
-        const minTempCelsius = ((parseFloat(minTempElement.innerText) - 32) * 5) / 9;
-
-        // Update the temperature elements with Celsius values
-        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureCelsius) + "°C";
-        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeCelsius) + "°C";
-        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
-        minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
+    // Function to convert temperature from Celsius to Fahrenheit
+    function celsiusToFahrenheit(celsius) {
+        return (celsius * 9) / 5 + 32;
     }
 
-    if (isCelsius) {
-        // Convert Celsius to Fahrenheit
-        const temperatureFahrenheit = (parseFloat(temperatureElement.innerText) * 9) / 5 + 32;
-        const feelsLikeFahrenheit = (parseFloat(feelsLikeElement.innerText) * 9) / 5 + 32;
-        const maxTempFahrenheit = (parseFloat(maxTempElement.innerText) * 9) / 5 + 32;
-        const minTempFahrenheit = (parseFloat(minTempElement.innerText) * 9) / 5 + 32;
+    // Function to convert temperature from Fahrenheit to Celsius
+    function fahrenheitToCelsius(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+    }
 
-        // Update the temperature elements with Fahrenheit values
-        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
-        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
-        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
-        minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
-    } else {
-        // Convert Fahrenheit to Celsius
-        const temperatureCelsius = ((parseFloat(temperatureElement.innerText) - 32) * 5) / 9;
-        const feelsLikeCelsius = ((parseFloat(feelsLikeElement.innerText) - 32) * 5) / 9;
-        const maxTempCelsius = ((parseFloat(maxTempElement.innerText) - 32) * 5) / 9;
-        const minTempCelsius = ((parseFloat(minTempElement.innerText) - 32) * 5) / 9;
-
-        // Update the temperature elements with Celsius values
-        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureCelsius) + "°C";
-        feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeCelsius) + "°C";
-        maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
-        minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
+    // Convert temperature based on the current unit
+    function convertTemperature(value, toCelsius) {
+        return toCelsius ? fahrenheitToCelsius(value) : celsiusToFahrenheit(value);
     }
 
     isCelsius = !isCelsius; // Toggle the temperature unit
@@ -169,11 +133,15 @@ function toggleTemperatureUnit() {
     console.log("Temperature unit changed to " + (isCelsius ? "Celsius" : "Fahrenheit"));
     // TODO
     console.log("Temperature: " + temperatureElement.innerText);
+    console.log("feelsLike: " + feelsLikeElement.innerText);
+    console.log("maxTemp: " + maxTempElement.innerText);
+    console.log("minTemp: " + minTempElement.innerText);
 }
 
 // Add the button click event listener
 const temperatureToggleBtn = document.getElementById("temperature-toggle-btn");
 temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
+
 
 showCurrentTime();
 getWeatherForCurrentLocation();
