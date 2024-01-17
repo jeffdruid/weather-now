@@ -10,12 +10,42 @@ function showCurrentTime() {
     }, 1000);
 }
 
+/**
+ * Get the user's current location and display the weather.
+ */
+function displayWeatherData(data) {
+    // Display weather data on the UI
+    console.log(data);
+    // Add code to display weather data on the UI
+}
+
+/**
+ * Get the user's current location and display the weather.
+ */
+function getWeatherForCurrentLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+            const data = await response.json();
+            displayWeatherData(data);
+            document.getElementById("temperature-now").innerHTML = "Current Temperature: " + Math.round(data.main.temp) + "°C";
+
+        }, (error) => {
+            console.error(error);
+        });
+    } else {
+        console.error("Geolocation is not supported by this browser.");
+    }
+}
+
 // TODO - Hide apiKeys in the .env file. Temp API key.
 const apiKey = `10b01580cf1723c01c311fb7cca8e196`;
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
@@ -70,6 +100,7 @@ if (searchBox) {
 }
 
 showCurrentTime();
+getWeatherForCurrentLocation();
 
 // TODO - Add a button that changes the temperature from Celsius to Fahrenheit.
 // TODO - Add a background image that changes depending on the weather.
@@ -78,10 +109,10 @@ showCurrentTime();
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
 // TODO - Add last updated time.
-// TODO - Displays the weather for the user's current location.
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
+// TODO - Displays the weather for the user's current location.
 
 // DONE
 // TODO - Add a refresh button.
