@@ -114,42 +114,22 @@ function toggleTemperatureUnit() {
     const maxTempElement = document.getElementById("max-temp");
     const minTempElement = document.getElementById("min-temp");
 
-    // Function to convert temperature from Celsius to Fahrenheit
-    function celsiusToFahrenheit(celsius) {
-        return (celsius * 9) / 5 + 32;
+    if (isCelsius) {
+        const temperatureFahrenheit = parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
+        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
+    } else {
+        const temperatureCelsius = ((parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
+        temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureCelsius) + "°C";
     }
-
-    // Function to convert temperature from Fahrenheit to Celsius
-    function fahrenheitToCelsius(fahrenheit) {
-        return ((fahrenheit - 32) * 5) / 9;
-    }
-
-    // Convert temperature based on the current unit
-    function convertTemperature(value, toCelsius) {
-        return toCelsius ? fahrenheitToCelsius(value) : celsiusToFahrenheit(value);
-    }
-
-    const initialTemperature = parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", ""));
-
-    if (isNaN(initialTemperature)) {
-        console.error("Invalid temperature value: " + initialTemperature);
-        return;
-    }
-
-    console.log("Initial temperature: " + initialTemperature);
-    console.log("Converted temperature: " + convertTemperature(initialTemperature, isCelsius));
 
     // Toggle the temperature unit
     isCelsius = !isCelsius;
-
     console.log("Temperature unit changed to " + (isCelsius ? "Celsius" : "Fahrenheit"));
-
 }
 
 // Add the button click event listener
 const temperatureToggleBtn = document.getElementById("temperature-toggle-btn");
 temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
-
 
 showCurrentTime();
 getWeatherForCurrentLocation();
@@ -163,3 +143,5 @@ getWeatherForCurrentLocation();
 // TODO - Handle duplicate city names.
 // TODO - shake Animation when the search box is invalid.
 // TODO - Add scroll animation displaying the user's current weather information.
+// TODO - Fix bug when user toggle the temperature unit and search for a new city
+// TODO - Clear container after user enter invalid city name.
