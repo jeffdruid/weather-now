@@ -54,18 +54,18 @@ let lastUpdatedTime = '';
 async function getWeather(location) {
     const response = await fetch(apiUrl + `q=` + location + `&appid=${apiKey}`);
     let data = await response.json();
-
+    // 404 error handling
     if (data.cod === "404" || data.cod === "400") {
         document.getElementById("location404").style.display = "flex";
         document.querySelector(".weather-container").style.display = "none";
         return;
     }
-
     document.querySelector(".weather-container").style.display = "flex";
     document.getElementById("location404").style.display = "none";
 
     console.log(data);
 
+    // Weather Description
     document.getElementById("location").innerHTML = data.name;
     document.getElementById("temperature").innerHTML = "Temperature: " + Math.round(data.main.temp) + "°C";
     document.getElementById("feels-like").innerHTML = "Feels like: " + Math.round(data.main.feels_like) + "°C";
@@ -76,8 +76,9 @@ async function getWeather(location) {
     document.getElementById("weather-desc").innerHTML = data.weather[0].description;;
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
-    document.getElementById("country").innerHTML = data.sys.country;
+    // document.getElementById("country").innerHTML = data.sys.country;
 
+    //Last updated time
     lastUpdatedTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     document.getElementById("last-updated").innerHTML = "Last Updated: " + lastUpdatedTime;
 
@@ -86,8 +87,12 @@ async function getWeather(location) {
     weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     weatherIcon.alt = data.weather[0].description;
 
-    // Refresh Button
+    // Flag icons.
+    const flagIcon = document.getElementById("flag-icon");
+    flagIcon.src = `https://www.flagsapi.com/${data.sys.country}/flat/32.png`;
+    flagIcon.alt = data.sys.country;
 
+    // Refresh Button
     const refreshButton = document.getElementById("refresh-button");
     refreshButton.addEventListener("click", () => {
         const location = document.getElementById("location").innerHTML;
@@ -126,6 +131,7 @@ function toggleTemperatureUnit() {
     const minTempElement = document.getElementById("min-temp");
 
     if (isCelsius) {
+        // Convert to Fahrenheit
         const temperatureFahrenheit = parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
         const feelsLikeFahrenheit = parseFloat(feelsLikeElement.innerText.replace("Feels like: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
         const maxTempFahrenheit = parseFloat(maxTempElement.innerText.replace("Maximum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
@@ -137,6 +143,7 @@ function toggleTemperatureUnit() {
         minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
 
     } else {
+        // Convert to Celsius
         const temperatureCelsius = ((parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
         const feelsLikeCelsius = ((parseFloat(feelsLikeElement.innerText.replace("Feels like: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
         const maxTempCelsius = ((parseFloat(maxTempElement.innerText.replace("Maximum: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
@@ -167,4 +174,3 @@ getWeatherForCurrentLocation();
 // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???)
 // TODO - Handle duplicate city names.
 // TODO - Add scroll animation displaying the user's current weather information.
-// TODO - Fix bug when user toggle the temperature unit and search for a new city
