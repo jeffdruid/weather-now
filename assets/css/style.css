@@ -70,6 +70,13 @@ input {
     -webkit-backdrop-filter: blur(20px);
 }
 
+/* Favorites styles */
+.fa-heart {
+    color: rgba(255, 0, 0, 0.7);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* Weather info styles */
 
 #current-time,
