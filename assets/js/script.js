@@ -181,6 +181,11 @@ function displayWeatherForFavorites() {
 
 // Function to set a location as a favorite
 function setFavoriteLocation(location) {
+    // TODO - check if the location is already a favorite
+    // TODO - void empty locations
+    let favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations')) || [];
+    favoriteLocations.push(location);
+    localStorage.setItem('favoriteLocations', JSON.stringify(favoriteLocations));
     console.log("Location set as favorite: " + location);
 }
 
