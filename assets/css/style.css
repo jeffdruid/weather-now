@@ -182,9 +182,8 @@ input {
     bottom: 0;
     left: 0;
     font-size: 1rem;
-    background: 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
-    border-radius: 40%;
+    font-weight: bold;
+    border-radius: 30%;
 }
 
 /* Footer Styles */
