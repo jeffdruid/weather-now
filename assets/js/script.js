@@ -164,10 +164,19 @@ function toggleTemperatureUnit() {
 const temperatureToggleBtn = document.getElementById("temperature-toggle-btn");
 temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
 
+// Function to display weather for favorite locations
+function displayWeatherForFavorites() {
+    // TODO - Add a button that displays the weather for the user's favorite locations.(Local storage)
+    console.log("Display weather for favorite locations");
+}
+
+// Add the button click event listener
+const favoritesBtn = document.getElementById('favorites-btn');
+favoritesBtn.addEventListener('click', displayWeatherForFavorites);
+
 showCurrentTime();
 getWeatherForCurrentLocation();
 
-// TODO - Add a background image that changes depending on the weather.
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
