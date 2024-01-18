@@ -3,8 +3,8 @@
  */
 function showCurrentTime() {
     setInterval(() => {
-        var currentTime = new Date();
-        var formattedTime = currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+        let currentTime = new Date();
+        let formattedTime = currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
         document.getElementById("current-time").innerHTML = "Time: " + formattedTime;
     }, 1000);
 }
@@ -53,7 +53,7 @@ let lastUpdatedTime = '';
  */
 async function getWeather(location) {
     const response = await fetch(apiUrl + `q=` + location + `&appid=${apiKey}`);
-    var data = await response.json();
+    let data = await response.json();
 
     if (data.cod === "404" || data.cod === "400") {
         document.getElementById("location404").style.display = "flex";
