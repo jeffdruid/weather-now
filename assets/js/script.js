@@ -192,7 +192,16 @@ function setFavoriteLocation(location) {
         console.log("Empty location cannot be set as a favorite.");
         return;
     }
+
+    // Get the favorite locations from local storage
     let favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations')) || [];
+
+    // Check if the location is already a favorite
+    if (favoriteLocations.includes(location)) {
+        console.log("Location is already a favorite: " + location);
+        return;
+    }
+    // Add the location to the favorite locations
     favoriteLocations.push(location);
     localStorage.setItem('favoriteLocations', JSON.stringify(favoriteLocations));
     console.log("Location set as favorite: " + location);
