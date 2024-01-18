@@ -1,7 +1,7 @@
 # Weather Now
 Weather Now is a web application that provides real-time weather information for any location worldwide. 
 
-[<img src="assets/images/icons/weather-forecast-16484.png" alt="Weather Icon">](https://github.com/jeffdruid/weather-now)
+[<img src="assets/images/icons/weather-forecast-16484.png" alt="Weather Icon">](https://jeffdruid.github.io/weather-now/)
 
 ## Table of Contents
 <!-- TODO - Update table -->
