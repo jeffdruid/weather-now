@@ -184,6 +184,7 @@ input {
     font-size: 1rem;
     font-weight: bold;
     border-radius: 30%;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 /* Footer Styles */
