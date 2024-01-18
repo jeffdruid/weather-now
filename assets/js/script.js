@@ -108,9 +108,10 @@ if (searchBox) {
             document.querySelector(".weather-container").style.display = "flex";
             if (isCelsius === !isCelsius) {
                 isCelsius = false;
-                // toggleTemperatureUnit(!isCelsius);
+                document.getElementById("temperature-toggle-btn").innerHTML = "°C";
             } else {
                 isCelsius = true;
+                document.getElementById("temperature-toggle-btn").innerHTML = "°F";
             }
             getWeather(searchBox.value);
             searchBox.value = '';
@@ -142,6 +143,8 @@ function toggleTemperatureUnit() {
         maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
         minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
 
+        document.getElementById("temperature-toggle-btn").innerHTML = "°C";
+
     } else {
         // Convert to Celsius
         const temperatureCelsius = ((parseFloat(temperatureElement.innerText.replace("Temperature: ", "").replace("°C", "").replace("°F", "")) - 32) * 5) / 9;
@@ -153,6 +156,8 @@ function toggleTemperatureUnit() {
         feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeCelsius) + "°C";
         maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
         minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
+
+        document.getElementById("temperature-toggle-btn").innerHTML = "°F";
     }
 
     // Toggle the temperature unit
