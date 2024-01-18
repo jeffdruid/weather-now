@@ -81,3 +81,5 @@ Weather Now is a web application that provides real-time weather information for
 - [How to Convert Celcius to Fahrenheit (°C to °F)](https://www.thoughtco.com/celcius-to-farenheit-formula-609227)
 - [Convert temperatures to and from celsius, fahrenheit](https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-11.php)
 - [Openweather API, time always in my local time zone](https://stackoverflow.com/questions/60627245/openweather-api-time-always-in-my-local-time-zone)
+- [localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
+- [HTML Web Storage API](https://www.w3schools.com/html/html5_webstorage.asp)
