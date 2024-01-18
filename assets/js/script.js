@@ -170,6 +170,19 @@ function displayWeatherForFavorites() {
     console.log("Display weather for favorite locations");
 }
 
+// Function to set a location as a favorite
+function setFavoriteLocation(location) {
+    // TODO - Implement the logic to set the location as a favorite
+    console.log("Location set as favorite: " + location);
+}
+
+// Add the button click event listener to set a location as a favorite
+const setFavoriteBtn = document.getElementById('set-favorite-btn');
+setFavoriteBtn.addEventListener('click', function () {
+    const location = document.getElementById("location").innerHTML;
+    setFavoriteLocation(location);
+});
+
 // Add the button click event listener
 const favoritesBtn = document.getElementById('favorites-btn');
 favoritesBtn.addEventListener('click', displayWeatherForFavorites);
