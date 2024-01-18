@@ -54,16 +54,19 @@ let lastUpdatedTime = '';
 async function getWeather(location) {
     const response = await fetch(apiUrl + `q=` + location + `&appid=${apiKey}`);
     let data = await response.json();
+
     // 404 error handling
     if (data.cod === "404" || data.cod === "400") {
         document.getElementById("location404").style.display = "flex";
         document.querySelector(".weather-container").style.display = "none";
         return;
+    } else {
+        document.querySelector(".weather-container").style.display = "flex";
+        document.getElementById("location404").style.display = "none";
     }
-    document.querySelector(".weather-container").style.display = "flex";
-    document.getElementById("location404").style.display = "none";
 
     console.log(data);
+    console.log("Weather data received for location:", location);
 
     // Weather Description
     document.getElementById("location").innerHTML = data.name;
@@ -76,7 +79,6 @@ async function getWeather(location) {
     document.getElementById("weather-desc").innerHTML = data.weather[0].description;;
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
-    // document.getElementById("country").innerHTML = data.sys.country;
 
     //Last updated time
     lastUpdatedTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
@@ -91,15 +93,15 @@ async function getWeather(location) {
     const flagIcon = document.getElementById("flag-icon");
     flagIcon.src = `https://www.flagsapi.com/${data.sys.country}/flat/32.png`;
     flagIcon.alt = data.sys.country;
-
-    // Refresh Button
-    const refreshButton = document.getElementById("refresh-button");
-    refreshButton.addEventListener("click", () => {
-        const location = document.getElementById("location").innerHTML;
-        getWeather(location);
-        console.log("Weather data refreshed for location:", location);
-    });
 }
+
+// Refresh Button
+const refreshButton = document.getElementById("refresh-button");
+refreshButton.addEventListener("click", () => {
+    const location = document.getElementById("location").innerHTML;
+    getWeather(location);
+    console.log("Weather data refreshed for location:", location);
+});
 
 // Search box event listener
 if (searchBox) {
