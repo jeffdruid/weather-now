@@ -1,9 +1,10 @@
 # Weather Now
+Weather Now is a web application that provides real-time weather information for any location worldwide. 
 
 [<img src="assets/images/icons/weather-forecast-16484.png" alt="Weather Icon">](https://github.com/jeffdruid/weather-now)
 
 ## Table of Contents
-
+<!-- TODO - Update table -->
 1. [Introduction](#introduction)
 1. [Technologies Used](#technologies-used)
 1. [User Stories](#user-stories)
@@ -42,6 +43,7 @@
     - [Useful links](#useful-links)
 
 ## Introduction
+- Weather Now is an user-friendly web application designed to provide users with detailed and up-to-date weather information for any location globally. Powered by real-time data from the OpenWeatherMap API, users can easily retrieve current weather data, including temperature, humidity, wind speed, and more.
 
 ## Technologies Used
 
@@ -51,9 +53,24 @@
 
 ## User Stories
 
+## Features
+
+### Current Weather: 
+- Get instant access to the current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
+
+### Location-Based: 
+- Utilize geolocation services to fetch the weather for your current location automatically.
+
+### Search Functionality: 
+- Enter a city name in the search box to retrieve weather details for any specific location.
+
+### Temperature Units: 
+- Toggle between Celsius and Fahrenheit units to view temperature information according to your preference.
+
 ## Credits
 
 ### Source code 
+<!-- TODO - Categorize -->
 - [Open Weather Map](https://openweathermap.org/)
 - [Google Charts](https://developers.google.com/chart)
 - [Free Frontend](https://freefrontend.com/css-input-text/)
