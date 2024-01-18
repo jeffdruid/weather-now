@@ -202,18 +202,26 @@ function setFavoriteLocation(location) {
         if (favoriteLocations.includes(location)) {
             console.log("Location is already a favorite: " + location);
             return;
+        } else {
+            // Add the location to the favorite locations
+            favoriteLocations.push(location);
+            localStorage.setItem('favoriteLocations', JSON.stringify(favoriteLocations));
+            console.log("Location set as favorite: " + location);
         }
-        // Add the location to the favorite locations
-        favoriteLocations.push(location);
-        localStorage.setItem('favoriteLocations', JSON.stringify(favoriteLocations));
-        console.log("Location set as favorite: " + location);
     }
 }
+
+// Clear the local storage
+// localStorage.clear();
+
 // Add the button click event listener to set a location as a favorite
 const setFavoriteBtn = document.getElementById('set-favorite-btn');
 setFavoriteBtn.addEventListener('click', function () {
     const location = document.getElementById("location").innerHTML;
     setFavoriteLocation(location);
+    // Set the heart icon to red
+    const favoriteIcon = document.querySelector('.fa-heart');
+    favoriteIcon.style.color = 'rgba(255, 0, 0, 0.9)';
 });
 
 // Add the button click event listener

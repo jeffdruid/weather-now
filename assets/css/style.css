@@ -82,7 +82,7 @@ input {
 }
 
 .fa-heart:hover {
-    color: rgba(255, 0, 0, 0.9);
+    /* color: rgba(255, 0, 0, 0.9); */
 }
 
 .fa-bookmark {
