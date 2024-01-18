@@ -218,10 +218,25 @@ function setFavoriteLocation(location) {
 const setFavoriteBtn = document.getElementById('set-favorite-btn');
 setFavoriteBtn.addEventListener('click', function () {
     const location = document.getElementById("location").innerHTML;
-    setFavoriteLocation(location);
-    // Set the heart icon to red
-    const favoriteIcon = document.querySelector('.fa-heart');
-    favoriteIcon.style.color = 'rgba(255, 0, 0, 0.9)';
+    const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
+    if (favoriteLocations && favoriteLocations.includes(location)) {
+        // Remove the location from favoriteLocations array
+        const updatedFavoriteLocations = favoriteLocations.filter(favoriteLocation => favoriteLocation !== location);
+        localStorage.setItem('favoriteLocations', JSON.stringify(updatedFavoriteLocations));
+        console.log("Location removed from favorites: " + location);
+
+        // Set the heart icon to white
+        const favoriteIcon = document.querySelector('.fa-heart');
+        favoriteIcon.style.color = 'rgba(255, 255, 255, 0.7)';
+        console.log("Favorite icon set to white.");
+    } else {
+        setFavoriteLocation(location);
+
+        // Set the heart icon to red
+        const favoriteIcon = document.querySelector('.fa-heart');
+        favoriteIcon.style.color = 'rgba(255, 0, 0, 0.9)';
+        console.log("Favorite icon set to red.");
+    };
 });
 
 // Add the button click event listener
