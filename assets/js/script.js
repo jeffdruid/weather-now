@@ -191,22 +191,24 @@ function setFavoriteLocation(location) {
     if (location.trim() === '') {
         console.log("Empty location cannot be set as a favorite.");
         return;
-    }
+    } else {
+        // Get the favorite locations from local storage
+        let favoriteLocations = new Set(JSON.parse(localStorage.getItem('favoriteLocations')) || []);
 
-    // Get the favorite locations from local storage
-    let favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations')) || [];
+        // Remove any empty locations from the favorite locations
+        favoriteLocations = Array.from(favoriteLocations).filter(favoriteLocation => favoriteLocation.trim() !== '');
 
-    // Check if the location is already a favorite
-    if (favoriteLocations.includes(location)) {
-        console.log("Location is already a favorite: " + location);
-        return;
+        // Check if the location is already a favorite
+        if (favoriteLocations.includes(location)) {
+            console.log("Location is already a favorite: " + location);
+            return;
+        }
+        // Add the location to the favorite locations
+        favoriteLocations.push(location);
+        localStorage.setItem('favoriteLocations', JSON.stringify(favoriteLocations));
+        console.log("Location set as favorite: " + location);
     }
-    // Add the location to the favorite locations
-    favoriteLocations.push(location);
-    localStorage.setItem('favoriteLocations', JSON.stringify(favoriteLocations));
-    console.log("Location set as favorite: " + location);
 }
-
 // Add the button click event listener to set a location as a favorite
 const setFavoriteBtn = document.getElementById('set-favorite-btn');
 setFavoriteBtn.addEventListener('click', function () {
