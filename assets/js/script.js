@@ -66,7 +66,6 @@ async function getWeather(location) {
     }
 
     console.log(data);
-    console.log("Weather data received for location:", location);
 
     // Weather Description
     document.getElementById("location").innerHTML = data.name;
