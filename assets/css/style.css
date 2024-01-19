@@ -100,6 +100,12 @@ input {
     color: rgba(0, 0, 0, 0.7);
 }
 
+.favorite a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
 /* Weather info styles */
 
 #current-time,
