@@ -314,12 +314,18 @@ async function getFiveDayForecast(location) {
     const data = await response.json();
     console.log(data);
 
-    document.getElementById("forecast").innerHTML = data.list[0].main.temp + ' ' + data.list[8].main.temp + ' ' + data.list[16].main.temp + ' ' + data.list[32].main.temp;
+    let forecastTemps = '';
+    for (let i = 0; i < data.list.length; i++) {
+        const temperature = Math.round(data.list[i].main.temp);
+        forecastTemps += temperature + '°C ';
+    }
+
+    document.getElementById("forecast").innerHTML = forecastTemps;
     document.getElementById("forecast").classList.add('weather-container');
     document.getElementById("forecast").style.display = "flex";
-    console.log(data.list[0].main.temp + ' ' + data.list[8].main.temp + ' ' + data.list[16].main.temp + ' ' + data.list[32].main.temp);
+    console.log(forecastTemps);
 }
-getFiveDayForecast('Toronto');
+getFiveDayForecast('lucan');
 
 showCurrentTime();
 getWeatherForCurrentLocation();
