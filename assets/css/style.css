@@ -86,7 +86,7 @@ input {
     font-size: 1.5rem;
     cursor: pointer;
     position: absolute;
-    top: 17%;
+    top: 10%;
     left: 0;
 }
 
@@ -96,7 +96,7 @@ input {
 #current-location,
 #temperature-now {
     text-align: center;
-    position: fixed;
+    position: absolute;
     bottom: 2.5rem;
     color: rgba(0, 0, 0, 0.9);
     text-transform: capitalize;
@@ -191,7 +191,7 @@ footer {
     flex-shrink: 0;
     background-color: rgba(0, 0, 0, 0.9);
     color: rgba(148, 187, 233, 0.5);
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
