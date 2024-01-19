@@ -202,6 +202,17 @@ input {
     color: rgba(0, 0, 0, 0.7);
 }
 
+/* Forecast styles */
+#forecast {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: capitalize;
+}
+
 /* Footer Styles */
 footer {
     flex-shrink: 0;
