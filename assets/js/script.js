@@ -173,12 +173,11 @@ temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
 // Function to display weather for favorite locations
 function displayWeatherForFavorites() {
     const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
-    console.log(localStorage.getItem('favoriteLocations'));
-    console.log("Favorite locations: " + favoriteLocations);
-    // Display weather for each favorite location
+    console.log(favoriteLocations);
+    // Check if there are any favorite locations
     if (favoriteLocations) {
         favoriteLocations.forEach(location => {
-            console.log("Display weather for favorite location: " + location);
+            // TODO - Display weather for each favorite location
         });
     } else {
         console.log("No favorite locations found.");
