@@ -80,17 +80,21 @@ async function getWeather(location) {
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
     document.getElementById("country").innerHTML = data.sys.country;
 
-    // Check if the location is a favorite
-    if (JSON.parse(localStorage.getItem('favoriteLocations')) && JSON.parse(localStorage.getItem('favoriteLocations')).includes(data.name)) {
+    // Check if the location is a favorite 
+    const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
+    const locationString = data.name + ', ' + data.sys.country;
+    if (favoriteLocations && favoriteLocations.includes(locationString)) {
         // Set the heart icon to red
         const favoriteIcon = document.querySelector('.fa-heart');
         favoriteIcon.style.color = 'rgba(255, 0, 0, 0.9)';
         console.log("Favorite icon set to red.");
+        console.log("Location is a favorite: " + locationString);
     } else {
         // Set the heart icon to white
         const favoriteIcon = document.querySelector('.fa-heart');
         favoriteIcon.style.color = 'rgba(255, 255, 255, 0.7)';
         console.log("Favorite icon set to white.");
+        console.log("Location is not a favorite: " + locationString);
     };
 
     //Last updated time
