@@ -61,8 +61,9 @@ async function getWeather(location) {
         document.querySelector(".weather-container").style.display = "none";
         return;
     } else {
-        document.querySelector(".weather-container").style.display = "flex";
+        document.getElementById("weather").style.display = "flex";
         document.getElementById("location404").style.display = "none";
+        document.getElementById("favorite-weather").style.display = "none";
     }
 
     console.log(data);
