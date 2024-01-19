@@ -319,10 +319,11 @@ async function getFiveDayForecast(location) {
     let forecastTemps = '';
     for (let i = 0; i < data.list.length; i++) {
         const temperature = Math.round(data.list[i].main.temp);
+        const description = data.list[i].weather[0].description;
         const dateTime = new Date(data.list[i].dt_txt);
         if (dateTime.getHours() === 0) {
             const dayOfWeek = dateTime.toLocaleDateString(undefined, { weekday: 'long' });
-            forecastTemps += `<div>${dayOfWeek}: ${temperature}°C</div>`;
+            forecastTemps += `<div>${dayOfWeek}: ${temperature}°C - ${description}</div>`;
         }
     }
 
