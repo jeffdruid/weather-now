@@ -81,10 +81,6 @@ input {
     padding: .75rem;
 }
 
-.fa-heart:hover {
-    /* color: rgba(255, 0, 0, 0.9); */
-}
-
 .fa-bookmark {
     color: white;
     font-size: 1.5rem;
