@@ -203,12 +203,13 @@ function displayWeatherForFavorites() {
             if (location.trim() !== '') {
                 const favoriteDiv = document.createElement('div');
                 favoriteDiv.classList.add('favorite');
-                // favoriteDiv.classList.add('');
                 favoriteDiv.innerText = location;
                 favoriteWeatherContainer.appendChild(favoriteDiv);
                 document.querySelector(".weather-container").style.display = "flex";
             }
         });
+    } else {
+        console.log("No favorite locations found.");
     }
 }
 // Function to set a location as a favorite
