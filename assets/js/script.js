@@ -195,13 +195,18 @@ function displayWeatherForFavorites() {
     if (favoriteLocations) {
         const favoriteWeatherContainer = document.getElementById('favorite-weather');
         favoriteWeatherContainer.innerHTML = '';
+
+        favoriteWeatherContainer.classList.add('weather-container');
+        console.log("Favorite locations: " + favoriteLocations);
         // Display the weather for each favorite location
         favoriteLocations.forEach(location => {
             if (location.trim() !== '') {
                 const favoriteDiv = document.createElement('div');
                 favoriteDiv.classList.add('favorite');
+                // favoriteDiv.classList.add('');
                 favoriteDiv.innerText = location;
                 favoriteWeatherContainer.appendChild(favoriteDiv);
+                document.querySelector(".weather-container").style.display = "flex";
             }
         });
     }
