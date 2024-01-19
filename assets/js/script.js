@@ -60,6 +60,7 @@ async function getWeather(location) {
         document.getElementById("location404").style.display = "flex";
         document.getElementById("weather").style.display = "none";
         document.getElementById("favorite-weather").style.display = "none";
+        document.getElementById("forecast").style.display = "none";
         return;
     } else {
         document.getElementById("weather").style.display = "flex";
@@ -300,6 +301,7 @@ favoritesBtn.addEventListener('click', () => {
         document.getElementById("weather").style.display = "none";
         document.getElementById("favorite-weather").style.display = "flex";
         document.getElementById("location404").style.display = "none";
+        document.getElementById("forecast").style.display = "none";
     }
     // Toggle the value of isFavoritesOpen
     isFavoritesOpen = !isFavoritesOpen;
