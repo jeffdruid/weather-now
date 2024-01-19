@@ -271,7 +271,19 @@ setFavoriteBtn.addEventListener('click', function () {
 
 // Add the button click event listener to display weather for favorite locations
 const favoritesBtn = document.getElementById('favorites-btn');
-favoritesBtn.addEventListener('click', displayWeatherForFavorites);
+
+// Variable to track if favorites are open or closed
+let isFavoritesOpen = false;
+
+favoritesBtn.addEventListener('click', () => {
+    if (isFavoritesOpen) {
+        console.log('Favorites closed');
+    } else {
+        console.log('Favorites opened');
+    }
+    // Toggle the value of isFavoritesOpen
+    isFavoritesOpen = !isFavoritesOpen;
+});
 
 showCurrentTime();
 getWeatherForCurrentLocation();
