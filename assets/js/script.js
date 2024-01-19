@@ -320,7 +320,7 @@ async function getFiveDayForecast(location) {
         const dateTime = new Date(data.list[i].dt_txt);
         if (dateTime.getHours() === 0) {
             const formattedDate = dateTime.toLocaleDateString();
-            forecastTemps += `${formattedDate}: ${temperature}°C\n`;
+            forecastTemps += `<div>${formattedDate}: ${temperature}°C</div>`;
         }
     }
 
