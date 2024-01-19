@@ -192,17 +192,20 @@ temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
 // Function to display weather for favorite locations
 function displayWeatherForFavorites() {
     const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
-    console.log(favoriteLocations);
-    // Check if there are any favorite locations
     if (favoriteLocations) {
+        const favoriteWeatherContainer = document.getElementById('favorite-weather');
+        favoriteWeatherContainer.innerHTML = '';
+        // Display the weather for each favorite location
         favoriteLocations.forEach(location => {
-            // TODO - Display weather for each favorite location
+            if (location.trim() !== '') {
+                const favoriteDiv = document.createElement('div');
+                favoriteDiv.classList.add('favorite');
+                favoriteDiv.innerText = location;
+                favoriteWeatherContainer.appendChild(favoriteDiv);
+            }
         });
-    } else {
-        console.log("No favorite locations found.");
     }
 }
-
 // Function to set a location as a favorite
 function setFavoriteLocation(location) {
     // Avoid adding empty locations
@@ -260,7 +263,7 @@ setFavoriteBtn.addEventListener('click', function () {
     };
 });
 
-// Add the button click event listener
+// Add the button click event listener to display weather for favorite locations
 const favoritesBtn = document.getElementById('favorites-btn');
 favoritesBtn.addEventListener('click', displayWeatherForFavorites);
 
