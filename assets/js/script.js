@@ -317,7 +317,8 @@ async function getFiveDayForecast(location) {
     let forecastTemps = '';
     for (let i = 0; i < data.list.length; i++) {
         const temperature = Math.round(data.list[i].main.temp);
-        forecastTemps += temperature + '°C ';
+        const dateTime = data.list[i].dt_txt;
+        forecastTemps += `${dateTime}: ${temperature}°C\n`;
     }
 
     document.getElementById("forecast").innerHTML = forecastTemps;
