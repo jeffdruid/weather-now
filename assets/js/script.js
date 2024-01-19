@@ -318,7 +318,9 @@ async function getFiveDayForecast(location) {
     for (let i = 0; i < data.list.length; i++) {
         const temperature = Math.round(data.list[i].main.temp);
         const dateTime = data.list[i].dt_txt;
-        forecastTemps += `${dateTime}: ${temperature}°C\n`;
+        if (dateTime.includes('00:00:00')) {
+            forecastTemps += `${dateTime}: ${temperature}°C\n`;
+        }
     }
 
     document.getElementById("forecast").innerHTML = forecastTemps;
