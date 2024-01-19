@@ -317,9 +317,10 @@ async function getFiveDayForecast(location) {
     let forecastTemps = '';
     for (let i = 0; i < data.list.length; i++) {
         const temperature = Math.round(data.list[i].main.temp);
-        const dateTime = data.list[i].dt_txt;
-        if (dateTime.includes('00:00:00')) {
-            forecastTemps += `${dateTime}: ${temperature}°C\n`;
+        const dateTime = new Date(data.list[i].dt_txt);
+        if (dateTime.getHours() === 0) {
+            const formattedDate = dateTime.toLocaleDateString();
+            forecastTemps += `${formattedDate}: ${temperature}°C\n`;
         }
     }
 
