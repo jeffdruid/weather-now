@@ -305,6 +305,5 @@ getWeatherForCurrentLocation();
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
-// TODO - Add a button that displays the weather for the user's favorite locations.(Local storage???)
 // TODO - Handle duplicate city names.
 // TODO - Add scroll animation displaying the user's current weather information.
