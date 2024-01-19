@@ -202,9 +202,16 @@ function displayWeatherForFavorites() {
         // Display the weather for each favorite location
         favoriteLocations.forEach(location => {
             if (location.trim() !== '') {
+                // Create a div for each favorite location
                 const favoriteDiv = document.createElement('div');
                 favoriteDiv.classList.add('favorite');
-                favoriteDiv.innerText = location;
+
+                // Create a link for each favorite location
+                const favoriteLink = document.createElement('a');
+                favoriteLink.href = '#';
+                favoriteLink.innerText = location;
+                favoriteLink.addEventListener('click', () => getWeather(location));
+                favoriteDiv.appendChild(favoriteLink);
                 favoriteWeatherContainer.appendChild(favoriteDiv);
             }
         });
