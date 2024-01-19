@@ -241,14 +241,12 @@ setFavoriteBtn.addEventListener('click', function () {
         // Set the heart icon to white
         const favoriteIcon = document.querySelector('.fa-heart');
         favoriteIcon.style.color = 'rgba(255, 255, 255, 0.7)';
-        console.log("Favorite icon set to white.");
     } else {
         setFavoriteLocation(location);
 
         // Set the heart icon to red
         const favoriteIcon = document.querySelector('.fa-heart');
         favoriteIcon.style.color = 'rgba(255, 0, 0, 0.9)';
-        console.log("Favorite icon set to red.");
     };
 });
 
