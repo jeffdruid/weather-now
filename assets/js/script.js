@@ -313,6 +313,11 @@ async function getFiveDayForecast(location) {
     const response = await fetch(`${apiUrlForecast}q=${location}&appid=${apiKey}`);
     const data = await response.json();
     console.log(data);
+
+    document.getElementById("forecast").innerHTML = data.list[0].main.temp + ' ' + data.list[8].main.temp + ' ' + data.list[16].main.temp + ' ' + data.list[32].main.temp;
+    document.getElementById("forecast").classList.add('weather-container');
+    document.getElementById("forecast").style.display = "flex";
+    console.log(data.list[0].main.temp + ' ' + data.list[8].main.temp + ' ' + data.list[16].main.temp + ' ' + data.list[32].main.temp);
 }
 getFiveDayForecast('Toronto');
 
