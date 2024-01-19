@@ -90,6 +90,16 @@ input {
     left: 0;
 }
 
+#favorite-weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+}
+
 /* Weather info styles */
 
 #current-time,
