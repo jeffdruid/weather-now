@@ -78,6 +78,7 @@ async function getWeather(location) {
     document.getElementById("weather-desc").innerHTML = data.weather[0].description;;
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
+    document.getElementById("country").innerHTML = data.sys.country;
 
     // Check if the location is a favorite
     if (JSON.parse(localStorage.getItem('favoriteLocations')) && JSON.parse(localStorage.getItem('favoriteLocations')).includes(data.name)) {
@@ -230,7 +231,12 @@ function setFavoriteLocation(location) {
 // Add the button click event listener to set a location as a favorite
 const setFavoriteBtn = document.getElementById('set-favorite-btn');
 setFavoriteBtn.addEventListener('click', function () {
-    const location = document.getElementById("location").innerHTML;
+    // Get the location name and country
+    const locationName = document.getElementById("location").innerHTML;
+    const locationCountry = document.getElementById("country").innerHTML;
+    const location = `${locationName}, ${locationCountry}`;
+    console.log("Location: " + location);
+    // Set the location as a favorite
     const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
     if (favoriteLocations && favoriteLocations.includes(location)) {
         // Remove the location from favoriteLocations array
