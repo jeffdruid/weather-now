@@ -191,7 +191,9 @@ function toggleTemperatureUnit() {
 const temperatureToggleBtn = document.getElementById("temperature-toggle-btn");
 temperatureToggleBtn.addEventListener("click", toggleTemperatureUnit);
 
-// Function to display weather for favorite locations
+/**
+ * Displays the weather for favorite locations.
+ */
 function displayWeatherForFavorites() {
     const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
     const favoriteWeatherContainer = document.getElementById('favorite-weather');
@@ -222,7 +224,10 @@ function displayWeatherForFavorites() {
         document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
     }
 }
-// Function to set a location as a favorite
+
+/**
+ * Function to set a location as a favorite 
+ */
 function setFavoriteLocation(location) {
     // Avoid adding empty locations
     if (location.trim() === '') {
@@ -285,6 +290,7 @@ favoritesBtn.addEventListener('click', displayWeatherForFavorites);
 // Variable to track if favorites are open or closed
 let isFavoritesOpen = false;
 
+// Add the button click event listener to toggle favorites
 favoritesBtn.addEventListener('click', () => {
     if (isFavoritesOpen && document.getElementById("favorite-weather").style.display === "flex") {
         console.log('Favorites closed');
@@ -299,9 +305,18 @@ favoritesBtn.addEventListener('click', () => {
     isFavoritesOpen = !isFavoritesOpen;
 });
 
+/*
+    * 5 Day Forecast
+    */
+async function getFiveDayForecast(location) {
+    const response = await fetch(`${apiUrl}q=${location}&appid=${apiKey}`);
+    const data = await response.json();
+    console.log(data);
+}
+getFiveDayForecast('Toronto');
+
 showCurrentTime();
 getWeatherForCurrentLocation();
-
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
