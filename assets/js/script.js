@@ -79,6 +79,19 @@ async function getWeather(location) {
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
 
+    // Check if the location is a favorite
+    if (JSON.parse(localStorage.getItem('favoriteLocations')) && JSON.parse(localStorage.getItem('favoriteLocations')).includes(data.name)) {
+        // Set the heart icon to red
+        const favoriteIcon = document.querySelector('.fa-heart');
+        favoriteIcon.style.color = 'rgba(255, 0, 0, 0.9)';
+        console.log("Favorite icon set to red.");
+    } else {
+        // Set the heart icon to white
+        const favoriteIcon = document.querySelector('.fa-heart');
+        favoriteIcon.style.color = 'rgba(255, 255, 255, 0.7)';
+        console.log("Favorite icon set to white.");
+    };
+
     //Last updated time
     lastUpdatedTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
     document.getElementById("last-updated").innerHTML = "Last Updated: " + lastUpdatedTime;
@@ -93,6 +106,7 @@ async function getWeather(location) {
     flagIcon.src = `https://www.flagsapi.com/${data.sys.country}/flat/32.png`;
     flagIcon.alt = data.sys.country;
 }
+// End of getWeather function
 
 // Refresh Button
 const refreshButton = document.getElementById("refresh-button");
