@@ -58,7 +58,8 @@ async function getWeather(location) {
     // 404 error handling
     if (data.cod === "404" || data.cod === "400") {
         document.getElementById("location404").style.display = "flex";
-        document.querySelector(".weather-container").style.display = "none";
+        document.getElementById("weather").style.display = "none";
+        document.getElementById("favorite-weather").style.display = "none";
         return;
     } else {
         document.getElementById("weather").style.display = "flex";
@@ -198,7 +199,7 @@ function displayWeatherForFavorites() {
     favoriteWeatherContainer.classList.add('weather-container');
 
     if (favoriteLocations && favoriteLocations.length > 0) {
-        console.log("Favorite locations: " + favoriteLocations);
+        console.log(favoriteLocations);
         // Display the weather for each favorite location
         favoriteLocations.forEach(location => {
             if (location.trim() !== '') {
@@ -257,7 +258,6 @@ setFavoriteBtn.addEventListener('click', function () {
     const locationName = document.getElementById("location").innerHTML;
     const locationCountry = document.getElementById("country").innerHTML;
     const location = `${locationName}, ${locationCountry}`;
-    console.log("Location: " + location);
     // Set the location as a favorite
     const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
     if (favoriteLocations && favoriteLocations.includes(location)) {
