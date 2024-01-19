@@ -205,9 +205,10 @@ function displayWeatherForFavorites() {
                 favoriteDiv.classList.add('favorite');
                 favoriteDiv.innerText = location;
                 favoriteWeatherContainer.appendChild(favoriteDiv);
-                document.querySelector(".weather-container").style.display = "flex";
+                console.log("Favorite location: " + location);
             }
         });
+        document.querySelector(".weather-container").style.display = "flex";
     } else {
         console.log("No favorite locations found.");
     }
@@ -279,8 +280,10 @@ let isFavoritesOpen = false;
 favoritesBtn.addEventListener('click', () => {
     if (isFavoritesOpen) {
         console.log('Favorites closed');
+        document.querySelector(".weather-container").style.display = "none";
     } else {
         console.log('Favorites opened');
+        document.querySelector(".weather-container").style.display = "flex";
     }
     // Toggle the value of isFavoritesOpen
     isFavoritesOpen = !isFavoritesOpen;
