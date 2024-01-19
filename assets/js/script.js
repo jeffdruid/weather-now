@@ -216,8 +216,9 @@ function displayWeatherForFavorites() {
             }
         });
     } else {
+        // Display a message if no favorite locations are found
         console.log("No favorite locations found.");
-        document.getElementById("favorite-weather").innerHTML = "No favorite locations found.";
+        document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
     }
 }
 // Function to set a location as a favorite
