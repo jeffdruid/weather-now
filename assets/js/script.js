@@ -209,7 +209,7 @@ function setFavoriteLocation(location) {
         let favoriteLocations = new Set(JSON.parse(localStorage.getItem('favoriteLocations')) || []);
 
         // Remove any empty locations from the favorite locations
-        favoriteLocations = Array.from(favoriteLocations).filter(favoriteLocation => favoriteLocation.trim() !== '');
+        // favoriteLocations = Array.from(favoriteLocations).filter(favoriteLocation => favoriteLocation.trim() !== '');
 
         // Check if the location is already a favorite
         if (favoriteLocations.includes(location)) {
