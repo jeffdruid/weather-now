@@ -284,6 +284,7 @@ favoritesBtn.addEventListener('click', () => {
     } else {
         console.log('Favorites opened');
         document.querySelector(".weather-container").style.display = "flex";
+        document.getElementById("location404").style.display = "none";
     }
     // Toggle the value of isFavoritesOpen
     isFavoritesOpen = !isFavoritesOpen;
