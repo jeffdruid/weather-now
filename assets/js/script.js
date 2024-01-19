@@ -309,7 +309,8 @@ favoritesBtn.addEventListener('click', () => {
     * 5 Day Forecast
     */
 async function getFiveDayForecast(location) {
-    const response = await fetch(`${apiUrl}q=${location}&appid=${apiKey}`);
+    const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
+    const response = await fetch(`${apiUrlForecast}q=${location}&appid=${apiKey}`);
     const data = await response.json();
     console.log(data);
 }
