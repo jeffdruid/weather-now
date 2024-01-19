@@ -278,7 +278,7 @@ favoritesBtn.addEventListener('click', displayWeatherForFavorites);
 let isFavoritesOpen = false;
 
 favoritesBtn.addEventListener('click', () => {
-    if (isFavoritesOpen) {
+    if (isFavoritesOpen && document.getElementById("favorite-weather").style.display === "flex") {
         console.log('Favorites closed');
         document.getElementById("favorite-weather").style.display = "none";
     } else {
