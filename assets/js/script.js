@@ -401,30 +401,49 @@ google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
 // Function to draw the chart
-function drawChart() {
-    // Create the data table
-    let data = new google.visualization.DataTable();
-    data.addColumn('string', 'Day');
-    data.addColumn('number', 'Temperature');
-    data.addColumn('number', 'Humidity');
-    data.addRows([
-        ['Monday', 25, 60],
-        ['Tuesday', 28, 55],
-        ['Wednesday', 30, 50],
-        ['Thursday', 26, 58],
-        ['Friday', 29, 52]
-    ]);
+async function drawChart() {
+    // apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
 
-    // Set chart options
-    let options = {
-        title: 'Temperature and Humidity Forecast',
-        curveType: 'function',
-        legend: { position: 'bottom' }
-    };
+    const currentLocation = document.getElementById("current-location").innerHTML;
+    const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${currentLocation}&appid=${apiKey}`;
+    const response = await fetch(apiUrlForecast);
+    const data = await response.json();
+    console.log(data);
 
-    // Instantiate and draw the chart
-    let chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
+    // Make an API call to fetch the forecast data
+    fetch(apiUrlForecast)
+        .then(response => response.json())
+        .then(data => {
+            // Create the data table
+            let dataTable = new google.visualization.DataTable();
+            dataTable.addColumn('string', 'Day');
+            dataTable.addColumn('number', 'Temperature');
+            dataTable.addColumn('number', 'Humidity');
+
+
+            // Set chart options
+            let options = {
+                title: 'Temperature and Humidity Forecast',
+                seriesType: 'bars',
+                series: {
+                    0: { targetAxisIndex: 0 },
+                    1: { targetAxisIndex: 1, type: 'line' }
+                },
+                vAxes: {
+                    0: { title: 'Temperature' },
+                    1: { title: 'Humidity' }
+                },
+                hAxis: { title: 'Day' },
+                legend: { position: 'bottom' }
+            };
+
+            // Instantiate and draw the chart
+            let chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+            chart.draw(dataTable, options);
+        })
+        .catch(error => {
+            console.error('Error fetching forecast data:', error);
+        });
 }
 
 // TODO - Add a map that shows the location of the city.
