@@ -420,6 +420,16 @@ async function drawChart() {
             dataTable.addColumn('number', 'Temperature');
             dataTable.addColumn('number', 'Humidity');
 
+            // Extract the forecast data from the API response
+            const forecastData = data.list;
+
+            // Iterate over the forecast data and add rows to the data table
+            forecastData.forEach(forecast => {
+                const day = forecast.dt_txt.split(' ')[0];
+                const temperature = forecast.main.temp;
+                const humidity = forecast.main.humidity;
+                dataTable.addRow([day, temperature, humidity]);
+            });
 
             // Set chart options
             let options = {
