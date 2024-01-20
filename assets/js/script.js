@@ -161,6 +161,15 @@ function toggleTemperatureUnit() {
         const maxTempFahrenheit = parseFloat(maxTempElement.innerText.replace("Maximum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
         const minTempFahrenheit = parseFloat(minTempElement.innerText.replace("Minimum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
 
+        // Get the forecast temperatures from the forecast element and convert them to Fahrenheit
+        const forecastTempsFahrenheit = document.getElementById("forecast").innerText;
+        // Regex to match all numbers in the forecastTempsFahrenheit string
+        const temperatureRegex = /(\d+)/g;
+        const forecastTemps = forecastTempsFahrenheit.match(temperatureRegex);
+
+        // Array of forecast temperatures in Fahrenheit
+        console.log(forecastTemps);
+
         temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
         feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
         maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
@@ -330,7 +339,6 @@ async function getFiveDayForecast(location) {
     document.getElementById("forecast").innerHTML = forecastTemps;
     document.getElementById("forecast").classList.add('weather-container');
     document.getElementById("forecast").style.display = "flex";
-    console.log(forecastTemps);
 }
 getFiveDayForecast('lucan');
 
