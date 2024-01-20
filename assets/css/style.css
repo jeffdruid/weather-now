@@ -245,7 +245,7 @@ input {
 #forecast h4 {
     font-size: 1rem;
     font-weight: bold;
-    margin-bottom: .5rem;
+    margin-bottom: .05rem;
 }
 
 #forecast div {
@@ -266,6 +266,15 @@ input {
 
 #forecast div:hover {
     background: rgba(255, 255, 255, 0.5);
+}
+
+.forecastF,
+forecastC {
+    font-weight: bold;
+}
+
+#forecast div {
+    font-style: italic;
 }
 
 .forecastF {
@@ -302,22 +311,28 @@ footer {
 
 /* Media Queries */
 @media screen and (min-width: 767px) {
+
+    /* Header styles */
     .container h1 {
         font-size: 2rem;
     }
 
+    /* Main styles */
     input {
         width: 90%;
     }
 
+    /* 404 styles */
     #location404 {
         width: 75%;
     }
 
+    /* Favorites styles */
     #favorite-weather {
         width: 90%;
     }
 
+    /* Weather info styles */
     #forecast div {
         width: 90%;
     }
