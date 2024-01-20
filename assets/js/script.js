@@ -340,7 +340,9 @@ async function getFiveDayForecast(location) {
         const dateTime = new Date(data.list[i].dt_txt);
         if (dateTime.getHours() === 0) {
             const dayOfWeek = dateTime.toLocaleDateString(undefined, { weekday: 'long' });
-            forecastData += `<div>${dayOfWeek}: ${temperatureCelsius}°C (${temperatureFahrenheit}°F) - ${description}</div>`;
+            forecastData += `<div>${dayOfWeek}: <span class="forecastC">${temperatureCelsius}°C`;
+            forecastData += `</span> - <span class="forecastF">${temperatureFahrenheit}°F`;
+            forecastData += `</span> - ${description}</div>`;
         }
     }
 
