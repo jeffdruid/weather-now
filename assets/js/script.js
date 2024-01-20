@@ -177,6 +177,14 @@ function toggleTemperatureUnit() {
         // // Array of forecast temperatures in Fahrenheit
         // console.log(forecastTemps);
 
+        // Display the forecast temperatures in Fahrenheit
+        document.querySelectorAll(".forecastC").forEach(forecast => {
+            forecast.style.display = "none";
+        });
+        document.querySelectorAll(".forecastF").forEach(forecast => {
+            forecast.style.display = "inline";
+        });
+
         temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
         feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
         maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempFahrenheit) + "°F";
@@ -195,6 +203,13 @@ function toggleTemperatureUnit() {
         feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeCelsius) + "°C";
         maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
         minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
+
+        document.querySelectorAll(".forecastC").forEach(forecast => {
+            forecast.style.display = "inline";
+        });
+        document.querySelectorAll(".forecastF").forEach(forecast => {
+            forecast.style.display = "none";
+        });
 
         document.getElementById("temperature-toggle-btn").innerHTML = "°F";
     }
@@ -341,7 +356,7 @@ async function getFiveDayForecast(location) {
         if (dateTime.getHours() === 0) {
             const dayOfWeek = dateTime.toLocaleDateString(undefined, { weekday: 'long' });
             forecastData += `<div>${dayOfWeek}: <span class="forecastC">${temperatureCelsius}°C`;
-            forecastData += `</span> - <span class="forecastF">${temperatureFahrenheit}°F`;
+            forecastData += `</span><span class="forecastF">${temperatureFahrenheit}°F`;
             forecastData += `</span> - ${description}</div>`;
         }
     }
