@@ -167,6 +167,12 @@ function toggleTemperatureUnit() {
         const temperatureRegex = /(\d+)/g;
         const forecastTemps = forecastTempsFahrenheit.match(temperatureRegex);
 
+        // Convert the each forecast temperatures to Fahrenheit
+        const forecastTempsFahrenheits = forecastTemps.map(temp => (temp * 9) / 5 + 32);
+        console.log(forecastTempsFahrenheits);
+
+        document.getElementById("forecast").innerHTML = forecastTempsFahrenheits.map(temp => temp + "°F").join(", ");
+
         // Array of forecast temperatures in Fahrenheit
         console.log(forecastTemps);
 
