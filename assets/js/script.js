@@ -66,8 +66,9 @@ async function getWeather(location) {
         document.getElementById("weather").style.display = "flex";
         document.getElementById("location404").style.display = "none";
         document.getElementById("favorite-weather").style.display = "none";
-        console.log("Close favorites, location selected.");
+        console.log("Close favorites, " + location + " selected.");
         isFavoritesOpen = false;
+        isCelsius = true;
     }
 
     console.log(data);
@@ -341,10 +342,20 @@ async function getFiveDayForecast(location) {
         const dateTime = new Date(data.list[i].dt_txt);
         if (dateTime.getHours() === 0) {
             const dayOfWeek = dateTime.toLocaleDateString(undefined, { weekday: 'long' });
-            forecastData += `<div>${dayOfWeek}: <span class="forecastC">${temperatureCelsius}°C`;
-            forecastData += `</span><span class="forecastF">${temperatureFahrenheit}°F`;
-            forecastData += `</span> - ${description}</div>`;
+            forecastData += `<div>${dayOfWeek}: `;
+            // Display the forecast's initial temperature in Celsius or Fahrenheit
+            if (isCelsius) {
+                forecastData += `<span class="forecastC" style="display: inline;">${temperatureCelsius}°C</span>`;
+                forecastData += `<span class="forecastF" style="display: none;">${temperatureFahrenheit}°F</span>`;
+                isCelsius = true;
+            } else {
+                isCelsius = false;
+                forecastData += `<span class="forecastC" style="display: none;">${temperatureCelsius}°C</span>`;
+                forecastData += `<span class="forecastF" style="display: inline;">${temperatureFahrenheit}°F</span>`;
+            }
+            forecastData += ` ${description}</div>`;
         }
+        isCelsius = !isCelsius;
     }
 
     document.getElementById("forecast").innerHTML = forecastData;
