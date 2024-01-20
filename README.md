@@ -84,3 +84,4 @@ Weather Now is a web application that provides real-time weather information for
 - [localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
 - [HTML Web Storage API](https://www.w3schools.com/html/html5_webstorage.asp)
 - [Country Flags](https://flagsapi.com/)
+- [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
