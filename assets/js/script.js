@@ -221,8 +221,18 @@ function displayWeatherForFavorites() {
 
     if (favoriteLocations && favoriteLocations.length > 0) {
         console.log(favoriteLocations);
-        // Display the weather for each favorite location
+
+        // Display the temperature in Celsius or Fahrenheit
         favoriteLocations.forEach(location => {
+            if (isCelsius === !isCelsius) {
+                isCelsius = false;
+                document.getElementById("temperature-toggle-btn").innerHTML = "°C";
+            } else {
+                isCelsius = true;
+                document.getElementById("temperature-toggle-btn").innerHTML = "°F";
+            }
+
+            // Display the weather for each favorite location
             if (location.trim() !== '') {
                 // Create a div for each favorite location
                 const favoriteDiv = document.createElement('div');
