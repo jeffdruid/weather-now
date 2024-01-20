@@ -363,7 +363,7 @@ async function getFiveDayForecast(location) {
                 forecastData += `<span class="forecastC" style="display: none;">${temperatureCelsius}°C</span>`;
                 forecastData += `<span class="forecastF" style="display: inline;">${temperatureFahrenheit}°F</span>`;
             }
-            forecastData += ` ${description}</div>`;
+            forecastData += ` - ${description}</div>`;
         }
         isCelsius = !isCelsius;
     }
@@ -391,6 +391,7 @@ forecastBtn.addEventListener('click', () => {
 
 showCurrentTime();
 getWeatherForCurrentLocation();
+
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Add a 5 day forecast.
