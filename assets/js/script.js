@@ -345,6 +345,7 @@ async function getFiveDayForecast(location) {
     console.log(data);
 
     let forecastData = '';
+    forecastData = `<h4>5 day Forecast</h4>` + forecastData;
     for (let i = 0; i < data.list.length; i++) {
         const temperatureCelsius = Math.round(data.list[i].main.temp);
         const temperatureFahrenheit = Math.round((temperatureCelsius * 9 / 5) + 32);
@@ -352,7 +353,7 @@ async function getFiveDayForecast(location) {
         const dateTime = new Date(data.list[i].dt_txt);
         if (dateTime.getHours() === 0) {
             const dayOfWeek = dateTime.toLocaleDateString(undefined, { weekday: 'long' });
-            forecastData += `<div>${dayOfWeek}: `;
+            forecastData += `<div>${dayOfWeek}`;
             // Display the forecast's initial temperature in Celsius or Fahrenheit
             if (isCelsius) {
                 forecastData += `<span class="forecastC" style="display: inline;">${temperatureCelsius}°C</span>`;
@@ -363,7 +364,7 @@ async function getFiveDayForecast(location) {
                 forecastData += `<span class="forecastC" style="display: none;">${temperatureCelsius}°C</span>`;
                 forecastData += `<span class="forecastF" style="display: inline;">${temperatureFahrenheit}°F</span>`;
             }
-            forecastData += ` - ${description}</div>`;
+            forecastData += `${description}</div>`;
         }
         isCelsius = !isCelsius;
     }

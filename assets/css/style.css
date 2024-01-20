@@ -1,3 +1,4 @@
+/* TODO - Update font-style */
 /* Reset defaults */
 * {
     margin: 0;
@@ -232,12 +233,39 @@ input {
 /* Forecast styles */
 #forecast {
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     padding: 1rem;
     color: rgba(0, 0, 0, 0.9);
     text-transform: capitalize;
+}
+
+#forecast h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+#forecast div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin: .25rem auto;
+    padding: .25rem;
+    background: rgba(255, 255, 255, 0);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    margin-bottom: .1rem;
+}
+
+#forecast div:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .forecastF {
@@ -270,4 +298,35 @@ footer {
     padding: .3rem;
     flex-direction: column;
     text-align: center;
+}
+
+/* Media Queries */
+@media screen and (min-width: 767px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    #location404 {
+        width: 75%;
+    }
+
+    #favorite-weather {
+        width: 90%;
+    }
+
+    #forecast div {
+        width: 90%;
+    }
+
+    #forecast {
+        flex-direction: row;
+    }
+
+    #forecast h4 {
+        margin-right: .75rem;
+    }
 }
