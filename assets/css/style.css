@@ -107,12 +107,27 @@ input {
     padding: 1rem;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.favorite {
+    margin: .25rem;
 }
 
 .favorite a {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
+    padding: .5rem;
+    margin: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.favorite a:hover {
+    color: rgba(255, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    border-bottom: 0;
 }
 
 /* Weather info styles */
