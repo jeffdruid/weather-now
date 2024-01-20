@@ -394,8 +394,39 @@ forecastBtn.addEventListener('click', () => {
 showCurrentTime();
 getWeatherForCurrentLocation();
 
+// Include the Google Charts library
+google.charts.load('current', { 'packages': ['corechart'] });
+
+// Callback function to draw the chart
+google.charts.setOnLoadCallback(drawChart);
+
+// Function to draw the chart
+function drawChart() {
+    // Create the data table
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Day');
+    data.addColumn('number', 'Temperature');
+    data.addRows([
+        ['Monday', 25],
+        ['Tuesday', 28],
+        ['Wednesday', 30],
+        ['Thursday', 26],
+        ['Friday', 29]
+    ]);
+
+    // Set chart options
+    var options = {
+        title: 'Temperature Forecast',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+    };
+
+    // Instantiate and draw the chart
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
+
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
-// TODO - Add a 5 day forecast.
 // TODO - Handle duplicate city names.
 // TODO - Add scroll animation displaying the user's current weather information.
