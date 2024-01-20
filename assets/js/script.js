@@ -161,22 +161,6 @@ function toggleTemperatureUnit() {
         const maxTempFahrenheit = parseFloat(maxTempElement.innerText.replace("Maximum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
         const minTempFahrenheit = parseFloat(minTempElement.innerText.replace("Minimum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
 
-        // // Get the forecast temperatures from the forecast element and convert them to Fahrenheit
-        // const forecastTempsFahrenheit = document.getElementById("forecast").innerText;
-        // // Regex to match all numbers in the forecastTempsFahrenheit string
-        // const temperatureRegex = /(\d+)/g;
-        // const forecastTemps = forecastTempsFahrenheit.match(temperatureRegex);
-
-        // // Convert the each forecast temperatures to Fahrenheit
-        // const forecastTempsFahrenheits = forecastTemps.map(temp => (temp * 9) / 5 + 32);
-        // console.log(forecastTempsFahrenheits);
-
-        // // Replace the forecastTempsFahrenheit string with the forecastTempsFahrenheits array
-        // document.getElementById("forecast").innerHTML = forecastTempsFahrenheits.map(temp => temp + "°F").join(", ");
-
-        // // Array of forecast temperatures in Fahrenheit
-        // console.log(forecastTemps);
-
         // Display the forecast temperatures in Fahrenheit
         document.querySelectorAll(".forecastC").forEach(forecast => {
             forecast.style.display = "none";
