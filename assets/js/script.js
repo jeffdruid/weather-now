@@ -161,20 +161,21 @@ function toggleTemperatureUnit() {
         const maxTempFahrenheit = parseFloat(maxTempElement.innerText.replace("Maximum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
         const minTempFahrenheit = parseFloat(minTempElement.innerText.replace("Minimum: ", "").replace("°C", "").replace("°F", "") * 9) / 5 + 32;
 
-        // Get the forecast temperatures from the forecast element and convert them to Fahrenheit
-        const forecastTempsFahrenheit = document.getElementById("forecast").innerText;
-        // Regex to match all numbers in the forecastTempsFahrenheit string
-        const temperatureRegex = /(\d+)/g;
-        const forecastTemps = forecastTempsFahrenheit.match(temperatureRegex);
+        // // Get the forecast temperatures from the forecast element and convert them to Fahrenheit
+        // const forecastTempsFahrenheit = document.getElementById("forecast").innerText;
+        // // Regex to match all numbers in the forecastTempsFahrenheit string
+        // const temperatureRegex = /(\d+)/g;
+        // const forecastTemps = forecastTempsFahrenheit.match(temperatureRegex);
 
-        // Convert the each forecast temperatures to Fahrenheit
-        const forecastTempsFahrenheits = forecastTemps.map(temp => (temp * 9) / 5 + 32);
-        console.log(forecastTempsFahrenheits);
+        // // Convert the each forecast temperatures to Fahrenheit
+        // const forecastTempsFahrenheits = forecastTemps.map(temp => (temp * 9) / 5 + 32);
+        // console.log(forecastTempsFahrenheits);
 
-        document.getElementById("forecast").innerHTML = forecastTempsFahrenheits.map(temp => temp + "°F").join(", ");
+        // // Replace the forecastTempsFahrenheit string with the forecastTempsFahrenheits array
+        // document.getElementById("forecast").innerHTML = forecastTempsFahrenheits.map(temp => temp + "°F").join(", ");
 
-        // Array of forecast temperatures in Fahrenheit
-        console.log(forecastTemps);
+        // // Array of forecast temperatures in Fahrenheit
+        // console.log(forecastTemps);
 
         temperatureElement.innerHTML = "Temperature: " + Math.round(temperatureFahrenheit) + "°F";
         feelsLikeElement.innerHTML = "Feels like: " + Math.round(feelsLikeFahrenheit) + "°F";
@@ -331,18 +332,19 @@ async function getFiveDayForecast(location) {
     const data = await response.json();
     console.log(data);
 
-    let forecastTemps = '';
+    let forecastData = '';
     for (let i = 0; i < data.list.length; i++) {
-        const temperature = Math.round(data.list[i].main.temp);
+        const temperatureCelsius = Math.round(data.list[i].main.temp);
+        const temperatureFahrenheit = Math.round((temperatureCelsius * 9 / 5) + 32);
         const description = data.list[i].weather[0].description;
         const dateTime = new Date(data.list[i].dt_txt);
         if (dateTime.getHours() === 0) {
             const dayOfWeek = dateTime.toLocaleDateString(undefined, { weekday: 'long' });
-            forecastTemps += `<div>${dayOfWeek}: ${temperature}°C - ${description}</div>`;
+            forecastData += `<div>${dayOfWeek}: ${temperatureCelsius}°C (${temperatureFahrenheit}°F) - ${description}</div>`;
         }
     }
 
-    document.getElementById("forecast").innerHTML = forecastTemps;
+    document.getElementById("forecast").innerHTML = forecastData;
     document.getElementById("forecast").classList.add('weather-container');
     document.getElementById("forecast").style.display = "flex";
 }
