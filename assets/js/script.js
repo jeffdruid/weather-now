@@ -440,8 +440,8 @@ async function drawChart() {
                     1: { targetAxisIndex: 1, type: 'line' }
                 },
                 vAxes: {
-                    0: { title: 'Temperature' },
-                    1: { title: 'Humidity' }
+                    0: { title: 'Temperature (°C)' },
+                    1: { title: 'Humidity (%)' }
                 },
                 hAxis: { title: 'Day' },
                 legend: { position: 'bottom' }
