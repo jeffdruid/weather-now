@@ -406,17 +406,18 @@ function drawChart() {
     let data = new google.visualization.DataTable();
     data.addColumn('string', 'Day');
     data.addColumn('number', 'Temperature');
+    data.addColumn('number', 'Humidity');
     data.addRows([
-        ['Monday', 25],
-        ['Tuesday', 28],
-        ['Wednesday', 30],
-        ['Thursday', 26],
-        ['Friday', 29]
+        ['Monday', 25, 60],
+        ['Tuesday', 28, 55],
+        ['Wednesday', 30, 50],
+        ['Thursday', 26, 58],
+        ['Friday', 29, 52]
     ]);
 
     // Set chart options
     let options = {
-        title: 'Temperature Forecast',
+        title: 'Temperature and Humidity Forecast',
         curveType: 'function',
         legend: { position: 'bottom' }
     };
