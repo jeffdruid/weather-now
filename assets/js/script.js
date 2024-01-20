@@ -403,7 +403,7 @@ google.charts.setOnLoadCallback(drawChart);
 // Function to draw the chart
 function drawChart() {
     // Create the data table
-    var data = new google.visualization.DataTable();
+    let data = new google.visualization.DataTable();
     data.addColumn('string', 'Day');
     data.addColumn('number', 'Temperature');
     data.addRows([
@@ -415,14 +415,14 @@ function drawChart() {
     ]);
 
     // Set chart options
-    var options = {
+    let options = {
         title: 'Temperature Forecast',
         curveType: 'function',
         legend: { position: 'bottom' }
     };
 
     // Instantiate and draw the chart
-    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+    let chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(data, options);
 }
 
