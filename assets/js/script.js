@@ -350,8 +350,21 @@ async function getFiveDayForecast(location) {
     document.getElementById("forecast").style.display = "flex";
 }
 
-// TODO - Implement the 5 day forecast in the weather container
-getFiveDayForecast('lucan');
+isForecastOpen = false;
+
+const forecastBtn = document.getElementById('forecast-btn');
+forecastBtn.addEventListener('click', () => {
+    const location = document.getElementById("location").innerHTML;
+    if (isForecastOpen) {
+        console.log('Forecast closed');
+        document.getElementById("forecast").style.display = "none";
+    } else {
+        console.log('Forecast opened');
+        document.getElementById("forecast").style.display = "flex";
+        getFiveDayForecast(location);
+    }
+    isForecastOpen = !isForecastOpen;
+});
 
 showCurrentTime();
 getWeatherForCurrentLocation();
