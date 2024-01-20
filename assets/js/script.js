@@ -125,6 +125,7 @@ refreshButton.addEventListener("click", () => {
     const location = document.getElementById("location").innerHTML;
     getWeather(location);
     console.log("Weather data refreshed for location:", location);
+    getFiveDayForecast(location);
 });
 
 // Search box event listener
