@@ -349,6 +349,8 @@ async function getFiveDayForecast(location) {
     document.getElementById("forecast").classList.add('weather-container');
     document.getElementById("forecast").style.display = "flex";
 }
+
+// TODO - Implement the 5 day forecast in the weather container
 getFiveDayForecast('lucan');
 
 showCurrentTime();
