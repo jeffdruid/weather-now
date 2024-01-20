@@ -425,10 +425,13 @@ async function drawChart() {
 
             // Iterate over the forecast data and add rows to the data table
             forecastData.forEach(forecast => {
-                const day = forecast.dt_txt.split(' ')[0];
+                const date = new Date(forecast.dt_txt);
+                const day = date.toLocaleDateString('en-US', { day: 'numeric' });
+                const month = date.toLocaleDateString('en-US', { month: 'long' });
+                const year = date.toLocaleDateString('en-US', { year: 'numeric' });
                 const temperature = forecast.main.temp;
                 const humidity = forecast.main.humidity;
-                dataTable.addRow([day, temperature, humidity]);
+                dataTable.addRow([`${day} ${month} ${year}`, temperature, humidity]);
             });
 
             // Set chart options
