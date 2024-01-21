@@ -33,12 +33,17 @@ function getWeatherForCurrentLocation() {
 
         }, (error) => {
             console.error(error);
-            // TODO - Display an error message on the UI
+            // Display an error message on the UI
+            document.getElementById("error-message-user-location").style.display = "flex";
             const errorMessage = document.getElementById('error-message-user-location');
-            errorMessage.textContent = 'Error getting your location. Please allow location access and reload the page. ';
+            errorMessage.textContent = 'Please allow location access and reload the page. ';
         });
     } else {
         console.error("Geolocation is not supported by this browser.");
+        // Display an error message on the UI
+        document.getElementById("error-message-user-location").style.display = "flex";
+        const errorMessage = document.getElementById('error-message-user-location');
+        errorMessage.textContent = 'Geolocation is not supported by this browser.';
     }
 }
 
@@ -461,8 +466,9 @@ async function drawChart() {
         .catch(error => {
             console.error('Error fetching forecast data:', error);
             // TODO - Display an error message on the UI
+            document.getElementById("error-message-user-forecast").style.display = "flex";
             const errorMessage = document.getElementById('error-message-user-forecast');
-            errorMessage.textContent = 'Error fetching forecast data. Please reload the page.';
+            errorMessage.textContent = 'Error fetching forecast data. Please try again.';
         });
 }
 
