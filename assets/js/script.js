@@ -60,6 +60,7 @@ async function getWeather(location) {
 
     // 404 error handling
     if (data.cod === "404" || data.cod === "400") {
+        document.getElementById("location404").innerHTML = "Location not found.";
         document.getElementById("location404").style.display = "flex";
         document.getElementById("weather").style.display = "none";
         document.getElementById("favorite-weather").style.display = "none";
@@ -460,7 +461,7 @@ async function drawChart() {
         .catch(error => {
             console.error('Error fetching forecast data:', error);
             // TODO - Display an error message on the UI
-            const errorMessage = document.getElementById('error-message');
+            const errorMessage = document.getElementById('error-message-user-forecast');
             errorMessage.textContent = 'Error fetching forecast data. Please reload the page.';
         });
 }

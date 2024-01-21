@@ -61,25 +61,7 @@ input {
 }
 
 /* Error Messages */
-#location404 {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: rgba(255, 0, 0, 0.7);
-    width: 90%;
-    margin: 0 auto;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-}
-
-#error-message {
+.error-message {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,24 +77,14 @@ input {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+}
+
+#error-message-user-forecast {
+    margin: .5rem auto;
 }
 
 #error-message-user-location {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: rgba(255, 0, 0, 0.7);
-    width: 90%;
     margin: .5rem auto;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 /* Favorites styles */
