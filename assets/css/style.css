@@ -245,7 +245,7 @@ marquee {
     color: rgba(0, 0, 0, 0.9);
     text-align: center;
     position: absolute;
-    bottom: -.3rem;
+    bottom: -1rem;
     right: .35rem;
 }
 
@@ -265,6 +265,11 @@ marquee {
 }
 
 /* Forecast styles */
+#weather,
+#forecast {
+    margin-bottom: 1.2rem;
+}
+
 #forecast {
     display: none;
     justify-content: stretch;
@@ -321,7 +326,8 @@ marquee {
     background: 0;
     border: 0;
     margin: 0 auto;
-    bottom: -.25rem;
+    margin-right: 2rem;
+    bottom: -.35rem;
     cursor: pointer;
     position: absolute;
     font-size: 1.25rem;
@@ -334,17 +340,12 @@ marquee {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 3rem;
     position: relative;
     bottom: 2rem;
     left: 0;
     right: 0;
     z-index: 0;
-    margin-bottom: 1rem;
-}
-
-#weather,
-#forecast {
     margin-bottom: .5rem;
 }
 
@@ -356,6 +357,22 @@ marquee {
 #chart_div>div>div:nth-child(1)>div>svg>rect {
     fill: rgba(255, 255, 255, 0.1);
 }
+
+#chart-btn {
+    display: flex;
+    background: 0;
+    border: 0;
+    margin: 0 auto;
+    margin-left: 2rem;
+    bottom: 0rem;
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.fa-chart-line {}
 
 /* Footer Styles */
 footer {
