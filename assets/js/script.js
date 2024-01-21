@@ -457,7 +457,7 @@ async function drawChart() {
 
             // Set chart options
             let options = {
-                title: 'Temperature and Humidity Forecast',
+                title: `5 Day Forecast - ${currentLocation}`,
                 seriesType: 'bars',
                 series: {
                     0: { targetAxisIndex: 0 },
