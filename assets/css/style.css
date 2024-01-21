@@ -323,10 +323,9 @@ input {
     align-items: center;
     margin-top: 1rem;
     position: fixed;
-    bottom: 0;
+    bottom: 2rem;
     left: 0;
     right: 0;
-    scale: .9;
 }
 
 #chart_div>div>div:nth-child(1)>div>svg>rect {
@@ -386,6 +385,6 @@ footer {
     }
 
     #chart_div {
-        scale: 1;
+        scale: .9;
     }
 }

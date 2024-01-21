@@ -470,7 +470,7 @@ async function drawChart() {
         })
         .catch(error => {
             console.error('Error fetching forecast data:', error);
-            // TODO - Display an error message on the UI
+            // Display an error message on the UI
             document.getElementById("error-message-user-forecast").style.display = "flex";
             const errorMessage = document.getElementById('error-message-user-forecast');
             errorMessage.textContent = 'Error fetching forecast data. Please try again.';
@@ -481,3 +481,5 @@ async function drawChart() {
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
 // TODO - Add scroll animation displaying the user's current weather information.
+// TODO - Add animation to the error message.
+// TODO - Add transition animations to the UI.
