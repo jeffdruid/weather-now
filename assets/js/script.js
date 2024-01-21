@@ -534,12 +534,13 @@ clearFavoritesBtn.addEventListener('click', clearAllFavorites);
 /**
  * Clears all favorite locations.
  */
-function clearAllFavorites(
-    // TODO - Add a confirmation dialog before clearing all favorites
-) {
-    localStorage.clear();
-    console.log("All favorites cleared.");
-    document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
+function clearAllFavorites() {
+    const confirmation = confirm("Are you sure you want to clear all favorites?");
+    if (confirmation) {
+        localStorage.clear();
+        console.log("All favorites cleared.");
+        document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
+    }
 }
 
 // TODO - Add a map that shows the location of the city.
