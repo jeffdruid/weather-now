@@ -147,6 +147,19 @@ input {
     ;
 }
 
+#current-flag {
+    margin-top: 0 !important;
+}
+
+#current-flag,
+#current-feels-like,
+#current-max,
+#current-min,
+#current-sunrise,
+#current-sunset,
+#current-desc,
+#current-wind,
+#current-humidity,
 #current-time,
 #current-location,
 #temperature-now {
