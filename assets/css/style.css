@@ -160,26 +160,15 @@ input {
 #current-location,
 #temperature-now {
     text-align: center;
-    position: fixed;
     display: flex;
-    bottom: 0.4rem;
     color: rgba(255, 255, 255, 0.9);
     text-transform: capitalize;
     font-size: .7rem;
     padding: 0rem;
-}
-
-#current-time {
-    left: .5rem;
-}
-
-#current-location {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#temperature-now {
-    right: .5rem;
+    justify-content: space-between;
+    margin-bottom: .25rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Description styles */
