@@ -175,6 +175,7 @@ input {
     margin-top: .2rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    font-style: italic;
 }
 
 marquee {
