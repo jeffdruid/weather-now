@@ -206,6 +206,8 @@ function toggleTemperatureUnit() {
         minTempElement.innerHTML = "Minimum: " + Math.round(minTempFahrenheit) + "°F";
 
         document.getElementById("temperature-toggle-btn").innerHTML = "°C";
+        document.getElementById("temperature-toggle-btn").style.color = "rgba(255, 255, 255, 1)";
+
 
     } else {
         // Convert to Celsius
@@ -227,6 +229,7 @@ function toggleTemperatureUnit() {
         });
 
         document.getElementById("temperature-toggle-btn").innerHTML = "°F";
+        document.getElementById("temperature-toggle-btn").style.color = "rgba(0, 0, 0, 1)";
     }
 
     // Toggle the temperature unit
@@ -491,7 +494,6 @@ async function drawChart() {
             chart.draw(dataTable, options);
         })
         .catch(error => {
-            console.error('Error fetching forecast data:', error);
             // Display an error message on the UI
             document.getElementById("error-message-user-forecast").style.display = "flex";
             const errorMessage = document.getElementById('error-message-user-forecast');
