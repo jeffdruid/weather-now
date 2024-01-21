@@ -422,9 +422,12 @@ forecastBtn.addEventListener('click', () => {
     if (isForecastOpen) {
         console.log('Forecast closed');
         document.getElementById("forecast").style.display = "none";
+        document.getElementById("forecast-btn").style.color = "rgba(0, 0, 0, .7) ";
     } else {
         console.log('Forecast opened');
         document.getElementById("forecast").style.display = "flex";
+        document.getElementById("forecast-btn").style.color = "rgba(255, 255, 255, 1) ";
+        document.getElementById("chart-btn").style.color = "rgba(0, 0, 0, .7) ";
         document.getElementById("chart_div").style.display = "none";
         getFiveDayForecast(location);
     }
@@ -503,12 +506,25 @@ async function drawChart() {
         });
 }
 
+isChartOpen = false;
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
     document.getElementById("chart_div").style.display = "flex";
     document.getElementById("forecast").style.display = "none";
     isForecastOpen = false;
     drawChart();
+    if (isChartOpen) {
+        console.log('Chart closed');
+        document.getElementById("chart_div").style.display = "none";
+        document.getElementById("chart-btn").style.color = "rgba(0, 0, 0, .7) ";
+    } else {
+        console.log('Chart opened');
+        document.getElementById("chart_div").style.display = "flex";
+        document.getElementById("chart-btn").style.color = "rgba(255, 255, 255, 1) ";
+        document.getElementById("forecast-btn").style.color = "rgba(0, 0, 0, .7) ";
+        document.getElementById("forecast").style.display = "none";
+    }
+    isChartOpen = !isChartOpen;
 });
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
@@ -519,3 +535,4 @@ chartBtn.addEventListener('click', async () => {
 // TODO - Add a button to clear the search history.
 // TODO - Add a button show the search history.
 // TODO - Update weather icons.
+// TODO - Fix issue when between chart and forecast buttons, the color is not changing.
