@@ -81,6 +81,7 @@ async function getWeather(location) {
     } else {
         document.getElementById("weather").style.display = "flex";
         document.getElementById("favorite-weather").style.display = "none";
+        document.getElementById("chart_div").style.display = "none";
         console.log("Close favorites, " + location + " selected.");
         isFavoritesOpen = false;
         isCelsius = true;
@@ -342,9 +343,10 @@ favoritesBtn.addEventListener('click', () => {
         document.getElementById("favorite-weather").style.display = "none";
     } else {
         console.log('Favorites opened');
-        document.getElementById("weather").style.display = "none";
         document.getElementById("favorite-weather").style.display = "flex";
+        document.getElementById("weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
+        // document.getElementById("chart_div").style.display = "none";
     }
     // Toggle the value of isFavoritesOpen
     isFavoritesOpen = !isFavoritesOpen;
