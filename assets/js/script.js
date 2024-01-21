@@ -431,12 +431,12 @@ google.charts.setOnLoadCallback(drawChart);
 
 // Function to draw the chart
 async function drawChart() {
-
+    // TODO - Prevent the chart from being drawn before the user's current location is fetched.
     // Get the weather for the user's current location
-    if (!getWeatherForCurrentLocation) {
-        getWeatherForCurrentLocation();
-        getWeatherForCurrentLocation = true;
-    }
+    // if (!getWeatherForCurrentLocation) {
+    //     getWeatherForCurrentLocation();
+    //     getWeatherForCurrentLocation = true;
+    // }
 
     // apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
 
@@ -502,7 +502,9 @@ async function drawChart() {
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
-// TODO - Add scroll animation displaying the user's current weather information.
 // TODO - Add animation to the error message.
 // TODO - Add transition animations to the UI.
-// TODO - Fix (+) button on the favorites section. displaying the user's wrong temperature unit when clicked.
+// TODO - Add a button to clear the favorites.
+// TODO - Add a button to clear the search history.
+// TODO - Add a button show the search history.
+// TODO - Update weather icons.

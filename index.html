@@ -9,7 +9,7 @@
     <meta name="author" content="Jefferson Aguiar">
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Favaicon -->
+    <!-- Favicon -->
     <link rel="icon" href="assets/images/icons/weather-forecast-16484.png" type="image/x-icon">
     <!-- Google Charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -27,14 +27,21 @@
         <div class="search">
             <input type="text" placeholder="Enter the city name...">
         </div>
-        <div id="favorites-btn"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
-        
+        <!-- Error Messages -->
         <div class="error-message" id="location404"></div>
         <div class="error-message" id="error-message-user-location"></div>
         <div class="error-message" id="error-message-user-forecast"></div>
+
+        <!-- Favorite Section -->
+        <div id="favorites-btn"><i class="fa fa-bookmark" aria-hidden="true"></i></div>
         <div id="favorite-weather"></div>
+
+        <!-- Weather section -->
         <div id="weather" class="weather-container">
+            <!-- Favorite button -->
             <div id="set-favorite-btn"><i class="fa fa-heart" aria-hidden="true"></i></div>
+           
+            <!-- Weather info -->
             <div id="location"></div>
             <div id="country"></div>
             <img id="flag-icon">
@@ -48,13 +55,19 @@
             <div id="weather-desc"></div>
             <div id="wind"></div>
             <div id="humidity"></div>
+
             <!-- Refresh and Convert buttons -->
             <button id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
             <button id="temperature-toggle-btn"></button>
             <div id="last-updated"></div>
+            
+            <!-- Forecast button -->
             <div id="forecast-btn"><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
         </div>
+        <!-- Forecast Section -->
         <div id="forecast"></div>
+        <!-- Google Charts -->
+        <button id="chart-btn"><i class="fa fa-chart-line"></i> </button>
         <div id="chart_div"></div>        
         <!-- Users current weather info -->
         <marquee behavior="scroll" direction="left" scrollamount="5">
@@ -64,11 +77,11 @@
                 <span id="current-location"></span>
                 <img id="current-flag">
                 <span id="current-feels-like"></span>
+                <span id="current-desc"></span>
                 <span id="current-max"></span>
                 <span id="current-min"></span>
                 <span id="current-sunrise"></span>
                 <span id="current-sunset"></span>
-                <span id="current-desc"></span>
                 <span id="current-wind"></span>
                 <span id="current-humidity"></span>
             </div>
