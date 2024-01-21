@@ -254,6 +254,11 @@ function displayWeatherForFavorites() {
     if (favoriteLocations && favoriteLocations.length > 0) {
         console.log(favoriteLocations);
 
+        // Add the "My Favorites" heading
+        const favoritesHeading = document.createElement('h4');
+        favoritesHeading.innerText = 'My Favorites';
+        favoriteWeatherContainer.appendChild(favoritesHeading);
+
         // Display the temperature in Celsius or Fahrenheit
         favoriteLocations.forEach(location => {
             if (isCelsius === !isCelsius) {
