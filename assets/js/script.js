@@ -493,3 +493,4 @@ async function drawChart() {
 // TODO - Add scroll animation displaying the user's current weather information.
 // TODO - Add animation to the error message.
 // TODO - Add transition animations to the UI.
+// TODO - Fix (+) button on the favorites section. displaying the user's wrong temperature unit when clicked.
