@@ -47,6 +47,13 @@ function getWeatherForCurrentLocation() {
     }
 }
 
+// Hide error message when clicking anywhere on the screen
+document.addEventListener("click", () => {
+    document.getElementById("error-message-user-location").style.display = "none";
+    document.getElementById("error-message-user-forecast").style.display = "none";
+    document.getElementById("location404").style.display = "none";
+});
+
 // TODO - Hide apiKeys in the .env file. Temp API key.
 const apiKey = `10b01580cf1723c01c311fb7cca8e196`;
 
