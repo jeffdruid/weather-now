@@ -141,52 +141,38 @@ input {
 }
 
 /* Weather info styles */
-
-/* TODO - fix current-info styles */
-/* .current-info {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 101%;
-    background: rgba(0, 0, 0, 1);
+.current-info {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 1rem;
-    text-transform: capitalize;
-} */
+    background-color: 0;
+    ;
+}
 
 #current-time,
 #current-location,
 #temperature-now {
-    text-align: center;
     display: flex;
-    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    color: rgba(0, 0, 0, 0.8);
     text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: .1rem;
     font-size: .7rem;
     padding: 0rem;
     justify-content: space-between;
-    margin-bottom: .25rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-top: .2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 marquee {
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     position: fixed;
-    bottom: 0;
-    margin: 0 auto;
+    bottom: .15rem;
     padding: 0;
-    height: 1.5rem;
-    background-color: rgba(0, 0, 0, 1);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: .7rem;
-    text-align: center;
+    height: 2rem;
+    background-color: 0;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* Description styles */
