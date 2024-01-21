@@ -84,6 +84,7 @@ async function getWeather(location) {
         document.getElementById("chart_div").style.display = "none";
         console.log("Close favorites, " + location + " selected.");
         isFavoritesOpen = false;
+        isForecastOpen = false;
         isCelsius = true;
     }
 
