@@ -504,8 +504,10 @@ async function drawChart() {
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
     const location = document.getElementById('location').textContent;
-    document.getElementById("chart_div").style.display = "flex";
-    console.log(location);
+    const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
+    const response = await fetch(`${apiUrlForecast}q=${location}&appid=${apiKey}`);
+    const data = await response.json();
+    console.log(data);
     await drawChart(location);
 });
 
