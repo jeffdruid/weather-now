@@ -416,6 +416,13 @@ google.charts.setOnLoadCallback(drawChart);
 
 // Function to draw the chart
 async function drawChart() {
+
+    // Get the weather for the user's current location
+    if (!getWeatherForCurrentLocation) {
+        getWeatherForCurrentLocation();
+        getWeatherForCurrentLocation = true;
+    }
+
     // apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
 
     const currentLocation = document.getElementById("current-location").innerHTML;
