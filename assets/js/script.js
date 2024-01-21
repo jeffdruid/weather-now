@@ -526,6 +526,22 @@ chartBtn.addEventListener('click', async () => {
     }
     isChartOpen = !isChartOpen;
 });
+
+// Add the button click event listener to clear all favorites
+const clearFavoritesBtn = document.getElementById('clear-favorites-btn');
+clearFavoritesBtn.addEventListener('click', clearAllFavorites);
+
+/**
+ * Clears all favorite locations.
+ */
+function clearAllFavorites(
+    // TODO - Add a confirmation dialog before clearing all favorites
+) {
+    localStorage.clear();
+    console.log("All favorites cleared.");
+    document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
+}
+
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
