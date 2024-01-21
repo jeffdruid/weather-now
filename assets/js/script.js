@@ -430,21 +430,14 @@ getWeatherForCurrentLocation();
 google.charts.load('current', { 'packages': ['corechart'] });
 
 // Callback function to draw the chart
-google.charts.setOnLoadCallback(drawChart);
+// google.charts.setOnLoadCallback(drawChart);
 
 // Function to draw the chart
 async function drawChart() {
-    // TODO - Prevent the chart from being drawn before the user's current location is fetched.
-    // Get the weather for the user's current location
-    // if (!getWeatherForCurrentLocation) {
-    //     getWeatherForCurrentLocation();
-    //     getWeatherForCurrentLocation = true;
-    // }
+    // TODO - Prevent the chart from being drawn before the user's current location is fetched
 
-    // apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
-
-    const currentLocation = document.getElementById("current-location").innerHTML;
-    const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${currentLocation}&appid=${apiKey}`;
+    const location = document.getElementById("location").innerHTML;
+    const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}&appid=${apiKey}`;
     const response = await fetch(apiUrlForecast);
     const data = await response.json();
     console.log(data);
@@ -475,7 +468,7 @@ async function drawChart() {
 
             // Set chart options
             let options = {
-                title: `Forecast - ${currentLocation}`,
+                title: `Forecast - ${location}`,
                 seriesType: 'bars',
                 series: {
                     0: { targetAxisIndex: 0 },
@@ -498,19 +491,15 @@ async function drawChart() {
             document.getElementById("error-message-user-forecast").style.display = "flex";
             const errorMessage = document.getElementById('error-message-user-forecast');
             errorMessage.textContent = 'Error fetching forecast data. Please try again.';
+            console.error(location, error);
         });
 }
 
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
-    const location = document.getElementById('location').textContent;
-    const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
-    const response = await fetch(`${apiUrlForecast}q=${location}&appid=${apiKey}`);
-    const data = await response.json();
-    console.log(data);
-    await drawChart(location);
+    document.getElementById("chart_div").style.display = "flex";
+    drawChart();
 });
-
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
