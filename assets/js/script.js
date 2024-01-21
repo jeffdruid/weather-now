@@ -504,8 +504,11 @@ async function drawChart() {
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
     const location = document.getElementById('location').textContent;
+    document.getElementById("chart_div").style.display = "flex";
     console.log(location);
+    await drawChart(location);
 });
+
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
