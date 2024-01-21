@@ -314,6 +314,11 @@ input {
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    scale: .9;
 }
 
 #chart_div>div>div:nth-child(1)>div>svg>rect {
@@ -370,5 +375,9 @@ footer {
 
     #forecast h4 {
         margin-right: .75rem;
+    }
+
+    #chart_div {
+        scale: 1;
     }
 }

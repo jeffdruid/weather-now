@@ -456,6 +456,8 @@ async function drawChart() {
         })
         .catch(error => {
             console.error('Error fetching forecast data:', error);
+            // TODO - Display an error message on the UI
+            document.getElementById('chart_div').innerHTML = '<div style="color: rgba(255, 0, 0, 0.7);">Error fetching forecast data.</div>';
         });
 }
 
