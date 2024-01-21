@@ -33,6 +33,9 @@ function getWeatherForCurrentLocation() {
 
         }, (error) => {
             console.error(error);
+            // TODO - Display an error message on the UI
+            const errorMessage = document.getElementById('error-message-user-location');
+            errorMessage.textContent = 'Error getting your location. Please allow location access and reload the page. ';
         });
     } else {
         console.error("Geolocation is not supported by this browser.");
