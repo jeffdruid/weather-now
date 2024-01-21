@@ -91,6 +91,7 @@ async function getWeather(location) {
         document.getElementById("weather").style.display = "flex";
         document.querySelector(".fa-bookmark").style.color = "rgba(255, 255, 255, .7) ";
         document.getElementById("favorite-weather").style.display = "none";
+        document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
         console.log("Close favorites, " + location + " selected.");
         isFavoritesOpen = false;
@@ -362,6 +363,7 @@ favoritesBtn.addEventListener('click', () => {
         document.querySelector(".fa-bookmark").style.color = "rgba(0, 0, 0, .6) ";
         document.getElementById("weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
+        document.getElementById("chart_div").style.display = "none";
         // document.getElementById("chart_div").style.display = "none";
     }
     // Toggle the value of isFavoritesOpen
@@ -418,6 +420,7 @@ forecastBtn.addEventListener('click', () => {
     } else {
         console.log('Forecast opened');
         document.getElementById("forecast").style.display = "flex";
+        document.getElementById("chart_div").style.display = "none";
         getFiveDayForecast(location);
     }
     isForecastOpen = !isForecastOpen;
@@ -498,6 +501,8 @@ async function drawChart() {
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
     document.getElementById("chart_div").style.display = "flex";
+    document.getElementById("forecast").style.display = "none";
+    isForecastOpen = false;
     drawChart();
 });
 // TODO - Add a map that shows the location of the city.
