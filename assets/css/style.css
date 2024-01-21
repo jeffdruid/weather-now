@@ -21,7 +21,6 @@ body {
 
 main {
     position: relative;
-    min-height: 100vh;
     z-index: 0;
 }
 
@@ -275,6 +274,7 @@ marquee {
     padding: 1rem;
     color: rgba(0, 0, 0, 0.9);
     text-transform: capitalize;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #forecast h4 {
@@ -340,6 +340,11 @@ marquee {
     left: 0;
     right: 0;
     z-index: -1;
+}
+
+#chart_div>div>div:nth-child(1)>div>svg>g:nth-child(3)>text {
+    fill: rgba(0, 0, 0, 0.7);
+    ;
 }
 
 #chart_div>div>div:nth-child(1)>div>svg>rect {

@@ -89,6 +89,7 @@ async function getWeather(location) {
         return;
     } else {
         document.getElementById("weather").style.display = "flex";
+        document.querySelector(".fa-bookmark").style.color = "rgba(255, 255, 255, .7) ";
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
         console.log("Close favorites, " + location + " selected.");
@@ -351,9 +352,11 @@ favoritesBtn.addEventListener('click', () => {
     if (isFavoritesOpen) {
         console.log('Favorites closed');
         document.getElementById("favorite-weather").style.display = "none";
+        document.querySelector(".fa-bookmark").style.color = "rgba(255, 255, 255, .7) ";
     } else {
         console.log('Favorites opened');
         document.getElementById("favorite-weather").style.display = "flex";
+        document.querySelector(".fa-bookmark").style.color = "rgba(0, 0, 0, .6) ";
         document.getElementById("weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         // document.getElementById("chart_div").style.display = "none";
@@ -469,7 +472,7 @@ async function drawChart() {
 
             // Set chart options
             let options = {
-                title: `5 Day Forecast - ${currentLocation}`,
+                title: `Forecast - ${currentLocation}`,
                 seriesType: 'bars',
                 series: {
                     0: { targetAxisIndex: 0 },
