@@ -156,7 +156,7 @@ input {
     right: .4rem;
     cursor: pointer;
     position: fixed;
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     color: rgba(255, 255, 255, .7);
     background-color: rgba(0, 0, 0, .1);
     border-radius: 50%;
@@ -369,7 +369,11 @@ marquee {
     position: absolute;
     font-size: 1.25rem;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#forecast-btn:hover {
+    color: rgba(255, 0, 0, 1)
 }
 
 /* Google Chart */
@@ -406,7 +410,11 @@ marquee {
     position: absolute;
     font-size: 1.25rem;
     font-weight: normal;
-    color: rgba(0, 0, 0, 0.7);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#chart-btn:hover {
+    color: rgba(255, 0, 0, 1)
 }
 
 /* Footer Styles */

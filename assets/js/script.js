@@ -437,15 +437,16 @@ isForecastOpen = false;
 const forecastBtn = document.getElementById('forecast-btn');
 forecastBtn.addEventListener('click', () => {
     const location = document.getElementById("location").innerHTML;
-    if (isForecastOpen) {
+    isChartOpen = false;
+    if (isForecastOpen && document.getElementById("forecast").style.display === "flex") {
         console.log('Forecast closed');
         document.getElementById("forecast").style.display = "none";
-        document.getElementById("forecast-btn").style.color = "rgba(0, 0, 0, .7) ";
+        // document.getElementById("forecast-btn").style.color = "rgba(0, 0, 0, .7) ";
     } else {
         console.log('Forecast opened');
         document.getElementById("forecast").style.display = "flex";
-        document.getElementById("forecast-btn").style.color = "rgba(255, 255, 255, 1) ";
-        document.getElementById("chart-btn").style.color = "rgba(0, 0, 0, .7) ";
+        document.getElementById("forecast-btn").style.color = "rgba(255, 0, 0, 1) ";
+        document.getElementById("chart-btn").style.color = "rgba(255, 255, 255, .9) ";
         document.getElementById("chart_div").style.display = "none";
         getFiveDayForecast(location);
     }
@@ -530,17 +531,16 @@ chartBtn.addEventListener('click', async () => {
     document.getElementById("chart_div").style.display = "flex";
     document.getElementById("forecast").style.display = "none";
     isForecastOpen = false;
-    drawChart();
-    if (isChartOpen) {
+    if (isChartOpen && document.getElementById("chart_div").style.display === "flex") {
         console.log('Chart closed');
         document.getElementById("chart_div").style.display = "none";
-        document.getElementById("chart-btn").style.color = "rgba(0, 0, 0, .7) ";
     } else {
         console.log('Chart opened');
         document.getElementById("chart_div").style.display = "flex";
-        document.getElementById("chart-btn").style.color = "rgba(255, 255, 255, 1) ";
-        document.getElementById("forecast-btn").style.color = "rgba(0, 0, 0, .7) ";
+        document.getElementById("chart-btn").style.color = "rgba(255, 0, 0, 1) ";
+        document.getElementById("forecast-btn").style.color = "rgba(255, 255, 255, 1) ";
         document.getElementById("forecast").style.display = "none";
+        drawChart();
     }
     isChartOpen = !isChartOpen;
 });
