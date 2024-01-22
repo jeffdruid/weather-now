@@ -449,7 +449,7 @@ async function getFiveDayForecast(location) {
             forecastData += `<div>${dayOfWeek}`;
 
             // Display the forecast's initial temperature in Celsius or Fahrenheit
-            if (!isCelsius) {
+            if (isCelsius) {
                 forecastData += `<span class="forecastC" style="display: inline;">${temperatureCelsius}°C</span>`;
                 forecastData += `<span class="forecastF" style="display: none;">${temperatureFahrenheit}°F</span>`;
                 console.log("Celsius " + isCelsius);
