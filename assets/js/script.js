@@ -145,6 +145,11 @@ async function getWeather(location) {
     const flagIcon = document.getElementById("flag-icon");
     flagIcon.src = `https://www.flagsapi.com/${data.sys.country}/flat/32.png`;
     flagIcon.alt = data.sys.country;
+
+    // Add the searched location to the search history
+    let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    searchHistory.push(location);
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
 }
 // End of getWeather function
 
@@ -550,18 +555,16 @@ chartBtn.addEventListener('click', async () => {
 const showHistoryBtn = document.getElementById('show-history-btn');
 // Function to display the search history
 function displaySearchHistory() {
-    console.log('Display search history');
     // Retrieve search history from local storage
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
     console.log(searchHistory);
     // Update the UI with the search history
     const historyContainer = document.getElementById('search-history');
-    historyContainer.innerHTML = 'HERE';
+    historyContainer.innerHTML = '';
 }
 
 // Add a button click event listener to show the search history
 showHistoryBtn.addEventListener('click', () => {
-    console.log('Show search history');
     displaySearchHistory();
 });
 // TODO - Add a map that shows the location of the city.
