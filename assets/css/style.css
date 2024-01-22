@@ -623,82 +623,12 @@ footer {
     }
 }
 
-@keyframes slideIn {
+@keyframes fadeOut {
     0% {
-        left: -25%;
+        opacity: 1;
     }
 
     100% {
-        left: 0;
-    }
-}
-
-@keyframes slideOut {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: -25%;
-    }
-}
-
-@keyframes slideInRight {
-    0% {
-        right: -25%;
-    }
-
-    100% {
-        right: 0;
-    }
-}
-
-@keyframes slideOutRight {
-    0% {
-        right: 0;
-    }
-
-    100% {
-        right: -25%;
-    }
-}
-
-@keyframes slideInLeft {
-    0% {
-        left: -25%;
-    }
-
-    100% {
-        left: 0;
-    }
-}
-
-@keyframes slideOutLeft {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: -25%;
-    }
-}
-
-@keyframes slideInTop {
-    0% {
-        top: -25%;
-    }
-
-    100% {
-        top: 0;
-    }
-}
-
-@keyframes slideOutTop {
-    0% {
-        top: 0;
-    }
-
-    100% {
-        top: -25%;
+        opacity: 0;
     }
 }
