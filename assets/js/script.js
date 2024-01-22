@@ -580,7 +580,9 @@ function displaySearchHistory() {
 showHistoryBtn.addEventListener('click', () => {
     document.getElementById("search-history").style.display = "flex";
     displaySearchHistory();
-});
+}, setInterval(() => {
+    document.getElementById("search-history").style.display = "none";
+}, 4000));
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
