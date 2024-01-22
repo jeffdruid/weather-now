@@ -89,7 +89,11 @@ async function getWeather(location) {
         document.getElementById("forecast").style.display = "none";
         return;
     } else {
-        document.getElementById("weather").style.display = "flex";
+        // Display the weather data on the UI with animation
+        const weatherElement = document.getElementById("weather");
+        weatherElement.style.display = "flex";
+        weatherElement.style.animation = "fadeIn .5s ease-in";
+
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
