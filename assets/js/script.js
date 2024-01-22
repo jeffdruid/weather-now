@@ -61,6 +61,7 @@ document.addEventListener("click", () => {
     document.getElementById("error-message-user-location").style.display = "none";
     document.getElementById("error-message-user-forecast").style.display = "none";
     document.getElementById("location404").style.display = "none";
+    // document.getElementById("search-history").style.display = "none";
 });
 
 // TODO - Hide apiKeys in the .env file. Temp API key.
@@ -565,10 +566,18 @@ function displaySearchHistory() {
     // Update the UI with the search history
     const historyContainer = document.getElementById('search-history');
     historyContainer.innerHTML = '';
+
+    // Iterate over the search history and display each item
+    searchHistory.forEach(item => {
+        const historyItem = document.createElement('div');
+        historyItem.textContent = item;
+        historyContainer.appendChild(historyItem);
+    });
 }
 
 // Add a button click event listener to show the search history
 showHistoryBtn.addEventListener('click', () => {
+    document.getElementById("search-history").style.display = "flex";
     displaySearchHistory();
 });
 // TODO - Add a map that shows the location of the city.
