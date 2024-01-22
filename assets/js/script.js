@@ -148,7 +148,9 @@ async function getWeather(location) {
 
     // Add the searched location to the search history
     let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-    searchHistory.push(location);
+    const locationName = document.getElementById("location").innerHTML;
+    const locationCountry = document.getElementById("country").innerHTML;
+    searchHistory.push(`${locationName}, ${locationCountry}`);
     localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
 }
 // End of getWeather function
