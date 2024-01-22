@@ -99,7 +99,7 @@ async function getWeather(location) {
         isForecastOpen = false;
         isChartOpen = false;
         isCelsius = true;
-        isSideBarOpen = true;
+        isSideBarOpen = false;
     }
 
     console.log(data);
