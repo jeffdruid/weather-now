@@ -60,6 +60,20 @@ input {
     width: 90%;
 }
 
+#show-history-btn {
+    background: 0;
+    border: 0;
+    margin: 0 auto;
+    margin-left: 2rem;
+    top: 1.75rem;
+    right: 3%;
+    cursor: pointer;
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.5);
+}
+
 /* Error Messages */
 .error-message {
     display: none;
