@@ -269,6 +269,13 @@ function displayWeatherForFavorites() {
     const favoriteWeatherContainer = document.getElementById('favorite-weather');
     favoriteWeatherContainer.innerHTML = '';
     favoriteWeatherContainer.classList.add('weather-container');
+
+    // Close the side bar
+    document.getElementById("side-bar").style.left = "-25%";
+    document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
+    isSideBarOpen = false;
+    console.log('Search button clicked, Side bar closed');
+
     // Check if there are favorite locations
     if (favoriteLocations && favoriteLocations.length > 0) {
         console.log(favoriteLocations);
