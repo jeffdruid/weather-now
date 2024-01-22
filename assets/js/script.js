@@ -274,7 +274,7 @@ function displayWeatherForFavorites() {
     document.getElementById("side-bar").style.left = "-25%";
     document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
     isSideBarOpen = false;
-    console.log('Search button clicked, Side bar closed');
+    console.log('Favorites button clicked, Side bar closed');
 
     // Check if there are favorite locations
     if (favoriteLocations && favoriteLocations.length > 0) {
@@ -593,6 +593,13 @@ function displaySearchHistory() {
 
 // Add a button click event listener to show the search history
 showHistoryBtn.addEventListener('click', () => {
+    // Close the side bar
+    document.getElementById("side-bar").style.left = "-25%";
+    document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
+    isSideBarOpen = false;
+    console.log('History button clicked, Side bar closed');
+
+    // Display the search history
     document.getElementById("search-history").style.display = "flex";
     displaySearchHistory();
 }, setInterval(() => {
@@ -601,6 +608,14 @@ showHistoryBtn.addEventListener('click', () => {
 
 // Function to toggle dark mode
 function toggleDarkMode() {
+
+    // Close the side bar
+    document.getElementById("side-bar").style.left = "-25%";
+    document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
+    isSideBarOpen = false;
+    console.log('Dark Mode button clicked, Side bar closed');
+
+    // Toggle the dark mode
     const body = document.body;
     body.classList.toggle('dark-mode');
 }
