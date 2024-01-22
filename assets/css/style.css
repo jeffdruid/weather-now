@@ -70,12 +70,6 @@ main {
     z-index: 0;
 }
 
-.fa-bookmark {
-    color: white;
-    cursor: pointer;
-    padding: .5rem;
-}
-
 .button-container {
     display: flex;
     flex-direction: column;
@@ -94,14 +88,7 @@ main {
     color: rgba(0, 0, 0, 1);
     margin-bottom: .5rem;
     padding: .5rem;
-}
-
-#favorites-btn,
-#show-history-btn,
-#dark-mode-btn,
-#github-link-btn {
-    display: flex;
-    align-items: center;
+    display: none;
 }
 
 #favorites-btn,
@@ -115,9 +102,16 @@ main {
     border: 0;
     margin: 0 auto;
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 1.75rem;
     padding: 2rem;
     color: rgba(0, 0, 0, 1);
+}
+
+#favorites-btn:hover,
+#show-history-btn:hover,
+#dark-mode-btn:hover,
+#github-link-btn:hover {
+    color: rgba(255, 0, 0, .7);
 }
 
 /* Search styles */
@@ -570,6 +564,11 @@ footer {
 
     #search-history {
         width: 75%;
+    }
+
+    /* Side Bar styles */
+    .button-container p {
+        display: flex;
     }
 
     /* Favorites styles */
