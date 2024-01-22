@@ -128,7 +128,7 @@ async function getWeather(location) {
         // Set the heart icon to white
         const favoriteIcon = document.querySelector('.fa-heart');
         favoriteIcon.style.color = 'rgba(255, 255, 255, 0.7)';
-        console.log("Favorite icon set to white.");
+
         console.log("Location is not a favorite: " + locationString);
     };
 
@@ -311,7 +311,7 @@ function displayWeatherForFavorites() {
     function clearAllFavorites() {
         const confirmation = confirm("Are you sure you want to clear all favorites?");
         if (confirmation) {
-            localStorage.clear();
+            localStorage.removeItem('favoriteLocations');
             console.log("All favorites cleared.");
             document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
         }
