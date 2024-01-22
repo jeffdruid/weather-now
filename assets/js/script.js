@@ -608,19 +608,22 @@ sideBarCloseBtn.addEventListener('mouseover', function () {
     this.style.transition = '0.5s';
 });
 
-isSideBarOpen = true;
+isSideBarOpen = false;
 const sideBarBtn = document.getElementById('side-bar-close-btn');
 sideBarBtn.addEventListener('click', () => {
     if (isSideBarOpen) {
         console.log('Side bar closed');
-        document.getElementById("side-bar").style.left = "-20%";
-        document.getElementById("side-bar-close-btn").style.transform = "rotate(0deg)";
+        document.getElementById("side-bar").style.left = "-25%";
+        document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
+        document.getElementById("side-bar-close-btn").style.transition = "0.5s";
         document.getElementById("side-bar").style.transition = "0.75s";
         document.getElementById("side-bar").style.background = "rgba(0, 0, 0, 0)";
         document.getElementById("side-bar").style.backdropFilter = "blur(0px)";
     } else {
         console.log('Side bar opened');
         document.getElementById("side-bar").style.left = "0%";
+        document.getElementById("side-bar-close-btn").style.transform = "rotate(180deg)";
+        document.getElementById("side-bar-close-btn").style.transition = "0.5s";
         document.getElementById("side-bar").style.transition = "0.75s";
         document.getElementById("side-bar").style.background = "rgba(0, 0, 0, 0.1)";
         document.getElementById("side-bar").style.backdropFilter = "blur(2px)";
