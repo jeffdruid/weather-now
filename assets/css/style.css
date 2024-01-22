@@ -43,6 +43,8 @@ main {
 }
 
 /* Main styles */
+
+/* Search styles */
 .search {
     display: flex;
     justify-content: center;
@@ -511,6 +513,10 @@ footer {
 
     /* Main styles */
     input {
+        width: 75%;
+    }
+
+    #search-history {
         width: 75%;
     }
 

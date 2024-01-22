@@ -588,6 +588,6 @@ showHistoryBtn.addEventListener('click', () => {
 // TODO - Handle duplicate city names.
 // TODO - Add animation to the error message.
 // TODO - Add transition animations to the UI.
-// TODO - Add a button to clear the search history.
-// TODO - Add a button show the search history.
 // TODO - Update weather icons.
+// TODO - Animation Intro
+// TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
