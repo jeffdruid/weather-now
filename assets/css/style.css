@@ -523,6 +523,11 @@ footer {
         width: 90%;
     }
 
+    /* Side Bar styles */
+    .button-container p {
+        font-size: 1.25rem;
+    }
+
     /* 404 styles */
     #location404 {
         width: 75%;

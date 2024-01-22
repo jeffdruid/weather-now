@@ -90,15 +90,16 @@ async function getWeather(location) {
         return;
     } else {
         document.getElementById("weather").style.display = "flex";
-        document.querySelector(".fa-bookmark").style.color = "rgba(255, 255, 255, .7) ";
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
+        document.getElementById("side-bar").style.left = "-25%";
         console.log("Close favorites, " + location + " selected.");
         isFavoritesOpen = false;
         isForecastOpen = false;
         isChartOpen = false;
         isCelsius = true;
+        isSideBarOpen = true;
     }
 
     console.log(data);
