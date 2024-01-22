@@ -600,3 +600,17 @@ darkModeBtn.addEventListener('click', toggleDarkMode);
 // TODO - Update weather icons.
 // TODO - Animation Intro
 // TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
+
+// Add the button hover event listener to invert the side-bar-close-btn
+const sideBarCloseBtn = document.getElementById('side-bar-close-btn');
+sideBarCloseBtn.addEventListener('mouseover', function () {
+    this.style.transform = 'rotate(180deg)';
+    this.style.transition = '0.5s';
+});
+
+const sideBarCloseBtn2 = document.getElementById('side-bar-close-btn');
+sideBarCloseBtn2.addEventListener('click', function () {
+    this.style.transform = 'rotate(180deg)';
+    this.style.transition = '0.5s';
+    document.getElementById("side-bar").style.left = "-18%";
+});
