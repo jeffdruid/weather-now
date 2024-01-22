@@ -612,5 +612,8 @@ const sideBarCloseBtn2 = document.getElementById('side-bar-close-btn');
 sideBarCloseBtn2.addEventListener('click', function () {
     this.style.transform = 'rotate(180deg)';
     this.style.transition = '0.5s';
-    document.getElementById("side-bar").style.left = "-18%";
+    document.getElementById("side-bar").style.left = "-20%";
+    document.getElementById("side-bar").style.transition = "0.75s";
+    document.getElementById("side-bar").style.background = "rgba(0, 0, 0, 0)";
+    document.getElementById("side-bar").style.backdropFilter = "blur(0px)";
 });
