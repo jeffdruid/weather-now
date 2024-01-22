@@ -591,3 +591,13 @@ showHistoryBtn.addEventListener('click', () => {
 // TODO - Update weather icons.
 // TODO - Animation Intro
 // TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+}
+
+// Add the button click event listener to toggle dark mode
+const darkModeBtn = document.getElementById('dark-mode-btn');
+darkModeBtn.addEventListener('click', toggleDarkMode);
