@@ -259,6 +259,8 @@ function displayWeatherForFavorites() {
         clearFavoritesBtn.id = 'clear-favorites-btn';
         clearFavoritesBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
         favoriteWeatherContainer.appendChild(clearFavoritesBtn);
+        document.getElementById('clear-favorites-btn').style.display = "flex";
+        document.getElementById('clear-favorites-btn').addEventListener('click', clearAllFavorites);
 
         // Add the "My Favorites" heading
         const favoritesHeading = document.createElement('h4');
@@ -294,6 +296,17 @@ function displayWeatherForFavorites() {
         // Display a message if no favorite locations are found
         console.log("No favorite locations found.");
         document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
+    }
+    /**
+        * Clears all favorite locations.
+        */
+    function clearAllFavorites() {
+        const confirmation = confirm("Are you sure you want to clear all favorites?");
+        if (confirmation) {
+            localStorage.clear();
+            console.log("All favorites cleared.");
+            document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
+        }
     }
 }
 
@@ -367,12 +380,10 @@ favoritesBtn.addEventListener('click', () => {
     if (isFavoritesOpen) {
         console.log('Favorites closed');
         document.getElementById("favorite-weather").style.display = "none";
-        document.getElementById("clear-favorites-btn").style.display = "none";
         document.querySelector(".fa-bookmark").style.color = "rgba(255, 255, 255, .7) ";
     } else {
         console.log('Favorites opened');
         document.getElementById("favorite-weather").style.display = "flex";
-        document.getElementById("clear-favorites-btn").style.display = "flex";
         document.querySelector(".fa-bookmark").style.color = "rgba(0, 0, 0, .6) ";
         document.getElementById("weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
@@ -534,31 +545,12 @@ chartBtn.addEventListener('click', async () => {
     isChartOpen = !isChartOpen;
 });
 
-// Check if there are favorites present
-if (localStorage.getItem("favorites") !== null) {
-    // Add the button click event listener to clear all favorites
-    const clearFavoritesBtn = document.getElementById('clear-favorites-btn');
-    clearFavoritesBtn.addEventListener('click', clearAllFavorites);
-}
-
-/**
- * Clears all favorite locations.
- */
-function clearAllFavorites() {
-    const confirmation = confirm("Are you sure you want to clear all favorites?");
-    if (confirmation) {
-        localStorage.clear();
-        console.log("All favorites cleared.");
-        document.getElementById("favorite-weather").innerHTML = "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
-    }
-}
 
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
 // TODO - Add animation to the error message.
 // TODO - Add transition animations to the UI.
-// TODO - Add a button to clear the favorites.
 // TODO - Add a button to clear the search history.
 // TODO - Add a button show the search history.
 // TODO - Update weather icons.
