@@ -557,7 +557,9 @@ const showHistoryBtn = document.getElementById('show-history-btn');
 function displaySearchHistory() {
     // Retrieve search history from local storage
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
-    console.log(searchHistory);
+    // Remove duplicates from search history
+    const uniqueSearchHistory = [...new Set(searchHistory)];
+    console.log(uniqueSearchHistory);
     // Update the UI with the search history
     const historyContainer = document.getElementById('search-history');
     historyContainer.innerHTML = '';
