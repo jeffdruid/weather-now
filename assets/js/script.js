@@ -466,7 +466,6 @@ google.charts.load('current', { 'packages': ['corechart'] });
 
 // Function to draw the chart
 async function drawChart() {
-    // TODO - Prevent the chart from being drawn before the user's current location is fetched
 
     const location = document.getElementById("location").innerHTML;
     const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}&appid=${apiKey}`;
@@ -547,6 +546,22 @@ chartBtn.addEventListener('click', async () => {
     isChartOpen = !isChartOpen;
 });
 
+// Add a button to show the search history
+const showHistoryBtn = document.getElementById('show-history-btn');
+// Function to display the search history
+function displaySearchHistory() {
+    console.log('Display search history');
+
+    // Update the UI with the search history
+    const historyContainer = document.getElementById('search-history');
+    historyContainer.innerHTML = 'HERE';
+}
+
+// Add a button click event listener to show the search history
+showHistoryBtn.addEventListener('click', () => {
+    console.log('Show search history');
+    displaySearchHistory();
+});
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
