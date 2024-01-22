@@ -389,11 +389,9 @@ favoritesBtn.addEventListener('click', () => {
     if (isFavoritesOpen) {
         console.log('Favorites closed');
         document.getElementById("favorite-weather").style.display = "none";
-        document.querySelector(".fa-bookmark").style.color = "rgba(255, 255, 255, .7) ";
     } else {
         console.log('Favorites opened');
         document.getElementById("favorite-weather").style.display = "flex";
-        document.querySelector(".fa-bookmark").style.color = "rgba(0, 0, 0, .6) ";
         document.getElementById("weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
@@ -583,14 +581,6 @@ showHistoryBtn.addEventListener('click', () => {
 }, setInterval(() => {
     document.getElementById("search-history").style.display = "none";
 }, 4000));
-// TODO - Add a map that shows the location of the city.
-// TODO - Add autocomplete for the search box.
-// TODO - Handle duplicate city names.
-// TODO - Add animation to the error message.
-// TODO - Add transition animations to the UI.
-// TODO - Update weather icons.
-// TODO - Animation Intro
-// TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
 
 // Function to toggle dark mode
 function toggleDarkMode() {
@@ -601,3 +591,12 @@ function toggleDarkMode() {
 // Add the button click event listener to toggle dark mode
 const darkModeBtn = document.getElementById('dark-mode-btn');
 darkModeBtn.addEventListener('click', toggleDarkMode);
+
+// TODO - Add a map that shows the location of the city.
+// TODO - Add autocomplete for the search box.
+// TODO - Handle duplicate city names.
+// TODO - Add animation to the error message.
+// TODO - Add transition animations to the UI.
+// TODO - Update weather icons.
+// TODO - Animation Intro
+// TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
