@@ -112,6 +112,8 @@ main {
 #dark-mode-btn:hover,
 #github-link-btn:hover {
     color: rgba(255, 0, 0, .7);
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
 }
 
 /* Search styles */
