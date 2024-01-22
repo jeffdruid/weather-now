@@ -456,7 +456,7 @@ footer {
         width: 90%;
     }
 
-    /* Weather info styles */
+    /* Forecast styles */
     #forecast div {
         width: 90%;
     }
@@ -469,7 +469,49 @@ footer {
         margin-right: .75rem;
     }
 
+    /* Google Charts styles */
     #chart_div {
         scale: .9;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* Header styles */
+    .container h1 {
+        font-size: 3rem;
+    }
+
+    /* Main styles */
+    input {
+        width: 75%;
+    }
+
+    /* Favorites styles */
+    #favorite-weather {
+        width: 75%;
+    }
+
+    /* Description styles */
+    .weather-container {
+        width: 75%;
+    }
+
+    /* Forecast styles */
+    #forecast div {
+        width: 75%;
+    }
+
+    #forecast {
+        flex-direction: row;
+    }
+
+    #forecast h4 {
+        margin-right: .75rem;
+    }
+
+    /* Google Charts styles */
+    #chart_div {
+        scale: .75;
     }
 }
