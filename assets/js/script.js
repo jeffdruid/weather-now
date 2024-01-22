@@ -176,7 +176,7 @@ if (searchBox) {
 }
 
 // Temperature unit toggle button
-let isCelsius = true; // Variable to track the temperature unit
+let isCelsius = true;
 
 /**
  * Toggle between Celsius and Fahrenheit temperature units.
@@ -413,21 +413,21 @@ async function getFiveDayForecast(location) {
         if (dateTime.getHours() === 0) {
             const dayOfWeek = dateTime.toLocaleDateString(undefined, { weekday: 'long' });
             forecastData += `<div>${dayOfWeek}`;
+
             // Display the forecast's initial temperature in Celsius or Fahrenheit
-            if (isCelsius) {
+            if (!isCelsius) {
                 forecastData += `<span class="forecastC" style="display: inline;">${temperatureCelsius}°C</span>`;
                 forecastData += `<span class="forecastF" style="display: none;">${temperatureFahrenheit}°F</span>`;
-                isCelsius = true;
+                console.log("Celsius " + isCelsius);
             } else {
-                isCelsius = false;
                 forecastData += `<span class="forecastC" style="display: none;">${temperatureCelsius}°C</span>`;
                 forecastData += `<span class="forecastF" style="display: inline;">${temperatureFahrenheit}°F</span>`;
+                console.log("Fahrenheit " + isCelsius);
             }
             forecastData += `${description}</div>`;
         }
         isCelsius = !isCelsius;
     }
-
     document.getElementById("forecast").innerHTML = forecastData;
     document.getElementById("forecast").classList.add('weather-container');
     document.getElementById("forecast").style.display = "flex";
@@ -437,6 +437,7 @@ isForecastOpen = false;
 
 const forecastBtn = document.getElementById('forecast-btn');
 forecastBtn.addEventListener('click', () => {
+    console.log(isCelsius);
     const location = document.getElementById("location").innerHTML;
     isChartOpen = false;
     if (isForecastOpen && document.getElementById("forecast").style.display === "flex") {
@@ -546,7 +547,6 @@ chartBtn.addEventListener('click', async () => {
     isChartOpen = !isChartOpen;
 });
 
-
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
@@ -555,4 +555,3 @@ chartBtn.addEventListener('click', async () => {
 // TODO - Add a button to clear the search history.
 // TODO - Add a button show the search history.
 // TODO - Update weather icons.
-// TODO - Fix issue when between chart and forecast buttons, the color is not changing.
