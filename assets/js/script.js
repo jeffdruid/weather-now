@@ -250,9 +250,15 @@ function displayWeatherForFavorites() {
     const favoriteWeatherContainer = document.getElementById('favorite-weather');
     favoriteWeatherContainer.innerHTML = '';
     favoriteWeatherContainer.classList.add('weather-container');
-
+    // Check if there are favorite locations
     if (favoriteLocations && favoriteLocations.length > 0) {
         console.log(favoriteLocations);
+
+        // Add the "Delete favorite" button
+        const clearFavoritesBtn = document.createElement('div');
+        clearFavoritesBtn.id = 'clear-favorites-btn';
+        clearFavoritesBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+        favoriteWeatherContainer.appendChild(clearFavoritesBtn);
 
         // Add the "My Favorites" heading
         const favoritesHeading = document.createElement('h4');
@@ -528,9 +534,12 @@ chartBtn.addEventListener('click', async () => {
     isChartOpen = !isChartOpen;
 });
 
-// Add the button click event listener to clear all favorites
-const clearFavoritesBtn = document.getElementById('clear-favorites-btn');
-clearFavoritesBtn.addEventListener('click', clearAllFavorites);
+// Check if there are favorites present
+if (localStorage.getItem("favorites") !== null) {
+    // Add the button click event listener to clear all favorites
+    const clearFavoritesBtn = document.getElementById('clear-favorites-btn');
+    clearFavoritesBtn.addEventListener('click', clearAllFavorites);
+}
 
 /**
  * Clears all favorite locations.
