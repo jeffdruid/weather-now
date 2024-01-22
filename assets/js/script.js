@@ -624,10 +624,10 @@ showHistoryBtn.addEventListener('click', () => {
 function toggleDarkMode() {
 
     // Close the side bar
-    document.getElementById("side-bar").style.left = "-25%";
-    document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
-    isSideBarOpen = false;
-    console.log('Dark Mode button clicked, Side bar closed');
+    // document.getElementById("side-bar").style.left = "-25%";
+    // document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
+    // console.log('Dark Mode button clicked, Side bar closed');
+    // isSideBarOpen = false;
 
     // Toggle the dark mode
     const body = document.body;
@@ -666,8 +666,5 @@ sideBarBtn.addEventListener('click', () => {
 // TODO - Add a map that shows the location of the city.
 // TODO - Add autocomplete for the search box.
 // TODO - Handle duplicate city names.
-// TODO - Add animation to the error message.
-// TODO - Add transition animations to the UI.
 // TODO - Update weather icons.
 // TODO - Animation Intro
-// TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
