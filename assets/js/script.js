@@ -551,7 +551,9 @@ const showHistoryBtn = document.getElementById('show-history-btn');
 // Function to display the search history
 function displaySearchHistory() {
     console.log('Display search history');
-
+    // Retrieve search history from local storage
+    const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    console.log(searchHistory);
     // Update the UI with the search history
     const historyContainer = document.getElementById('search-history');
     historyContainer.innerHTML = 'HERE';
