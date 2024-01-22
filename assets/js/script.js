@@ -94,6 +94,7 @@ async function getWeather(location) {
         document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
         document.getElementById("side-bar").style.left = "-25%";
+        document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
         console.log("Close favorites, " + location + " selected.");
         isFavoritesOpen = false;
         isForecastOpen = false;
@@ -183,6 +184,14 @@ if (searchBox) {
         }
     });
 }
+
+const searchButton = document.querySelector("input");
+searchButton.addEventListener("click", () => {
+    document.getElementById("side-bar").style.left = "-25%";
+    document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
+    isSideBarOpen = false;
+    console.log('Search button clicked, Side bar closed');
+});
 
 // Temperature unit toggle button
 let isCelsius = true;
@@ -593,23 +602,9 @@ function toggleDarkMode() {
 const darkModeBtn = document.getElementById('dark-mode-btn');
 darkModeBtn.addEventListener('click', toggleDarkMode);
 
-// TODO - Add a map that shows the location of the city.
-// TODO - Add autocomplete for the search box.
-// TODO - Handle duplicate city names.
-// TODO - Add animation to the error message.
-// TODO - Add transition animations to the UI.
-// TODO - Update weather icons.
-// TODO - Animation Intro
-// TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
-
-// Add the button hover event listener to invert the side-bar-close-btn
-const sideBarCloseBtn = document.getElementById('side-bar-close-btn');
-sideBarCloseBtn.addEventListener('mouseover', function () {
-    this.style.transform = 'rotate(180deg)';
-    this.style.transition = '0.5s';
-});
-
 isSideBarOpen = false;
+
+// Add the button click event listener to toggle the side bar
 const sideBarBtn = document.getElementById('side-bar-close-btn');
 sideBarBtn.addEventListener('click', () => {
     if (isSideBarOpen) {
@@ -631,3 +626,12 @@ sideBarBtn.addEventListener('click', () => {
     }
     isSideBarOpen = !isSideBarOpen;
 });
+
+// TODO - Add a map that shows the location of the city.
+// TODO - Add autocomplete for the search box.
+// TODO - Handle duplicate city names.
+// TODO - Add animation to the error message.
+// TODO - Add transition animations to the UI.
+// TODO - Update weather icons.
+// TODO - Animation Intro
+// TODO - Add a side bar with the search history and favorites, and a settings button.(dark mode), github lin
