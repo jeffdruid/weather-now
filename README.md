@@ -43,29 +43,83 @@ Weather Now is a web application that provides real-time weather information for
     - [Useful links](#useful-links)
 
 ## Introduction
-- Weather Now is an user-friendly web application designed to provide users with detailed and up-to-date weather information for any location globally. Powered by real-time data from the OpenWeatherMap API, users can easily retrieve current weather data, including temperature, humidity, wind speed, and more.
+- Weather Now is an application that allows users to get the current weather and 5-day forecast for a specific location. The application provides information such as temperature, humidity, wind speed, sunrise, sunset, and weather description.
 
 ## Technologies Used
 
 - HTML5
 - CSS3
 - Javascript
+- OpenWeatherMap API
+- Flags API
+- Google Charts
+
 
 ## User Stories
+- **As a user, I want to quickly check the current weather for any location, so that I can plan accordingly.**
+
+- **As a user, I want to see a 5-day forecast for a location, so that I can plan for the upcoming days.**
+
+- **As a user, I want to save my favorite locations, so that I can quickly check the weather for them.**
+
+- **As a user, I want to toggle between Celsius and Fahrenheit temperature units, so that I can use my preferred unit.**
+
+- **As a user, I want to switch between light and dark modes, so that I can customize the app based on my preference.**
+
+- **As a user, I want to view my search history, so that I can easily revisit previous locations.**
+
+- **As a user, I want to find a link to the source code on GitHub in the sidebar, so that I can explore the codebase, contribute, or provide feedback on the application.**
+
 
 ## Features
 
 ### Current Weather: 
-- Get instant access to the current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
-
-### Location-Based: 
-- Utilize geolocation services to fetch the weather for your current location automatically.
+- Get real-time weather information such asn current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
+- Upon loading, the application will attempt to get your current location and display the weather.
 
 ### Search Functionality: 
 - Enter a city name in the search box to retrieve weather details for any specific location.
 
 ### Temperature Units: 
 - Toggle between Celsius and Fahrenheit units to view temperature information according to your preference.
+
+### 5-Day Forecast:
+- Plan ahead with a 5-day weather forecast, displaying temperature and humidity trends.
+
+### Favorites:
+- Save your favorite locations and easily check the weather for them.
+
+### Dark Mode:
+- Toggle between light and dark mode for better visibility.
+
+### Search History:
+- View your search history to quickly revisit previous locations.
+
+### Side Bar:
+- The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and Github link.
+
+### Chart:
+- Visualize temperature and humidity trends with an interactive chart. Click on the "Chart" button to view a graphical representation of temperature and humidity for the next 5 days.
+
+### GitHub:
+- Explore and contribute to the source code on GitHub.
+
+## Bugs
+
+### Fixed Bugs
+
+## UI Improvements
+
+## Future Improvements
+
+### Map Integration: 
+- Plan to add a map feature that shows the location of the city.
+
+### Autocomplete: 
+- Implement autocomplete functionality for the search box.
+
+### User Interface: 
+- Enhance the user interface with animations and updated weather icons.
 
 ## Credits
 
