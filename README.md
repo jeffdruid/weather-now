@@ -56,19 +56,26 @@ Weather Now is a web application that provides real-time weather information for
 
 
 ## User Stories
-- **As a user, I want to quickly check the current weather for any location, so that I can plan accordingly.**
+<!-- TODO - Create a table -->
+ - As a user, I want to check the current weather for a specific city.
 
-- **As a user, I want to see a 5-day forecast for a location, so that I can plan for the upcoming days.**
+- As a user, I want to view a 5-day weather forecast for a specific city.
 
-- **As a user, I want to save my favorite locations, so that I can quickly check the weather for them.**
+- As a user, I want to toggle between Celsius and Fahrenheit for temperature units.
 
-- **As a user, I want to toggle between Celsius and Fahrenheit temperature units, so that I can use my preferred unit.**
+- As a user, I want to view an interactive chart showing temperature and humidity trends.
 
-- **As a user, I want to switch between light and dark modes, so that I can customize the app based on my preference.**
+- As a user, I want to set a location as a favorite for quick access.
 
-- **As a user, I want to view my search history, so that I can easily revisit previous locations.**
+- As a user, I want to view weather information for my favorite locations.
 
-- **As a user, I want to find a link to the source code on GitHub in the sidebar, so that I can explore the codebase, contribute, or provide feedback on the application.**
+- As a user, I want to toggle between light and dark mode for a personalized viewing experience.
+
+- As a user, I want to view my search history for quick reference.
+
+- As a user, I want to access the source code on GitHub.
+
+- As a user, I want a visually appealing and responsive design.
 
 
 ## Features
