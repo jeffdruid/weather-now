@@ -106,25 +106,22 @@ Weather Now is a web application that provides real-time weather information for
 - Explore and contribute to the source code on GitHub.
 
 ## Testing
+<!-- TODO -->
+### Validator Testing
+#### HTML
+#### CSS
+#### JavaScript
 
-###
-####
-####
+### Accessibility
+### Responsiveness
+
+### Manual Testing
 ####
 
-###
-###
-###
-[Testing](#testing)
-    - [Validator Testing](#validator-testing)
-        - [HTML](#html)
-        - [CSS](#css)
-        - [Javascript](#javascript)
-    - [Accessibility](#accessibility)
-    - [Responsiveness](#responsiveness)
-    - [Manual Testing](#manual-testing)
-        - [Cross-browser Compatibility](#cross-browser-compatibility)
-        - [Responsiveness and Device Compatibility]
+#### Desktop
+#### Tablet
+#### Mobile
+
 ## Bugs
 <!-- TODO -->
 
