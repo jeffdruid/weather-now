@@ -159,3 +159,4 @@ Weather Now is a web application that provides real-time weather information for
 - [Country Flags](https://flagsapi.com/)
 - [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
 - [Marquee feature](https://codepen.io/notkieran/pen/jVmWNY)
+- [Hide API key](https://jessicawatts-95014.medium.com/hiding-api-keys-js-656290a1132c)
