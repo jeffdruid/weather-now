@@ -617,8 +617,10 @@ showHistoryBtn.addEventListener('click', () => {
     document.getElementById("search-history").style.animation = "fadeIn .5s ease-in";
     displaySearchHistory();
 }, setInterval(() => {
+    document.getElementById("search-history").style.animation = "fadeOut .5s ease-in";
     document.getElementById("search-history").style.display = "none";
-}, 5000));
+}, 5000
+));
 
 // Function to toggle dark mode
 function toggleDarkMode() {
