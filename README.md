@@ -59,16 +59,16 @@ Weather Now is a web application that provides real-time weather information for
 <!-- TODO - Create a table -->
 | User Story | I Know I'm Done When... |
 |------------|-------------------------|
-| As a user, I want to check the current weather for a specific city. ||
-| As a user, I want to view a 5-day weather forecast for a specific city. ||
-| As a user, I want to toggle between Celsius and Fahrenheit for temperature units. ||
-| As a user, I want to view an interactive chart showing temperature and humidity trends. ||
-| As a user, I want to set a location as a favorite for quick access. ||
-| As a user, I want to view weather information for my favorite locations. ||
-| As a user, I want to toggle between light and dark mode for a personalized viewing experience. ||
-| As a user, I want to view my search history for quick reference. ||
-| As a user, I want to access the source code on GitHub. ||
-| As a user, I want a visually appealing and responsive design. ||
+| As a user, I want to check the current weather for a specific city. | I can easily check the current weather for any city by entering the city name in the search box. The displayed information includes temperature, humidity, wind speed, and weather icons.|
+| As a user, I want to view a 5-day weather forecast for a specific city. | I can explore a 5-day weather forecast for a selected city by clicking on the "Forecast" button. The application should display temperature and humidity trends for the specified city.|
+| As a user, I want to toggle between Celsius and Fahrenheit for temperature units. | There is a temperature unit toggle button that allows me to switch between displaying temperatures in Celsius and Fahrenheit.|
+| As a user, I want to view an interactive chart showing temperature and humidity trends. | There is a "Chart" button that, when clicked, displays an interactive chart illustrating temperature and humidity trends for the 5-day forecast.|
+| As a user, I want to set a location as a favorite for quick access. | There is a heart icon or a similar indication next to each location. Clicking the heart icon should save the location as a favorite for easy access.|
+| As a user, I want to view weather information for my favorite locations. | There is a "Favorites" button that, when clicked, displays weather information for all saved favorite locations.|
+| As a user, I want to toggle between light and dark mode for a personalized viewing experience. | There is a "Dark Mode" button that toggles between light and dark mode, providing a personalized viewing experience.|
+| As a user, I want to view my search history for quick reference. | There is a "Show History" button that, when clicked, displays a list of past searches for quick reference.|
+| As a user, I want to access the source code on GitHub. | There is a GitHub icon or link that, when clicked, redirects me to the Weather App's source code on GitHub|
+| As a user, I want a visually appealing and responsive design. | The application has a responsive layout that works well on different devices. The design is visually appealing, providing a seamless and enjoyable user experience.|
 
 ## Wireframe
 <!-- TODO -->
