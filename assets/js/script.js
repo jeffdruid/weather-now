@@ -663,8 +663,16 @@ sideBarBtn.addEventListener('click', () => {
     isSideBarOpen = !isSideBarOpen;
 });
 
-// TODO - Add a map that shows the location of the city.
-// TODO - Add autocomplete for the search box.
-// TODO - Handle duplicate city names.
-// TODO - Update weather icons.
-// TODO - Animation Intro
+// TODO - Add a map that shows the location of the city. (Future feature)
+// TODO - Update weather icons. (Future feature)
+// TODO - Add autocomplete for the search box. (Future feature)
+// TODO - Handle duplicate city names. (BUG - API)
+// TODO - Animation Intro (GSAP?)
+// TODO - Finish implementing search history.
+// TODO - Finish implementing dark mode.
+// TODO - Finish GitHub links.
+// TODO - TODO About container(???).
+// TODO - Double check error handling.
+// TODO - Error handle Flags API not loading.
+// TODO - Remove console logs. ???
+// TODO - Remove unused code.
