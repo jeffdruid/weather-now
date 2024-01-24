@@ -1,3 +1,9 @@
+// script.js
+import { API_KEY } from '/config.js';
+
+const apiKey = API_KEY;
+
+// rest of your code
 /**
  * Get the current time and display it.
  */
@@ -63,9 +69,6 @@ document.addEventListener("click", () => {
     document.getElementById("location404").style.display = "none";
     // document.getElementById("search-history").style.display = "none";
 });
-
-// TODO - Hide apiKeys in the .env file. Temp API key.
-const apiKey = `10b01580cf1723c01c311fb7cca8e196`;
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
@@ -467,7 +470,7 @@ async function getFiveDayForecast(location) {
     document.getElementById("forecast").style.display = "flex";
 }
 
-isForecastOpen = false;
+let isForecastOpen = false;
 
 const forecastBtn = document.getElementById('forecast-btn');
 forecastBtn.addEventListener('click', () => {
@@ -561,7 +564,7 @@ async function drawChart() {
         });
 }
 
-isChartOpen = false;
+let isChartOpen = false;
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
     document.getElementById("chart_div").style.display = "flex";
@@ -639,7 +642,7 @@ function toggleDarkMode() {
 const darkModeBtn = document.getElementById('dark-mode-btn');
 darkModeBtn.addEventListener('click', toggleDarkMode);
 
-isSideBarOpen = false;
+let isSideBarOpen = false;
 
 // Add the button click event listener to toggle the side bar
 const sideBarBtn = document.getElementById('side-bar-close-btn');
