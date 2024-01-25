@@ -77,7 +77,7 @@ let lastUpdatedTime = '';
  * Get the weather data from the API.
  */
 async function getWeather(location) {
-    const response = await fetch(apiUrl + `q=` + location + `&appid=${apiKey}`);
+    const response = await fetch(apiUrl + `q=` + location);
     let data = await response.json();
 
     // 404 error handling
@@ -433,7 +433,7 @@ favoritesBtn.addEventListener('click', () => {
     */
 async function getFiveDayForecast(location) {
     const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
-    const response = await fetch(`${apiUrlForecast}q=${location}&appid=${apiKey}`);
+    const response = await fetch(`${apiUrlForecast}q=${location}`);
     const data = await response.json();
     console.log(data);
 
@@ -503,7 +503,7 @@ google.charts.load('current', { 'packages': ['corechart'] });
 async function drawChart() {
 
     const location = document.getElementById("location").innerHTML;
-    const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}&appid=${apiKey}`;
+    const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}`;
     const response = await fetch(apiUrlForecast);
     const data = await response.json();
     console.log(data);
