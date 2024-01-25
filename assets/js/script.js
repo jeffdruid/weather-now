@@ -673,6 +673,7 @@ sideBarBtn.addEventListener('click', () => {
 // TODO - Handle duplicate city names. (BUG - API)
 // TODO - Animation Intro (GSAP?)
 // TODO - Finish implementing search history.
+// TODO - Handle empty search history.
 // TODO - Finish implementing dark mode.
 // TODO - Finish GitHub links.
 // TODO - TODO About container(???).
