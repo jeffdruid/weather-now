@@ -69,7 +69,7 @@ document.addEventListener("click", () => {
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://weather-key-160275f00837.herokuapp.com/key';
+const apiUrl = 'https://weather-key-160275f00837.herokuapp.com/mykey';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
@@ -434,6 +434,7 @@ favoritesBtn.addEventListener('click', () => {
 async function getFiveDayForecast(location) {
     const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
     const response = await fetch(`${apiUrlForecast}q=${location}`);
+    console.log(response);
     const data = await response.json();
     console.log(data);
 
@@ -505,6 +506,7 @@ async function drawChart() {
     const location = document.getElementById("location").innerHTML;
     const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}`;
     const response = await fetch(apiUrlForecast);
+    console.log(response);
     const data = await response.json();
     console.log(data);
 
