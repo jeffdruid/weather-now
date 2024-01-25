@@ -1,6 +1,8 @@
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://weather-key-160275f00837.herokuapp.com';
+// sample_url1 = "https://weather-dh-d49c7aef68c1.herokuapp.com/myapi?location=London"
+// sample_url2 = "https://weather-dh-d49c7aef68c1.herokuapp.com/myapi?location=London,uk"
+const apiUrl = 'https://weather-dh-d49c7aef68c1.herokuapp.com/myapi?';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
