@@ -140,6 +140,32 @@ Weather Now is a web application that provides real-time weather information for
 ### User Interface: 
 - Enhance the user interface with animations and updated weather icons.
 
+## Deployment
+
+### Cloning & Forking
+#### Forking a Repository
+1. Visit [Weather Now](https://github.com/jeffdruid/weather-now).
+2. Click on the "Fork" button located in the top-right corner of the page.
+3. Optionally, you can provide a description for your fork.
+4. Select "Create fork". You will be redirected to your newly created forked repository.
+
+#### Cloning a Repository
+1. Navigate to the repository on Github and click the "Code" button located above the list of files.
+2. Click on thee "Code" button and copy the repository's URL.
+3. Open your Terminal application on your computer and change the directory to where you want the cloned directory.
+4. Enter the command "git clone" followed by the repository's URL. This downloads a copy of the repository into your local machine.
+
+### Local Deployment
+1. Sign up for [Gitpod](https://www.gitpod.io/) using your GitHub account.
+2. Install the Gitpod browser extension to access Gitpod from GitHub. You can find the extension [here](https://www.gitpod.io/docs/browser-extension/).
+3. Go to the [Weather Now](https://github.com/jeffdruid/weather-now).
+4. Click on the "GitPod" button above the list of files in the repository on GitHub. This opens Gitpod workspace using the repository.
+
+### Remote Deployment
+<!-- TODO -->
+To deploy the site on Netlify ...
+
+You can access the live link here : [Weather Now]()
 ## Credits
 
 ### Source code 

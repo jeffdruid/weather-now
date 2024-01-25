@@ -1,9 +1,7 @@
-// script.js
+// config.js
 import { API_KEY } from './config.js';
-
 const apiKey = API_KEY;
 
-// rest of your code
 /**
  * Get the current time and display it.
  */
