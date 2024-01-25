@@ -1,3 +1,9 @@
+// API call
+// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+const apiUrl = 'https://weather-key-160275f00837.herokuapp.com/mykey';
+const searchBox = document.querySelector(".search input");
+let lastUpdatedTime = '';
+
 /**
  * Get the current time and display it.
  */
@@ -26,7 +32,7 @@ function getWeatherForCurrentLocation() {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             // const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
-            const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`);
+            const response = await fetch(apiUrl + `?lat=${latitude}&lon=${longitude}`);
             console.log(response);
             console.log(apiUrl);
             const data = await response.json();
@@ -66,12 +72,6 @@ document.addEventListener("click", () => {
     document.getElementById("location404").style.display = "none";
     // document.getElementById("search-history").style.display = "none";
 });
-
-// API call
-// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://weather-key-160275f00837.herokuapp.com/mykey';
-const searchBox = document.querySelector(".search input");
-let lastUpdatedTime = '';
 
 /**
  * Get the weather data from the API.
