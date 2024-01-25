@@ -1,7 +1,7 @@
 // script.js
-// import { API_KEY } from './config.js';
+import { API_KEY } from './config.js';
 
-const apiKey = process.env.API_KEY || '';
+const apiKey = API_KEY;
 
 // rest of your code
 /**
