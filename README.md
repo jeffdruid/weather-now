@@ -155,11 +155,12 @@ Weather Now is a web application that provides real-time weather information for
 3. Open your Terminal application on your computer and change the directory to where you want the cloned directory.
 4. Enter the command "git clone" followed by the repository's URL. This downloads a copy of the repository into your local machine.
 
-### Local Deployment
+<!-- ### Local Deployment
+<!-- TODO -->
 1. Sign up for [Gitpod](https://www.gitpod.io/) using your GitHub account.
 2. Install the Gitpod browser extension to access Gitpod from GitHub. You can find the extension [here](https://www.gitpod.io/docs/browser-extension/).
 3. Go to the [Weather Now](https://github.com/jeffdruid/weather-now).
-4. Click on the "GitPod" button above the list of files in the repository on GitHub. This opens Gitpod workspace using the repository.
+4. Click on the "GitPod" button above the list of files in the repository on GitHub. This opens Gitpod workspace using the repository. -->
 
 ### Remote Deployment
 <!-- TODO -->
