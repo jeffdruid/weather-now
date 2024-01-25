@@ -33,6 +33,7 @@ function getWeatherForCurrentLocation() {
             const longitude = position.coords.longitude;
             // const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
             const response = await fetch(apiUrl + `?lat=${latitude}&lon=${longitude}`);
+            console.log(apiUrl + `?lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
             console.log(response);
             console.log(apiUrl);
             const data = await response.json();
