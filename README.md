@@ -160,3 +160,4 @@ Weather Now is a web application that provides real-time weather information for
 - [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
 - [Marquee feature](https://codepen.io/notkieran/pen/jVmWNY)
 - [Hide API key](https://jessicawatts-95014.medium.com/hiding-api-keys-js-656290a1132c)
+- [Dave Gray - Hiding API Keys in Javascript Netlify](https://www.youtube.com/watch?v=2J3xbMkH2K4)
