@@ -79,7 +79,7 @@ document.addEventListener("click", () => {
  * Get the weather data from the API.
  */
 async function getWeather(location) {
-    const response = await fetch(apiUrl + `q=` + location);
+    const response = await fetch(apiUrl + `location=` + location);
     let data = await response.json();
 
     // 404 error handling
