@@ -25,7 +25,10 @@ function getWeatherForCurrentLocation() {
         navigator.geolocation.getCurrentPosition(async (position) => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-            const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+            // const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
+            const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`);
+            console.log(response);
+            console.log(apiUrl);
             const data = await response.json();
             displayWeatherData(data);
             document.getElementById("temperature-now").innerHTML = "Temp: " + Math.round(data.main.temp) + "°C";
