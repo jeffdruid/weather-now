@@ -1,7 +1,3 @@
-// config.js
-import { API_KEY } from './config.js';
-const apiKey = API_KEY;
-
 /**
  * Get the current time and display it.
  */
@@ -70,7 +66,7 @@ document.addEventListener("click", () => {
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&';
+const apiUrl = 'https://weather-key-160275f00837.herokuapp.com';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
