@@ -66,7 +66,7 @@ document.addEventListener("click", () => {
 
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://weather-key-160275f00837.herokuapp.com';
+const apiUrl = 'https://weather-key-160275f00837.herokuapp.com/key';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
