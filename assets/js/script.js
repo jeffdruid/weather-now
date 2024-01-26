@@ -31,24 +31,31 @@ function getWeatherForCurrentLocation() {
         navigator.geolocation.getCurrentPosition(async (position) => {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
-            const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`, { mode: 'cors' });
-            console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
-            console.log(response);
-            console.log(apiUrl);
-            const data = await response.json();
-            displayWeatherData(data);
-            document.getElementById("temperature-now").innerHTML = "Temp: " + Math.round(data.main.temp) + "°C";
-            document.getElementById("current-location").innerHTML = data.name;
-            document.getElementById("current-flag").src = `https://www.flagsapi.com/${data.sys.country}/flat/16.png`;
-            document.getElementById("current-feels-like").innerHTML = "Feels like: " + Math.round(data.main.feels_like) + "°C";
-            document.getElementById("current-max").innerHTML = "Maximum: " + Math.round(data.main.temp_max) + "°C";
-            document.getElementById("current-min").innerHTML = "Minimum: " + Math.round(data.main.temp_min) + "°C";
-            document.getElementById("current-sunrise").innerHTML = "Sunrise: " + new Date((data.sys.sunrise + data.timezone) * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-            document.getElementById("current-sunset").innerHTML = "Sunset: " + new Date((data.sys.sunset + data.timezone) * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-            document.getElementById("current-desc").innerHTML = data.weather[0].description;
-            document.getElementById("current-wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
-            document.getElementById("current-humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
-
+            try {
+                const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`, { mode: 'cors' });
+                console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
+                console.log(response);
+                console.log(apiUrl);
+                const data = await response.json();
+                displayWeatherData(data);
+                document.getElementById("temperature-now").innerHTML = "Temp: " + Math.round(data.main.temp) + "°C";
+                document.getElementById("current-location").innerHTML = data.name;
+                document.getElementById("current-flag").src = `https://www.flagsapi.com/${data.sys.country}/flat/16.png`;
+                document.getElementById("current-feels-like").innerHTML = "Feels like: " + Math.round(data.main.feels_like) + "°C";
+                document.getElementById("current-max").innerHTML = "Maximum: " + Math.round(data.main.temp_max) + "°C";
+                document.getElementById("current-min").innerHTML = "Minimum: " + Math.round(data.main.temp_min) + "°C";
+                document.getElementById("current-sunrise").innerHTML = "Sunrise: " + new Date((data.sys.sunrise + data.timezone) * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+                document.getElementById("current-sunset").innerHTML = "Sunset: " + new Date((data.sys.sunset + data.timezone) * 1000).toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+                document.getElementById("current-desc").innerHTML = data.weather[0].description;
+                document.getElementById("current-wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
+                document.getElementById("current-humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
+            } catch (error) {
+                console.error(error);
+                // Display an error message on the UI
+                document.getElementById("error-message-user-location").style.display = "flex";
+                const errorMessage = document.getElementById('error-message-user-location');
+                errorMessage.textContent = 'Failed to fetch weather data.';
+            }
         }, (error) => {
             console.error(error);
             // Display an error message on the UI
