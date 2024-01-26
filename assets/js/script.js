@@ -1,5 +1,7 @@
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+// SOLVED - CORS error
 const apiUrl = 'https://cors-anywhere.herokuapp.com/https://weather-key-160275f00837.herokuapp.com/myapi?';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
