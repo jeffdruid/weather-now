@@ -1,19 +1,8 @@
-import express from 'express';
-const app = express();
-
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 const apiUrl = 'https://weather-key-160275f00837.herokuapp.com/myapi?';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
-
-// Enable CORS headers
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
 
 /**
  * Get the current time and display it.
