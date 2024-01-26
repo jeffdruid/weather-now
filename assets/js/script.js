@@ -1,6 +1,6 @@
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-const apiUrl = 'https://weather-key-160275f00837.herokuapp.com/myapi?';
+const apiUrl = 'https://cors-anywhere.herokuapp.com/https://weather-key-160275f00837.herokuapp.com/myapi?';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
