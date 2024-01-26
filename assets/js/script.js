@@ -441,7 +441,9 @@ favoritesBtn.addEventListener('click', () => {
     * 5 Day Forecast
     */
 async function getFiveDayForecast(location) {
-    const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
+    // TODO - update the URL
+    // const response = await fetch(apiUrl + `location=` + location);
+    // const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
     const response = await fetch(`${apiUrlForecast}q=${location}`);
     console.log(response);
     const data = await response.json();
@@ -513,6 +515,7 @@ google.charts.load('current', { 'packages': ['corechart'] });
 async function drawChart() {
 
     const location = document.getElementById("location").innerHTML;
+    // TODO - update the URL
     const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}`;
     const response = await fetch(apiUrlForecast);
     console.log(response);
