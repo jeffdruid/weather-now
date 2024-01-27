@@ -504,6 +504,8 @@ forecastBtn.addEventListener('click', () => {
 });
 
 showCurrentTime();
+
+// TODO - Comment out the following line to avoid making too many API call for the user's current location
 // getWeatherForCurrentLocation();
 
 // Include the Google Charts library
