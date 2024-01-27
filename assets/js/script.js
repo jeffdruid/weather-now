@@ -517,14 +517,15 @@ async function drawChart() {
 
     const location = document.getElementById("location").innerHTML;
     // TODO - update the URL
-    const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}`;
-    const response = await fetch(apiUrlForecast);
+    // const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}`;
+    // const response = await fetch(apiUrlForecast);
+    const response = await fetch(`${apiUrl}location=${location}&endpoint=forecast`);
     console.log(response);
     const data = await response.json();
     console.log(data);
 
     // Make an API call to fetch the forecast data
-    fetch(apiUrlForecast)
+    fetch(apiUrl + `location=` + location + `&endpoint=forecast`)
         .then(response => response.json())
         .then(data => {
             // Create the data table
