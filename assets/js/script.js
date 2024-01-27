@@ -3,6 +3,7 @@
 
 // SOLVED - CORS error
 const apiUrl = 'https://cors-anywhere.herokuapp.com/https://weather-key-160275f00837.herokuapp.com/myapi?';
+// const apiUrlForecast = 'https://cors-anywhere.herokuapp.com/https://weather-key-160275f00837.herokuapp.com/forecast?';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
@@ -35,9 +36,9 @@ function getWeatherForCurrentLocation() {
             const longitude = position.coords.longitude;
             try {
                 const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`, { mode: 'cors' });
-                console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
+                // console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
                 console.log(response);
-                console.log(apiUrl);
+                // console.log(apiUrl);
                 const data = await response.json();
                 displayWeatherData(data);
                 document.getElementById("temperature-now").innerHTML = "Temp: " + Math.round(data.main.temp) + "°C";
@@ -444,7 +445,7 @@ async function getFiveDayForecast(location) {
     // TODO - update the URL
     // const response = await fetch(apiUrl + `location=` + location);
     // const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
-    const response = await fetch(`${apiUrlForecast}q=${location}`);
+    const response = await fetch(`${apiUrl}location=${location}&endpoint=forecast`);
     console.log(response);
     const data = await response.json();
     console.log(data);
@@ -503,7 +504,7 @@ forecastBtn.addEventListener('click', () => {
 });
 
 showCurrentTime();
-getWeatherForCurrentLocation();
+// getWeatherForCurrentLocation();
 
 // Include the Google Charts library
 google.charts.load('current', { 'packages': ['corechart'] });
