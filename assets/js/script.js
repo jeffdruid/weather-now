@@ -35,6 +35,7 @@ function getWeatherForCurrentLocation() {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             try {
+                await delay(5000); // Add a delay of 5 second before making the API call
                 const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`, { mode: 'cors' });
                 // console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
                 console.log(response);
