@@ -112,7 +112,6 @@ async function getWeather(location) {
         document.getElementById("side-bar").style.left = "-25%";
         document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
         console.log("Close favorites, " + location + " selected.");
-        isFavoritesOpen = false;
         isForecastOpen = false;
         isChartOpen = false;
         isCelsius = true;
@@ -424,23 +423,13 @@ setFavoriteBtn.addEventListener('click', function () {
 const favoritesBtn = document.getElementById('favorites-btn');
 favoritesBtn.addEventListener('click', displayWeatherForFavorites);
 
-// Variable to track if favorites are open or closed
-let isFavoritesOpen = false;
-
 // Add the button click event listener to toggle favorites
 favoritesBtn.addEventListener('click', () => {
-    if (isFavoritesOpen) {
-        console.log('Favorites closed');
-        document.getElementById("favorite-weather").style.display = "none";
-    } else {
-        console.log('Favorites opened');
-        document.getElementById("favorite-weather").style.display = "flex";
-        document.getElementById("weather").style.display = "none";
-        document.getElementById("forecast").style.display = "none";
-        document.getElementById("chart_div").style.display = "none";
-    }
-    // Toggle the value of isFavoritesOpen
-    isFavoritesOpen = !isFavoritesOpen;
+    console.log('Favorites opened');
+    document.getElementById("favorite-weather").style.display = "flex";
+    document.getElementById("weather").style.display = "none";
+    document.getElementById("forecast").style.display = "none";
+    document.getElementById("chart_div").style.display = "none";
 });
 
 /*
