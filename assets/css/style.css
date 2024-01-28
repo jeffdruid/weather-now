@@ -54,7 +54,7 @@ main {
     text-transform: uppercase;
     text-align: center;
     color: var(--primary-color);
-    text-shadow: 0 4px 30px rgb(255, 255, 255, 1);
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
 }
 
 /* Main styles */
@@ -66,7 +66,7 @@ main {
     top: 50%;
     right: -1.5rem;
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 #side-bar {
@@ -147,6 +147,7 @@ main {
 
 input {
     background: var(--secondary-color) url(../images/icons/magnifying-glass-solid.svg) no-repeat 95% center;
+    color: var(--primary-color);
     padding: .75rem;
     border-radius: 10px;
     border: 0;
@@ -230,11 +231,11 @@ input {
 
 .favorite a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: rgba(0, 0, 0, 0.8);
     cursor: pointer;
     padding: .5rem;
     margin: 1rem;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px dashed var(--secondary-color);
 }
 
 .favorite a:hover {
@@ -411,7 +412,7 @@ marquee {
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 1rem;
-    color: var(--text-color);
+    color: rgba(0, 0, 0, 0.8);
     text-transform: capitalize;
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -488,11 +489,11 @@ marquee {
 }
 
 #chart_div>div>div:nth-child(1)>div>svg>g:nth-child(3)>text {
-    fill: var(--primary-color);
+    fill: rgba(0, 0, 0, 0.8);
 }
 
 #chart_div>div>div:nth-child(1)>div>svg>rect {
-    fill: rgba(255, 255, 255, 0.1);
+    fill: rgba(255, 255, 255, 0.5);
 }
 
 #chart-btn {
@@ -516,7 +517,7 @@ marquee {
 /* Footer Styles */
 footer {
     flex-shrink: 0;
-    background-color: var(--text-color);
+    background-color: rgba(0, 0, 0, 1);
     font-size: .5rem;
     color: rgba(148, 187, 233, 0.5);
     position: fixed;
@@ -653,5 +654,5 @@ footer {
 }
 
 .dark-mode {
-    filter: invert(1) hue-rotate(180deg);
+    /* filter: invert(1) hue-rotate(180deg); */
 }

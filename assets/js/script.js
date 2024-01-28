@@ -645,6 +645,29 @@ function toggleDarkMode() {
     // Toggle the dark mode
     const body = document.querySelector('body');
     body.classList.toggle('dark-mode');
+
+    // --primary-color: rgba(22, 0, 0, 1);
+    // --secondary-color: rgba(255, 255, 255, 0.7);
+
+    // --gradient-start-color: rgba(238, 174, 202, 1);
+    // --gradient-end-color: rgba(148, 187, 233, 1);
+
+    // --text-color: rgba(0, 0, 0, 0.8);
+    // --background-color: rgba(0, 0, 0, 0);
+
+    // Change variable colors in :root
+    const root = document.documentElement;
+    if (body.classList.contains('dark-mode')) {
+        root.style.setProperty('--primary-color', 'white');
+        root.style.setProperty('--secondary-color', 'black');
+        root.style.setProperty('--gradient-start-color', 'slategray');
+        root.style.setProperty('--gradient-end-color', 'black');
+        root.style.setProperty('--text-color', 'lightgray');
+
+    } else {
+        // root.style.setProperty('--primary-color', '--primary-color');
+    }
+
 }
 
 // Add the button click event listener to toggle dark mode
