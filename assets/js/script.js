@@ -98,6 +98,7 @@ async function getWeather(location) {
         document.getElementById("weather").style.display = "none";
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
+        document.getElementById("search-history").style.display = "none";
         return;
     } else {
         // Display the weather data on the UI with animation
@@ -107,6 +108,7 @@ async function getWeather(location) {
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
+        document.getElementById("search-history").style.display = "none";
         document.getElementById("side-bar").style.left = "-25%";
         document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
         console.log("Close favorites, " + location + " selected.");
