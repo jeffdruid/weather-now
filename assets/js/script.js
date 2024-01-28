@@ -92,7 +92,7 @@ async function getWeather(location) {
     let data = await response.json();
 
     // 404 error handling
-    if (data.cod === "404" || data.cod === "400") {
+    if (response.status === 400 || response.status === 404) {
         document.getElementById("location404").innerHTML = "Location not found.";
         document.getElementById("location404").style.display = "flex";
         document.getElementById("weather").style.display = "none";
