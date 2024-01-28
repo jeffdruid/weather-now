@@ -10,6 +10,7 @@ const unlockButton = document.createElement("button");
 unlockButton.textContent = "Unlock CORS Access";
 unlockButton.addEventListener("click", () => {
     window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
+    unlockButton.style.display = "none";
 });
 
 document.body.appendChild(unlockButton);
