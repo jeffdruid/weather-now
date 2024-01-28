@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="icon" href="assets/images/icons/weather-forecast-16484.png" type="image/x-icon">
-    <!-- Google Charts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>Weather Now</title>
 </head>
 <body>
@@ -121,6 +119,8 @@
     </footer>
     <!-- Scripts -->
     <script type="module" src="assets/js/script.js"></script>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/6b0af4bcb3.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
@@ -138,14 +138,16 @@
         function nextState() {
         const state = Flip.getState(".block, .logo-weather, .logo-now", {props: "color,backgroundColor", simple: true}); // capture current state
         
-        if (curLayout < layouts.length - 1) {
+        if (curLayout < layouts.length -1) {
             intro.classList.remove(layouts[curLayout]); // remove old class
             curLayout++;   // increment
             intro.classList.add(layouts[curLayout]);    // add the new class
+            console.log(curLayout);
         } else {
-            gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1, delay: 1.5, onComplete: () => {
+            gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1, delay: .5, onComplete: () => {
                 intro.style.display = "none"; // hide the intro element when the animation ends
-            }, repeat: 0}); // Fix Loop
+            }});
+            return;
         }
 
         Flip.from(state, { // animate from the previous state
@@ -155,11 +157,11 @@
             ease: "power2.inOut",
             spin: curLayout === 0, // only spin when going to the "final" layout
             simple: true,
-            onEnter: (elements, animation) => gsap.fromTo(elements, {opacity: 0}, {opacity: 1, delay: animation.duration() - 0.1}),
+            onEnter: (elements, animation) => gsap.fromTo(elements, {opacity: 0}, {opacity: 1, delay: animation.duration() - 0.2}),
             onLeave: elements => gsap.to(elements, {opacity: 0})
         });
 
-        gsap.delayedCall(curLayout === 0 ? 3.5 : 1.5, nextState);
+        gsap.delayedCall(curLayout === 0 ? 2.5 : 1.5, nextState);
         }
 
         gsap.delayedCall(1, nextState);
