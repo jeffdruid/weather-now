@@ -443,8 +443,6 @@ favoritesBtn.addEventListener('click', () => {
     * 5 Day Forecast
     */
 async function getFiveDayForecast(location) {
-    // TODO - update the URL
-    // const response = await fetch(apiUrl + `location=` + location);
     // const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
     const response = await fetch(`${apiUrl}location=${location}&endpoint=forecast`);
     console.log(response);
@@ -512,14 +510,11 @@ showCurrentTime();
 // Include the Google Charts library
 google.charts.load('current', { 'packages': ['corechart'] });
 
-// Callback function to draw the chart
-// google.charts.setOnLoadCallback(drawChart);
 
 // Function to draw the chart
 async function drawChart() {
 
     const location = document.getElementById("location").innerHTML;
-    // TODO - update the URL
     // const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}`;
     // const response = await fetch(apiUrlForecast);
     const response = await fetch(`${apiUrl}location=${location}&endpoint=forecast`);
@@ -617,8 +612,12 @@ function displaySearchHistory() {
 
     // Iterate over the search history and display each item
     uniqueSearchHistory.forEach(item => {
-        const historyItem = document.createElement('div');
+        const historyItem = document.createElement('a');
         historyItem.textContent = item;
+        historyItem.href = '#';
+        historyItem.addEventListener('click', () => {
+            getWeather(item);
+        });
         historyContainer.appendChild(historyItem);
     });
 }
@@ -667,7 +666,6 @@ function toggleDarkMode() {
 
         body.style.addClassName('dark-mode');
     }
-
 }
 
 // Add the button click event listener to toggle dark mode
@@ -706,11 +704,8 @@ sideBarBtn.addEventListener('click', () => {
 // TODO - Animation Intro (GSAP?)
 // TODO - Finish implementing search history.
 // TODO - Handle empty search history.
-// TODO - Finish implementing dark mode.
-// TODO - Finish GitHub links.
 // TODO - TODO About container(???).
 // TODO - Double check error handling.
-// TODO - Error handle Flags API not loading.
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
 // TODO - Cache current location data.
