@@ -293,6 +293,8 @@ function displayWeatherForFavorites() {
     weatherFavorites.style.display = "flex";
     weatherFavorites.style.animation = "fadeIn .3s ease-in";
 
+    // close searchHistory
+    document.getElementById("search-history").style.display = "none";
 
     // Close the side bar
     document.getElementById("side-bar").style.left = "-25%";
@@ -602,6 +604,9 @@ chartBtn.addEventListener('click', async () => {
 const showHistoryBtn = document.getElementById('show-history-btn');
 // Function to display the search history
 function displaySearchHistory() {
+    // Close favorites
+    document.getElementById("favorite-weather").style.display = "none";
+
     // Retrieve search history from local storage
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 
