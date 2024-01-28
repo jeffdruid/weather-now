@@ -1,9 +1,7 @@
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-
 // SOLVED - CORS error
 const apiUrl = 'https://cors-anywhere.herokuapp.com/https://weather-key-160275f00837.herokuapp.com/myapi?';
-// const apiUrlForecast = 'https://cors-anywhere.herokuapp.com/https://weather-key-160275f00837.herokuapp.com/forecast?';
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
@@ -35,7 +33,6 @@ function getWeatherForCurrentLocation() {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             try {
-                await delay(5000); // Add a delay of 5 second before making the API call
                 const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`, { mode: 'cors' });
                 // console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
                 console.log(response);
@@ -495,14 +492,8 @@ forecastBtn.addEventListener('click', () => {
     isForecastOpen = !isForecastOpen;
 });
 
-showCurrentTime();
-
-// TODO - Comment out the following line to avoid making too many API call for the user's current location
-// getWeatherForCurrentLocation();
-
 // Include the Google Charts library
 google.charts.load('current', { 'packages': ['corechart'] });
-
 
 // Function to draw the chart
 async function drawChart() {
@@ -697,6 +688,10 @@ sideBarBtn.addEventListener('click', () => {
     }
     isSideBarOpen = !isSideBarOpen;
 });
+
+showCurrentTime();
+// TODO - Comment out the following line to avoid making too many API call for the user's current location
+getWeatherForCurrentLocation();
 
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)
