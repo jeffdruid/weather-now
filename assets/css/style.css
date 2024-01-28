@@ -237,8 +237,8 @@ body>button {
     margin: .5rem auto;
 }
 
-#spinner {
-    display: none;
+.spinner {
+    display: block;
     font-weight: bold;
     color: var(--red-color-1);
     width: 100%;
@@ -247,7 +247,7 @@ body>button {
     padding: 1.5rem;
 }
 
-#spinner .fa-spinner {
+.spinner .fa-spinner {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -587,9 +587,20 @@ chartBtn.addEventListener('click', async () => {
         document.getElementById("forecast").style.display = "none";
 
         // Show spinner while chart is loading
-        const spinner = document.createElement('div');
-        spinner.classList.add('spinner');
+        const spinner = document.querySelector('.spinner');
         document.getElementById("chart_div").appendChild(spinner);
+
+        // Rotate spinner until display is set to none
+        const rotateSpinner = () => {
+            if (document.getElementById("chart_div").style.display !== "none") {
+                spinner.style.transform = `rotate(${spinnerRotation}deg)`;
+                spinnerRotation += 10;
+                setTimeout(rotateSpinner, 100);
+            }
+        };
+
+        let spinnerRotation = 0;
+        rotateSpinner();
 
         await drawChart();
 
