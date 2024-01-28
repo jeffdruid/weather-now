@@ -167,6 +167,15 @@ input {
     margin-top: 0;
 }
 
+#search-history a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin: .25rem;
+    padding: .25rem;
+    border-bottom: 1px dashed var(--secondary-color);
+}
+
 /* Error Messages */
 .error-message {
     display: none;
