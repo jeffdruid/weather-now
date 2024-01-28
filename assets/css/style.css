@@ -49,7 +49,7 @@ main {
 }
 
 .container h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
     color: var(--primary-color);
@@ -595,6 +595,10 @@ footer {
     /* 404 styles */
     #location404 {
         width: 75%;
+    }
+
+    body>button {
+        width: 25%;
     }
 
     /* Favorites styles */
