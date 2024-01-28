@@ -238,7 +238,7 @@ body>button {
 }
 
 .spinner {
-    display: block;
+    display: none;
     font-weight: bold;
     color: var(--red-color-1);
     width: 100%;
