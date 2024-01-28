@@ -5,6 +5,15 @@ const apiUrl = 'https://cors-anywhere.herokuapp.com/https://weather-key-160275f0
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = '';
 
+// Add the unlock CORS access button
+const unlockButton = document.createElement("button");
+unlockButton.textContent = "Unlock CORS Access";
+unlockButton.addEventListener("click", () => {
+    window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
+});
+
+document.body.appendChild(unlockButton);
+
 /**
  * Get the current time and display it.
  */
@@ -712,8 +721,6 @@ getWeatherForCurrentLocation();
 // TODO - Add autocomplete for the search box. (Future feature)
 // TODO - Handle duplicate city names. (BUG - API)
 // TODO - Animation Intro (GSAP?)
-// TODO - Finish implementing search history.
-// TODO - Handle empty search history.
 // TODO - TODO About container(???).
 // TODO - Double check error handling.
 // TODO - Remove console logs. ???
