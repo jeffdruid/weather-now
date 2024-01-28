@@ -585,7 +585,16 @@ chartBtn.addEventListener('click', async () => {
         document.getElementById("chart-btn").style.color = "rgba(255, 0, 0, 1) ";
         document.getElementById("forecast-btn").style.color = "rgba(255, 255, 255, 1) ";
         document.getElementById("forecast").style.display = "none";
-        drawChart();
+
+        // Show spinner while chart is loading
+        const spinner = document.createElement('div');
+        spinner.classList.add('spinner');
+        document.getElementById("chart_div").appendChild(spinner);
+
+        await drawChart();
+
+        // Remove spinner after chart is loaded
+        document.getElementById("chart_div").removeChild(spinner);
     }
     isChartOpen = !isChartOpen;
 });
@@ -717,14 +726,12 @@ showCurrentTime();
 // TODO - Comment out the following line to avoid making too many API call for the user's current location
 // getWeatherForCurrentLocation();
 
+
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)
 // TODO - Add autocomplete for the search box. (Future feature)
 // TODO - Handle duplicate city names. (BUG - API)
-// TODO - Animation Intro (GSAP?)
-// TODO - TODO About container(???).
 // TODO - Double check error handling.
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
 // TODO - Add load spinner loading chart.
-// todo style cors btn
