@@ -610,6 +610,11 @@ function displaySearchHistory() {
     const historyContainer = document.getElementById('search-history');
     historyContainer.innerHTML = '';
 
+    // Add the "My History" heading
+    const historyHeading = document.createElement('h4');
+    historyHeading.textContent = 'My History';
+    historyContainer.appendChild(historyHeading);
+
     // Iterate over the search history and display each item
     uniqueSearchHistory.forEach(item => {
         const historyItem = document.createElement('a');

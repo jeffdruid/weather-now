@@ -169,11 +169,28 @@ input {
 
 #search-history a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: rgba(0, 0, 0, 0.8);
     font-size: 1rem;
     margin: .25rem;
     padding: .25rem;
     border-bottom: 1px dashed var(--secondary-color);
+}
+
+#search-history a:hover {
+    color: var(--red-color-2);
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    border-bottom: 0;
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+#search-history h4 {
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-color);
 }
 
 /* Error Messages */
@@ -220,7 +237,6 @@ input {
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
-    font-weight: bold;
     color: var(--text-color);
     background-color: rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -230,6 +246,7 @@ input {
     font-size: 1.25rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
+    letter-spacing: 1.5px;
     color: var(--primary-color);
 }
 
@@ -251,6 +268,8 @@ input {
     background-color: var(--secondary-color);
     border-radius: 10px;
     border-bottom: 0;
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
 }
 
 #clear-favorites-btn {
