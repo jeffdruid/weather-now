@@ -120,7 +120,7 @@ async function getWeather(location) {
     console.log(data);
 
     // Display the weather data on the UI with animation
-    document.getElementById("weather").style.animation = "fadeIn .5s ease-in";
+    document.getElementById("weather").style.animation = "fadeIn .3s ease-in";
 
     // Weather Description
     document.getElementById("location").innerHTML = data.name;
@@ -289,7 +289,7 @@ function displayWeatherForFavorites() {
     // Display the weather data on the UI with animation
     const weatherFavorites = document.getElementById("favorite-weather");
     weatherFavorites.style.display = "flex";
-    weatherFavorites.style.animation = "fadeIn .5s ease-in";
+    weatherFavorites.style.animation = "fadeIn .3s ease-in";
 
 
     // Close the side bar
@@ -495,7 +495,7 @@ forecastBtn.addEventListener('click', () => {
     } else {
         console.log('Forecast opened');
         document.getElementById("forecast").style.display = "flex";
-        document.getElementById("forecast").style.animation = "fadeIn .5s ease-in";
+        document.getElementById("forecast").style.animation = "fadeIn .3s ease-in";
         document.getElementById("forecast-btn").style.color = "rgba(255, 0, 0, 1) ";
         document.getElementById("chart-btn").style.color = "rgba(255, 255, 255, .9) ";
         document.getElementById("chart_div").style.display = "none";
@@ -584,7 +584,7 @@ let isChartOpen = false;
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
     document.getElementById("chart_div").style.display = "flex";
-    document.getElementById("chart_div").style.animation = "fadeIn .5s ease-in";
+    document.getElementById("chart_div").style.animation = "fadeIn .3s ease-in";
     document.getElementById("forecast").style.display = "none";
     isForecastOpen = false;
     if (isChartOpen && document.getElementById("chart_div").style.display === "flex") {
@@ -633,12 +633,13 @@ showHistoryBtn.addEventListener('click', () => {
 
     // Display the search history
     document.getElementById("search-history").style.display = "flex";
-    document.getElementById("search-history").style.animation = "fadeIn .5s ease-in";
+    document.getElementById("search-history").style.animation = "fadeIn .3s ease-in";
     displaySearchHistory();
-}, setInterval(() => {
-    document.getElementById("search-history").style.animation = "fadeOut .5s ease-in";
-    document.getElementById("search-history").style.display = "none";
-}, 5000));
+});
+// , setInterval(() => {
+//     document.getElementById("search-history").style.animation = "fadeOut .5s ease-in";
+//     document.getElementById("search-history").style.display = "none";
+// }, 5000));
 
 // Function to toggle dark mode
 function toggleDarkMode() {
