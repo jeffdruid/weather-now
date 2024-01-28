@@ -655,7 +655,6 @@ function toggleDarkMode() {
         root.style.setProperty('--gradient-start-color', 'slategray');
         root.style.setProperty('--gradient-end-color', 'black');
         root.style.setProperty('--text-color', 'lightgray');
-        root.style.setProperty('--background-color', 'rgb(255 255 255 / 85%)');
 
         body.style.removeClassName('dark-mode');
 

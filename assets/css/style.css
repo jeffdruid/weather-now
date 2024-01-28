@@ -65,7 +65,7 @@ main {
     right: -1.5rem;
     font-size: 2rem;
     color: var(--secondary-color);
-    -webkit-text-stroke: 1px var(--background-color);
+    -webkit-text-stroke: .75px rgba(255, 255, 255, 1);
 }
 
 #side-bar {
