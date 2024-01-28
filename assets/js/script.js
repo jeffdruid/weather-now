@@ -642,15 +642,8 @@ showHistoryBtn.addEventListener('click', () => {
 
 // Function to toggle dark mode
 function toggleDarkMode() {
-
-    // Close the side bar
-    // document.getElementById("side-bar").style.left = "-25%";
-    // document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
-    // console.log('Dark Mode button clicked, Side bar closed');
-    // isSideBarOpen = false;
-
     // Toggle the dark mode
-    const body = document.body;
+    const body = document.querySelector('body');
     body.classList.toggle('dark-mode');
 }
 
@@ -697,3 +690,5 @@ sideBarBtn.addEventListener('click', () => {
 // TODO - Error handle Flags API not loading.
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
+// TODO - Cache current location data.
+// TODO - Add load spinner.
