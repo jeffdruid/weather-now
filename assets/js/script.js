@@ -580,6 +580,8 @@ chartBtn.addEventListener('click', async () => {
     isChartOpen = !isChartOpen;
 });
 
+// localStorage.removeItem('searchHistory');
+
 // Add a button to show the search history
 const showHistoryBtn = document.getElementById('show-history-btn');
 // Function to display the search history
@@ -589,6 +591,18 @@ function displaySearchHistory() {
 
     // Retrieve search history from local storage
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+    // Check if search history is empty
+    if (searchHistory.length === 0) {
+        const historyContainer = document.getElementById('search-history');
+        historyContainer.innerHTML = '';
+
+        // Add the error message
+        const errorMessage = document.createElement('p');
+        errorMessage.textContent = 'No search history found.';
+        historyContainer.appendChild(errorMessage);
+        return;
+    }
 
     // Remove duplicates from search history
     const uniqueSearchHistory = [...new Set(searchHistory)];
