@@ -715,7 +715,7 @@ sideBarBtn.addEventListener('click', () => {
 
 showCurrentTime();
 // TODO - Comment out the following line to avoid making too many API call for the user's current location
-getWeatherForCurrentLocation();
+// getWeatherForCurrentLocation();
 
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)
@@ -726,5 +726,5 @@ getWeatherForCurrentLocation();
 // TODO - Double check error handling.
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
-// TODO - Cache current location data.
-// TODO - Add load spinner.
+// TODO - Add load spinner loading chart.
+// todo style cors btn
