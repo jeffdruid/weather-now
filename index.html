@@ -131,16 +131,22 @@
     <script>
         gsap.registerPlugin(Flip);
 
-        let layouts = ["final", "plain", "columns", "grid"],
+        let layouts = ["final", "plain", "columns", "grid", "final"],
             intro = document.querySelector(".intro"),
             curLayout = 0; // index of the current layout
 
         function nextState() {
         const state = Flip.getState(".block, .logo-weather, .logo-now", {props: "color,backgroundColor", simple: true}); // capture current state
         
-        intro.classList.remove(layouts[curLayout]); // remove old class
-        curLayout = (curLayout + 1) % layouts.length;   // increment (loop back to the start if at the end)
-        intro.classList.add(layouts[curLayout]);    // add the new class
+        if (curLayout < layouts.length - 1) {
+            intro.classList.remove(layouts[curLayout]); // remove old class
+            curLayout++;   // increment
+            intro.classList.add(layouts[curLayout]);    // add the new class
+        } else {
+            gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1, delay: 1.5, onComplete: () => {
+                intro.style.display = "none"; // hide the intro element when the animation ends
+            }, repeat: 0}); // Fix Loop
+        }
 
         Flip.from(state, { // animate from the previous state
             absolute: true,
