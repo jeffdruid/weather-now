@@ -16,6 +16,7 @@
     --gradient-start-color: rgba(238, 174, 202, 1);
     --gradient-end-color: rgba(148, 187, 233, 1);
 
+    --default-text-color: rgba(0, 0, 0, 0.8);
     --text-color: rgba(0, 0, 0, 0.8);
     --background-color: rgba(0, 0, 0, 0);
 
@@ -176,7 +177,7 @@ input {
 
 #search-history a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--default-text-color);
     font-size: 1rem;
     margin: .25rem;
     padding: .25rem;
@@ -297,7 +298,7 @@ body>button {
 
 .favorite a {
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--default-text-color);
     cursor: pointer;
     padding: .35rem;
     margin: .5rem;
@@ -484,7 +485,7 @@ marquee {
     flex-direction: column;
     flex-wrap: nowrap;
     padding: 1rem;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--default-text-color);
     text-transform: capitalize;
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -561,7 +562,7 @@ marquee {
 }
 
 #chart_div>div>div:nth-child(1)>div>svg>g:nth-child(3)>text {
-    fill: rgba(0, 0, 0, 0.8);
+    fill: var(--default-text-color);
 }
 
 #chart_div>div>div:nth-child(1)>div>svg>rect {
