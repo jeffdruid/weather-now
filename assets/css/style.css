@@ -36,7 +36,7 @@ body {
     padding: 0;
     margin: 0;
     margin-bottom: 3rem;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 main {
@@ -744,6 +744,7 @@ footer {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    z-index: 10;
 }
 
 .intro.grid,

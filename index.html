@@ -149,6 +149,7 @@
         } else {
             gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1, delay: .5, onComplete: () => {
                 intro.style.display = "none"; // hide the intro element when the animation ends
+                document.body.style.overflow = "visible";
             }});
             return;
         }
@@ -161,7 +162,9 @@
             spin: curLayout === 0, // only spin when going to the "final" layout
             simple: true,
             onEnter: (elements, animation) => gsap.fromTo(elements, {opacity: 0}, {opacity: 1, delay: animation.duration() - 0.2}),
-            onLeave: elements => gsap.to(elements, {opacity: 0})
+            onLeave: elements => {
+                gsap.to(elements, {opacity: 0});
+            }
         });
 
         gsap.delayedCall(curLayout === 0 ? 2.5 : 1.5, nextState);
