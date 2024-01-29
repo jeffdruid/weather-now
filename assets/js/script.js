@@ -43,12 +43,15 @@ function getWeatherForCurrentLocation() {
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             try {
+                // Make an API call to fetch the weather data
                 const response = await fetch(apiUrl + `lat=${latitude}&lon=${longitude}`, { mode: 'cors' });
                 // console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
                 console.log(response);
                 // console.log(apiUrl);
                 const data = await response.json();
                 displayWeatherData(data);
+
+                // Display the weather data on the UI
                 document.getElementById("temperature-now").innerHTML = "Temp: " + Math.round(data.main.temp) + "°C";
                 document.getElementById("current-location").innerHTML = data.name;
                 document.getElementById("current-flag").src = `https://www.flagsapi.com/${data.sys.country}/flat/16.png`;
@@ -154,6 +157,7 @@ async function getWeather(location) {
         document.getElementById("search-history").style.display = "none";
         return;
     } else {
+        // Close all other containers
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
@@ -257,6 +261,7 @@ if (searchBox) {
     });
 }
 
+// Search button event listener
 const searchButton = document.querySelector("input");
 searchButton.addEventListener("click", () => {
     document.getElementById("side-bar").style.left = "-25%";
@@ -480,7 +485,6 @@ setFavoriteBtn.addEventListener('click', function () {
 
 // // Add the button click event listener to display weather for favorite locations
 const favoritesBtn = document.getElementById('favorites-btn');
-// favoritesBtn.addEventListener('click', displayWeatherForFavorites);
 
 let isFavoritesOpen = false;
 
@@ -492,6 +496,7 @@ favoritesBtn.addEventListener('click', () => {
     isSideBarOpen = false;
     console.log('History button clicked, Side bar closed');
 
+    // Display the favorites if the favorites button is clicked
     if (isFavoritesOpen && document.getElementById("favorite-weather").style.display === "flex") {
         console.log('Favorites closed');
         document.getElementById("favorite-weather").style.display = "none";
@@ -519,6 +524,8 @@ async function getFiveDayForecast(location) {
 
     let forecastData = '';
     forecastData = `<h4>5 day Forecast</h4>` + forecastData;
+
+    // Iterate over the forecast data and add rows to the data table
     for (let i = 0; i < data.list.length; i++) {
         const temperatureCelsius = Math.round(data.list[i].main.temp);
         const temperatureFahrenheit = Math.round((temperatureCelsius * 9 / 5) + 32);
@@ -549,6 +556,7 @@ async function getFiveDayForecast(location) {
 
 let isForecastOpen = false;
 
+// Add the button click event listener to display the forecast
 const forecastBtn = document.getElementById('forecast-btn');
 forecastBtn.addEventListener('click', async () => {
     showSpinner();
@@ -637,6 +645,8 @@ async function drawChart() {
 }
 
 let isChartOpen = false;
+
+// Add the button click event listener to display the chart
 const chartBtn = document.getElementById('chart-btn');
 chartBtn.addEventListener('click', async () => {
     document.getElementById("chart_div").style.display = "flex";
