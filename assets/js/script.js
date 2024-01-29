@@ -517,15 +517,7 @@ forecastBtn.addEventListener('click', () => {
         document.getElementById("chart-btn").style.color = "rgba(255, 255, 255, .9) ";
         document.getElementById("chart_div").style.display = "none";
 
-        // Add spinner while forecast is loading
-        const spinner = document.createElement("div");
-        spinner.classList.add("spinner");
-        document.getElementById("forecast").appendChild(spinner);
-
-        getFiveDayForecast(location).then(() => {
-            // Remove spinner after forecast is loaded
-            document.getElementById("forecast").removeChild(spinner);
-        });
+        getFiveDayForecast(location);
     }
     isForecastOpen = !isForecastOpen;
 });
