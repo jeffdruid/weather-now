@@ -772,17 +772,12 @@ function toggleDarkMode() {
         root.style.setProperty('--gradient-start-color', 'slategray');
         root.style.setProperty('--gradient-end-color', 'black');
         root.style.setProperty('--text-color', 'lightgray');
-
-        body.style.removeClassName('dark-mode');
-
     } else {
         root.style.setProperty('--primary-color', 'rgba(22, 0, 0, 1)');
         root.style.setProperty('--secondary-color', 'rgba(255, 255, 255, 0.7)');
         root.style.setProperty('--gradient-start-color', 'rgba(238, 174, 202, 1)');
         root.style.setProperty('--gradient-end-color', 'rgba(148, 187, 233, 1)');
         root.style.setProperty('--text-color', 'rgba(0, 0, 0, 0.8');
-
-        body.style.addClassName('dark-mode');
     }
 }
 
