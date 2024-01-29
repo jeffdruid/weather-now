@@ -551,7 +551,7 @@ forecastBtn.addEventListener('click', async () => {
         // document.getElementById("forecast-btn").style.color = "rgba(0, 0, 0, .7) ";
     } else {
         console.log('Forecast opened');
-        document.getElementById("forecast").style.display = "flex";
+        // document.getElementById("forecast").style.display = "flex";
         document.getElementById("forecast").style.animation = "fadeIn .3s ease-in";
         document.getElementById("forecast-btn").style.color = "rgba(255, 0, 0, 1) ";
         document.getElementById("chart-btn").style.color = "rgba(255, 255, 255, .9) ";
@@ -587,6 +587,8 @@ async function drawChart() {
 
             // Extract the forecast data from the API response
             const forecastData = data.list;
+
+            hideSpinner();
 
             // Iterate over the forecast data and add rows to the data table
             forecastData.forEach(forecast => {
@@ -648,8 +650,6 @@ chartBtn.addEventListener('click', async () => {
         showSpinner();
 
         await drawChart();
-
-        hideSpinner();
     }
     isChartOpen = !isChartOpen;
 });
