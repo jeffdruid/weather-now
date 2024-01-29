@@ -79,9 +79,12 @@ Weather Now is a web application that provides real-time weather information for
 ### Current Weather: 
 - Get real-time weather information such asn current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
 - Upon loading, the application will attempt to get your current location and display the weather.
+![Current Info](/assets/media/feat-current-info.gif)
 
+![Error Location Access](/assets/media/error-location-access.png)
 ### Search Functionality: 
 - Enter a city name in the search box to retrieve weather details for any specific location.
+![Search Feature](/assets/media/feat-search.png)
 
 ### Temperature Units: 
 - Toggle between Celsius and Fahrenheit units to view temperature information according to your preference.
