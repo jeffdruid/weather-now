@@ -615,6 +615,7 @@ chartBtn.addEventListener('click', async () => {
         document.getElementById("forecast").style.display = "none";
 
         // Show spinner while chart is loading
+        document.querySelector('.spinner').style.display = "flex";
         const spinner = document.querySelector('.spinner');
         document.getElementById("chart_div").appendChild(spinner);
 
