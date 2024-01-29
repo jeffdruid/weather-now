@@ -68,7 +68,7 @@ function getWeatherForCurrentLocation() {
                 // Display an error message on the UI
                 document.getElementById("error-message-user-location").style.display = "flex";
                 const errorMessage = document.getElementById('error-message-user-location');
-                errorMessage.textContent = 'Failed to fetch weather data.';
+                errorMessage.textContent = 'Failed to fetch weather data. Too many requests. Please try again later.';
             }
         }, (error) => {
             console.error(error);
@@ -155,6 +155,7 @@ async function getWeather(location) {
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         document.getElementById("search-history").style.display = "none";
+        document.getElementById("chart_div").style.display = "none";
         return;
     } else {
         // Close all other containers
@@ -600,6 +601,7 @@ async function drawChart() {
     const response = await fetch(apiUrl + `location=` + location + `&endpoint=forecast`)
         .then(response => response.json())
         .then(data => {
+            hideSpinner();
             // Create the data table
             let dataTable = new google.visualization.DataTable();
             dataTable.addColumn('string', 'Day');
@@ -609,7 +611,6 @@ async function drawChart() {
             // Extract the forecast data from the API response
             const forecastData = data.list;
 
-            hideSpinner();
 
             // Iterate over the forecast data and add rows to the data table
             forecastData.forEach(forecast => {
@@ -822,5 +823,4 @@ getWeatherForCurrentLocation();
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
 
-// TODO - Handle 429 error
 // TODO - Handle cors error
