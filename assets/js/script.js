@@ -15,6 +15,14 @@ unlockButton.addEventListener("click", () => {
 
 document.body.appendChild(unlockButton);
 
+// 429 error handling
+if (typeof response !== 'undefined' && response.status === 429) {
+    setTimeout(() => {
+        document.body.style.pointerEvents = "auto";
+    }, 60000);
+    document.body.style.pointerEvents = "none";
+}
+
 /**
  * Get the current time and display it.
  */
@@ -496,6 +504,7 @@ async function getFiveDayForecast(location) {
     console.log(response);
     const data = await response.json();
     console.log(data);
+    hideSpinner();
 
     let forecastData = '';
     forecastData = `<h4>5 day Forecast</h4>` + forecastData;
@@ -636,27 +645,11 @@ chartBtn.addEventListener('click', async () => {
         document.getElementById("forecast-btn").style.color = "rgba(255, 255, 255, 1) ";
         document.getElementById("forecast").style.display = "none";
 
-        // Show spinner while chart is loading
-        document.querySelector('.spinner').style.display = "flex";
-        const spinner = document.querySelector('.spinner');
-        document.getElementById("chart_div").appendChild(spinner);
-
-        // Rotate spinner until display is set to none
-        const rotateSpinner = () => {
-            if (document.getElementById("chart_div").style.display !== "none") {
-                spinner.style.transform = `rotate(${spinnerRotation}deg)`;
-                spinnerRotation += 10;
-                setTimeout(rotateSpinner, 100);
-            }
-        };
-
-        let spinnerRotation = 0;
-        rotateSpinner();
+        showSpinner();
 
         await drawChart();
 
-        // Remove spinner after chart is loaded
-        document.getElementById("chart_div").removeChild(spinner);
+        hideSpinner();
     }
     isChartOpen = !isChartOpen;
 });
