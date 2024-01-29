@@ -1,4 +1,6 @@
-/* TODO - Update font-style */
+/* Font styles */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
 /* Reset defaults */
 * {
     margin: 0;
@@ -23,6 +25,7 @@
 
 /* General styles */
 body {
+    font-family: 'Merriweather', sans-serif;
     background-color: var(--background-color);
     display: flex;
     flex-direction: column;
@@ -47,13 +50,16 @@ main {
     justify-content: center;
     align-items: center;
     padding: 2rem 2rem 1rem 2rem;
+    background-image: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
 }
 
 .container h1 {
     font-size: 1.75rem;
+    font-family: 'Merriweather', serif;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
 }
 
 /* Main styles */
