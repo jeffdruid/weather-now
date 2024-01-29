@@ -821,3 +821,6 @@ getWeatherForCurrentLocation();
 // TODO - Double check error handling.
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
+
+// TODO - Handle 429 error
+// TODO - Handle cors error
