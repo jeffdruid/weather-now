@@ -150,6 +150,7 @@
             gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1, delay: .5, onComplete: () => {
                 intro.style.display = "none"; // hide the intro element when the animation ends
                 document.body.style.overflow = "visible";
+                document.getElementById("side-bar-close-btn").style.display = "flex";
             }});
             return;
         }

@@ -59,8 +59,7 @@ main {
     font-family: 'Merriweather', serif;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--secondary-color);
-    border-radius: 50%;
+    color: rgba(22, 0, 0, 1);
 }
 
 /* Main styles */
@@ -69,11 +68,13 @@ main {
 
 #side-bar-close-btn {
     position: absolute;
+    display: none;
     top: 50%;
     right: -1.5rem;
     font-size: 2rem;
     color: var(--secondary-color);
     -webkit-text-stroke: .75px rgba(255, 255, 255, 1);
+    z-index: 9;
 }
 
 #side-bar {
@@ -205,7 +206,7 @@ input {
 body>button {
     width: 50%;
     height: 2rem;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
