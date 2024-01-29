@@ -308,6 +308,10 @@ function displayWeatherForFavorites() {
     isSideBarOpen = false;
     console.log('Favorites button clicked, Side bar closed');
 
+    // Close the history
+    document.getElementById("search-history").style.display = "none";
+    isHistoryOpen = false;
+
     // Check if there are favorite locations
     if (favoriteLocations && favoriteLocations.length > 0) {
         console.log(favoriteLocations);
@@ -667,6 +671,8 @@ function displaySearchHistory() {
     });
 }
 
+let isHistoryOpen = false;
+
 // Add a button click event listener to show the search history
 showHistoryBtn.addEventListener('click', () => {
     // Close the side bar
@@ -679,11 +685,18 @@ showHistoryBtn.addEventListener('click', () => {
     document.getElementById("search-history").style.display = "flex";
     document.getElementById("search-history").style.animation = "fadeIn .3s ease-in";
     displaySearchHistory();
+
+    if (isHistoryOpen && document.getElementById("search-history").style.display === "flex") {
+
+        console.log('History closed');
+        isHistoryOpen = !isHistoryOpen;
+        document.getElementById("search-history").style.display = "none";
+    } else {
+        console.log('History opened');
+        isHistoryOpen = !isHistoryOpen;
+        document.getElementById("search-history").style.display = "flex";
+    }
 });
-// , setInterval(() => {
-//     document.getElementById("search-history").style.animation = "fadeOut .5s ease-in";
-//     document.getElementById("search-history").style.display = "none";
-// }, 5000));
 
 // Function to toggle dark mode
 function toggleDarkMode() {
@@ -746,7 +759,6 @@ showCurrentTime();
 // TODO - Comment out the following line to avoid making too many API call for the user's current location
 // getWeatherForCurrentLocation();
 
-
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)
 // TODO - Add autocomplete for the search box. (Future feature)
@@ -754,4 +766,3 @@ showCurrentTime();
 // TODO - Double check error handling.
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
-// TODO - Add load spinner loading chart.
