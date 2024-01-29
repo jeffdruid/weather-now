@@ -353,7 +353,6 @@ body>button {
 .current-info {
     display: flex;
     background-color: 0;
-    ;
 }
 
 #current-flag {
@@ -390,7 +389,7 @@ body>button {
 marquee {
     background: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
     position: fixed;
-    bottom: .15rem;
+    bottom: .35rem;
     padding: 0;
     height: 2rem;
     background-color: 0;
