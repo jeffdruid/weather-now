@@ -443,11 +443,10 @@ favoritesBtn.addEventListener('click', () => {
     document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
     isSideBarOpen = false;
     console.log('History button clicked, Side bar closed');
+
     if (isFavoritesOpen && document.getElementById("favorite-weather").style.display === "flex") {
         console.log('Favorites closed');
         document.getElementById("favorite-weather").style.display = "none";
-
-
     } else {
         console.log('Favorites opened');
         document.getElementById("favorite-weather").style.display = "flex";
