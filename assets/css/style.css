@@ -505,11 +505,12 @@ marquee {
     margin-bottom: .05rem;
 }
 
-#forecast div {
+#forecast>div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     width: 80%;
     margin: .25rem auto;
     padding: .25rem;

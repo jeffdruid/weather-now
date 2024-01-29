@@ -547,7 +547,7 @@ async function getFiveDayForecast(location) {
             forecastData += `<div>${dayOfWeek}`;
 
             // Display the forecast's initial temperature in Celsius or Fahrenheit
-            if (isCelsius) {
+            if (!isCelsius) {
                 forecastData += `<span class="forecastC" style="display: inline;">${temperatureCelsius}°C</span>`;
                 forecastData += `<span class="forecastF" style="display: none;">${temperatureFahrenheit}°F</span>`;
                 console.log("Celsius " + isCelsius);
@@ -613,7 +613,6 @@ async function drawChart() {
 
             // Extract the forecast data from the API response
             const forecastData = data.list;
-
 
             // Iterate over the forecast data and add rows to the data table
             forecastData.forEach(forecast => {
@@ -731,6 +730,7 @@ function displaySearchHistory() {
         });
         historyContainer.appendChild(historyItem);
     });
+    console.log(searchHistory);
 }
 
 let isHistoryOpen = false;
@@ -823,6 +823,7 @@ showCurrentTime();
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)
 // TODO - Add autocomplete for the search box. (Future feature)
+// TODO - Use cache to store the weather data. (Future feature)
 // TODO - Handle duplicate city names. (BUG - API)
 // TODO - Double check error handling.
 // TODO - Remove console logs. ???
