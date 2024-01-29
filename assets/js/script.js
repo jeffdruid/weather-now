@@ -430,17 +430,33 @@ setFavoriteBtn.addEventListener('click', function () {
     };
 });
 
-// Add the button click event listener to display weather for favorite locations
+// // Add the button click event listener to display weather for favorite locations
 const favoritesBtn = document.getElementById('favorites-btn');
-favoritesBtn.addEventListener('click', displayWeatherForFavorites);
+// favoritesBtn.addEventListener('click', displayWeatherForFavorites);
+
+let isFavoritesOpen = false;
 
 // Add the button click event listener to toggle favorites
 favoritesBtn.addEventListener('click', () => {
-    console.log('Favorites opened');
-    document.getElementById("favorite-weather").style.display = "flex";
-    document.getElementById("weather").style.display = "none";
-    document.getElementById("forecast").style.display = "none";
-    document.getElementById("chart_div").style.display = "none";
+    // Close the side bar
+    document.getElementById("side-bar").style.left = "-25%";
+    document.getElementById("side-bar-close-btn").style.transform = "rotate(360deg)";
+    isSideBarOpen = false;
+    console.log('History button clicked, Side bar closed');
+    if (isFavoritesOpen && document.getElementById("favorite-weather").style.display === "flex") {
+        console.log('Favorites closed');
+        document.getElementById("favorite-weather").style.display = "none";
+
+
+    } else {
+        console.log('Favorites opened');
+        document.getElementById("favorite-weather").style.display = "flex";
+        document.getElementById("weather").style.display = "none";
+        document.getElementById("forecast").style.display = "none";
+        document.getElementById("chart_div").style.display = "none";
+        displayWeatherForFavorites();
+    }
+    isFavoritesOpen = !isFavoritesOpen;
 });
 
 /*
@@ -631,6 +647,7 @@ const showHistoryBtn = document.getElementById('show-history-btn');
 function displaySearchHistory() {
     // Close favorites
     document.getElementById("favorite-weather").style.display = "none";
+    isFavoritesOpen = false;
 
     // Retrieve search history from local storage
     const searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
