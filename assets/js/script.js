@@ -91,10 +91,35 @@ document.addEventListener("click", () => {
     // document.getElementById("search-history").style.display = "none";
 });
 
+// Show spinner
+function showSpinner() {
+    const spinner = document.querySelector(".spinner");
+    spinner.style.display = "block";
+
+    // Rotate spinner until display is set to none
+    const rotateSpinner = () => {
+        if (document.querySelector(".spinner").style.display !== "none") {
+            spinner.style.transform = `rotate(${spinnerRotation}deg)`;
+            spinnerRotation += 10;
+            setTimeout(rotateSpinner, 100);
+        }
+    };
+
+    let spinnerRotation = 0;
+    rotateSpinner();
+}
+
+// Hide spinner
+function hideSpinner() {
+    const spinner = document.querySelector(".spinner");
+    spinner.style.display = "none";
+}
+
 /**
  * Get the weather data from the API.
  */
 async function getWeather(location) {
+    showSpinner();
     const response = await fetch(apiUrl + `location=` + location);
     let data = await response.json();
 
@@ -108,9 +133,7 @@ async function getWeather(location) {
         document.getElementById("search-history").style.display = "none";
         return;
     } else {
-        // Display the weather data on the UI with animation
-        const weatherElement = document.getElementById("weather");
-        weatherElement.style.display = "flex";
+
 
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
@@ -142,6 +165,12 @@ async function getWeather(location) {
     document.getElementById("wind").innerHTML = "Wind Speed: " + data.wind.speed + " km/h";
     document.getElementById("humidity").innerHTML = "Humidity Level: " + data.main.humidity + "%";
     document.getElementById("country").innerHTML = data.sys.country;
+
+    hideSpinner();
+
+    // Display the weather data on the UI with animation
+    const weatherElement = document.getElementById("weather");
+    weatherElement.style.display = "flex";
 
     // Check if the location is a favorite 
     const favoriteLocations = JSON.parse(localStorage.getItem('favoriteLocations'));
