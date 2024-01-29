@@ -238,9 +238,15 @@ async function getWeather(location) {
 // Refresh Button
 const refreshButton = document.getElementById("refresh-button");
 refreshButton.addEventListener("click", () => {
-    const location = document.getElementById("location").innerHTML;
-    getWeather(location);
-    console.log("Weather data refreshed for location:", location);
+    const currentTime = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    if (currentTime === lastUpdatedTime) {
+        alert("Weather data is already up to date.");
+        return;
+    } else {
+        const location = document.getElementById("location").innerHTML;
+        getWeather(location);
+        console.log("Weather data refreshed for location:", location);
+    }
 });
 
 // Search box event listener
