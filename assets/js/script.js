@@ -169,6 +169,7 @@ async function getWeather(location) {
         isChartOpen = false;
         isCelsius = true;
         isSideBarOpen = false;
+        isHistoryOpen = false;
     }
     showSpinner();
     console.log(data);
