@@ -96,8 +96,11 @@ document.addEventListener("click", () => {
 
 // Intercept and log all requests
 const originalFetch = window.fetch;
+let requestCounter = 0;
+// Count the number of requests
 window.fetch = function (url) {
-    console.log("Request:", url);
+    requestCounter++;
+    console.log("Request:", url, "Request Counter:", requestCounter);
     return originalFetch.apply(this, arguments);
 };
 
