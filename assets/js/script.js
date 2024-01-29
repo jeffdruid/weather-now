@@ -224,7 +224,7 @@ refreshButton.addEventListener("click", () => {
 if (searchBox) {
     searchBox.addEventListener("keyup", (event) => {
         if (event.key === "Enter") {
-            document.querySelector(".weather-container").style.display = "flex";
+            // document.querySelector(".weather-container").style.display = "flex";
             if (isCelsius === !isCelsius) {
                 isCelsius = false;
                 document.getElementById("temperature-toggle-btn").innerHTML = "°C";
@@ -530,7 +530,9 @@ async function getFiveDayForecast(location) {
 let isForecastOpen = false;
 
 const forecastBtn = document.getElementById('forecast-btn');
-forecastBtn.addEventListener('click', () => {
+forecastBtn.addEventListener('click', async () => {
+    showSpinner();
+
     console.log(isCelsius);
     const location = document.getElementById("location").innerHTML;
     isChartOpen = false;
@@ -545,8 +547,7 @@ forecastBtn.addEventListener('click', () => {
         document.getElementById("forecast-btn").style.color = "rgba(255, 0, 0, 1) ";
         document.getElementById("chart-btn").style.color = "rgba(255, 255, 255, .9) ";
         document.getElementById("chart_div").style.display = "none";
-
-        getFiveDayForecast(location);
+        await getFiveDayForecast(location);
     }
     isForecastOpen = !isForecastOpen;
 });
