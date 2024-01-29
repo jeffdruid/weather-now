@@ -773,12 +773,14 @@ function toggleDarkMode() {
     if (body.classList.contains('dark-mode')) {
         root.style.setProperty('--primary-color', 'white');
         root.style.setProperty('--secondary-color', 'black');
+        root.style.setProperty('--secondary-color-h1', 'rgba(22, 0, 0, 1)');
         root.style.setProperty('--gradient-start-color', 'slategray');
         root.style.setProperty('--gradient-end-color', 'black');
         root.style.setProperty('--text-color', 'lightgray');
     } else {
         root.style.setProperty('--primary-color', 'rgba(22, 0, 0, 1)');
         root.style.setProperty('--secondary-color', 'rgba(255, 255, 255, 0.7)');
+        root.style.setProperty('--secondary-color-h1', 'rgba(255, 255, 255, 1)');
         root.style.setProperty('--gradient-start-color', 'rgba(238, 174, 202, 1)');
         root.style.setProperty('--gradient-end-color', 'rgba(148, 187, 233, 1)');
         root.style.setProperty('--text-color', 'rgba(0, 0, 0, 0.8');
@@ -816,7 +818,7 @@ sideBarBtn.addEventListener('click', () => {
 
 showCurrentTime();
 // TODO - Comment out the following line to avoid making too many API call for the user's current location
-getWeatherForCurrentLocation();
+// getWeatherForCurrentLocation();
 
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)

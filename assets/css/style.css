@@ -13,6 +13,8 @@
     --primary-color: rgba(22, 0, 0, 1);
     --secondary-color: rgba(255, 255, 255, 0.7);
 
+    --secondary-color-h1: rgba(255, 255, 255, 1);
+
     --gradient-start-color: rgba(238, 174, 202, 1);
     --gradient-end-color: rgba(148, 187, 233, 1);
 
@@ -50,7 +52,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 2rem .75rem 1rem .75rem;
     background-image: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
 }
 
@@ -59,7 +61,14 @@ main {
     font-family: 'Merriweather', serif;
     font-weight: bold;
     text-transform: uppercase;
-    color: rgba(22, 0, 0, 1);
+    letter-spacing: .1rem;
+    text-align: center;
+    color: var(--secondary-color-h1);
+    background-image: linear-gradient(circle, var(--gradient-end-color) 0%, var(--gradient-start-color) 100%);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, .3);
+    padding: 1.25rem;
+    border-radius: 5px;
+    width: 100vw;
 }
 
 /* Main styles */
@@ -72,8 +81,8 @@ main {
     top: 50%;
     right: -1.5rem;
     font-size: 2rem;
-    color: var(--secondary-color);
-    -webkit-text-stroke: .75px rgba(255, 255, 255, 1);
+    color: var(--primary-color);
+    /* -webkit-text-stroke: .75px rgba(255, 255, 255, 1); */
     z-index: 9;
 }
 
@@ -195,7 +204,7 @@ input {
 }
 
 #search-history h4 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-bottom: .5rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -286,7 +295,7 @@ body>button {
 }
 
 #favorite-weather h4 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
