@@ -15,14 +15,6 @@ unlockButton.addEventListener("click", () => {
 
 document.body.appendChild(unlockButton);
 
-// 429 error handling
-if (typeof response !== 'undefined' && response.status === 429) {
-    setTimeout(() => {
-        document.body.style.pointerEvents = "auto";
-    }, 60000);
-    document.body.style.pointerEvents = "none";
-}
-
 /**
  * Get the current time and display it.
  */
@@ -99,7 +91,16 @@ document.addEventListener("click", () => {
     // document.getElementById("search-history").style.display = "none";
 });
 
-// Show spinner
+// Intercept and log all requests
+const originalFetch = window.fetch;
+window.fetch = function (url) {
+    console.log("Request:", url);
+    return originalFetch.apply(this, arguments);
+};
+
+/**
+ * Show spinner
+*/
 function showSpinner() {
     const spinner = document.querySelector(".spinner");
     spinner.style.display = "block";
@@ -117,7 +118,9 @@ function showSpinner() {
     rotateSpinner();
 }
 
-// Hide spinner
+/**
+* Hide spinner
+*/
 function hideSpinner() {
     const spinner = document.querySelector(".spinner");
     spinner.style.display = "none";
@@ -127,8 +130,18 @@ function hideSpinner() {
  * Get the weather data from the API.
  */
 async function getWeather(location) {
-    showSpinner();
     const response = await fetch(apiUrl + `location=` + location);
+
+    // 429 error handling
+    if (response.status === 429) {
+        alert("Too many requests. Please try again later.");
+        document.getElementById("location404").innerHTML = "Too many requests. Please try again later.";
+        document.getElementById("location404").style.display = "flex";
+        document.querySelector(".spinner").style.display = "none";
+        console.log(response);
+        return;
+    }
+
     let data = await response.json();
 
     // 404 error handling
@@ -141,8 +154,6 @@ async function getWeather(location) {
         document.getElementById("search-history").style.display = "none";
         return;
     } else {
-
-
         document.getElementById("favorite-weather").style.display = "none";
         document.getElementById("forecast").style.display = "none";
         document.getElementById("chart_div").style.display = "none";
@@ -155,7 +166,7 @@ async function getWeather(location) {
         isCelsius = true;
         isSideBarOpen = false;
     }
-
+    showSpinner();
     console.log(data);
 
     // Display the weather data on the UI with animation
@@ -496,8 +507,8 @@ favoritesBtn.addEventListener('click', () => {
 });
 
 /*
-    * 5 Day Forecast
-    */
+* 5 Day Forecast
+*/
 async function getFiveDayForecast(location) {
     // const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
     const response = await fetch(`${apiUrl}location=${location}&endpoint=forecast`);
@@ -564,19 +575,14 @@ forecastBtn.addEventListener('click', async () => {
 // Include the Google Charts library
 google.charts.load('current', { 'packages': ['corechart'] });
 
-// Function to draw the chart
+/**
+ * Draw the chart.
+ */
 async function drawChart() {
 
     const location = document.getElementById("location").innerHTML;
-    // const apiUrlForecast = `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${location}`;
-    // const response = await fetch(apiUrlForecast);
-    const response = await fetch(`${apiUrl}location=${location}&endpoint=forecast`);
-    console.log(response);
-    const data = await response.json();
-    console.log(data);
-
     // Make an API call to fetch the forecast data
-    fetch(apiUrl + `location=` + location + `&endpoint=forecast`)
+    const response = await fetch(apiUrl + `location=` + location + `&endpoint=forecast`)
         .then(response => response.json())
         .then(data => {
             // Create the data table
@@ -658,7 +664,10 @@ chartBtn.addEventListener('click', async () => {
 
 // Add a button to show the search history
 const showHistoryBtn = document.getElementById('show-history-btn');
-// Function to display the search history
+
+/**
+ * Display the search history.
+ */
 function displaySearchHistory() {
     // Close favorites
     document.getElementById("favorite-weather").style.display = "none";
@@ -730,7 +739,9 @@ showHistoryBtn.addEventListener('click', () => {
     }
 });
 
-// Function to toggle dark mode
+/**
+ * Toggle the dark mode.
+ */
 function toggleDarkMode() {
     // Toggle the dark mode
     const body = document.querySelector('body');
@@ -789,7 +800,7 @@ sideBarBtn.addEventListener('click', () => {
 
 showCurrentTime();
 // TODO - Comment out the following line to avoid making too many API call for the user's current location
-// getWeatherForCurrentLocation();
+getWeatherForCurrentLocation();
 
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)

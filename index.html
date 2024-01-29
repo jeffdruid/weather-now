@@ -100,7 +100,7 @@
         
         <!-- Loading spinner -->
         <div class="spinner"><i class="fa fa-spinner" aria-hidden="true"></i></div>   
-        
+
         <!-- Users current weather info -->
         <marquee behavior="scroll" direction="left" scrollamount="5">
             <div class="current-info">
@@ -149,7 +149,6 @@
             intro.classList.remove(layouts[curLayout]); // remove old class
             curLayout++;   // increment
             intro.classList.add(layouts[curLayout]);    // add the new class
-            console.log(curLayout);
         } else {
             gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1, delay: .5, onComplete: () => {
                 intro.style.display = "none"; // hide the intro element when the animation ends
