@@ -2,7 +2,8 @@
 // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 // SOLVED - CORS error
 const apiUrl =
-  "https://cors-anywhere.herokuapp.com/https://weather-key-160275f00837.herokuapp.com/myapi?";
+  "https://cors-anywhere.herokuapp.com/" +
+  "https://weather-key-160275f00837.herokuapp.com/myapi?";
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = "";
 
@@ -101,8 +102,9 @@ function getWeatherForCurrentLocation() {
         } catch (error) {
           console.error(error);
           // Display an error message on the UI
-          document.getElementById("error-message-user-location").style.display =
-            "flex";
+          document.getElementById(
+            "error-message-user-location"
+          ).style.display = "flex";
           const errorMessage = document.getElementById(
             "error-message-user-location"
           );
@@ -129,15 +131,19 @@ function getWeatherForCurrentLocation() {
     // Display an error message on the UI
     document.getElementById("error-message-user-location").style.display =
       "flex";
-    const errorMessage = document.getElementById("error-message-user-location");
+    const errorMessage = document.getElementById(
+      "error-message-user-location"
+    );
     errorMessage.textContent = "Geolocation is not supported by this browser.";
   }
 }
 
 // Hide error message when clicking anywhere on the screen
 document.addEventListener("click", () => {
-  document.getElementById("error-message-user-location").style.display = "none";
-  document.getElementById("error-message-user-forecast").style.display = "none";
+  document.getElementById("error-message-user-location").style.display =
+    "none";
+  document.getElementById("error-message-user-forecast").style.display =
+    "none";
   document.getElementById("location404").style.display = "none";
   // document.getElementById("search-history").style.display = "none";
 });
@@ -724,7 +730,9 @@ async function getFiveDayForecast(location) {
   // Iterate over the forecast data and add rows to the data table
   for (let i = 0; i < data.list.length; i++) {
     const temperatureCelsius = Math.round(data.list[i].main.temp);
-    const temperatureFahrenheit = Math.round((temperatureCelsius * 9) / 5 + 32);
+    const temperatureFahrenheit = Math.round(
+      (temperatureCelsius * 9) / 5 + 32
+    );
     const description = data.list[i].weather[0].description;
     const dateTime = new Date(data.list[i].dt_txt);
     if (dateTime.getHours() === 0) {
@@ -773,7 +781,8 @@ forecastBtn.addEventListener("click", async () => {
     console.log("Forecast opened");
     // document.getElementById("forecast").style.display = "flex";
     document.getElementById("forecast").style.animation = "fadeIn .3s ease-in";
-    document.getElementById("forecast-btn").style.color = "rgba(255, 0, 0, 1) ";
+    document.getElementById("forecast-btn").style.color =
+      "rgba(255, 0, 0, 1) ";
     document.getElementById("chart-btn").style.color =
       "rgba(255, 255, 255, .9) ";
     document.getElementById("chart_div").style.display = "none";
@@ -896,7 +905,8 @@ function displaySearchHistory() {
   isFavoritesOpen = false;
 
   // Retrieve search history from local storage
-  const searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+  const searchHistory =
+    JSON.parse(localStorage.getItem("searchHistory")) || [];
 
   // Check if search history is empty
   if (searchHistory.length === 0) {
@@ -1018,26 +1028,16 @@ sideBarBtn.addEventListener("click", () => {
       "rotate(180deg)";
     document.getElementById("side-bar-close-btn").style.transition = "0.5s";
     document.getElementById("side-bar").style.transition = "0.75s";
-    document.getElementById("side-bar").style.background = "rgba(0, 0, 0, 0.1)";
+    document.getElementById("side-bar").style.background =
+      "rgba(0, 0, 0, 0.1)";
     document.getElementById("side-bar").style.backdropFilter = "blur(2px)";
   }
   isSideBarOpen = !isSideBarOpen;
 });
 
 showCurrentTime();
-// TODO - Comment out the following line to avoid making too many API call for the user's current location
+// Avoid making too many API call for the user's current location
 getWeatherForCurrentLocation();
-
-// TODO - Add a map that shows the location of the city. (Future feature)
-// TODO - Update weather icons. (Future feature)
-// TODO - Add autocomplete for the search box. (Future feature)
-// TODO - Use cache to store the weather data. (Future feature)
-// TODO - Handle duplicate city names. (BUG - API)
-// TODO - Double check error handling.
-// TODO - Remove console logs. ???
-// TODO - Remove unused code.
-// TODO - Color code the temperature. (Future feature)
-// TODO - Handle cors error
 
 const marqueeText = document.getElementById("scrolling-text");
 let position = 0;

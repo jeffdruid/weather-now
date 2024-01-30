@@ -1,0 +1,10 @@
+// TODO - Add a map that shows the location of the city. (Future feature)
+// TODO - Update weather icons. (Future feature)
+// TODO - Add autocomplete for the search box. (Future feature)
+// TODO - Use cache to store the weather data. (Future feature)
+// TODO - Handle duplicate city names. (BUG - API)
+// TODO - Double check error handling.
+// TODO - Remove console logs. ???
+// TODO - Remove unused code.
+// TODO - Color code the temperature. (Future feature)
+// TODO - Handle cors error
