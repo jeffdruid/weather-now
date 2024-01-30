@@ -26,7 +26,7 @@ function showCurrentTime() {
     let formattedTime = currentTime.toLocaleTimeString("en-US", {
       hour: "numeric",
       hour12: true,
-      minute: "numeric",
+      minute: "numeric"
     });
     document.getElementById("current-time").innerHTML =
       "Time: " + formattedTime;
@@ -295,7 +295,7 @@ async function getWeather(location) {
   lastUpdatedTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
-    minute: "numeric",
+    minute: "numeric"
   });
   document.getElementById("last-updated").innerHTML =
     "Last Updated: " + lastUpdatedTime;
@@ -326,11 +326,11 @@ refreshButton.addEventListener("click", () => {
   const currentTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
-    minute: "numeric",
+    minute: "numeric"
   });
   if (currentTime === lastUpdatedTime) {
     alert("Weather data is already up to date.");
-    return;
+    return
   } else {
     const location = document.getElementById("location").innerHTML;
     getWeather(location);
@@ -545,11 +545,10 @@ function displayWeatherForFavorites() {
     console.log(favoriteLocations);
 
     // Add the "Delete favorite" button
-    const clearFavoritesBtn = document.createElement("div");
-    clearFavoritesBtn.id = "clear-favorites-btn";
-    clearFavoritesBtn.innerHTML = 
-    "<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>";
-    favoriteWeatherContainer.appendChild(clearFavoritesBtn);
+    const clearBtn = document.createElement("div");
+    clearBtn.id = "clear-favorites-btn";
+    clearBtn.innerHTML = "<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>";
+    favoriteWeatherContainer.appendChild(clearBtn);
     document.getElementById("clear-favorites-btn").style.display = "flex";
     document
       .getElementById("clear-favorites-btn")
@@ -631,7 +630,7 @@ function setFavoriteLocation(location) {
     // Check if the location is already a favorite
     if (favoriteLocations.includes(location)) {
       console.log("Location is already a favorite: " + location);
-      return;
+      return
     } else {
       // Add the location to the favorite locations
       favoriteLocations.push(location);
