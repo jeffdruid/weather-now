@@ -610,6 +610,7 @@ footer {
     padding: .3rem;
     flex-direction: column;
     text-align: center;
+    z-index: 1;
 }
 
 /* Media Queries */
