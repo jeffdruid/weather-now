@@ -659,7 +659,7 @@ footer {
 
     /* Google Charts styles */
     #chart_div {
-        scale: 0.9;
+        transform: scale(0.9);
     }
 }
 
@@ -714,7 +714,7 @@ footer {
 
     /* Google Charts styles */
     #chart_div {
-        scale: 0.75;
+        transform: scale(0.75);
     }
 }
 
