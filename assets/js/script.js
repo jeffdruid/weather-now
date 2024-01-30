@@ -742,12 +742,16 @@ async function getFiveDayForecast(location) {
 
       // Display the forecast's initial temperature in Celsius or Fahrenheit
       if (!isCelsius) {
-        forecastData += `<span class="forecastC" style="display: inline;">${temperatureCelsius}°C</span>`;
-        forecastData += `<span class="forecastF" style="display: none;">${temperatureFahrenheit}°F</span>`;
+        forecastData += `<span class="forecastC" style="display: inline;">
+            ${temperatureCelsius}°C</span>`;
+        forecastData += `<span class="forecastF" style="display: none;">
+            ${temperatureFahrenheit}°F</span>`;
         console.log("Celsius " + isCelsius);
       } else {
-        forecastData += `<span class="forecastC" style="display: none;">${temperatureCelsius}°C</span>`;
-        forecastData += `<span class="forecastF" style="display: inline;">${temperatureFahrenheit}°F</span>`;
+        forecastData += `<span class="forecastC" style="display: none;">
+            ${temperatureCelsius}°C</span>`;
+        forecastData += `<span class="forecastF" style="display: inline;">
+            ${temperatureFahrenheit}°F</span>`;
         console.log("Fahrenheit " + isCelsius);
       }
       forecastData += `${description}</div>`;
@@ -775,7 +779,6 @@ forecastBtn.addEventListener("click", async () => {
   ) {
     console.log("Forecast closed");
     document.getElementById("forecast").style.display = "none";
-    // document.getElementById("forecast-btn").style.color = "rgba(0, 0, 0, .7) ";
   } else {
     console.log("Forecast opened");
     // document.getElementById("forecast").style.display = "flex";
