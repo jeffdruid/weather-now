@@ -71,10 +71,28 @@ Weather Now is a web application that provides real-time weather information for
 | As a user, I want to view my search history for quick reference. | There is a "Show History" button that, when clicked, displays a list of past searches for quick reference.|
 | As a user, I want to access the source code on GitHub. | There is a GitHub icon or link that, when clicked, redirects me to the Weather App's source code on GitHub|
 | As a user, I want a visually appealing and responsive design. | The application has a responsive layout that works well on different devices. The design is visually appealing, providing a seamless and enjoyable user experience.|
-![Alt text](assets/media/alert-already-updated.png) ![Alt text](assets/media/alert-clear-favorites.png) ![Alt text](assets/media/Animation-intro.gif) ![Alt text](assets/media/btn-chart-active.png) ![Alt text](assets/media/btn-clear-favorites.png) ![Alt text](assets/media/btn-forecast-chart.png) ![Alt text](assets/media/btn-temp-toggle.png) ![Alt text](assets/media/error-429.png) ![Alt text](assets/media/error-cors-access.png) ![Alt text](assets/media/error-location-access.png) ![Alt text](assets/media/error-no-favorites.png) ![Alt text](assets/media/error-no-history.png) ![Alt text](assets/media/error-not-found.png) ![Alt text](assets/media/feat-chart.png) ![Alt text](assets/media/feat-current-info.gif) ![Alt text](assets/media/feat-dark-mode-btn.png) ![Alt text](assets/media/feat-dark-mode-screen.png) ![Alt text](assets/media/feat-favorite-btn.png) ![Alt text](assets/media/feat-favorite-container.png) ![Alt text](assets/media/feat-favorite-icon.png) ![Alt text](assets/media/feat-flags-api.png) ![Alt text](assets/media/feat-footer.png) ![Alt text](assets/media/feat-forecast.png) ![Alt text](assets/media/feat-github-btn.png) ![Alt text](assets/media/feat-header.png) ![Alt text](assets/media/feat-history-btn.png) ![Alt text](assets/media/feat-history-container.png) ![Alt text](assets/media/feat-last-updated.png) ![Alt text](assets/media/feat-loading-chart.gif) ![Alt text](assets/media/feat-loading-forecast.gif) ![Alt text](assets/media/feat-refresh-btn.png) ![Alt text](assets/media/feat-search.png) ![Alt text](assets/media/feat-side-bar-btn.png) ![Alt text](assets/media/feat-side-bar-desktop.png) ![Alt text](assets/media/feat-side-bar-mobile.png) ![Alt text](assets/media/feat-weather-container.png) ![Alt text](assets/media/responsive-hero.png)
+
 ## Wireframe
 <!-- TODO -->
-## Features
+
+### Features
+- TODO create a table
+
+| Feature | Description |
+|---------|-------------|
+| Header  | Displays the header section of the application. |
+- TODO
+![Alt text](assets/media/feat-header.png) 
+
+### Weather Container
+- TODO
+![Alt text](assets/media/feat-weather-container.png)
+#### Buttons
+![Alt text](assets/media/feat-favorite-icon.png) 
+![Alt text](assets/media/feat-flags-api.png) 
+![Alt text](assets/media/feat-last-updated.png) 
+![Alt text](assets/media/feat-refresh-btn.png) 
+![Alt text](assets/media/btn-forecast-chart.png) 
 
 ### Current Weather: 
 - Get real-time weather information such asn current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
@@ -82,43 +100,88 @@ Weather Now is a web application that provides real-time weather information for
 ![Current Info](/assets/media/feat-current-info.gif)
 
 ![Error Location Access](/assets/media/error-location-access.png)
+
 ### Search Functionality: 
 - Enter a city name in the search box to retrieve weather details for any specific location.
 ![Search Feature](/assets/media/feat-search.png)
 
 ### Temperature Units: 
 - Toggle between Celsius and Fahrenheit units to view temperature information according to your preference.
+![Alt text](assets/media/btn-temp-toggle.png) 
 
 ### 5-Day Forecast:
 - Plan ahead with a 5-day weather forecast, displaying temperature and humidity trends.
+![Alt text](assets/media/feat-forecast.png) 
 
 ### Favorites:
 - Save your favorite locations and easily check the weather for them.
+![Alt text](assets/media/feat-favorite-btn.png) 
+![Alt text](assets/media/feat-favorite-container.png) 
+#### Buttons
+- TODO
+![Alt text](assets/media/btn-clear-favorites.png) 
 
 ### Dark Mode:
 - Toggle between light and dark mode for better visibility.
+![Alt text](assets/media/feat-dark-mode-btn.png) 
+![Alt text](assets/media/feat-dark-mode-screen.png) 
 
 ### Search History:
 - View your search history to quickly revisit previous locations.
+![Alt text](assets/media/feat-history-btn.png) 
+![Alt text](assets/media/feat-history-container.png) 
 
 ### Side Bar:
 - The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and Github link.
+![Alt text](assets/media/feat-side-bar-btn.png) 
+![Alt text](assets/media/feat-side-bar-desktop.png) 
+![Alt text](assets/media/feat-side-bar-mobile.png) 
 
 ### Chart:
 - Visualize temperature and humidity trends with an interactive chart. Click on the "Chart" button to view a graphical representation of temperature and humidity for the next 5 days.
+![Alt text](assets/media/feat-chart.png) 
+
 
 ### GitHub:
 - Explore and contribute to the source code on GitHub.
+![Alt text](assets/media/feat-github-btn.png) 
+
+### Loading Screen
+- TODO
+![Alt text](assets/media/feat-loading-chart.gif) 
+![Alt text](assets/media/feat-loading-forecast.gif) 
+
+### Error Handling
+![Alt text](assets/media/error-429.png) 
+![Alt text](assets/media/error-cors-access.png) 
+![Alt text](assets/media/error-location-access.png) 
+![Alt text](assets/media/error-no-favorites.png) 
+![Alt text](assets/media/error-no-history.png) 
+![Alt text](assets/media/error-not-found.png)
+
+### Alerts
+![Alt text](assets/media/alert-already-updated.png) 
+![Alt text](assets/media/alert-clear-favorites.png) 
+![Alt text](assets/media/alert-too-many-requests.png)
+
+### Footer
+- TODO
+![Alt text](assets/media/feat-footer.png) 
 
 ## Testing
 <!-- TODO -->
 ### Validator Testing
 #### HTML
+![Alt text](assets/media/validator-html.png) 
 #### CSS
+![Alt text](assets/media/validator-css.png)
 #### JavaScript
+![Alt text](assets/media/validator-js.png) 
 
 ### Accessibility
+
 ### Responsiveness
+![Alt text](assets/media/responsive-hero.png)
 
 ### Manual Testing
 ####
@@ -132,8 +195,13 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Fixed Bugs
 <!-- TODO -->
+- Dark Mode not toggling properly on mobile.
+
 ## UI Improvements
 <!-- TODO -->
+- Color code the temperature.
+- Fix Header
+
 ## Future Improvements
 
 ### Map Integration: 
@@ -144,6 +212,10 @@ Weather Now is a web application that provides real-time weather information for
 
 ### User Interface: 
 - Enhance the user interface with animations and updated weather icons.
+
+### Cache Data
+- TODO
+- Use cache to store the weather data. (Future feature)
 
 ## Deployment
 
@@ -169,9 +241,9 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Remote Deployment
 <!-- TODO -->
-To deploy the site on Netlify ...
+To deploy the site on Github Pages ...
 
-You can access the live link here : [Weather Now]()
+You can access the live link here : [Weather Now](https://jeffdruid.github.io/weather-now/#/)
 ## Credits
 
 ### Source code 
