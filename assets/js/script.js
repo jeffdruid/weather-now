@@ -832,17 +832,23 @@ async function drawChart() {
       });
 
       // Set chart options
-      let options = {legend: { position: "bottom" },
-        series: {
-          humidity: { targetAxisIndex: 1, type: "line" },
-          temperature: { targetAxisIndex: 0 }
-        },
-        title: `Forecast - ${location}`,
-        vAxes: [
-          { title: "Temperature (°C)" },
-          { title: "Humidity (%)" }
-        ]
+      let options = {
+        title: `Forecast - ${location}`
       };
+
+      /* jshint -W074 */
+      options.seriesType = "bars";
+      options.series = {
+        humidity: { targetAxisIndex: 1, type: "line" },
+        temperature: { targetAxisIndex: 0 }
+      };
+      options.vAxes = {
+        humidity: { title: "Humidity (%)" },
+        temperature: { title: "Temperature (°C)" }
+        };
+      options.hAxis = { title: "Day" };
+      /* jshint -W085 */
+      options.legend = { position: "bottom" };
 
       // Instantiate and draw the chart
       let chart = new google.visualization.ComboChart(
