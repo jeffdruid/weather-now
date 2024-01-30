@@ -10,7 +10,7 @@ let lastUpdatedTime = "";
 // Add the unlock CORS access button
 const unlockButton = document.createElement("button");
 unlockButton.textContent = "Unlock Server Access";
-unlockButton.addEventListener("click", () => {
+unlockButton.addEventListener("click", function() {
   window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
   unlockButton.style.display = "none";
 });
@@ -21,7 +21,7 @@ document.body.appendChild(unlockButton);
  * Get the current time and display it.
  */
 function showCurrentTime() {
-  setInterval(() => {
+  setInterval(function() {
     let currentTime = new Date();
     let formattedTime = currentTime.toLocaleTimeString("en-US", {
       hour: "numeric",
@@ -47,7 +47,7 @@ function displayWeatherData(data) {
 function getWeatherForCurrentLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      async (position) => {
+      async function(position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         try {
@@ -114,7 +114,7 @@ function getWeatherForCurrentLocation() {
           unlockButton.style.display = "block";
         }
       },
-      (error) => {
+      function(error) {
         console.error(error);
         // Display an error message on the UI
         document.getElementById("error-message-user-location").style.display =
@@ -139,7 +139,7 @@ function getWeatherForCurrentLocation() {
 }
 
 // Hide error message when clicking anywhere on the screen
-document.addEventListener("click", () => {
+document.addEventListener("click", function() {
   document.getElementById("error-message-user-location").style.display =
     "none";
   document.getElementById("error-message-user-forecast").style.display =
@@ -166,9 +166,9 @@ function showSpinner() {
   spinner.style.display = "block";
 
   // Rotate spinner until display is set to none
-  const rotateSpinner = () => {
+  const rotateSpinner = function() {
     if (document.querySelector(".spinner").style.display !== "none") {
-      spinner.style.transform = `rotate(${spinnerRotation}deg)`;
+      spinner.style.transform = "rotate(" + spinnerRotation + "deg)";
       spinnerRotation += 10;
       setTimeout(rotateSpinner, 100);
     }
@@ -322,7 +322,7 @@ async function getWeather(location) {
 
 // Refresh Button
 const refreshButton = document.getElementById("refresh-button");
-refreshButton.addEventListener("click", () => {
+refreshButton.addEventListener("click", function() {
   const currentTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
@@ -330,7 +330,7 @@ refreshButton.addEventListener("click", () => {
   });
   if (currentTime === lastUpdatedTime) {
     alert("Weather data is already up to date.");
-    return
+    return;
   } else {
     const location = document.getElementById("location").innerHTML;
     getWeather(location);
@@ -340,7 +340,7 @@ refreshButton.addEventListener("click", () => {
 
 // Search box event listener
 if (searchBox) {
-  searchBox.addEventListener("keyup", (event) => {
+  searchBox.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
       // document.querySelector(".weather-container").style.display = "flex";
       if (isCelsius === !isCelsius) {
@@ -358,7 +358,7 @@ if (searchBox) {
 
 // Search button event listener
 const searchButton = document.querySelector("input");
-searchButton.addEventListener("click", () => {
+searchButton.addEventListener("click", function() {
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
@@ -418,7 +418,7 @@ function toggleTemperatureUnit() {
       32;
 
     // Display the forecast temperatures in Fahrenheit
-    document.querySelectorAll(".forecastC").forEach((forecast) => {
+    document.querySelectorAll(".forecastC").forEach(function(forecast) {
       forecast.style.display = "none";
     });
     document.querySelectorAll(".forecastF").forEach((forecast) => {
@@ -487,10 +487,10 @@ function toggleTemperatureUnit() {
     maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
     minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
 
-    document.querySelectorAll(".forecastC").forEach((forecast) => {
+    document.querySelectorAll(".forecastC").forEach(function(forecast) {
       forecast.style.display = "inline";
     });
-    document.querySelectorAll(".forecastF").forEach((forecast) => {
+    document.querySelectorAll(".forecastF").forEach(function(forecast) {
       forecast.style.display = "none";
     });
 
@@ -560,7 +560,7 @@ function displayWeatherForFavorites() {
     favoriteWeatherContainer.appendChild(favoritesHeading);
 
     // Display the temperature in Celsius or Fahrenheit
-    favoriteLocations.forEach((location) => {
+    favoriteLocations.forEach(function(location) {
       if (isCelsius === !isCelsius) {
         isCelsius = false;
         document.getElementById("temperature-toggle-btn").innerHTML = "°C";
