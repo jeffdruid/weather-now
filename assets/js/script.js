@@ -302,7 +302,8 @@ async function getWeather(location) {
 
   // Weather icons.
   const weatherIcon = document.getElementById("weather-icon");
-  weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+  weatherIcon.src =
+    "https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png";
   weatherIcon.alt = data.weather[0].description;
 
   // Flag icons.
@@ -588,7 +589,8 @@ function displayWeatherForFavorites() {
     // Display a message if no favorite locations are found
     console.log("No favorite locations found.");
     document.getElementById("favorite-weather").innerHTML =
-      "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
+      "<span style='color: rgba(255, 0, 0, 0.7);'>" +
+      "No favorite locations found.</span>";
   }
   /**
    * Clears all favorite locations.
@@ -601,7 +603,8 @@ function displayWeatherForFavorites() {
       localStorage.removeItem("favoriteLocations");
       console.log("All favorites cleared.");
       document.getElementById("favorite-weather").innerHTML =
-        "<span style='color: rgba(255, 0, 0, 0.7);'>No favorite locations found.</span>";
+        "<span style='color: rgba(255, 0, 0, 0.7);'>" +
+        "No favorite locations found.</span>";
     }
   }
 }
@@ -678,7 +681,7 @@ setFavoriteBtn.addEventListener("click", function () {
   }
 });
 
-// // Add the button click event listener to display weather for favorite locations
+// Add the button to display weather for favorite locations
 const favoritesBtn = document.getElementById("favorites-btn");
 
 let isFavoritesOpen = false;
@@ -714,7 +717,7 @@ favoritesBtn.addEventListener("click", () => {
  * 5 Day Forecast
  */
 async function getFiveDayForecast(location) {
-  // const apiUrlForecast = 'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
+  //'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
   const response = await fetch(
     `${apiUrl}location=${location}&endpoint=forecast`
   );
