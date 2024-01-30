@@ -754,7 +754,7 @@ async function getFiveDayForecast(location) {
       forecastData += `${description}</div>`;
     }
     isCelsius = !isCelsius;
-    i++;
+    i = i + 1;
   }
   document.getElementById("forecast").innerHTML = forecastData;
   document.getElementById("forecast").classList.add("weather-container");
@@ -832,19 +832,16 @@ async function drawChart() {
       });
 
       // Set chart options
-      let options = {
-        title: `Forecast - ${location}`,
-        seriesType: "bars",
+      let options = {legend: { position: "bottom" },
         series: {
-          temperature: { targetAxisIndex: 0 },
-          humidity: { targetAxisIndex: 1, type: "line" }
+          humidity: { targetAxisIndex: 1, type: "line" },
+          temperature: { targetAxisIndex: 0 }
         },
+        title: `Forecast - ${location}`,
         vAxes: [
           { title: "Temperature (°C)" },
           { title: "Humidity (%)" }
-        ],
-        hAxis: { title: "Day" },
-        legend: { position: "bottom" }
+        ]
       };
 
       // Instantiate and draw the chart
@@ -899,6 +896,7 @@ chartBtn.addEventListener("click", async function() {
 // Add a button to show the search history
 const showHistoryBtn = document.getElementById("show-history-btn");
 
+const historyContainer = document.getElementById("search-history");
 /**
  * Display the search history.
  */
@@ -913,7 +911,6 @@ function displaySearchHistory() {
 
   // Check if search history is empty
   if (searchHistory.length === 0) {
-    const historyContainer = document.getElementById("search-history");
     historyContainer.innerHTML = "";
 
     // Add the error message
@@ -927,7 +924,6 @@ function displaySearchHistory() {
   const uniqueSearchHistory = [...new Set(searchHistory)];
 
   // Update the UI with the search history
-  const historyContainer = document.getElementById("search-history");
   historyContainer.innerHTML = "";
 
   // Add the "My History" heading
