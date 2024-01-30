@@ -69,6 +69,8 @@ function getWeatherForCurrentLocation() {
                 document.getElementById("error-message-user-location").style.display = "flex";
                 const errorMessage = document.getElementById('error-message-user-location');
                 errorMessage.textContent = 'Failed to fetch weather data. Too many requests. Please try again later.';
+                // Display the unlock CORS access button
+                unlockButton.style.display = "block";
             }
         }, (error) => {
             console.error(error);
