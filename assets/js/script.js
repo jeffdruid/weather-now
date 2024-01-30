@@ -820,7 +820,7 @@ sideBarBtn.addEventListener('click', () => {
 
 showCurrentTime();
 // TODO - Comment out the following line to avoid making too many API call for the user's current location
-// getWeatherForCurrentLocation();
+getWeatherForCurrentLocation();
 
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)

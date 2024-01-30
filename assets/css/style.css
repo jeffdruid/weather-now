@@ -356,6 +356,8 @@ body>button {
 
 #current-flag {
     margin-top: 0 !important;
+    width: 16px;
+    height: 16px;
 }
 
 #current-flag,
@@ -385,8 +387,16 @@ body>button {
     font-style: italic;
 }
 
+
 #scrolling-container {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
     background: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
+    width: 100%;
+    height: 1.5rem;
+    position: fixed;
+    bottom: 15px;
 }
 
 #scrolling-text {
@@ -394,8 +404,8 @@ body>button {
     bottom: .35rem;
     padding: 0;
     height: 2rem;
-    background-color: transparent;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     z-index: 1;
 }
