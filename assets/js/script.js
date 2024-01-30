@@ -832,3 +832,21 @@ showCurrentTime();
 // TODO - Remove unused code.
 // TODO - Color code the temperature. (Future feature)
 // TODO - Handle cors error
+
+const marqueeText = document.getElementById('scrolling-text');
+let position = 0;
+const speed = 0.5;
+/**
+ * Move the marquee text.
+ */
+function moveMarquee() {
+    position -= speed;
+    marqueeText.style.transform = `translateX(${position}px)`;
+
+    // Reset the position when the text has moved off the screen
+    if (position <= -marqueeText.offsetWidth) {
+        position = window.innerWidth;
+    }
+}
+
+setInterval(moveMarquee, 10);

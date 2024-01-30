@@ -98,8 +98,26 @@
         <div id="forecast"></div>    
         <!-- Google Charts -->
         <div id="chart_div"></div>
-        
     </main>
+    <!-- Users current weather info -->
+    <div id="scrolling-container">
+        <div id="scrolling-text">
+            <div class="current-info">
+                <span id="current-time"></span>
+                <span id="temperature-now"></span>
+                <span id="current-location"></span>
+                <img id="current-flag" src="/assets/images/icons/magnifying-glass-solid.svg" alt="Search Icon">
+                <span id="current-feels-like"></span>
+                <span id="current-desc"></span>
+                <span id="current-max"></span>
+                <span id="current-min"></span>
+                <span id="current-sunrise"></span>
+                <span id="current-sunset"></span>
+                <span id="current-wind"></span>
+                <span id="current-humidity"></span>
+            </div>
+        </div>
+    </div>
     <!-- Footer Section -->
     <footer>
         @2024 Weather Now. All rights reserved.
@@ -157,22 +175,5 @@
 
         gsap.delayedCall(1, nextState);
     </script>
-<!-- Users current weather info -->
-<marquee behavior="scroll" direction="left" scrollamount="5">
-    <div class="current-info">
-        <span id="current-time"></span>
-        <span id="temperature-now"></span>
-        <span id="current-location"></span>
-        <img id="current-flag" src="/assets/images/icons/magnifying-glass-solid.svg" alt="Search Icon">
-        <span id="current-feels-like"></span>
-        <span id="current-desc"></span>
-        <span id="current-max"></span>
-        <span id="current-min"></span>
-        <span id="current-sunrise"></span>
-        <span id="current-sunset"></span>
-        <span id="current-wind"></span>
-        <span id="current-humidity"></span>
-    </div>
-</marquee>
 </body>
 </html>

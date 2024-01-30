@@ -385,8 +385,11 @@ body>button {
     font-style: italic;
 }
 
-marquee {
+#scrolling-container {
     background: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
+}
+
+#scrolling-text {
     position: fixed;
     bottom: .35rem;
     padding: 0;
