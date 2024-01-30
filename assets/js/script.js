@@ -279,8 +279,7 @@ async function getWeather(location) {
   const locationString = data.name + ", " + data.sys.country;
   if (favoriteLocations && favoriteLocations.includes(locationString)) {
     // Set the heart icon to red
-    const favoriteIcon = document.querySelector(".fa-heart");
-    favoriteIcon.style.color = "rgba(255, 0, 0, 0.9)";
+    document.querySelector(".fa-heart").style.color = "rgba(255, 0, 0, 0.9)";
     console.log("Favorite icon set to red.");
     console.log("Location is a favorite: " + locationString);
   } else {
@@ -331,11 +330,10 @@ refreshButton.addEventListener("click", function() {
   if (currentTime === lastUpdatedTime) {
     alert("Weather data is already up to date.");
     return;
-  } else {
-    const location = document.getElementById("location").innerHTML;
-    getWeather(location);
-    console.log("Weather data refreshed for location:", location);
   }
+  const location = document.getElementById("location").innerHTML;
+  getWeather(location);
+  console.log("Weather data refreshed for location:", location);
 });
 
 // Search box event listener
@@ -421,7 +419,7 @@ function toggleTemperatureUnit() {
     document.querySelectorAll(".forecastC").forEach(function(forecast) {
       forecast.style.display = "none";
     });
-    document.querySelectorAll(".forecastF").forEach((forecast) => {
+    document.querySelectorAll(".forecastF").forEach(function(forecast) {
       forecast.style.display = "inline";
     });
 
@@ -616,31 +614,29 @@ function setFavoriteLocation(location) {
   if (location.trim() === "") {
     console.log("Empty location cannot be set as a favorite.");
     return;
-  } else {
-    // Get the favorite locations from local storage
-    let favoriteLocations = new Set(
-      JSON.parse(localStorage.getItem("favoriteLocations")) || []
-    );
-
-    // Remove any empty locations from the favorite locations
-    favoriteLocations = Array.from(favoriteLocations).filter(
-      (favoriteLocation) => favoriteLocation.trim() !== ""
-    );
-
-    // Check if the location is already a favorite
-    if (favoriteLocations.includes(location)) {
-      console.log("Location is already a favorite: " + location);
-      return
-    } else {
-      // Add the location to the favorite locations
-      favoriteLocations.push(location);
-      localStorage.setItem(
-        "favoriteLocations",
-        JSON.stringify(favoriteLocations)
-      );
-      console.log("Location set as favorite: " + location);
-    }
   }
+  // Get the favorite locations from local storage
+  let favoriteLocations = new Set(
+    JSON.parse(localStorage.getItem("favoriteLocations")) || []
+  );
+
+  // Remove any empty locations from the favorite locations
+  favoriteLocations = Array.from(favoriteLocations).filter(
+    (favoriteLocation) => favoriteLocation.trim() !== ""
+  );
+
+  // Check if the location is already a favorite
+  if (favoriteLocations.includes(location)) {
+    console.log("Location is already a favorite: " + location);
+    return;
+  }
+  // Add the location to the favorite locations
+  favoriteLocations.push(location);
+  localStorage.setItem(
+    "favoriteLocations",
+    JSON.stringify(favoriteLocations)
+  );
+  console.log("Location set as favorite: " + location);
 }
 
 // Add the button click event listener to set a location as a favorite
@@ -683,7 +679,7 @@ const favoritesBtn = document.getElementById("favorites-btn");
 let isFavoritesOpen = false;
 
 // Add the button click event listener to toggle favorites
-favoritesBtn.addEventListener("click", () => {
+favoritesBtn.addEventListener("click", function() {
   // Close the side bar
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
