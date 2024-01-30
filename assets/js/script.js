@@ -24,9 +24,9 @@ function showCurrentTime() {
   setInterval(() => {
     let currentTime = new Date();
     let formattedTime = currentTime.toLocaleTimeString("en-US", {
+      hour12: true,
       hour: "numeric",
       minute: "numeric",
-      hour12: true,
     });
     document.getElementById("current-time").innerHTML =
       "Time: " + formattedTime;
@@ -80,8 +80,8 @@ function getWeatherForCurrentLocation() {
               (data.sys.sunrise + data.timezone) * 1000
             ).toLocaleTimeString("en-US", {
               hour: "numeric",
-              minute: "numeric",
               hour12: true,
+              minute: "numeric",
             });
           document.getElementById("current-sunset").innerHTML =
             "Sunset: " +
@@ -89,8 +89,8 @@ function getWeatherForCurrentLocation() {
               (data.sys.sunset + data.timezone) * 1000
             ).toLocaleTimeString("en-US", {
               hour: "numeric",
-              minute: "numeric",
               hour12: true,
+              minute: "numeric",
             });
           document.getElementById("current-desc").innerHTML =
             data.weather[0].description;
@@ -250,13 +250,13 @@ async function getWeather(location) {
     "Sunrise: " +
     new Date((data.sys.sunrise + data.timezone) * 1000).toLocaleTimeString(
       "en-US",
-      { hour: "numeric", minute: "numeric", hour12: true }
+      { hour12: true, hour: "numeric", minute: "numeric" }
     );
   document.getElementById("sun-set").innerHTML =
     "Sunset: " +
     new Date((data.sys.sunset + data.timezone) * 1000).toLocaleTimeString(
       "en-US",
-      { hour: "numeric", minute: "numeric", hour12: true }
+      { hour12: true, hour: "numeric", minute: "numeric" }
     );
   document.getElementById("weather-desc").innerHTML =
     data.weather[0].description;
@@ -293,9 +293,9 @@ async function getWeather(location) {
 
   //Last updated time
   lastUpdatedTime = new Date().toLocaleTimeString("en-US", {
+    hour12: true,
     hour: "numeric",
     minute: "numeric",
-    hour12: true,
   });
   document.getElementById("last-updated").innerHTML =
     "Last Updated: " + lastUpdatedTime;
@@ -324,9 +324,9 @@ async function getWeather(location) {
 const refreshButton = document.getElementById("refresh-button");
 refreshButton.addEventListener("click", () => {
   const currentTime = new Date().toLocaleTimeString("en-US", {
+    hour12: true,
     hour: "numeric",
     minute: "numeric",
-    hour12: true,
   });
   if (currentTime === lastUpdatedTime) {
     alert("Weather data is already up to date.");
