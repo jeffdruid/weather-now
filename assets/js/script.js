@@ -644,9 +644,6 @@ function setFavoriteLocation(location) {
   }
 }
 
-// Clear the local storage
-// localStorage.clear();
-
 // Add the button click event listener to set a location as a favorite
 const setFavoriteBtn = document.getElementById("set-favorite-btn");
 setFavoriteBtn.addEventListener("click", function () {
@@ -670,14 +667,14 @@ setFavoriteBtn.addEventListener("click", function () {
     console.log("Location removed from favorites: " + location);
 
     // Set the heart icon to white
-    const favoriteIcon = document.querySelector(".fa-heart");
-    favoriteIcon.style.color = "rgba(255, 255, 255, 0.7)";
+    const favoriteIconToRemove = document.querySelector(".fa-heart");
+    favoriteIconToRemove.style.color = "rgba(255, 255, 255, 0.7)";
   } else {
     setFavoriteLocation(location);
 
     // Set the heart icon to red
-    const favoriteIcon = document.querySelector(".fa-heart");
-    favoriteIcon.style.color = "rgba(255, 0, 0, 0.9)";
+    const favoriteIconToSet = document.querySelector(".fa-heart");
+    favoriteIconToSet.style.color = "rgba(255, 0, 0, 0.9)";
   }
 });
 
@@ -896,8 +893,6 @@ chartBtn.addEventListener("click", async () => {
   isChartOpen = !isChartOpen;
 });
 
-localStorage.removeItem("searchHistory");
-
 // Add a button to show the search history
 const showHistoryBtn = document.getElementById("show-history-btn");
 
@@ -1061,3 +1056,5 @@ function moveMarquee() {
 }
 
 setInterval(moveMarquee, 10);
+// localStorage.clear();
+// localStorage.removeItem("searchHistory");
