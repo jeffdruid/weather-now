@@ -803,7 +803,7 @@ google.charts.load("current", { packages: ["corechart"] });
 async function drawChart() {
   const location = document.getElementById("location").innerHTML;
   // Make an API call to fetch the forecast data
-  const response = await fetch(
+  await fetch(
     apiUrl + `location=` + location + `&endpoint=forecast`
   )
     .then(function(response) {
