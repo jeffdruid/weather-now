@@ -1,5 +1,5 @@
 // API call
-// https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+// https://api.openweathermap.org/data/2.5/weather?q={cityname}&appid={API key}
 // SOLVED - CORS error
 const apiUrl =
   "https://cors-anywhere.herokuapp.com/" +
@@ -722,7 +722,8 @@ async function getFiveDayForecast(location) {
   forecastData = `<h4>5 day Forecast</h4>` + forecastData;
 
   // Iterate over the forecast data and add rows to the data table
-  for (let i = 0; i < data.list.length; i++) {
+  let i;
+  for (i = 0; i < data.list.length; i++) {
     const temperatureCelsius = Math.round(data.list[i].main.temp);
     const temperatureFahrenheit = Math.round(
       (temperatureCelsius * 9) / 5 + 32
@@ -731,7 +732,7 @@ async function getFiveDayForecast(location) {
     const dateTime = new Date(data.list[i].dt_txt);
     if (dateTime.getHours() === 0) {
       const dayOfWeek = dateTime.toLocaleDateString(undefined, {
-        weekday: "long",
+        weekday: "long"
       });
       forecastData += `<div>${dayOfWeek}`;
 
@@ -762,7 +763,7 @@ let isForecastOpen = false;
 
 // Add the button click event listener to display the forecast
 const forecastBtn = document.getElementById("forecast-btn");
-forecastBtn.addEventListener("click", async () => {
+forecastBtn.addEventListener("click", async function() {
   showSpinner();
 
   console.log(isCelsius);
@@ -800,8 +801,10 @@ async function drawChart() {
   const response = await fetch(
     apiUrl + `location=` + location + `&endpoint=forecast`
   )
-    .then((response) => response.json())
-    .then((data) => {
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
       hideSpinner();
       // Create the data table
       let dataTable = new google.visualization.DataTable();
@@ -813,7 +816,7 @@ async function drawChart() {
       const forecastData = data.list;
 
       // Iterate over the forecast data and add rows to the data table
-      forecastData.forEach((forecast) => {
+      forecastData.forEach(function(forecast) {
         const date = new Date(forecast.dt_txt);
         const day = date.toLocaleDateString("en-US", { day: "numeric" });
         const month = date.toLocaleDateString("en-US", { month: "long" });
@@ -845,7 +848,7 @@ async function drawChart() {
       );
       chart.draw(dataTable, options);
     })
-    .catch((error) => {
+    .catch(function(error) {
       // Display an error message on the UI
       document.getElementById("error-message-user-forecast").style.display =
         "flex";
@@ -862,7 +865,7 @@ let isChartOpen = false;
 
 // Add the button click event listener to display the chart
 const chartBtn = document.getElementById("chart-btn");
-chartBtn.addEventListener("click", async () => {
+chartBtn.addEventListener("click", async function() {
   document.getElementById("chart_div").style.display = "flex";
   document.getElementById("chart_div").style.animation = "fadeIn .3s ease-in";
   document.getElementById("forecast").style.display = "none";
@@ -928,11 +931,11 @@ function displaySearchHistory() {
   historyContainer.appendChild(historyHeading);
 
   // Iterate over the search history and display each item
-  uniqueSearchHistory.forEach((item) => {
+  uniqueSearchHistory.forEach(function(item) {
     const historyItem = document.createElement("a");
     historyItem.textContent = item;
     historyItem.href = "#";
-    historyItem.addEventListener("click", () => {
+    historyItem.addEventListener("click", function() {
       getWeather(item);
     });
     historyContainer.appendChild(historyItem);
@@ -943,7 +946,7 @@ function displaySearchHistory() {
 let isHistoryOpen = false;
 
 // Add a button click event listener to show the search history
-showHistoryBtn.addEventListener("click", () => {
+showHistoryBtn.addEventListener("click", function() {
   // Close the side bar
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
@@ -1006,7 +1009,7 @@ let isSideBarOpen = false;
 
 // Add the button click event listener to toggle the side bar
 const sideBarBtn = document.getElementById("side-bar-close-btn");
-sideBarBtn.addEventListener("click", () => {
+sideBarBtn.addEventListener("click", function() {
   if (isSideBarOpen) {
     console.log("Side bar closed");
     document.getElementById("side-bar").style.left = "-25%";
