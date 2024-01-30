@@ -1,6 +1,11 @@
+/* global google */
+/* jshint -W117 */
+/* jshint -W074 */
+/* jshint -W074 */
+/* jshint -W085 */
+
 // API call
 // https://api.openweathermap.org/data/2.5/weather?q={cityname}&appid={API key}
-// SOLVED - CORS error
 const apiUrl =
   "https://cors-anywhere.herokuapp.com/" +
   "https://weather-key-160275f00837.herokuapp.com/myapi?";
@@ -831,24 +836,23 @@ async function drawChart() {
         dataTable.addRow([`${day} ${month} ${year}`, temperature, humidity]);
       });
 
+      /* jshint -W074 */
+      /* jshint -W085 */
       // Set chart options
       let options = {
-        title: `Forecast - ${location}`
+        title: `Forecast - ${location}`,
+        seriesType: "bars",
+        series: {
+          0: { targetAxisIndex: 0 },
+          1: { targetAxisIndex: 1, type: "line" },
+        },
+        vAxes: {
+          0: { title: "Temperature (°C)" },
+          1: { title: "Humidity (%)" },
+        },
+        hAxis: { title: "Day" },
+        legend: { position: "bottom" },
       };
-
-      /* jshint -W074 */
-      options.seriesType = "bars";
-      options.series = {
-        humidity: { targetAxisIndex: 1, type: "line" },
-        temperature: { targetAxisIndex: 0 }
-      };
-      options.vAxes = {
-        humidity: { title: "Humidity (%)" },
-        temperature: { title: "Temperature (°C)" }
-        };
-      options.hAxis = { title: "Day" };
-      /* jshint -W085 */
-      options.legend = { position: "bottom" };
 
       // Instantiate and draw the chart
       let chart = new google.visualization.ComboChart(
