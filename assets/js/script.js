@@ -24,8 +24,8 @@ function showCurrentTime() {
   setInterval(() => {
     let currentTime = new Date();
     let formattedTime = currentTime.toLocaleTimeString("en-US", {
-      hour12: true,
       hour: "numeric",
+      hour12: true,
       minute: "numeric",
     });
     document.getElementById("current-time").innerHTML =
@@ -81,7 +81,7 @@ function getWeatherForCurrentLocation() {
             ).toLocaleTimeString("en-US", {
               hour: "numeric",
               hour12: true,
-              minute: "numeric",
+              minute: "numeric"
             });
           document.getElementById("current-sunset").innerHTML =
             "Sunset: " +
@@ -90,7 +90,7 @@ function getWeatherForCurrentLocation() {
             ).toLocaleTimeString("en-US", {
               hour: "numeric",
               hour12: true,
-              minute: "numeric",
+              minute: "numeric"
             });
           document.getElementById("current-desc").innerHTML =
             data.weather[0].description;
@@ -250,13 +250,13 @@ async function getWeather(location) {
     "Sunrise: " +
     new Date((data.sys.sunrise + data.timezone) * 1000).toLocaleTimeString(
       "en-US",
-      { hour12: true, hour: "numeric", minute: "numeric" }
+      { hour: "numeric", hour12: true, minute: "numeric" }
     );
   document.getElementById("sun-set").innerHTML =
     "Sunset: " +
     new Date((data.sys.sunset + data.timezone) * 1000).toLocaleTimeString(
       "en-US",
-      { hour12: true, hour: "numeric", minute: "numeric" }
+      { hour: "numeric", hour12: true, minute: "numeric" }
     );
   document.getElementById("weather-desc").innerHTML =
     data.weather[0].description;
@@ -293,8 +293,8 @@ async function getWeather(location) {
 
   //Last updated time
   lastUpdatedTime = new Date().toLocaleTimeString("en-US", {
-    hour12: true,
     hour: "numeric",
+    hour12: true,
     minute: "numeric",
   });
   document.getElementById("last-updated").innerHTML =
@@ -324,8 +324,8 @@ async function getWeather(location) {
 const refreshButton = document.getElementById("refresh-button");
 refreshButton.addEventListener("click", () => {
   const currentTime = new Date().toLocaleTimeString("en-US", {
-    hour12: true,
     hour: "numeric",
+    hour12: true,
     minute: "numeric",
   });
   if (currentTime === lastUpdatedTime) {
@@ -547,8 +547,8 @@ function displayWeatherForFavorites() {
     // Add the "Delete favorite" button
     const clearFavoritesBtn = document.createElement("div");
     clearFavoritesBtn.id = "clear-favorites-btn";
-    clearFavoritesBtn.innerHTML =
-      '<i class="fa fa-trash" aria-hidden="true"></i>';
+    clearFavoritesBtn.innerHTML = 
+    "<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>";
     favoriteWeatherContainer.appendChild(clearFavoritesBtn);
     document.getElementById("clear-favorites-btn").style.display = "flex";
     document
