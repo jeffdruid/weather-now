@@ -56,9 +56,8 @@ function getWeatherForCurrentLocation() {
             apiUrl + `lat=${latitude}&lon=${longitude}`,
             { mode: "cors" }
           );
-          // console.log(apiUrl + `lat=${latitude}&lon=${longitude}`); // Log the apiUrl with latitude and longitude
           console.log(response);
-          // console.log(apiUrl);
+
           const data = await response.json();
           displayWeatherData(data);
 
@@ -109,7 +108,8 @@ function getWeatherForCurrentLocation() {
             "error-message-user-location"
           );
           errorMessage.textContent =
-            "Failed to fetch weather data. Too many requests. Please try again later.";
+            "Failed to fetch weather data." +
+            "Too many requests. Please try again later.";
           // Display the unlock CORS access button
           unlockButton.style.display = "block";
         }
@@ -155,7 +155,7 @@ let requestCounter = 0;
 window.fetch = function (url) {
   requestCounter++;
   console.log("Request:", url, "Request Counter:", requestCounter);
-  return originalFetch.apply(this, arguments);
+  return originalFetch.apply(window, [url]);
 };
 
 /**
@@ -215,22 +215,21 @@ async function getWeather(location) {
     document.getElementById("search-history").style.display = "none";
     document.getElementById("chart_div").style.display = "none";
     return;
-  } else {
-    // Close all other containers
-    document.getElementById("favorite-weather").style.display = "none";
-    document.getElementById("forecast").style.display = "none";
-    document.getElementById("chart_div").style.display = "none";
-    document.getElementById("search-history").style.display = "none";
-    document.getElementById("side-bar").style.left = "-25%";
-    document.getElementById("side-bar-close-btn").style.transform =
-      "rotate(360deg)";
-    console.log("Close favorites, " + location + " selected.");
-    isForecastOpen = false;
-    isChartOpen = false;
-    isCelsius = true;
-    isSideBarOpen = false;
-    isHistoryOpen = false;
   }
+  // Close all other containers
+  document.getElementById("favorite-weather").style.display = "none";
+  document.getElementById("forecast").style.display = "none";
+  document.getElementById("chart_div").style.display = "none";
+  document.getElementById("search-history").style.display = "none";
+  document.getElementById("side-bar").style.left = "-25%";
+  document.getElementById("side-bar-close-btn").style.transform =
+    "rotate(360deg)";
+  console.log("Close favorites, " + location + " selected.");
+  isForecastOpen = false;
+  isChartOpen = false;
+  isCelsius = true;
+  isSideBarOpen = false;
+  isHistoryOpen = false;
   showSpinner();
   console.log(data);
 
