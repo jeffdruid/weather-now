@@ -149,14 +149,15 @@ document.addEventListener("click", function() {
 });
 
 // Intercept and log all requests
-const originalFetch = window.fetch;
-let requestCounter = 0;
-// Count the number of requests
-window.fetch = function (url) {
-  requestCounter++;
-  console.log("Request:", url, "Request Counter:", requestCounter);
-  return originalFetch.apply(window, [url]);
-};
+// const originalFetch = window.fetch;
+// let requestCounter = 0;
+
+// // Count the number of requests
+// window.fetch = function (url) {
+//   requestCounter++;
+//   console.log("Request:", url, "Request Counter:", requestCounter);
+//   return originalFetch.apply(window, [url]);
+// };
 
 /**
  * Show spinner
@@ -722,8 +723,8 @@ async function getFiveDayForecast(location) {
   forecastData = `<h4>5 day Forecast</h4>` + forecastData;
 
   // Iterate over the forecast data and add rows to the data table
-  let i;
-  for (i = 0; i < data.list.length; i++) {
+  let i = 0;
+  while (i < data.list.length) {
     const temperatureCelsius = Math.round(data.list[i].main.temp);
     const temperatureFahrenheit = Math.round(
       (temperatureCelsius * 9) / 5 + 32
@@ -753,6 +754,7 @@ async function getFiveDayForecast(location) {
       forecastData += `${description}</div>`;
     }
     isCelsius = !isCelsius;
+    i++;
   }
   document.getElementById("forecast").innerHTML = forecastData;
   document.getElementById("forecast").classList.add("weather-container");
@@ -790,6 +792,9 @@ forecastBtn.addEventListener("click", async function() {
 });
 
 // Include the Google Charts library
+const script = document.createElement("script");
+script.src = "https://www.gstatic.com/charts/loader.js";
+document.head.appendChild(script);
 google.charts.load("current", { packages: ["corechart"] });
 
 /**
@@ -831,15 +836,15 @@ async function drawChart() {
         title: `Forecast - ${location}`,
         seriesType: "bars",
         series: {
-          0: { targetAxisIndex: 0 },
-          1: { targetAxisIndex: 1, type: "line" },
+          temperature: { targetAxisIndex: 0 },
+          humidity: { targetAxisIndex: 1, type: "line" }
         },
-        vAxes: {
-          0: { title: "Temperature (°C)" },
-          1: { title: "Humidity (%)" },
-        },
+        vAxes: [
+          { title: "Temperature (°C)" },
+          { title: "Humidity (%)" }
+        ],
         hAxis: { title: "Day" },
-        legend: { position: "bottom" },
+        legend: { position: "bottom" }
       };
 
       // Instantiate and draw the chart
