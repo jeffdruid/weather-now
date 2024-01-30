@@ -7,7 +7,7 @@ let lastUpdatedTime = '';
 
 // Add the unlock CORS access button
 const unlockButton = document.createElement("button");
-unlockButton.textContent = "Unlock CORS Access";
+unlockButton.textContent = "Unlock Server Access";
 unlockButton.addEventListener("click", () => {
     window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
     unlockButton.style.display = "none";
@@ -682,7 +682,7 @@ chartBtn.addEventListener('click', async () => {
     isChartOpen = !isChartOpen;
 });
 
-// localStorage.removeItem('searchHistory');
+localStorage.removeItem('searchHistory');
 
 // Add a button to show the search history
 const showHistoryBtn = document.getElementById('show-history-btn');
@@ -820,7 +820,7 @@ sideBarBtn.addEventListener('click', () => {
 
 showCurrentTime();
 // TODO - Comment out the following line to avoid making too many API call for the user's current location
-getWeatherForCurrentLocation();
+// getWeatherForCurrentLocation();
 
 // TODO - Add a map that shows the location of the city. (Future feature)
 // TODO - Update weather icons. (Future feature)
@@ -830,5 +830,5 @@ getWeatherForCurrentLocation();
 // TODO - Double check error handling.
 // TODO - Remove console logs. ???
 // TODO - Remove unused code.
-
+// TODO - Color code the temperature. (Future feature)
 // TODO - Handle cors error
