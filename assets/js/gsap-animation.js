@@ -3,7 +3,7 @@ let layouts = ["final", "plain", "columns", "grid", "final"],
     curLayout = 0; // index of the current layout
 
 function nextState() {
-    const state = Flip.getState(".block, .logo-weather, .logo-now", {props: "color,backgroundColor", simple: true}); // capture current state
+    const state = Flip.getState(".block, .logo-now", {props: "color,backgroundColor", simple: true}); // capture current state
 
     if (curLayout < layouts.length -1) {
         intro.classList.remove(layouts[curLayout]); // remove old class
