@@ -218,7 +218,7 @@ body>button {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    background: var(--red-color-1);
+    background: var(--red-color-2);
     color: white;
     text-transform: uppercase;
     font-size: .75rem;
@@ -614,7 +614,7 @@ footer {
     flex-shrink: 0;
     background-color: rgba(0, 0, 0, 1);
     font-size: .5rem;
-    color: rgba(148, 187, 233, 0.5);
+    color: white;
     position: fixed;
     display: flex;
     bottom: 0;
