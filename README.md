@@ -178,7 +178,10 @@ Weather Now is a web application that provides real-time weather information for
 #### JavaScript
 ![Alt text](assets/media/validator-js.png) 
 
-### Accessibility
+#### Accessibility
+![Alt text](assets/media/validator-accessibility.png)
+#### Lighthouse
+![Alt text](assets/media/validator-lighthouse.png)
 
 ### Responsiveness
 ![Alt text](assets/media/responsive-hero.png)
