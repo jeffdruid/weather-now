@@ -814,77 +814,83 @@ forecastBtn.addEventListener("click", async function() {
   isForecastOpen = !isForecastOpen;
 });
 
-google.charts.load("current", { packages: ["corechart"] });
 
 /**
  * Draw the chart.
- */
+*/
 async function drawChart() {
-  const location = document.getElementById("location").innerHTML;
-  // Make an API call to fetch the forecast data
-  await fetch(
-    apiUrl + `location=` + location + `&endpoint=forecast`
-  )
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      hideSpinner();
-      // Create the data table
-      let dataTable = new google.visualization.DataTable();
-      dataTable.addColumn("string", "Day");
-      dataTable.addColumn("number", "Temperature");
-      dataTable.addColumn("number", "Humidity");
+  // Load Google Charts
+  let script = document.createElement("script");
+  script.src = "https://www.gstatic.com/charts/loader.js";
+  script.onload = function() {
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(function() {
+      const location = document.getElementById("location").innerHTML;
+      // Make an API call to fetch the forecast data
+      fetch(apiUrl + `location=` + location + `&endpoint=forecast`)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          hideSpinner();
+          // Create the data table
+          let dataTable = new google.visualization.DataTable();
+          dataTable.addColumn("string", "Day");
+          dataTable.addColumn("number", "Temperature");
+          dataTable.addColumn("number", "Humidity");
 
-      // Extract the forecast data from the API response
-      const forecastData = data.list;
+          // Extract the forecast data from the API response
+          const forecastData = data.list;
 
-      // Iterate over the forecast data and add rows to the data table
-      forecastData.forEach(function(forecast) {
-        const date = new Date(forecast.dt_txt);
-        const day = date.toLocaleDateString("en-US", { day: "numeric" });
-        const month = date.toLocaleDateString("en-US", { month: "long" });
-        const year = date.toLocaleDateString("en-US", { year: "numeric" });
-        const temperature = forecast.main.temp;
-        const humidity = forecast.main.humidity;
-        dataTable.addRow([`${day} ${month} ${year}`, temperature, humidity]);
-      });
+          // Iterate over the forecast data and add rows to the data table
+          forecastData.forEach(function(forecast) {
+            const date = new Date(forecast.dt_txt);
+            const day = date.toLocaleDateString("en-US", { day: "numeric" });
+            const month = date.toLocaleDateString("en-US", { month: "long" });
+            const year = date.toLocaleDateString("en-US", { year: "numeric" });
+            const temperature = forecast.main.temp;
+            const humidity = forecast.main.humidity;
+            dataTable.addRow([`${day} ${month} ${year}`, temperature, humidity]);
+          });
 
-      /* jshint -W074 */
-      /* jshint -W085 */
-      // Set chart options
-      let options = {
-        title: `Forecast - ${location}`,
-        seriesType: "bars",
-        series: {
-          0: { targetAxisIndex: 0 },
-          1: { targetAxisIndex: 1, type: "line" },
-        },
-        vAxes: {
-          0: { title: "Temperature (°C)" },
-          1: { title: "Humidity (%)" },
-        },
-        hAxis: { title: "Day" },
-        legend: { position: "bottom" },
-      };
+          /* jshint -W074 */
+          /* jshint -W085 */
+          // Set chart options
+          let options = {
+            title: `Forecast - ${location}`,
+            seriesType: "bars",
+            series: {
+              0: { targetAxisIndex: 0 },
+              1: { targetAxisIndex: 1, type: "line" },
+            },
+            vAxes: {
+              0: { title: "Temperature (°C)" },
+              1: { title: "Humidity (%)" },
+            },
+            hAxis: { title: "Day" },
+            legend: { position: "bottom" },
+          };
 
-      // Instantiate and draw the chart
-      let chart = new google.visualization.ComboChart(
-        document.getElementById("chart_div")
-      );
-      chart.draw(dataTable, options);
-    })
-    .catch(function(error) {
-      // Display an error message on the UI
-      document.getElementById("error-message-user-forecast").style.display =
-        "flex";
-      const errorMessage = document.getElementById(
-        "error-message-user-forecast"
-      );
-      errorMessage.textContent =
-        "Error fetching forecast data. Please try again.";
-      console.error(location, error);
+          // Instantiate and draw the chart
+          let chart = new google.visualization.ComboChart(
+            document.getElementById("chart_div")
+          );
+          chart.draw(dataTable, options);
+        })
+        .catch(function(error) {
+          // Display an error message on the UI
+          document.getElementById("error-message-user-forecast").style.display =
+            "flex";
+          const errorMessage = document.getElementById(
+            "error-message-user-forecast"
+          );
+          errorMessage.textContent =
+            "Error fetching forecast data. Please try again.";
+          console.error(location, error);
+        });
     });
+  };
+  document.head.appendChild(script);
 }
 
 let isChartOpen = false;
