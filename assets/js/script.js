@@ -56,7 +56,7 @@ window.addEventListener("load", function() {
       if (result.state === "granted") {
         getWeatherForCurrentLocation();
       } else if (result.state === "prompt") {
-        alert("Please allow access to your location for accurate weather information.");
+        // alert("Please allow access to your location for accurate weather information.");
       }
     });
   } else if (navigator.geolocation) {
@@ -814,10 +814,6 @@ forecastBtn.addEventListener("click", async function() {
   isForecastOpen = !isForecastOpen;
 });
 
-// Include the Google Charts library
-const script = document.createElement("script");
-script.src = "https://www.gstatic.com/charts/loader.js";
-document.head.appendChild(script);
 google.charts.load("current", { packages: ["corechart"] });
 
 /**

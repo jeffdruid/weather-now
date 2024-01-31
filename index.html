@@ -124,15 +124,13 @@
     </footer>
     <!-- Scripts -->
     <script type="module" src="assets/js/script.js"></script>
-    <!-- Google Charts -->
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/6b0af4bcb3.js" crossorigin="anonymous"></script>
-    <!-- Scripts -->
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Flip.min.js"></script>
-    <!-- Your existing code -->
-    <script type="module" src="assets/js/script.js"></script>
+    <!-- Google Charts -->
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- GSAP Animation -->
     <script>
         gsap.registerPlugin(Flip);
@@ -153,6 +151,7 @@
                 intro.style.display = "none"; // hide the intro element when the animation ends
                 document.body.style.overflow = "visible";
                 document.getElementById("side-bar-close-btn").style.display = "flex";
+                document.body.style.background = "radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%)";
             }});
             return;
         }
