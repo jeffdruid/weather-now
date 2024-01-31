@@ -72,7 +72,7 @@ function getWeatherForCurrentLocation() {
           document.getElementById("current-location").innerHTML = data.name;
           document.getElementById(
             "current-flag"
-          ).src = `https://www.flagsapi.com/${data.sys.country}/flat/16.png`;
+          ).src = `https://www.flagsapi.com/${data.sys.country}/flat/24.png`;
           document.getElementById("current-feels-like").innerHTML =
             "Feels like: " + Math.round(data.main.feels_like) + "°C";
           document.getElementById("current-max").innerHTML =

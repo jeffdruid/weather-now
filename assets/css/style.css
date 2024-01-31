@@ -378,10 +378,10 @@ body>button {
     text-transform: capitalize;
     font-weight: bold;
     letter-spacing: .1rem;
-    font-size: .7rem;
+    font-size: .85rem;
     padding: 0rem;
     justify-content: space-between;
-    margin-top: .2rem;
+    margin-top: 0rem;
     margin-left: 1rem;
     margin-right: 1rem;
     font-style: italic;
@@ -396,12 +396,12 @@ body>button {
     width: 100%;
     height: 1.5rem;
     position: fixed;
-    bottom: 15px;
+    bottom: 19px;
 }
 
 #scrolling-text {
     position: fixed;
-    bottom: .35rem;
+    bottom: .55rem;
     padding: 0;
     height: 2rem;
     display: flex;
@@ -613,7 +613,7 @@ body>button {
 footer {
     flex-shrink: 0;
     background-color: rgba(0, 0, 0, 1);
-    font-size: .5rem;
+    font-size: .75rem;
     color: white;
     position: fixed;
     display: flex;
@@ -820,22 +820,22 @@ footer {
 
 .b1 {
     background: #ffc8dd;
-    color: transparent;
+    /* color: transparent; */
 }
 
 .b2 {
     background: #ffafcc;
-    color: transparent;
+    /* color: transparent; */
 }
 
 .b3 {
     background: #bde0fe;
-    color: transparent;
+    /* color: transparent; */
 }
 
 .b4 {
     background: #a2d2ff;
-    color: transparent;
+    /* color: transparent; */
 }
 
 .intro.plain .block {
