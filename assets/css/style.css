@@ -33,8 +33,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: white;
-    /* background: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%); */
+    /* background: rgba(0, 0, 0, 1); */
+    background: radial-gradient(circle, rgba(238, 174, 202) 0%, rgba(148, 187, 233) 100%);
     padding: 0;
     margin: 0;
     margin-bottom: 3rem;
@@ -390,7 +390,7 @@ body>button {
 
 #scrolling-container {
     white-space: nowrap;
-    display: flex;
+    display: none;
     flex-direction: row;
     background: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
     width: 100%;
@@ -820,27 +820,27 @@ footer {
 
 .b1 {
     background: #ffc8dd;
-    /* color: transparent; */
+    color: transparent;
 }
 
 .b2 {
     background: #ffafcc;
-    /* color: transparent; */
+    color: transparent;
 }
 
 .b3 {
     background: #bde0fe;
-    /* color: transparent; */
+    color: transparent;
 }
 
 .b4 {
     background: #a2d2ff;
-    /* color: transparent; */
+    color: transparent;
 }
 
 .intro.plain .block {
     background: 0;
-    color: var(--primary-color);
+    color: transparent;
     margin-right: .25rem;
     font-size: 2rem;
 }
