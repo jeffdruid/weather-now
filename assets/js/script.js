@@ -47,6 +47,24 @@ function displayWeatherData(data) {
 }
 
 /**
+ * Ask for permission to use user location on page load.
+ */
+window.addEventListener("load", function() {
+  alert("Please allow access to your location for accurate weather information.");
+  if (navigator.permissions) {
+    navigator.permissions.query({ name: "geolocation" }).then(function(result) {
+      if (result.state === "granted") {
+        getWeatherForCurrentLocation();
+      } else if (result.state === "prompt") {
+        alert("Please allow access to your location for accurate weather information.");
+      }
+    });
+  } else if (navigator.geolocation) {
+    getWeatherForCurrentLocation();
+  }
+});
+
+/**
  * Get the user's current location and display the weather.
  */
 function getWeatherForCurrentLocation() {
@@ -1046,7 +1064,7 @@ sideBarBtn.addEventListener("click", function() {
 
 showCurrentTime();
 // Avoid making too many API call for the user's current location
-getWeatherForCurrentLocation();
+// getWeatherForCurrentLocation();
 
 const marqueeText = document.getElementById("scrolling-text");
 let position = 0;
