@@ -1,3 +1,4 @@
+// FLIP for GSAP
 let layouts = ["final", "plain", "columns", "grid", "final"],
     intro = document.querySelector(".intro"),
     curLayout = 0; // index of the current layout
@@ -10,7 +11,7 @@ function nextState() {
         curLayout++;   // increment
         intro.classList.add(layouts[curLayout]);    // add the new class
     } else {
-        gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1.25, delay: .25, onComplete: () => {
+        gsap.fromTo(intro, {opacity: 1}, {opacity: 0, duration: 1.25, delay: 1.25, onComplete: () => {
             intro.style.display = "none"; // hide the intro element when the animation ends
             document.body.style.overflow = "visible";
             document.getElementById("side-bar-close-btn").style.display = "flex";
