@@ -55,7 +55,11 @@ Weather Now is a web application that provides real-time weather information for
 - OpenWeatherMap API
 - Flags API
 - Google Charts
-
+- GSAP
+- Python
+- Flask
+- Heroku
+- Cors-Anywhere
 
 ## User Stories
 <!-- TODO - Create a table -->
@@ -173,6 +177,11 @@ Weather Now is a web application that provides real-time weather information for
 - TODO
 ![Alt text](assets/media/feat-footer.png) 
 
+### API Key
+- TODO
+![Alt text](assets/media/FlaskApp.png)
+- [Source Code](https://github.com/jeffdruid/weatherKey)
+
 ## Testing
 <!-- TODO -->
 ### Validator Testing
@@ -201,9 +210,11 @@ Weather Now is a web application that provides real-time weather information for
 ## Bugs
 <!-- TODO -->
 
+
 ### Fixed Bugs
 <!-- TODO -->
 - Dark Mode not toggling properly on mobile.
+- Cors Access - Cors-Anywhere
 
 ## UI Improvements
 <!-- TODO -->
