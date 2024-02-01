@@ -86,6 +86,10 @@ Weather Now is a web application that provides real-time weather information for
 - TODO
 ![Alt text](assets/media/feat-header.png) 
 
+### Animation Intro
+![Animation-Intro](assets/media/Animation-intro.gif)
+![Alt text](assets/media/Animation-code.png)
+
 ### Weather Container
 - TODO
 ![Alt text](assets/media/feat-weather-container.png)

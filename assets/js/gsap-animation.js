@@ -2,10 +2,8 @@
 let layouts = ["final", "plain", "columns", "grid", "final"],
     intro = document.querySelector(".intro"),
     curLayout = 0; // index of the current layout
-
 function nextState() {
     const state = Flip.getState(".block", {props: "color,backgroundColor", simple: true}); // capture current state
-
     if (curLayout < layouts.length -1) {
         intro.classList.remove(layouts[curLayout]); // remove old class
         curLayout++;   // increment
@@ -20,7 +18,6 @@ function nextState() {
         }});
         return;
     }
-
     Flip.from(state, { // animate from the previous state
         absolute: true,
         stagger: 0.07,
@@ -33,8 +30,6 @@ function nextState() {
             gsap.to(elements, {opacity: 0});
         }
     });
-
     gsap.delayedCall(curLayout === 0 ? .25 : .9, nextState);
 }
-
 gsap.delayedCall(1, nextState);
