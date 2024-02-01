@@ -74,7 +74,9 @@ Weather Now is a web application that provides real-time weather information for
 
 ## Wireframe
 <!-- TODO -->
+![Alt text](assets/media/Wireframe-2.png)
 
+![Alt text](assets/media/Wireframe-1.png)
 ### Features
 - TODO create a table
 
@@ -87,6 +89,7 @@ Weather Now is a web application that provides real-time weather information for
 ### Weather Container
 - TODO
 ![Alt text](assets/media/feat-weather-container.png)
+
 #### Buttons
 ![Alt text](assets/media/feat-favorite-icon.png) 
 ![Alt text](assets/media/feat-flags-api.png) 
@@ -117,8 +120,6 @@ Weather Now is a web application that provides real-time weather information for
 - Save your favorite locations and easily check the weather for them.
 ![Alt text](assets/media/feat-favorite-btn.png) 
 ![Alt text](assets/media/feat-favorite-container.png) 
-#### Buttons
-- TODO
 ![Alt text](assets/media/btn-clear-favorites.png) 
 
 ### Dark Mode:
