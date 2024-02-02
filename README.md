@@ -9,17 +9,38 @@ Weather Now is a web application that provides real-time weather information for
 <!-- TODO - Update table -->
 
 1. [Introduction](#introduction)
-1. [Technologies Used](#technologies-used)
-1. [User Stories](#user-stories)
-1. [Wireframe](#wireframe)
-1. [Features](#features)
-   - [Index](#index)
-1. [Testing](#testing)
+2. [Technologies Used](#technologies-used)
+3. [User Stories](#user-stories)
+4. [Wireframe](#wireframe)
+5. [Features](#features)
+
+- [Animation Intro](#animation-intro)
+- [Header](#header)
+- [Weather Container](#weather-container)
+  - [Buttons](#buttons)
+- [Current Weather](#current-weather)
+- [Search Functionality](#search-functionality)
+- [Temperature Units](#temperature-units)
+- [5-Day Forecast](#5-day-forecast)
+- [Favorites](#favorites)
+- [Dark Mode](#dark-mode)
+- [Search History](#search-history)
+- [Side Bar](#side-bar)
+- [Chart](#chart)
+- [GitHub](#github)
+- [Loading Screen](#loading-screen)
+- [Error Handling](#error-handling)
+- [Alerts](#alerts)
+- [Footer](#footer)
+- [API Key](#api-key)
+
+6. [Testing](#testing)
    - [Validator Testing](#validator-testing)
      - [HTML](#html)
      - [CSS](#css)
      - [Javascript](#javascript)
    - [Accessibility](#accessibility)
+   - [Lighthouse](#lighthouse)
    - [Responsiveness](#responsiveness)
    - [Manual Testing](#manual-testing)
      - [Cross-browser Compatibility](#cross-browser-compatibility)
@@ -30,20 +51,26 @@ Weather Now is a web application that provides real-time weather information for
      - [Desktop](#desktop)
      - [Tablet](#tablet)
      - [Mobile](#mobile)
-   - [Bugs](#bugs)
-     - [Fixed Bugs](#fixed-bugs)
-   - [UI Improvements](#ui-improvements)
-   - [Future Improvements](#future-improvements)
-1. [Deployment](#deployment)
-   - [Cloning & Forking](#cloning--forking)
-   - [Local Deployment](#local-deployment)
-   - [Remote Deployment](#remote-deployment)
-1. [Credits](#credits)
-   - [Source Code](#source-code)
-   - [Icons](#icons)
-   - [Videos](#videos)
-   - [Images](#images)
-   - [Useful links](#useful-links)
+7. [Bugs](#bugs)
+   - [Fixed Bugs](#fixed-bugs)
+8. [UI Improvements](#ui-improvements)
+9. [Future Improvements](#future-improvements)
+   - [Map Integration](#map-integration)
+   - [Autocomplete](#autocomplete)
+   - [User Interface](#user-interface)
+   - [Cache Data](#cache-data)
+10. [Deployment](#deployment)
+
+- [Cloning & Forking](#cloning--forking)
+- [Local Deployment](#local-deployment)
+- [Remote Deployment](#remote-deployment)
+
+11. [Credits](#credits)
+
+- [Source Code](#source-code)
+- [Icons](#icons)
+- [Images](#images)
+- [Useful links](#useful-links)
 
 ## Introduction
 
@@ -90,7 +117,7 @@ Weather Now is a web application that provides real-time weather information for
 
 ![Alt text](assets/media/Wireframe-1.png)
 
-### Features
+## Features
 
 - TODO create a table
 
