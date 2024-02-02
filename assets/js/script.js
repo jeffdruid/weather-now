@@ -15,7 +15,7 @@ let lastUpdatedTime = "";
 // Add the unlock CORS access button
 const unlockButton = document.createElement("button");
 unlockButton.textContent = "Unlock Server Access";
-unlockButton.addEventListener("click", function() {
+unlockButton.addEventListener("click", function () {
   window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
   unlockButton.style.display = "none";
 });
@@ -26,12 +26,12 @@ document.body.appendChild(unlockButton);
  * Get the current time and display it.
  */
 function showCurrentTime() {
-  setInterval(function() {
+  setInterval(function () {
     let currentTime = new Date();
     let formattedTime = currentTime.toLocaleTimeString("en-US", {
       hour: "numeric",
       hour12: true,
-      minute: "numeric"
+      minute: "numeric",
     });
     document.getElementById("current-time").innerHTML =
       "Time: " + formattedTime;
@@ -49,16 +49,20 @@ function displayWeatherData(data) {
 /**
  * Ask for permission to use user location on page load.
  */
-window.addEventListener("load", function() {
-  alert("Please allow access to your location for accurate weather information.");
+window.addEventListener("load", function () {
+  alert(
+    "Please allow access to your location for accurate weather information."
+  );
   if (navigator.permissions) {
-    navigator.permissions.query({ name: "geolocation" }).then(function(result) {
-      if (result.state === "granted") {
-        getWeatherForCurrentLocation();
-      } else if (result.state === "prompt") {
-        // alert("Please allow access to your location for accurate weather information.");
-      }
-    });
+    navigator.permissions
+      .query({ name: "geolocation" })
+      .then(function (result) {
+        if (result.state === "granted") {
+          getWeatherForCurrentLocation();
+        } else if (result.state === "prompt") {
+          // alert("Please allow access to your location for accurate weather information.");
+        }
+      });
   } else if (navigator.geolocation) {
     getWeatherForCurrentLocation();
   }
@@ -70,7 +74,7 @@ window.addEventListener("load", function() {
 function getWeatherForCurrentLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      async function(position) {
+      async function (position) {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
         try {
@@ -104,7 +108,7 @@ function getWeatherForCurrentLocation() {
             ).toLocaleTimeString("en-US", {
               hour: "numeric",
               hour12: true,
-              minute: "numeric"
+              minute: "numeric",
             });
           document.getElementById("current-sunset").innerHTML =
             "Sunset: " +
@@ -113,7 +117,7 @@ function getWeatherForCurrentLocation() {
             ).toLocaleTimeString("en-US", {
               hour: "numeric",
               hour12: true,
-              minute: "numeric"
+              minute: "numeric",
             });
           document.getElementById("current-desc").innerHTML =
             data.weather[0].description;
@@ -137,7 +141,7 @@ function getWeatherForCurrentLocation() {
           unlockButton.style.display = "block";
         }
       },
-      function(error) {
+      function (error) {
         console.error(error);
         // Display an error message on the UI
         document.getElementById("error-message-user-location").style.display =
@@ -162,7 +166,7 @@ function getWeatherForCurrentLocation() {
 }
 
 // Hide error message when clicking anywhere on the screen
-document.addEventListener("click", function() {
+document.addEventListener("click", function () {
   document.getElementById("error-message-user-location").style.display =
     "none";
   document.getElementById("error-message-user-forecast").style.display =
@@ -190,7 +194,7 @@ function showSpinner() {
   spinner.style.display = "block";
 
   // Rotate spinner until display is set to none
-  const rotateSpinner = function() {
+  const rotateSpinner = function () {
     if (document.querySelector(".spinner").style.display !== "none") {
       spinner.style.transform = "rotate(" + spinnerRotation + "deg)";
       spinnerRotation += 10;
@@ -318,7 +322,7 @@ async function getWeather(location) {
   lastUpdatedTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
-    minute: "numeric"
+    minute: "numeric",
   });
   document.getElementById("last-updated").innerHTML =
     "Last Updated: " + lastUpdatedTime;
@@ -345,11 +349,11 @@ async function getWeather(location) {
 
 // Refresh Button
 const refreshButton = document.getElementById("refresh-button");
-refreshButton.addEventListener("click", function() {
+refreshButton.addEventListener("click", function () {
   const currentTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
-    minute: "numeric"
+    minute: "numeric",
   });
   if (currentTime === lastUpdatedTime) {
     alert("Weather data is already up to date.");
@@ -362,7 +366,7 @@ refreshButton.addEventListener("click", function() {
 
 // Search box event listener
 if (searchBox) {
-  searchBox.addEventListener("keyup", function(event) {
+  searchBox.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
       // document.querySelector(".weather-container").style.display = "flex";
       if (isCelsius === !isCelsius) {
@@ -380,7 +384,7 @@ if (searchBox) {
 
 // Search button event listener
 const searchButton = document.querySelector("input");
-searchButton.addEventListener("click", function() {
+searchButton.addEventListener("click", function () {
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
@@ -440,10 +444,10 @@ function toggleTemperatureUnit() {
       32;
 
     // Display the forecast temperatures in Fahrenheit
-    document.querySelectorAll(".forecastC").forEach(function(forecast) {
+    document.querySelectorAll(".forecastC").forEach(function (forecast) {
       forecast.style.display = "none";
     });
-    document.querySelectorAll(".forecastF").forEach(function(forecast) {
+    document.querySelectorAll(".forecastF").forEach(function (forecast) {
       forecast.style.display = "inline";
     });
 
@@ -509,10 +513,10 @@ function toggleTemperatureUnit() {
     maxTempElement.innerHTML = "Maximum: " + Math.round(maxTempCelsius) + "°C";
     minTempElement.innerHTML = "Minimum: " + Math.round(minTempCelsius) + "°C";
 
-    document.querySelectorAll(".forecastC").forEach(function(forecast) {
+    document.querySelectorAll(".forecastC").forEach(function (forecast) {
       forecast.style.display = "inline";
     });
-    document.querySelectorAll(".forecastF").forEach(function(forecast) {
+    document.querySelectorAll(".forecastF").forEach(function (forecast) {
       forecast.style.display = "none";
     });
 
@@ -569,7 +573,7 @@ function displayWeatherForFavorites() {
     // Add the "Delete favorite" button
     const clearBtn = document.createElement("div");
     clearBtn.id = "clear-favorites-btn";
-    clearBtn.innerHTML = "<i class=\"fa fa-trash\" aria-hidden=\"true\"></i>";
+    clearBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
     favoriteWeatherContainer.appendChild(clearBtn);
     document.getElementById("clear-favorites-btn").style.display = "flex";
     document
@@ -582,7 +586,7 @@ function displayWeatherForFavorites() {
     favoriteWeatherContainer.appendChild(favoritesHeading);
 
     // Display the temperature in Celsius or Fahrenheit
-    favoriteLocations.forEach(function(location) {
+    favoriteLocations.forEach(function (location) {
       if (isCelsius === !isCelsius) {
         isCelsius = false;
         document.getElementById("temperature-toggle-btn").innerHTML = "°C";
@@ -656,10 +660,7 @@ function setFavoriteLocation(location) {
   }
   // Add the location to the favorite locations
   favoriteLocations.push(location);
-  localStorage.setItem(
-    "favoriteLocations",
-    JSON.stringify(favoriteLocations)
-  );
+  localStorage.setItem("favoriteLocations", JSON.stringify(favoriteLocations));
   console.log("Location set as favorite: " + location);
 }
 
@@ -703,7 +704,7 @@ const favoritesBtn = document.getElementById("favorites-btn");
 let isFavoritesOpen = false;
 
 // Add the button click event listener to toggle favorites
-favoritesBtn.addEventListener("click", function() {
+favoritesBtn.addEventListener("click", function () {
   // Close the side bar
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
@@ -756,7 +757,7 @@ async function getFiveDayForecast(location) {
     const dateTime = new Date(data.list[i].dt_txt);
     if (dateTime.getHours() === 0) {
       const dayOfWeek = dateTime.toLocaleDateString(undefined, {
-        weekday: "long"
+        weekday: "long",
       });
       forecastData += `<div>${dayOfWeek}`;
 
@@ -788,7 +789,7 @@ let isForecastOpen = false;
 
 // Add the button click event listener to display the forecast
 const forecastBtn = document.getElementById("forecast-btn");
-forecastBtn.addEventListener("click", async function() {
+forecastBtn.addEventListener("click", async function () {
   showSpinner();
 
   console.log(isCelsius);
@@ -814,24 +815,23 @@ forecastBtn.addEventListener("click", async function() {
   isForecastOpen = !isForecastOpen;
 });
 
-
 /**
  * Draw the chart.
-*/
+ */
 async function drawChart() {
   // Load Google Charts
   let script = document.createElement("script");
   script.src = "https://www.gstatic.com/charts/loader.js";
-  script.onload = function() {
+  script.onload = function () {
     google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(function() {
+    google.charts.setOnLoadCallback(function () {
       const location = document.getElementById("location").innerHTML;
       // Make an API call to fetch the forecast data
       fetch(apiUrl + `location=` + location + `&endpoint=forecast`)
-        .then(function(response) {
+        .then(function (response) {
           return response.json();
         })
-        .then(function(data) {
+        .then(function (data) {
           hideSpinner();
           // Create the data table
           let dataTable = new google.visualization.DataTable();
@@ -843,14 +843,18 @@ async function drawChart() {
           const forecastData = data.list;
 
           // Iterate over the forecast data and add rows to the data table
-          forecastData.forEach(function(forecast) {
+          forecastData.forEach(function (forecast) {
             const date = new Date(forecast.dt_txt);
             const day = date.toLocaleDateString("en-US", { day: "numeric" });
             const month = date.toLocaleDateString("en-US", { month: "long" });
             const year = date.toLocaleDateString("en-US", { year: "numeric" });
             const temperature = forecast.main.temp;
             const humidity = forecast.main.humidity;
-            dataTable.addRow([`${day} ${month} ${year}`, temperature, humidity]);
+            dataTable.addRow([
+              `${day} ${month} ${year}`,
+              temperature,
+              humidity,
+            ]);
           });
 
           /* jshint -W074 */
@@ -877,10 +881,11 @@ async function drawChart() {
           );
           chart.draw(dataTable, options);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           // Display an error message on the UI
-          document.getElementById("error-message-user-forecast").style.display =
-            "flex";
+          document.getElementById(
+            "error-message-user-forecast"
+          ).style.display = "flex";
           const errorMessage = document.getElementById(
             "error-message-user-forecast"
           );
@@ -897,7 +902,7 @@ let isChartOpen = false;
 
 // Add the button click event listener to display the chart
 const chartBtn = document.getElementById("chart-btn");
-chartBtn.addEventListener("click", async function() {
+chartBtn.addEventListener("click", async function () {
   document.getElementById("chart_div").style.display = "flex";
   document.getElementById("chart_div").style.animation = "fadeIn .3s ease-in";
   document.getElementById("forecast").style.display = "none";
@@ -962,11 +967,11 @@ function displaySearchHistory() {
   historyContainer.appendChild(historyHeading);
 
   // Iterate over the search history and display each item
-  uniqueSearchHistory.forEach(function(item) {
+  uniqueSearchHistory.forEach(function (item) {
     const historyItem = document.createElement("a");
     historyItem.textContent = item;
     historyItem.href = "#";
-    historyItem.addEventListener("click", function() {
+    historyItem.addEventListener("click", function () {
       getWeather(item);
     });
     historyContainer.appendChild(historyItem);
@@ -977,7 +982,7 @@ function displaySearchHistory() {
 let isHistoryOpen = false;
 
 // Add a button click event listener to show the search history
-showHistoryBtn.addEventListener("click", function() {
+showHistoryBtn.addEventListener("click", function () {
   // Close the side bar
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
@@ -1040,7 +1045,7 @@ let isSideBarOpen = false;
 
 // Add the button click event listener to toggle the side bar
 const sideBarBtn = document.getElementById("side-bar-close-btn");
-sideBarBtn.addEventListener("click", function() {
+sideBarBtn.addEventListener("click", function () {
   if (isSideBarOpen) {
     console.log("Side bar closed");
     document.getElementById("side-bar").style.left = "-25%";
