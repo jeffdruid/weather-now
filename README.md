@@ -103,29 +103,41 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Animation Intro
 
-![Animation-Intro](assets/media/Animation-intro.gif)
-![Alt text](assets/media/Animation-code.png)
+- A quick animation intro GSAP library.
+  ![Animation-Intro](assets/media/Animation-intro.gif)
+
+  - The animation was made by FLIP for GSAP - TODO - Source Code link
+    ![Alt text](assets/media/Animation-code.png)
 
 ### Weather Container
 
-- TODO
+- Contains Weather information
   ![Alt text](assets/media/feat-weather-container.png)
 
 #### Buttons
 
-![Alt text](assets/media/feat-favorite-icon.png)
-![Alt text](assets/media/feat-flags-api.png)
-![Alt text](assets/media/feat-last-updated.png)
-![Alt text](assets/media/feat-refresh-btn.png)
-![Alt text](assets/media/btn-forecast-chart.png)
+- Add/Remove favorites
+  ![Alt text](assets/media/feat-favorite-icon.png)
+
+- Flags API provides the flags icons.
+  ![Alt text](assets/media/feat-flags-api.png)
+
+- Display when the weather was last updated.
+  ![Alt text](assets/media/feat-last-updated.png)
+
+- Refresh weather information.
+  ![Alt text](assets/media/feat-refresh-btn.png)
+
+- Provides additional weather information like 5 day forecast and a forecast chart, display the temperatures throughout the next five days and also humidity levels.
+  ![Alt text](assets/media/btn-forecast-chart.png)
 
 ### Current Weather:
 
 - Get real-time weather information such asn current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
-- Upon loading, the application will attempt to get your current location and display the weather.
-  ![Current Info](/assets/media/feat-current-info.gif)
-
-![Error Location Access](/assets/media/error-location-access.png)
+  - Upon loading, the application will ask user to allow location in order to get your current location and display the weather.
+    ![Current Info](/assets/media/feat-current-info.gif)
+  - Error Message when user's location is not available. User still be able to access the services of the website but the information on the foooter will only display the users current time.
+    ![Error Location Access](/assets/media/error-location-access.png)
 
 ### Search Functionality:
 
@@ -147,7 +159,8 @@ Weather Now is a web application that provides real-time weather information for
 - Save your favorite locations and easily check the weather for them.
   ![Alt text](assets/media/feat-favorite-btn.png)
   ![Alt text](assets/media/feat-favorite-container.png)
-  ![Alt text](assets/media/btn-clear-favorites.png)
+  - Clear all favorites from favorites container.
+    ![Alt text](assets/media/btn-clear-favorites.png)
 
 ### Dark Mode:
 
@@ -180,39 +193,50 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Loading Screen
 
-- TODO
+- Loading spinner will be display while the page load the content from the OpenWeatherMap API.
   ![Alt text](assets/media/feat-loading-chart.gif)
   ![Alt text](assets/media/feat-loading-forecast.gif)
 
 ### Error Handling
 
-![Alt text](assets/media/error-429.png)
-![Alt text](assets/media/error-cors-access.png)
-![Alt text](assets/media/error-location-access.png)
-![Alt text](assets/media/error-no-favorites.png)
-![Alt text](assets/media/error-no-history.png)
-![Alt text](assets/media/error-not-found.png)
+- Because the website uses the cors-anywhere proxy, sometimes will get an error if too many request are made in a short amount of time, blocking access for a while.
+  ![Alt text](assets/media/error-429.png)
+- Using Cors-Anywhere to provide cors access to the weatherKey flask app, where the API key is hidden.
+  ![Alt text](assets/media/error-cors-access.png)
+
+- Error message displayed when user has not allowed location, user still able to use the functions of this website after this error.
+  ![Alt text](assets/media/error-location-access.png)
+- Error message displayed when localStorage does not have any favorites saved.
+  ![Alt text](assets/media/error-no-favorites.png)
+- Error message displayed when localStorage does not have any previous searched locations
+  ![Alt text](assets/media/error-no-history.png)
+- Error message displayed when a location is invalid or does not exist.
+  ![Alt text](assets/media/error-not-found.png)
 
 ### Alerts
 
-![Alt text](assets/media/alert-already-updated.png)
-![Alt text](assets/media/alert-clear-favorites.png)
-![Alt text](assets/media/alert-too-many-requests.png)
+- If user refresher the page and the page is already up to date.
+  ![Alt text](assets/media/alert-already-updated.png)
+- Alert displayed when user tries to clear all favorites.
+  ![Alt text](assets/media/alert-clear-favorites.png)
+- If user has sent too many request requests in a short amount of time.
+  ![Alt text](assets/media/alert-too-many-requests.png)
 
 ### Footer
 
-- TODO
+- Footer of page displaying website's info.
   ![Alt text](assets/media/feat-footer.png)
 
 ### API Key
 
-- TODO
+- During development of the application, one of the issues not using a back-end was to hide the api key, in early development the api key was exposed to github but quickly realised the this was bad practice and had to come upb with an alternative solution.
+- a small flask app was used in order to fully hide the api key in the front-end. the flask app was inspired by Daniel Hamilton's App on github
   ![Alt text](assets/media/FlaskApp.png)
 - [Source Code](https://github.com/jeffdruid/weatherKey)
 
 ## Testing
 
-<!-- TODO -->
+- A series of testing was made by using diffrerent online validators such as JigSaw, W3C nd JSLint.
 
 ### Validator Testing
 
@@ -242,6 +266,8 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Manual Testing
 
+- manual testing was made by checking the application in different browsers and different screen sizes.
+
 ####
 
 #### Desktop
@@ -252,6 +278,7 @@ Weather Now is a web application that provides real-time weather information for
 
 ## Bugs
 
+- Temperature not displaying the correct unit when toggle is activated.
 <!-- TODO -->
 
 ### Fixed Bugs
@@ -259,7 +286,7 @@ Weather Now is a web application that provides real-time weather information for
 <!-- TODO -->
 
 - Dark Mode not toggling properly on mobile.
-- Cors Access - Cors-Anywhere
+- Cors Access was blocked bypass this by using - Cors-Anywhere proxy
 
 ## UI Improvements
 
