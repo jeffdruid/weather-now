@@ -94,8 +94,6 @@ Weather Now is a web application that provides real-time weather information for
 
 ## User Stories
 
-<!-- TODO - Create a table -->
-
 | User Story                                                                                     | I Know I'm Done When...                                                                                                                                                                   |
 | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | As a user, I want to check the current weather for a specific city.                            | I can easily check the current weather for any city by entering the city name in the search box. The displayed information includes temperature, humidity, wind speed, and weather icons. |
@@ -119,150 +117,148 @@ Weather Now is a web application that provides real-time weather information for
 
 ## Features
 
-- TODO create a table
+### Header
 
-| Feature | Description                                     |
-| ------- | ----------------------------------------------- |
-| Header  | Displays the header section of the application. |
-
-- TODO
-  ![Alt text](assets/media/feat-header.png)
+|                                           |                                                 |
+| ----------------------------------------- | ----------------------------------------------- |
+| ![Alt text](assets/media/feat-header.png) | Displays the header section of the application. |
 
 ### Animation Intro
 
-- A quick animation intro using the GSAP library.
-  ![Animation-Intro](assets/media/Animation-intro.gif)
-
-  - The animation was made by FLIP for GSAP - [CodePen](https://codepen.io/GreenSock/pen/eYdyVVe)
-    ![Alt text](assets/media/Animation-code.png)
+|                                                      |                                                                                               |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| ![Animation-Intro](assets/media/Animation-intro.gif) | A quick animation intro using the GSAP library.                                               |
+| ![Alt text](assets/media/Animation-code.png)         | The animation was made by FLIP for GSAP - [CodePen](https://codepen.io/GreenSock/pen/eYdyVVe) |
 
 ### Weather Container
 
-- Contains Weather information
-  ![Alt text](assets/media/feat-weather-container.png)
+|                                                      |                              |
+| ---------------------------------------------------- | ---------------------------- |
+| ![Alt text](assets/media/feat-weather-container.png) | Contains Weather information |
 
 #### Buttons
 
-- Add/Remove favorites
-  ![Alt text](assets/media/feat-favorite-icon.png)
-
-- Flags API provides flags icons.
-  ![Alt text](assets/media/feat-flags-api.png)
-
-- Display when the weather was last updated.
-  ![Alt text](assets/media/feat-last-updated.png)
-
-- Refresh weather information.
-  ![Alt text](assets/media/feat-refresh-btn.png)
-
-- Additional weather information, including a 5-day forecast and a forecast chart displaying temperatures and humidity levels.
-  ![Alt text](assets/media/btn-forecast-chart.png)
+|                                                  |                                                                                                                              |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| ![Alt text](assets/media/feat-favorite-icon.png) | Add/Remove favorites                                                                                                         |
+| ![Alt text](assets/media/feat-flags-api.png)     | Flags API provides flags icons.                                                                                              |
+| ![Alt text](assets/media/feat-last-updated.png)  | Display when the weather was last updated.                                                                                   |
+| ![Alt text](assets/media/feat-refresh-btn.png)   | Refresh weather information.                                                                                                 |
+| ![Alt text](assets/media/btn-forecast-chart.png) | Additional weather information, including a 5-day forecast and a forecast chart displaying temperatures and humidity levels. |
 
 ### Current Weather:
 
 - Get real-time weather information such asn current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
-  - Upon loading, the application will ask user to allow location in order to get your current location and display the weather.
-    ![Current Info](/assets/media/feat-current-info.gif)
-  - Error Message displayed when the user's location is not available. But the user can still access the services of the website, and the footer displays the user's current time.
-    ![Error Location Access](/assets/media/error-location-access.png)
+
+|                                                                   |                                                                                                                                                                                |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ![Current Info](/assets/media/feat-current-info.gif)              | Upon loading, the application will ask user to allow location in order to get your current location and display the weather.                                                   |
+| ![Error Location Access](/assets/media/error-location-access.png) | Error Message displayed when the user's location is not available. But the user can still access the services of the website, and the footer displays the user's current time. |
 
 ### Search Functionality:
 
-- Allows user to enter a city name in the search box to retrieve weather details for any specific location.
-  ![Search Feature](/assets/media/feat-search.png)
+|                                                  |                                                                                                           |
+| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| ![Search Feature](/assets/media/feat-search.png) | Allows user to enter a city name in the search box to retrieve weather details for any specific location. |
 
 ### Temperature Units:
 
-- Allows users to toggle between Celsius and Fahrenheit units to view temperature information according to their preference.
-  ![Alt text](assets/media/btn-temp-toggle.png)
+|                                               |                                                                                                                            |
+| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| ![Alt text](assets/media/btn-temp-toggle.png) | Allows users to toggle between Celsius and Fahrenheit units to view temperature information according to their preference. |
 
 ### 5-Day Forecast:
 
-- Provides a 5-day weather forecast, displaying temperature and humidity trends.
-  ![Alt text](assets/media/feat-forecast.png)
+|                                             |                                                                                |
+| ------------------------------------------- | ------------------------------------------------------------------------------ |
+| ![Alt text](assets/media/feat-forecast.png) | Provides a 5-day weather forecast, displaying temperature and humidity trends. |
 
 ### Favorites:
 
-- Allow users to save favorite locations and easily check the weather for them.
-  ![Alt text](assets/media/feat-favorite-btn.png)
-  ![Alt text](assets/media/feat-favorite-container.png)
-  - Clear all favorites from favorites container.
-    ![Alt text](assets/media/btn-clear-favorites.png)
+|                                                       |                                                                               |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------- |
+| ![Alt text](assets/media/feat-favorite-btn.png)       | Allow users to save favorite locations and easily check the weather for them. |
+| ![Alt text](assets/media/feat-favorite-container.png) |                                                                               |
+| ![Alt text](assets/media/btn-clear-favorites.png)     | Clear all favorites from favorites container.                                 |
 
 ### Dark Mode:
 
-- Allow users to toggle between light and dark mode for better visibility.
-  ![Alt text](assets/media/feat-dark-mode-btn.png)
-  ![Alt text](assets/media/feat-dark-mode-screen.png)
+|                                                     |                                                                          |
+| --------------------------------------------------- | ------------------------------------------------------------------------ |
+| ![Alt text](assets/media/feat-dark-mode-btn.png)    | Allow users to toggle between light and dark mode for better visibility. |
+| ![Alt text](assets/media/feat-dark-mode-screen.png) |                                                                          |
 
 ### Search History:
 
-- Allow users to view their search history to quickly revisit previous locations.
-  ![Alt text](assets/media/feat-history-btn.png)
-  ![Alt text](assets/media/feat-history-container.png)
+|                                                      |                                                                                 |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------- |
+| ![Alt text](assets/media/feat-history-btn.png)       | Allow users to view their search history to quickly revisit previous locations. |
+| ![Alt text](assets/media/feat-history-container.png) |                                                                                 |
 
 ### Side Bar:
 
-- The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and a Github link.
-  ![Alt text](assets/media/feat-side-bar-btn.png)
-  ![Alt text](assets/media/feat-side-bar-desktop.png)
-  ![Alt text](assets/media/feat-side-bar-mobile.png)
+|                                                     |                                                                                                                 |
+| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| ![Alt text](assets/media/feat-side-bar-btn.png)     | The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and a Github link. |
+| ![Alt text](assets/media/feat-side-bar-desktop.png) |                                                                                                                 |
+| ![Alt text](assets/media/feat-side-bar-mobile.png)  |                                                                                                                 |
 
 ### Chart:
 
-- Visualize temperature and humidity trends with an interactive chart. Clicking on the "Chart" button displays a graphical representation of temperature and humidity for the next 5 days.
-  ![Alt text](assets/media/feat-chart.png)
+|                                          |                                                                                                                                                                                          |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Alt text](assets/media/feat-chart.png) | Visualize temperature and humidity trends with an interactive chart. Clicking on the "Chart" button displays a graphical representation of temperature and humidity for the next 5 days. |
 
 ### GitHub:
 
-- Allows users to explore and contribute to the source code on GitHub.
-  ![Alt text](assets/media/feat-github-btn.png)
+|                                               |                                                                      |
+| --------------------------------------------- | -------------------------------------------------------------------- |
+| ![Alt text](assets/media/feat-github-btn.png) | Allows users to explore and contribute to the source code on GitHub. |
 
 ### Loading Screen
 
-- A loading spinner is displayed while the page loads content from the OpenWeatherMap API.
-  ![Alt text](assets/media/feat-loading-chart.gif)
-  ![Alt text](assets/media/feat-loading-forecast.gif)
+|                                                                                                      |                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| ![Alt text](assets/media/feat-loading-chart.gif) ![Alt text](assets/media/feat-loading-forecast.gif) | A loading spinner is displayed while the page loads content from the OpenWeatherMap API. |
 
 ### Error Handling
 
 - Handles various error scenarios, including CORS issues, location access denial, and invalid or non-existent locations.
-  ![Alt text](assets/media/error-429.png)
-- Using Cors-Anywhere to provide cors access to the weatherKey flask app, where the API key is hidden.
-  ![Alt text](assets/media/error-cors-access.png)
 
-- Error message displayed when user has not allowed location, user still able to use the functions of this website after this error.
-  ![Alt text](assets/media/error-location-access.png)
-- Error message displayed when localStorage does not have any favorites saved.
-  ![Alt text](assets/media/error-no-favorites.png)
-- Error message displayed when localStorage does not have any previous searched locations
-  ![Alt text](assets/media/error-no-history.png)
-- Error message displayed when a location is invalid or does not exist.
-  ![Alt text](assets/media/error-not-found.png)
+|                                                     |                                                                                                                                    |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| ![Alt text](assets/media/error-429.png)             | Error 429                                                                                                                          |
+| ![Alt text](assets/media/error-cors-access.png)     | Using Cors-Anywhere to provide cors access to the weatherKey flask app, where the API key is hidden.                               |
+| ![Alt text](assets/media/error-location-access.png) | Error message displayed when user has not allowed location, user still able to use the functions of this website after this error. |
+| ![Alt text](assets/media/error-no-favorites.png)    | Error message displayed when localStorage does not have any favorites saved.                                                       |
+| ![Alt text](assets/media/error-no-history.png)      | Error message displayed when localStorage does not have any previous searched locations                                            |
+| ![Alt text](assets/media/error-not-found.png)       | Error message displayed when a location is invalid or does not exist.                                                              |
 
 ### Alerts
 
 - Displays alerts for scenarios like attempting to refresh when already updated, trying to clear all favorites, and sending too many requests in a short amount of time.
 
-- If user refresher the page and the page is already up to date.
-  ![Alt text](assets/media/alert-already-updated.png)
-- Alert displayed when user tries to clear all favorites.
-  ![Alt text](assets/media/alert-clear-favorites.png)
-- If user has sent too many request requests in a short amount of time.
-  ![Alt text](assets/media/alert-too-many-requests.png)
+|                                                       |                                                                       |
+| ----------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Alt text](assets/media/alert-already-updated.png)   | If user refresher the page and the page is already up to date.        |
+| ![Alt text](assets/media/alert-clear-favorites.png)   | Alert displayed when user tries to clear all favorites.               |
+| ![Alt text](assets/media/alert-too-many-requests.png) | If user has sent too many request requests in a short amount of time. |
 
 ### Footer
 
-- The footer of the page displaying website information.
-  ![Alt text](assets/media/feat-footer.png)
+|                                           |                                                        |
+| ----------------------------------------- | ------------------------------------------------------ |
+| ![Alt text](assets/media/feat-footer.png) | The footer of the page displaying website information. |
 
 ### API Key
 
 - Describes the solution to hide the API key during development, using a small flask app to hide the API key in the front-end.
 
-- During development of the application, one of the issues not using a back-end was to hide the api key, in early development the api key was exposed to github but quickly realized the this was bad practice and had to come upb with an alternative solution.
-- a small flask app was used in order to fully hide the api key in the front-end. the flask app was inspired by Daniel Hamilton's App on github
-  ![Alt text](assets/media/FlaskApp.png)
+  - During development of the application, one of the issues not using a back-end was to hide the api key, in early development the api key was exposed to github but quickly realized the this was bad practice and had to come upb with an alternative solution.
+    - a small flask app was used in order to fully hide the api key in the front-end. the flask app was inspired by Daniel Hamilton's App on github
+
+![Alt text](assets/media/FlaskApp.png)
+
 - [Source Code](https://github.com/jeffdruid/weatherKey)
 
 ## Testing
@@ -323,8 +319,10 @@ Weather Now is a web application that provides real-time weather information for
 
 <!-- TODO -->
 
-- Color code the temperature.
+- Shorter Animation intro
 - Fix Header
+- Increase readability of footer elements.
+- Fix toggle buttons
 
 ## Future Improvements
 
@@ -344,6 +342,10 @@ Weather Now is a web application that provides real-time weather information for
 
 - TODO
 - Use cache to store the weather data. (Future feature)
+
+### Color code the temperature.
+
+- TODO
 
 ## Deployment
 
