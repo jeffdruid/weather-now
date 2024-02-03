@@ -32,9 +32,13 @@ Weather Now is a web application that provides real-time weather information for
 - [Error Handling](#error-handling)
 - [Alerts](#alerts)
 - [Footer](#footer)
+
+6. [Troubleshooting](#troubleshooting)
+
+- [CORS Error](#cors-error)
 - [API Key](#api-key)
 
-6. [Testing](#testing)
+7. [Testing](#testing)
    - [Validator Testing](#validator-testing)
      - [HTML](#html)
      - [CSS](#css)
@@ -51,21 +55,21 @@ Weather Now is a web application that provides real-time weather information for
      - [Desktop](#desktop)
      - [Tablet](#tablet)
      - [Mobile](#mobile)
-7. [Bugs](#bugs)
+8. [Bugs](#bugs)
    - [Fixed Bugs](#fixed-bugs)
-8. [UI Improvements](#ui-improvements)
-9. [Future Improvements](#future-improvements)
-   - [Map Integration](#map-integration)
-   - [Autocomplete](#autocomplete)
-   - [User Interface](#user-interface)
-   - [Cache Data](#cache-data)
-10. [Deployment](#deployment)
+9. [UI Improvements](#ui-improvements)
+10. [Future Improvements](#future-improvements)
+    - [Map Integration](#map-integration)
+    - [Autocomplete](#autocomplete)
+    - [User Interface](#user-interface)
+    - [Cache Data](#cache-data)
+11. [Deployment](#deployment)
 
 - [Cloning & Forking](#cloning--forking)
 - [Local Deployment](#local-deployment)
 - [Remote Deployment](#remote-deployment)
 
-11. [Credits](#credits)
+12. [Credits](#credits)
 
 - [Source Code](#source-code)
 - [Icons](#icons)
@@ -250,20 +254,33 @@ Weather Now is a web application that provides real-time weather information for
 | ----------------------------------------- | ------------------------------------------------------ |
 | ![Alt text](assets/media/feat-footer.png) | The footer of the page displaying website information. |
 
+## Troubleshooting
+
+### CORS Error
+
+- TODO Screenshots
+
+- During the development of the application, CORS (Cross-Origin Resource Sharing) issues were encountered when making requests from the frontend to the backend.
+
+  - Addressing CORS issues during the development of this JavaScript project proved to be a valuable learning experience. The use of CORS-anywhere as a workaround provided a practical solution to enable smooth communication between the frontend and backend during the initial stages of development.
+
+- Cors-Anywhere Proxy Solution
+
+  - To overcome these CORS challenges, a workaround using the CORS-anywhere proxy was implemented. CORS-anywhere is a simple HTTP proxy that allows cross-origin requests to be made from the frontend, bypassing the usual CORS restrictions.
+
 ### API Key
 
-- Describes the solution to hide the API key during development, using a small flask app to hide the API key in the front-end.
+- This Flask application serves as a secure backend solution for handling API requests to OpenWeatherMap. By keeping the API key on the server side, we mitigate the risk of exposing sensitive information to the client-side.
 
-  - During development of the application, one of the issues not using a back-end was to hide the api key, in early development the api key was exposed to github but quickly realized the this was bad practice and had to come upb with an alternative solution.
-    - a small flask app was used in order to fully hide the api key in the front-end. the flask app was inspired by Daniel Hamilton's App on github
+  - During the early stages of development, the OpenWeatherMap API key was inadvertently exposed in the GitHub repository. Recognizing the security implications of such a practice, a decision was made to find an alternative solution. Inspired by Dan Hamilton's App on GitHub, a small Flask application was implemented to serve as a backend.
 
 ![Alt text](assets/media/FlaskApp.png)
 
-- [Source Code](https://github.com/jeffdruid/weatherKey)
+- [WeatherKey - Source Code](https://github.com/jeffdruid/weatherKey)
 
 ## Testing
 
-- A series of testing was made by using diffrerent online validators such as JigSaw, W3C nd JSLint.
+- A series of testing was made by using different online validators such as JigSaw, W3C nd JSLint.
 
 ### Validator Testing
 
@@ -393,8 +410,8 @@ You can access the live link here : [Weather Now](https://jeffdruid.github.io/we
 - [Yusuf önaldı](https://freedesignresources.net/34-weather-icon-pack/)
 - [Glass Effect](https://webdesign.tutsplus.com/how-to-create-a-frosted-glass-effect-in-css--cms-32535t)
 - [Font Awesome](https://fontawesome.com)
-- [search Icon inside input box](https://nikitahl.com/search-icon-inside-input)
-- [How to Convert Celcius to Fahrenheit (°C to °F)](https://www.thoughtco.com/celcius-to-farenheit-formula-609227)
+- [Search Icon inside input box](https://nikitahl.com/search-icon-inside-input)
+- [How to Convert Celsius to Fahrenheit (°C to °F)](https://www.thoughtco.com/celcius-to-farenheit-formula-609227)
 - [Convert temperatures to and from celsius, fahrenheit](https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-11.php)
 - [Openweather API, time always in my local time zone](https://stackoverflow.com/questions/60627245/openweather-api-time-always-in-my-local-time-zone)
 - [localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
@@ -407,3 +424,5 @@ You can access the live link here : [Weather Now](https://jeffdruid.github.io/we
 - [Handle CORS Client-side](https://gist.github.com/jesperorb/6ca596217c8dfba237744966c2b5ab1e)
 - [Flip for GSAP](https://codepen.io/GreenSock/pen/eYdyVVe)
 - [Placeholder - image from pngtree.com](https://pngtree.com/element/down?id=NjM5ODI2Ng==&type=1&time=1706706114&token=MTZmZDg0ZWMzNzQ0NDYwNWI5ZmE0MGRkMmNkOWZjZjk=&t=0)
+- [Dan Hamilton](https://github.com/dlhamilton/weatherAPITest/blob/main/run.py)
+- [Cors-Anywhere](https://github.com/Rob--W/cors-anywhere)
