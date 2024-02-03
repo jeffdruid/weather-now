@@ -58,13 +58,14 @@ main {
 
 .container h1 {
     font-size: 1.75rem;
-    font-family: 'Merriweather', serif;
+    font-family: 'Raleway', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: .1rem;
+    letter-spacing: .2rem;
     text-align: center;
     color: var(--secondary-color-h1);
     box-shadow: 0 16px 20px rgba(0, 0, 0, .3);
+    text-shadow: 4px 4px 4px var(--primary-color);
     padding: 1.25rem;
     border-radius: 5px;
     width: 100vw;

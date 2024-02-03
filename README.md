@@ -371,17 +371,21 @@ The manual testing confirms that the page operates smoothly across multiple brow
   ![Cors Button - After](assets/media/ui-cors-btn.png)
 
 - Increase readability of footer elements.
-  ![Footer - After](assets/media/ui-footer.png)
+  ![Footer - Larger Text](assets/media/ui-footer.png)
 - Increased to `font-size: .75rem;`
 
 - Fix Side Bar Not closing on Mobile Screens.
   ![Side Bar - Blocked](assets/media/ui-side-bar-after.png)
 - Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
 
+- Fix Header for better readability and contrast.
+  ![Header - Text Shadow](assets/media/ui-header-after.png)
+- Added `text-shadow: 4px 4px 4px var(--primary-color);`
+
 - Shorter Animation intro
 <!-- TODO screen grab -->
 
-- Fix Header
+- Default Side Bar to open in order to fill white space when the page is first loaded.
 - Fix toggle buttons
 
 ## Future Improvements
