@@ -332,14 +332,26 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 #### Desktop
 
+| Edge - Version 121.0.2277.98 | Chrome - Version 120.0.6099.71 | Firefox - Version 120.0.1 |
+| ---------------------------- | ------------------------------ | ------------------------- |
+
 #### Tablet
+
+<!-- TODO double check versions -->
+
+| Edge - Version 120.0.2210.157 | Chrome - Version 121.0.6167.143 | Firefox - Version 122.0.1 |
+| ----------------------------- | ------------------------------- | ------------------------- |
 
 #### Mobile
 
+| Edge - Version 120.0.2210.157 | Chrome - Version 121.0.6167.143 | Firefox - Version 122.0.1 |
+| ----------------------------- | ------------------------------- | ------------------------- |
+
 ## Bugs
 
-- Temperature not displaying the correct unit when toggle is activated.
 <!-- TODO -->
+
+- Temperature not displaying the correct unit when toggle is activated.
 
 ### Fixed Bugs
 
