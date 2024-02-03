@@ -357,8 +357,12 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 <!-- TODO -->
 
-- Animation not in full screen after page is refreshed.
 - Dark Mode not toggling properly on mobile.
+  ![Side Bar - Blocked](assets/media/ui-side-bar-after.png)
+- Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
+
+- Animation not in full screen after page is refreshed.
+
 - Cors Access was blocked bypass this by using - Cors-Anywhere proxy
 
 ## UI Improvements
@@ -373,10 +377,6 @@ The manual testing confirms that the page operates smoothly across multiple brow
 - Increase readability of footer elements.
   ![Footer - Larger Text](assets/media/ui-footer.png)
 - Increased to `font-size: .75rem;`
-
-- Fix Side Bar Not closing on Mobile Screens.
-  ![Side Bar - Blocked](assets/media/ui-side-bar-after.png)
-- Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
 
 - Fix Header for better readability and contrast.
   ![Header - Text Shadow](assets/media/ui-header-after.png)
