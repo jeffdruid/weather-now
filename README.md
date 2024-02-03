@@ -382,10 +382,12 @@ The manual testing confirms that the page operates smoothly across multiple brow
   ![Header - Text Shadow](assets/media/ui-header-after.png)
 - Added `text-shadow: 4px 4px 4px var(--primary-color);`
 
+- Default Side Bar to open in order to fill white space when the page is first loaded.
+  ![Side Bar - Mobile View](assets/media/feat-side-bar-mobile.png)
+- Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
+
 - Shorter Animation intro
 <!-- TODO screen grab -->
-
-- Default Side Bar to open in order to fill white space when the page is first loaded.
 - Fix toggle buttons
 
 ## Future Improvements

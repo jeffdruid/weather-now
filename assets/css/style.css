@@ -87,18 +87,18 @@ main {
 }
 
 #side-bar {
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     width: 25%;
     height: 100%;
-    background-color: var(--background-color);
+    background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(1px);
     position: fixed;
     top: 0;
-    left: -25%;
+    left: 0;
     z-index: 1;
 }
 
