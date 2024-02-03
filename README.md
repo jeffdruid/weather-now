@@ -113,7 +113,7 @@ Weather Now is a web application that provides real-time weather information for
 
 ## Wireframe
 
-<!-- TODO -->
+<!-- TODO Update All alts -->
 
 ![Alt text](assets/media/Wireframe-2.png)
 
@@ -329,6 +329,7 @@ Weather Now is a web application that provides real-time weather information for
 
 <!-- TODO -->
 
+- Animation not in full screen after page is refreshed.
 - Dark Mode not toggling properly on mobile.
 - Cors Access was blocked bypass this by using - Cors-Anywhere proxy
 
@@ -382,19 +383,22 @@ Weather Now is a web application that provides real-time weather information for
 3. Open your Terminal application on your computer and change the directory to where you want the cloned directory.
 4. Enter the command "git clone" followed by the repository's URL. This downloads a copy of the repository into your local machine.
 
-<!-- ### Local Deployment
-<!-- TODO -->
+### Local Deployment
 
 1. Sign up for [Gitpod](https://www.gitpod.io/) using your GitHub account.
 2. Install the Gitpod browser extension to access Gitpod from GitHub. You can find the extension [here](https://www.gitpod.io/docs/browser-extension/).
 3. Go to the [Weather Now](https://github.com/jeffdruid/weather-now).
-4. Click on the "GitPod" button above the list of files in the repository on GitHub. This opens Gitpod workspace using the repository. -->
+4. Click on the "GitPod" button above the list of files in the repository on GitHub. This opens Gitpod workspace using the repository.
 
 ### Remote Deployment
 
-<!-- TODO -->
+To deploy the site on Github Pages after forking or cloning:
 
-To deploy the site on Github Pages ...
+1. Go to your repository on GitHub.
+2. Click on the "Settings" tab on the top of your repository.
+3. In the left sidebar, click on the "Pages" tab.
+4. Under the "Build and Deployment" section, select "main" from the source drop-down list and click on the "Save" button.
+5. The page will display the link to the deployed website. You wil see a green success message indicating that your site is published at the specific URL.
 
 You can access the live link here : [Weather Now](https://jeffdruid.github.io/weather-now/#/)
 
