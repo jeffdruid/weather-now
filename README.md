@@ -310,9 +310,25 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Manual Testing
 
-- manual testing was made by checking the application in different browsers and different screen sizes.
+- The manual testing conducted on the page includes the following aspects:
 
-####
+#### Cross-browser Compatibility
+
+- Verified the functionality of the page across different web browsers to ensure it works properly and it is consistent.
+
+#### Responsiveness and Device Compatibility
+
+- Verified that the project displays correctly and functions appropriately across various device sizes, ensuring a good user experience.
+
+#### Link Validation
+
+- Verified all internal and external links to ensure they direct users to the intended destinations and open correctly without issues.
+
+#### Text and Font Readability
+
+- Verified that all text content and fonts used on the page are legible, clear, and easy to understand.
+
+The manual testing confirms that the page operates smoothly across multiple browsers, adapts well to different devices, ensures accurate link navigation, and maintains clear readability for users interacting with the content.
 
 #### Desktop
 
