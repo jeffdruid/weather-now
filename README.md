@@ -115,40 +115,40 @@ Weather Now is a web application that provides real-time weather information for
 
 <!-- TODO Update All alts -->
 
-![Alt text](assets/media/Wireframe-2.png)
+![Wireframe Intro](assets/media/Wireframe-2.png)
 
-![Alt text](assets/media/Wireframe-1.png)
+![Wireframe Main Page](assets/media/Wireframe-1.png)
 
 ## Features
 
 ### Header
 
-|                                           |                                                 |
-| ----------------------------------------- | ----------------------------------------------- |
-| ![Alt text](assets/media/feat-header.png) | Displays the header section of the application. |
+|                                                 |                                                 |
+| ----------------------------------------------- | ----------------------------------------------- |
+| ![Header Section](assets/media/feat-header.png) | Displays the header section of the application. |
 
 ### Animation Intro
 
 |                                                      |                                                                                               |
 | ---------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | ![Animation-Intro](assets/media/Animation-intro.gif) | A quick animation intro using the GSAP library.                                               |
-| ![Alt text](assets/media/Animation-code.png)         | The animation was made by FLIP for GSAP - [CodePen](https://codepen.io/GreenSock/pen/eYdyVVe) |
+| ![GSAP code](assets/media/Animation-code.png)        | The animation was made by FLIP for GSAP - [CodePen](https://codepen.io/GreenSock/pen/eYdyVVe) |
 
 ### Weather Container
 
-|                                                      |                              |
-| ---------------------------------------------------- | ---------------------------- |
-| ![Alt text](assets/media/feat-weather-container.png) | Contains Weather information |
+|                                                               |                              |
+| ------------------------------------------------------------- | ---------------------------- |
+| ![Weather Container](assets/media/feat-weather-container.png) | Contains Weather information |
 
 #### Buttons
 
-|                                                  |                                                                                                                              |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| ![Alt text](assets/media/feat-favorite-icon.png) | Add/Remove favorites                                                                                                         |
-| ![Alt text](assets/media/feat-flags-api.png)     | Flags API provides flags icons.                                                                                              |
-| ![Alt text](assets/media/feat-last-updated.png)  | Display when the weather was last updated.                                                                                   |
-| ![Alt text](assets/media/feat-refresh-btn.png)   | Refresh weather information.                                                                                                 |
-| ![Alt text](assets/media/btn-forecast-chart.png) | Additional weather information, including a 5-day forecast and a forecast chart displaying temperatures and humidity levels. |
+|                                                          |                                                                                                                              |
+| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| ![Heart Icon](assets/media/feat-favorite-icon.png)       | Add/Remove favorites                                                                                                         |
+| ![Location Flag](assets/media/feat-flags-api.png)        | Flags API provides flags icons.                                                                                              |
+| ![Last Updated Time](assets/media/feat-last-updated.png) | Display when the weather was last updated.                                                                                   |
+| ![Refresh Button](assets/media/feat-refresh-btn.png)     | Refresh weather information.                                                                                                 |
+| ![Forecast Button](assets/media/btn-forecast-chart.png)  | Additional weather information, including a 5-day forecast and a forecast chart displaying temperatures and humidity levels. |
 
 ### Current Weather:
 
@@ -167,92 +167,92 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Temperature Units:
 
-|                                               |                                                                                                                            |
-| --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| ![Alt text](assets/media/btn-temp-toggle.png) | Allows users to toggle between Celsius and Fahrenheit units to view temperature information according to their preference. |
+|                                                         |                                                                                                                            |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| ![Temperature Toggle](assets/media/btn-temp-toggle.png) | Allows users to toggle between Celsius and Fahrenheit units to view temperature information according to their preference. |
 
 ### 5-Day Forecast:
 
-|                                             |                                                                                |
-| ------------------------------------------- | ------------------------------------------------------------------------------ |
-| ![Alt text](assets/media/feat-forecast.png) | Provides a 5-day weather forecast, displaying temperature and humidity trends. |
+|                                                       |                                                                                |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------ |
+| ![Forecast Container](assets/media/feat-forecast.png) | Provides a 5-day weather forecast, displaying temperature and humidity trends. |
 
 ### Favorites:
 
-|                                                       |                                                                               |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------- |
-| ![Alt text](assets/media/feat-favorite-btn.png)       | Allow users to save favorite locations and easily check the weather for them. |
-| ![Alt text](assets/media/feat-favorite-container.png) |                                                                               |
-| ![Alt text](assets/media/btn-clear-favorites.png)     | Clear all favorites from favorites container.                                 |
+|                                                                  |                                                                               |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| ![Favorites Button](assets/media/feat-favorite-btn.png)          | Allow users to save favorite locations and easily check the weather for them. |
+| ![Favorites Container](assets/media/feat-favorite-container.png) |                                                                               |
+| ![Clear All Button](assets/media/btn-clear-favorites.png)        | Clear all favorites from favorites container.                                 |
 
 ### Dark Mode:
 
-|                                                     |                                                                          |
-| --------------------------------------------------- | ------------------------------------------------------------------------ |
-| ![Alt text](assets/media/feat-dark-mode-btn.png)    | Allow users to toggle between light and dark mode for better visibility. |
-| ![Alt text](assets/media/feat-dark-mode-screen.png) |                                                                          |
+|                                                                       |                                                                          |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| ![Dark Mode Button](assets/media/feat-dark-mode-btn.png)              | Allow users to toggle between light and dark mode for better visibility. |
+| ![Dark Mode - Main Page View](assets/media/feat-dark-mode-screen.png) |                                                                          |
 
 ### Search History:
 
-|                                                      |                                                                                 |
-| ---------------------------------------------------- | ------------------------------------------------------------------------------- |
-| ![Alt text](assets/media/feat-history-btn.png)       | Allow users to view their search history to quickly revisit previous locations. |
-| ![Alt text](assets/media/feat-history-container.png) |                                                                                 |
+|                                                               |                                                                                 |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| ![History Button](assets/media/feat-history-btn.png)          | Allow users to view their search history to quickly revisit previous locations. |
+| ![History Container](assets/media/feat-history-container.png) |                                                                                 |
 
 ### Side Bar:
 
-|                                                     |                                                                                                                 |
-| --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| ![Alt text](assets/media/feat-side-bar-btn.png)     | The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and a Github link. |
-| ![Alt text](assets/media/feat-side-bar-desktop.png) |                                                                                                                 |
-| ![Alt text](assets/media/feat-side-bar-mobile.png)  |                                                                                                                 |
+|                                                                |                                                                                                                 |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| ![Side Bar Button](assets/media/feat-side-bar-btn.png)         | The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and a Github link. |
+| ![Side Bar on Desktop](assets/media/feat-side-bar-desktop.png) |                                                                                                                 |
+| ![Side Bar on Mobile](assets/media/feat-side-bar-mobile.png)   |                                                                                                                 |
 
 ### Chart:
 
-|                                          |                                                                                                                                                                                          |
-| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Alt text](assets/media/feat-chart.png) | Visualize temperature and humidity trends with an interactive chart. Clicking on the "Chart" button displays a graphical representation of temperature and humidity for the next 5 days. |
+|                                                |                                                                                                                                                                                          |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Forecast Chart](assets/media/feat-chart.png) | Visualize temperature and humidity trends with an interactive chart. Clicking on the "Chart" button displays a graphical representation of temperature and humidity for the next 5 days. |
 
 ### GitHub:
 
-|                                               |                                                                      |
-| --------------------------------------------- | -------------------------------------------------------------------- |
-| ![Alt text](assets/media/feat-github-btn.png) | Allows users to explore and contribute to the source code on GitHub. |
+|                                                    |                                                                      |
+| -------------------------------------------------- | -------------------------------------------------------------------- |
+| ![GitHub Button](assets/media/feat-github-btn.png) | Allows users to explore and contribute to the source code on GitHub. |
 
 ### Loading Screen
 
-|                                                                                                      |                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| ![Alt text](assets/media/feat-loading-chart.gif) ![Alt text](assets/media/feat-loading-forecast.gif) | A loading spinner is displayed while the page loads content from the OpenWeatherMap API. |
+|                                                                                                                                       |                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| ![Loading Spinner - Chart](assets/media/feat-loading-chart.gif) ![Loading Spinner - Forecast](assets/media/feat-loading-forecast.gif) | A loading spinner is displayed while the page loads content from the OpenWeatherMap API. |
 
 ### Error Handling
 
 - Handles various error scenarios, including CORS issues, location access denial, and invalid or non-existent locations.
 
-|                                                     |                                                                                                                                    |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| ![Alt text](assets/media/error-429.png)             | Error 429                                                                                                                          |
-| ![Alt text](assets/media/error-cors-access.png)     | Using Cors-Anywhere to provide cors access to the weatherKey flask app, where the API key is hidden.                               |
-| ![Alt text](assets/media/error-location-access.png) | Error message displayed when user has not allowed location, user still able to use the functions of this website after this error. |
-| ![Alt text](assets/media/error-no-favorites.png)    | Error message displayed when localStorage does not have any favorites saved.                                                       |
-| ![Alt text](assets/media/error-no-history.png)      | Error message displayed when localStorage does not have any previous searched locations                                            |
-| ![Alt text](assets/media/error-not-found.png)       | Error message displayed when a location is invalid or does not exist.                                                              |
+|                                                                             |                                                                                                                                    |
+| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| ![Error 429 Message](assets/media/error-429.png)                            | Error 429                                                                                                                          |
+| ![Unlock Server Access Button](assets/media/error-cors-access.png)          | Using Cors-Anywhere to provide cors access to the weatherKey flask app, where the API key is hidden.                               |
+| ![Error Message - Location Access](assets/media/error-location-access.png)  | Error message displayed when user has not allowed location, user still able to use the functions of this website after this error. |
+| ![Error Message - No Favorites Found ](assets/media/error-no-favorites.png) | Error message displayed when localStorage does not have any favorites saved.                                                       |
+| ![Error Message - No History Found](assets/media/error-no-history.png)      | Error message displayed when localStorage does not have any previous searched locations                                            |
+| ![Error Message - Invalid Location](assets/media/error-not-found.png)       | Error message displayed when a location is invalid or does not exist.                                                              |
 
 ### Alerts
 
 - Displays alerts for scenarios like attempting to refresh when already updated, trying to clear all favorites, and sending too many requests in a short amount of time.
 
-|                                                       |                                                                       |
-| ----------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Alt text](assets/media/alert-already-updated.png)   | If user refresher the page and the page is already up to date.        |
-| ![Alt text](assets/media/alert-clear-favorites.png)   | Alert displayed when user tries to clear all favorites.               |
-| ![Alt text](assets/media/alert-too-many-requests.png) | If user has sent too many request requests in a short amount of time. |
+|                                                                        |                                                                       |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| ![Alert - Already Updated](assets/media/alert-already-updated.png)     | If user refresher the page and the page is already up to date.        |
+| ![Alert - Clear All Favorites](assets/media/alert-clear-favorites.png) | Alert displayed when user tries to clear all favorites.               |
+| ![Alert - Too Many Requests](assets/media/alert-too-many-requests.png) | If user has sent too many request requests in a short amount of time. |
 
 ### Footer
 
-|                                           |                                                        |
-| ----------------------------------------- | ------------------------------------------------------ |
-| ![Alt text](assets/media/feat-footer.png) | The footer of the page displaying website information. |
+|                                         |                                                        |
+| --------------------------------------- | ------------------------------------------------------ |
+| ![Footer](assets/media/feat-footer.png) | The footer of the page displaying website information. |
 
 ## Troubleshooting
 
@@ -274,7 +274,7 @@ Weather Now is a web application that provides real-time weather information for
 
   - During the early stages of development, the OpenWeatherMap API key was inadvertently exposed in the GitHub repository. Recognizing the security implications of such a practice, a decision was made to find an alternative solution. Inspired by Dan Hamilton's App on GitHub, a small Flask application was implemented to serve as a backend.
 
-![Alt text](assets/media/FlaskApp.png)
+![Flak App](assets/media/FlaskApp.png)
 
 - [WeatherKey - Source Code](https://github.com/jeffdruid/weatherKey)
 
@@ -286,27 +286,27 @@ Weather Now is a web application that provides real-time weather information for
 
 #### HTML
 
-![Alt text](assets/media/validator-html.png)
+![Validator - HTML](assets/media/validator-html.png)
 
 #### CSS
 
-![Alt text](assets/media/validator-css.png)
+![Validator - CSS](assets/media/validator-css.png)
 
 #### JavaScript
 
-![Alt text](assets/media/validator-js.png)
+![Validator - JavaScript](assets/media/validator-js.png)
 
 #### Accessibility
 
-![Alt text](assets/media/validator-accessibility.png)
+![LightHouse - Results](assets/media/validator-accessibility.png)
 
 #### Lighthouse
 
-![Alt text](assets/media/validator-lighthouse.png)
+![LightHouse - Report](assets/media/validator-lighthouse.png)
 
 ### Responsiveness
 
-![Alt text](assets/media/responsive-hero.png)
+![Main Page in Different Screen Sizes](assets/media/responsive-hero.png)
 
 ### Manual Testing
 
