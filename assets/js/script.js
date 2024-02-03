@@ -13,14 +13,14 @@ const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = "";
 
 // Add the unlock CORS access button
-const unlockButton = document.createElement("button");
-unlockButton.textContent = "Unlock Server Access";
-unlockButton.addEventListener("click", function () {
-  window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
-  unlockButton.style.display = "none";
-});
+// const unlockButton = document.createElement("button");
+// unlockButton.textContent = "Unlock Server Access";
+// unlockButton.addEventListener("click", function () {
+//   window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
+//   unlockButton.style.display = "none";
+// });
 
-document.body.appendChild(unlockButton);
+// document.body.appendChild(unlockButton);
 
 /**
  * Get the current time and display it.
@@ -49,121 +49,121 @@ function displayWeatherData(data) {
 /**
  * Ask for permission to use user location on page load.
  */
-window.addEventListener("load", function () {
-  alert(
-    "Please allow access to your location for accurate weather information."
-  );
-  if (navigator.permissions) {
-    navigator.permissions
-      .query({ name: "geolocation" })
-      .then(function (result) {
-        if (result.state === "granted") {
-          getWeatherForCurrentLocation();
-        } else if (result.state === "prompt") {
-          // alert("Please allow access to your location for accurate weather information.");
-        }
-      });
-  } else if (navigator.geolocation) {
-    getWeatherForCurrentLocation();
-  }
-});
+// window.addEventListener("load", function () {
+//   alert(
+//     "Please allow access to your location for accurate weather information."
+//   );
+//   if (navigator.permissions) {
+//     navigator.permissions
+//       .query({ name: "geolocation" })
+//       .then(function (result) {
+//         if (result.state === "granted") {
+//           getWeatherForCurrentLocation();
+//         } else if (result.state === "prompt") {
+//           // alert("Please allow access to your location for accurate weather information.");
+//         }
+//       });
+//   } else if (navigator.geolocation) {
+//     getWeatherForCurrentLocation();
+//   }
+// });
 
 /**
  * Get the user's current location and display the weather.
  */
-function getWeatherForCurrentLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      async function (position) {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        try {
-          // Make an API call to fetch the weather data
-          const response = await fetch(
-            apiUrl + `lat=${latitude}&lon=${longitude}`,
-            { mode: "cors" }
-          );
-          console.log(response);
+// function getWeatherForCurrentLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(
+//       async function (position) {
+//         const latitude = position.coords.latitude;
+//         const longitude = position.coords.longitude;
+//         try {
+//           // Make an API call to fetch the weather data
+//           const response = await fetch(
+//             apiUrl + `lat=${latitude}&lon=${longitude}`,
+//             { mode: "cors" }
+//           );
+//           console.log(response);
 
-          const data = await response.json();
-          displayWeatherData(data);
+//           const data = await response.json();
+//           displayWeatherData(data);
 
-          // Display the weather data on the UI
-          document.getElementById("temperature-now").innerHTML =
-            "Temp: " + Math.round(data.main.temp) + "°C";
-          document.getElementById("current-location").innerHTML = data.name;
-          document.getElementById(
-            "current-flag"
-          ).src = `https://www.flagsapi.com/${data.sys.country}/flat/24.png`;
-          document.getElementById("current-feels-like").innerHTML =
-            "Feels like: " + Math.round(data.main.feels_like) + "°C";
-          document.getElementById("current-max").innerHTML =
-            "Maximum: " + Math.round(data.main.temp_max) + "°C";
-          document.getElementById("current-min").innerHTML =
-            "Minimum: " + Math.round(data.main.temp_min) + "°C";
-          document.getElementById("current-sunrise").innerHTML =
-            "Sunrise: " +
-            new Date(
-              (data.sys.sunrise + data.timezone) * 1000
-            ).toLocaleTimeString("en-US", {
-              hour: "numeric",
-              hour12: true,
-              minute: "numeric",
-            });
-          document.getElementById("current-sunset").innerHTML =
-            "Sunset: " +
-            new Date(
-              (data.sys.sunset + data.timezone) * 1000
-            ).toLocaleTimeString("en-US", {
-              hour: "numeric",
-              hour12: true,
-              minute: "numeric",
-            });
-          document.getElementById("current-desc").innerHTML =
-            data.weather[0].description;
-          document.getElementById("current-wind").innerHTML =
-            "Wind Speed: " + data.wind.speed + " km/h";
-          document.getElementById("current-humidity").innerHTML =
-            "Humidity Level: " + data.main.humidity + "%";
-        } catch (error) {
-          console.error(error);
-          // Display an error message on the UI
-          document.getElementById(
-            "error-message-user-location"
-          ).style.display = "flex";
-          const errorMessage = document.getElementById(
-            "error-message-user-location"
-          );
-          errorMessage.textContent =
-            "Failed to fetch weather data." +
-            "Too many requests. Please try again later.";
-          // Display the unlock CORS access button
-          unlockButton.style.display = "block";
-        }
-      },
-      function (error) {
-        console.error(error);
-        // Display an error message on the UI
-        document.getElementById("error-message-user-location").style.display =
-          "flex";
-        const errorMessage = document.getElementById(
-          "error-message-user-location"
-        );
-        errorMessage.textContent =
-          "Please allow location access and reload the page. ";
-      }
-    );
-  } else {
-    console.error("Geolocation is not supported by this browser.");
-    // Display an error message on the UI
-    document.getElementById("error-message-user-location").style.display =
-      "flex";
-    const errorMessage = document.getElementById(
-      "error-message-user-location"
-    );
-    errorMessage.textContent = "Geolocation is not supported by this browser.";
-  }
-}
+//           // Display the weather data on the UI
+//           document.getElementById("temperature-now").innerHTML =
+//             "Temp: " + Math.round(data.main.temp) + "°C";
+//           document.getElementById("current-location").innerHTML = data.name;
+//           document.getElementById(
+//             "current-flag"
+//           ).src = `https://www.flagsapi.com/${data.sys.country}/flat/24.png`;
+//           document.getElementById("current-feels-like").innerHTML =
+//             "Feels like: " + Math.round(data.main.feels_like) + "°C";
+//           document.getElementById("current-max").innerHTML =
+//             "Maximum: " + Math.round(data.main.temp_max) + "°C";
+//           document.getElementById("current-min").innerHTML =
+//             "Minimum: " + Math.round(data.main.temp_min) + "°C";
+//           document.getElementById("current-sunrise").innerHTML =
+//             "Sunrise: " +
+//             new Date(
+//               (data.sys.sunrise + data.timezone) * 1000
+//             ).toLocaleTimeString("en-US", {
+//               hour: "numeric",
+//               hour12: true,
+//               minute: "numeric",
+//             });
+//           document.getElementById("current-sunset").innerHTML =
+//             "Sunset: " +
+//             new Date(
+//               (data.sys.sunset + data.timezone) * 1000
+//             ).toLocaleTimeString("en-US", {
+//               hour: "numeric",
+//               hour12: true,
+//               minute: "numeric",
+//             });
+//           document.getElementById("current-desc").innerHTML =
+//             data.weather[0].description;
+//           document.getElementById("current-wind").innerHTML =
+//             "Wind Speed: " + data.wind.speed + " km/h";
+//           document.getElementById("current-humidity").innerHTML =
+//             "Humidity Level: " + data.main.humidity + "%";
+//         } catch (error) {
+//           console.error(error);
+//           // Display an error message on the UI
+//           document.getElementById(
+//             "error-message-user-location"
+//           ).style.display = "flex";
+//           const errorMessage = document.getElementById(
+//             "error-message-user-location"
+//           );
+//           errorMessage.textContent =
+//             "Failed to fetch weather data." +
+//             "Too many requests. Please try again later.";
+//           // Display the unlock CORS access button
+//           unlockButton.style.display = "block";
+//         }
+//       },
+//       function (error) {
+//         console.error(error);
+//         // Display an error message on the UI
+//         document.getElementById("error-message-user-location").style.display =
+//           "flex";
+//         const errorMessage = document.getElementById(
+//           "error-message-user-location"
+//         );
+//         errorMessage.textContent =
+//           "Please allow location access and reload the page. ";
+//       }
+//     );
+//   } else {
+//     console.error("Geolocation is not supported by this browser.");
+//     // Display an error message on the UI
+//     document.getElementById("error-message-user-location").style.display =
+//       "flex";
+//     const errorMessage = document.getElementById(
+//       "error-message-user-location"
+//     );
+//     errorMessage.textContent = "Geolocation is not supported by this browser.";
+//   }
+// }
 
 // Hide error message when clicking anywhere on the screen
 document.addEventListener("click", function () {
@@ -229,6 +229,16 @@ async function getWeather(location) {
     document.querySelector(".spinner").style.display = "none";
     console.log(response);
     return;
+  }
+
+  if (response.status === 403) {
+    // Add the unlock CORS access button
+    const unlockButton = document.createElement("button");
+    unlockButton.textContent = "Unlock Server Access";
+    unlockButton.addEventListener("click", function () {
+      window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
+      unlockButton.style.display = "none";
+    });
   }
 
   let data = await response.json();
