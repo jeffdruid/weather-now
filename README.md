@@ -365,9 +365,23 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 <!-- TODO -->
 
-- Shorter Animation intro
-- Fix Header
+- Fix Padding on the Mobile screens for the CORS Button.
+  ![Cors Button - Before](assets/media/ui-cors-btn-before.png)
+- Added the `padding:1.5rem;` to the CORS button for the mobile screens.
+  ![Cors Button - After](assets/media/ui-cors-btn.png)
+
 - Increase readability of footer elements.
+  ![Footer - After](assets/media/ui-footer.png)
+- Increased to `font-size: .75rem;`
+
+- Fix Side Bar Not closing on Mobile Screens.
+  ![Side Bar - Blocked](assets/media/ui-side-bar-after.png)
+- Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
+
+- Shorter Animation intro
+<!-- TODO screen grab -->
+
+- Fix Header
 - Fix toggle buttons
 
 ## Future Improvements

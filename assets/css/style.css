@@ -225,6 +225,7 @@ body>button {
     font-weight: bold;
     border: 0;
     border-radius: 10px;
+    padding: 1.5rem;
 }
 
 .error-message {
