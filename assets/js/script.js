@@ -81,6 +81,8 @@ async function getWeather(location) {
   const response = await fetch(apiUrl + `location=` + location);
   //
   if (response.status === 403) {
+    document.getElementById("favorite-weather").style.display = "none";
+    document.getElementById("search-history").style.display = "none";
     // Add the unlock CORS access button
     const unlockButton = document.createElement("button");
     unlockButton.textContent = "Unlock Server Access";
