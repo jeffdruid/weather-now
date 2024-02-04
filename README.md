@@ -278,6 +278,11 @@ Weather Now is a web application that provides real-time weather information for
 
 - [WeatherKey - Source Code](https://github.com/jeffdruid/weatherKey)
 
+### Remove User's Current Weather Information
+
+- TODO
+- Replaced the information with the most recent search, also avoiding sending to many API requests.
+
 ## Testing
 
 - A series of testing was made by using different online validators such as JigSaw, W3C nd JSLint.
@@ -363,7 +368,9 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 - Animation not in full screen after page is refreshed.
 
-- Cors Access was blocked bypass this by using - Cors-Anywhere proxy
+- Cors Access was blocked bypass this by using - Cors-Anywhere proxy.
+
+- Update current time in the footer to display location's current time instead of user's current time.
 
 ## UI Improvements
 
