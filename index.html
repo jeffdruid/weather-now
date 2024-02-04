@@ -1,127 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Metatags -->
-    <meta name="description" content="Weather Now - Get the current weather conditions of any city">
-    <meta name="keywords" content="weather, forecast, temperature, city">
-    <meta name="author" content="Jefferson Aguiar">
+    <meta
+      name="description"
+      content="Weather Now - Get the current weather conditions of any city"
+    />
+    <meta name="keywords" content="weather, forecast, temperature, city" />
+    <meta name="author" content="Jefferson Aguiar" />
     <!-- stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/icons/weather-forecast-16484.png" type="image/x-icon">
+    <link
+      rel="icon"
+      href="assets/images/icons/weather-forecast-16484.png"
+      type="image/x-icon"
+    />
     <title>Weather Now</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header Section -->
     <header>
-         <!-- GSAP Animation -->
-    <div class="intro final">
+      <!-- GSAP Animation -->
+      <div class="intro final">
         <div class="block b1">""</div>
         <div class="block b2">""</div>
         <div class="block b3">""</div>
         <div class="block b4">""</div>
         <div class="logo-weather"></div>
         <div class="logo-now">Weather Now</div>
-    </div>    
+      </div>
 
-        <div class="container">
-            <h1>Weather Now</h1>
-        </div>
+      <div class="container">
+        <h1>Weather Now</h1>
+      </div>
     </header>
     <!-- Main Section -->
     <main>
-        <!-- Search Section -->
-        <div class="search">
-            <input type="text" placeholder="Enter the city name...">
-            <div id="search-history"></div>
-        </div>
+      <!-- Search Section -->
+      <div class="search">
+        <input type="text" placeholder="Enter a city name..." />
+        <div id="search-history"></div>
+      </div>
 
-        <!-- Error Messages -->
-        <div class="error-message" id="location404"></div>
-        <div class="error-message" id="error-message-user-location"></div>
-        <div class="error-message" id="error-message-user-forecast"></div>
-       
-        <!-- Favorite Section -->
-        <div id="favorite-weather"></div>
-        <!-- Side bar -->
-        <div id="side-bar">
-            <div id="side-bar-close-btn"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
-            <div id="side-bar-content">
-                <!-- Favorite Section -->
-                <div id="favorites-btn" class="button-container"><i class="fa fa-bookmark" aria-hidden="true"></i><p>Favorite</p></div>
-                <!-- History button -->
-                <div id="show-history-btn" class="button-container"><i class="fa fa-history" aria-hidden="true"></i><p>History</p></div>
-                <!-- Dark mode toggle -->
-                <div id="dark-mode-btn" class="button-container"><i class="fa fa-moon-o" aria-hidden="true"></i><p>Dark Mode</p></div>
-                <!-- GitHub link button -->
-                <a target="_blank" aria-label="GitHub Page" href="https://github.com/jeffdruid/weather-now">
-                    <div id="github-link-btn" class="button-container"><i class="fa fa-github" aria-hidden="true"></i><p>Github</p></div>
-                </a>
+      <!-- Error Messages -->
+      <div class="error-message" id="location404"></div>
+      <div class="error-message" id="error-message-user-location"></div>
+      <div class="error-message" id="error-message-user-forecast"></div>
+
+      <!-- Favorite Section -->
+      <div id="favorite-weather"></div>
+      <!-- Side bar -->
+      <div id="side-bar">
+        <div id="side-bar-close-btn">
+          <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+        </div>
+        <div id="side-bar-content">
+          <!-- Favorite Section -->
+          <div id="favorites-btn" class="button-container">
+            <i class="fa fa-bookmark" aria-hidden="true"></i>
+            <p>Favorite</p>
+          </div>
+          <!-- History button -->
+          <div id="show-history-btn" class="button-container">
+            <i class="fa fa-history" aria-hidden="true"></i>
+            <p>History</p>
+          </div>
+          <!-- Dark mode toggle -->
+          <div id="dark-mode-btn" class="button-container">
+            <i class="fa fa-moon-o" aria-hidden="true"></i>
+            <p>Dark Mode</p>
+          </div>
+          <!-- GitHub link button -->
+          <a
+            target="_blank"
+            aria-label="GitHub Page"
+            href="https://github.com/jeffdruid/weather-now"
+          >
+            <div id="github-link-btn" class="button-container">
+              <i class="fa fa-github" aria-hidden="true"></i>
+              <p>Github</p>
             </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Weather Section -->
+      <div id="weather" class="weather-container">
+        <!-- Favorite button -->
+        <div id="set-favorite-btn">
+          <i class="fa fa-heart" aria-hidden="true"></i>
         </div>
 
-        <!-- Weather Section -->
-        <div id="weather" class="weather-container">
-            <!-- Favorite button -->
-            <div id="set-favorite-btn"><i class="fa fa-heart" aria-hidden="true"></i></div>
-           
-            <!-- Weather info -->
-            <div id="location"></div>
-            <div id="country"></div>
-            <img id="flag-icon" src="assets/images/placeholder.png" alt="temp">
-            <div id="temperature"></div>
-            <div id="feels-like"></div>
-            <div id="max-temp"></div>
-            <div id="min-temp"></div>
-            <div id="sun-rise"></div>
-            <div id="sun-set"></div>
-            <img id="weather-icon" src="assets/images/placeholder.png" alt="temp">
-            <div id="weather-desc"></div>
-            <div id="wind"></div>
-            <div id="humidity"></div>
+        <!-- Weather info -->
+        <div id="location"></div>
+        <div id="country"></div>
+        <img id="flag-icon" src="assets/images/placeholder.png" alt="temp" />
+        <div id="temperature"></div>
+        <div id="feels-like"></div>
+        <div id="max-temp"></div>
+        <div id="min-temp"></div>
+        <div id="sun-rise"></div>
+        <div id="sun-set"></div>
+        <img
+          id="weather-icon"
+          src="assets/images/placeholder.png"
+          alt="temp"
+        />
+        <div id="weather-desc"></div>
+        <div id="wind"></div>
+        <div id="humidity"></div>
 
-            <!-- Refresh and Convert buttons -->
-            <button id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-            <button id="temperature-toggle-btn"></button>
-            <div id="last-updated"></div>
-            
-            <!-- Forecast button -->
-            <div id="forecast-btn"><i class="fa fa-plus-square-o" aria-hidden="true"></i></div>
-            <!-- Chart button -->
-            <button id="chart-btn"><i class="fa fa-chart-line"></i> </button>
+        <!-- Refresh and Convert buttons -->
+        <button id="refresh-button">
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+        </button>
+        <button id="temperature-toggle-btn"></button>
+        <div id="last-updated"></div>
+
+        <!-- Forecast button -->
+        <div id="forecast-btn">
+          <i class="fa fa-plus-square-o" aria-hidden="true"></i>
         </div>
-        <!-- Loading spinner -->
-        <div class="spinner"><i class="fa fa-spinner" aria-hidden="true"></i></div>   
-        <!-- Forecast Section -->
-        <div id="forecast"></div>    
-        <!-- Google Charts -->
-        <div id="chart_div"></div>
+        <!-- Chart button -->
+        <button id="chart-btn"><i class="fa fa-chart-line"></i></button>
+      </div>
+      <!-- Loading spinner -->
+      <div class="spinner">
+        <i class="fa fa-spinner" aria-hidden="true"></i>
+      </div>
+      <!-- Forecast Section -->
+      <div id="forecast"></div>
+      <!-- Google Charts -->
+      <div id="chart_div"></div>
     </main>
     <!-- Users current weather info -->
     <div id="scrolling-container">
-        <div id="scrolling-text">
-            <div class="current-info">
-                <span id="current-time"></span>
-                <span id="temperature-now"></span>
-                <span id="current-location"></span>
-                <img id="current-flag" src="assets/images/placeholder.png" alt="temp">
-                <span id="current-feels-like"></span>
-                <span id="current-desc"></span>
-                <span id="current-max"></span>
-                <span id="current-min"></span>
-                <span id="current-sunrise"></span>
-                <span id="current-sunset"></span>
-                <span id="current-wind"></span>
-                <span id="current-humidity"></span>
-            </div>
+      <div id="scrolling-text">
+        <div class="current-info">
+          <span id="current-time"></span>
+          <span id="temperature-now"> </span>
+          <span id="current-location">
+            save your favorite cities and get the current weather conditions
+          </span>
+          <img
+            id="current-flag"
+            src="assets/images/icons/weather-forecast-16484.png"
+            alt="temp"
+          />
+          <span id="current-feels-like"></span>
+          <span id="current-desc"></span>
+          <span id="current-max"></span>
+          <span id="current-min"></span>
+          <span id="current-sunrise"></span>
+          <span id="current-sunset"></span>
+          <span id="current-wind"></span>
+          <span id="current-humidity"></span>
         </div>
+      </div>
     </div>
     <!-- Footer Section -->
-    <footer>
-        @2024 Weather Now. All rights reserved.
-    </footer>
+    <footer>@2024 Weather Now. All rights reserved.</footer>
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Flip.min.js"></script>
@@ -129,6 +170,9 @@
     <script type="module" src="assets/js/script.js"></script>
     <script async type="module" src="assets/js/gsap-animation.js"></script>
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/6b0af4bcb3.js" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/6b0af4bcb3.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
