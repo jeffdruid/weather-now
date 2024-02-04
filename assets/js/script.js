@@ -79,7 +79,18 @@ function hideSpinner() {
  */
 async function getWeather(location) {
   const response = await fetch(apiUrl + `location=` + location);
+  //
+  if (response.status === 403) {
+    // Add the unlock CORS access button
+    const unlockButton = document.createElement("button");
+    unlockButton.textContent = "Unlock Server Access";
+    unlockButton.addEventListener("click", function () {
+      window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
+      unlockButton.style.display = "none";
+    });
 
+    document.body.appendChild(unlockButton);
+  }
   // 429 error handling
   if (response.status === 429) {
     alert("Too many requests. Please try again later.");
@@ -89,16 +100,6 @@ async function getWeather(location) {
     document.querySelector(".spinner").style.display = "none";
     console.log(response);
     return;
-  }
-
-  if (response.status === 403) {
-    // Add the unlock CORS access button
-    const unlockButton = document.createElement("button");
-    unlockButton.textContent = "Unlock Server Access";
-    unlockButton.addEventListener("click", function () {
-      window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
-      unlockButton.style.display = "none";
-    });
   }
 
   let data = await response.json();
