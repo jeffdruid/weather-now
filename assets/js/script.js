@@ -304,6 +304,47 @@ async function getWeather(location) {
     "Humidity Level: " + data.main.humidity + "%";
   document.getElementById("country").innerHTML = data.sys.country;
 
+  // Display the weather data on the Footer with animation
+
+  document.getElementById("temperature-now").innerHTML =
+    "Temp: " + Math.round(data.main.temp) + "°C";
+  document.getElementById("current-location").innerHTML = data.name;
+  document.getElementById(
+    "current-flag"
+  ).src = `https://www.flagsapi.com/${data.sys.country}/flat/24.png`;
+  document.getElementById("current-feels-like").innerHTML =
+    "Feels like: " + Math.round(data.main.feels_like) + "°C";
+  document.getElementById("current-max").innerHTML =
+    "Maximum: " + Math.round(data.main.temp_max) + "°C";
+  document.getElementById("current-min").innerHTML =
+    "Minimum: " + Math.round(data.main.temp_min) + "°C";
+  document.getElementById("current-sunrise").innerHTML =
+    "Sunrise: " +
+    new Date((data.sys.sunrise + data.timezone) * 1000).toLocaleTimeString(
+      "en-US",
+      {
+        hour: "numeric",
+        hour12: true,
+        minute: "numeric",
+      }
+    );
+  document.getElementById("current-sunset").innerHTML =
+    "Sunset: " +
+    new Date((data.sys.sunset + data.timezone) * 1000).toLocaleTimeString(
+      "en-US",
+      {
+        hour: "numeric",
+        hour12: true,
+        minute: "numeric",
+      }
+    );
+  document.getElementById("current-desc").innerHTML =
+    data.weather[0].description;
+  document.getElementById("current-wind").innerHTML =
+    "Wind Speed: " + data.wind.speed + " km/h";
+  document.getElementById("current-humidity").innerHTML =
+    "Humidity Level: " + data.main.humidity + "%";
+
   hideSpinner();
 
   // Display the weather data on the UI with animation
