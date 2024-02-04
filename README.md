@@ -258,7 +258,7 @@ Weather Now is a web application that provides real-time weather information for
 
 ### CORS Error
 
-- TODO Screenshots
+- ![Error 403](assets/media/error-403.png)
 
 - During the development of the application, CORS (Cross-Origin Resource Sharing) issues were encountered when making requests from the frontend to the backend.
 
@@ -267,6 +267,7 @@ Weather Now is a web application that provides real-time weather information for
 - Cors-Anywhere Proxy Solution
 
   - To overcome these CORS challenges, a workaround using the CORS-anywhere proxy was implemented. CORS-anywhere is a simple HTTP proxy that allows cross-origin requests to be made from the frontend, bypassing the usual CORS restrictions.
+    ![Server Access](assets/media/error-server-access.png)
 
 ### API Key
 
