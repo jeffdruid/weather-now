@@ -338,20 +338,21 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 #### Desktop
 
-| Edge - Version 121.0.2277.98 | Chrome - Version 120.0.6099.71 | Firefox - Version 120.0.1 |
-| ---------------------------- | ------------------------------ | ------------------------- |
+| Edge - Version 121.0.2277.98                            | Chrome - Version 121.0.6167.140                             | Firefox - Version 120.0.1                                     |
+| ------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------- |
+| ![Desktop - Edge](assets/media/screen-desktop-edge.png) | ![Desktop - Chrome](assets/media/screen-desktop-chrome.png) | ![Desktop - Firefox](assets/media/screen-desktop-firefox.png) |
 
 #### Tablet
 
-<!-- TODO double check versions -->
-
-| Edge - Version 120.0.2210.157 | Chrome - Version 121.0.6167.143 | Firefox - Version 122.0.1 |
-| ----------------------------- | ------------------------------- | ------------------------- |
+| Edge - Version 120.0.2210.157                          | Chrome - Version 121.0.6167.101                            | Firefox - Version 122.0                                      |
+| ------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| ![Tablet - Edge](assets/images/screen-tablet-edge.jpg) | ![Tablet - Chrome](assets/images/screen-tablet-chrome.jpg) | ![Tablet - Firefox](assets/images/screen-tablet-firefox.jpg) |
 
 #### Mobile
 
-| Edge - Version 120.0.2210.157 | Chrome - Version 121.0.6167.143 | Firefox - Version 122.0.1 |
-| ----------------------------- | ------------------------------- | ------------------------- |
+| Edge - Version 120.0.2210.157                         | Chrome - Version 121.0.6167.143                            | Firefox - Version 122.0.1                                    |
+| ----------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
+| ![Mobile- Edge](assets/images/screen-mobile-edge.jpg) | ![Mobile - Chrome](assets/images/screen-mobile-chrome.jpg) | ![Mobile - Firefox](assets/images/screen-mobile-firefox.jpg) |
 
 ## Bugs
 
