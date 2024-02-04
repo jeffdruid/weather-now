@@ -373,6 +373,16 @@ The manual testing confirms that the page operates smoothly across multiple brow
   - Set Header container and Main container to default `display: none`, and updated the their `display: flex` at the end of the animation.
   - Also default Main `height: 0;` and at the end of animation to `height: 100%`.
 
+- Display CORS button only when status 403 occurs.
+  ![Unlock Server Access Button](assets/media/error-cors-access.png)
+
+  - Moved the following code inside the getWeather function in order to check `if (response.status === 403)`.
+    `unlockButton.addEventListener("click", function () {
+  window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
+  unlockButton.style.display = "none";
+});
+document.body.appendChild(unlockButton);`
+
 - Update current time in the footer to display location's current time instead of user's current time.
 
 ## UI Improvements
