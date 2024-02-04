@@ -24,6 +24,8 @@ function nextState() {
           document.body.style.overflow = "visible";
           document.getElementById("side-bar").style.display = "flex";
           document.getElementById("side-bar-close-btn").style.display = "flex";
+          document.querySelector(".container").style.display = "flex";
+          document.querySelector(".search").style.display = "flex";
           document.getElementById("scrolling-container").style.display =
             "flex";
           document.body.style.background =

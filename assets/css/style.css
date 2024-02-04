@@ -49,7 +49,7 @@ main {
 /* Header styles */
 .container {
     flex: 1;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 2rem .75rem 1rem .75rem;
@@ -155,7 +155,7 @@ main {
 
 /* Search styles */
 .search {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 1rem;
