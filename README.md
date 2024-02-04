@@ -399,6 +399,9 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
   - Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
 
+- Added padding to :hover elements in Favorites and History
+  ![Hover effect](assets/media/ui-hover-after.png)
+  - Added `padding: 0.75rem` to both Favorites and History elements when hovered.
 - Shorter Animation intro
 <!-- TODO screen grab -->
 - Fix toggle buttons

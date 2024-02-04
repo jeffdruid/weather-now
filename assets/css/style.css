@@ -196,6 +196,7 @@ input {
 }
 
 #search-history a:hover {
+    padding: .75rem;
     color: var(--red-color-2);
     background-color: var(--secondary-color);
     border-radius: 10px;
@@ -318,6 +319,7 @@ body>button {
 }
 
 .favorite a:hover {
+    padding: .75rem;
     color: var(--red-color-2);
     background-color: var(--secondary-color);
     border-radius: 10px;

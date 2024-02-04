@@ -959,7 +959,7 @@ function toggleDarkMode() {
 const darkModeBtn = document.getElementById("dark-mode-btn");
 darkModeBtn.addEventListener("click", toggleDarkMode);
 
-let isSideBarOpen = false;
+let isSideBarOpen = true;
 
 // Add the button click event listener to toggle the side bar
 const sideBarBtn = document.getElementById("side-bar-close-btn");
