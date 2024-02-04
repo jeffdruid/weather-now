@@ -364,11 +364,14 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 - Dark Mode not toggling properly on mobile.
   ![Side Bar - Blocked](assets/media/ui-side-bar-after.png)
-- Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
+
+  - Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
 
 - Animation not in full screen after page is refreshed.
+  ![Animation - Bug](assets/media/bug-animation-refresh.png)
 
-- Cors Access was blocked bypass this by using - Cors-Anywhere proxy.
+  - Set Header container and Main container to default `display: none`, and updated the their `display: flex` at the end of the animation.
+  - Also default Main `height: 0;` and at the end of animation to `height: 100%`.
 
 - Update current time in the footer to display location's current time instead of user's current time.
 
@@ -383,15 +386,18 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 - Increase readability of footer elements.
   ![Footer - Larger Text](assets/media/ui-footer.png)
-- Increased to `font-size: .75rem;`
+
+  - Increased to `font-size: .75rem;`
 
 - Fix Header for better readability and contrast.
   ![Header - Text Shadow](assets/media/ui-header-after.png)
-- Added `text-shadow: 4px 4px 4px var(--primary-color);`
+
+  - Added `text-shadow: 4px 4px 4px var(--primary-color);`
 
 - Default Side Bar to open in order to fill white space when the page is first loaded.
   ![Side Bar - Mobile View](assets/media/feat-side-bar-mobile.png)
-- Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
+
+  - Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
 
 - Shorter Animation intro
 <!-- TODO screen grab -->

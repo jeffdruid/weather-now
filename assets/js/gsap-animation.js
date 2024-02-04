@@ -25,6 +25,7 @@ function nextState() {
           document.getElementById("side-bar").style.display = "flex";
           document.getElementById("side-bar-close-btn").style.display = "flex";
           document.querySelector(".container").style.display = "flex";
+          document.querySelector("main").style.height = "100%";
           document.querySelector(".search").style.display = "flex";
           document.getElementById("scrolling-container").style.display =
             "flex";
