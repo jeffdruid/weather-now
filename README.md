@@ -344,15 +344,15 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 #### Tablet
 
-| Edge - Version 120.0.2210.157                          | Chrome - Version 121.0.6167.101                            | Firefox - Version 122.0                                      |
-| ------------------------------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| ![Tablet - Edge](assets/images/screen-tablet-edge.jpg) | ![Tablet - Chrome](assets/images/screen-tablet-chrome.jpg) | ![Tablet - Firefox](assets/images/screen-tablet-firefox.jpg) |
+| Edge - Version 120.0.2210.157                         | Chrome - Version 121.0.6167.101                           | Firefox - Version 122.0                                     |
+| ----------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- |
+| ![Tablet - Edge](assets/media/screen-tablet-edge.jpg) | ![Tablet - Chrome](assets/media/screen-tablet-chrome.jpg) | ![Tablet - Firefox](assets/media/screen-tablet-firefox.jpg) |
 
 #### Mobile
 
-| Edge - Version 120.0.2210.157                         | Chrome - Version 121.0.6167.143                            | Firefox - Version 122.0.1                                    |
-| ----------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ |
-| ![Mobile- Edge](assets/images/screen-mobile-edge.jpg) | ![Mobile - Chrome](assets/images/screen-mobile-chrome.jpg) | ![Mobile - Firefox](assets/images/screen-mobile-firefox.jpg) |
+| Edge - Version 120.0.2210.157                        | Chrome - Version 121.0.6167.143                           | Firefox - Version 122.0.1                                   |
+| ---------------------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------- |
+| ![Mobile- Edge](assets/media/screen-mobile-edge.jpg) | ![Mobile - Chrome](assets/media/screen-mobile-chrome.jpg) | ![Mobile - Firefox](assets/media/screen-mobile-firefox.jpg) |
 
 ## Bugs
 
@@ -362,28 +362,32 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 ### Fixed Bugs
 
-<!-- TODO -->
+|                                            |                                                           |
+| ------------------------------------------ | --------------------------------------------------------- |
+| Dark Mode not toggling properly on mobile. | ![Side Bar - Blocked](assets/media/ui-side-bar-after.png) |
 
-- Dark Mode not toggling properly on mobile.
-  ![Side Bar - Blocked](assets/media/ui-side-bar-after.png)
+- Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
 
-  - Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
+|                                                       |                                                            |
+| ----------------------------------------------------- | ---------------------------------------------------------- |
+| Animation not in full screen after page is refreshed. | ![Animation - Bug](assets/media/bug-animation-refresh.png) |
 
-- Animation not in full screen after page is refreshed.
-  ![Animation - Bug](assets/media/bug-animation-refresh.png)
+- Set Header container and Main container to default `display: none`, and updated the their `display: flex` at the end of the animation.
 
-  - Set Header container and Main container to default `display: none`, and updated the their `display: flex` at the end of the animation.
   - Also default Main `height: 0;` and at the end of animation to `height: 100%`.
 
-- Display CORS button only when status 403 occurs.
-  ![Unlock Server Access Button](assets/media/error-cors-access.png)
+|                                                  |                                                                    |
+| ------------------------------------------------ | ------------------------------------------------------------------ |
+| Display CORS button only when status 403 occurs. | ![Unlock Server Access Button](assets/media/error-cors-access.png) |
 
-  - Moved the following code inside the getWeather function in order to check `if (response.status === 403)`.
-    `unlockButton.addEventListener("click", function () {
+- Moved the following code inside the getWeather function in order to check `if (response.status === 403)`.
+  `unlockButton.addEventListener("click", function () {
   window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
   unlockButton.style.display = "none";
 });
 document.body.appendChild(unlockButton);`
+
+<!-- TODO -->
 
 - Update current time in the footer to display location's current time instead of user's current time.
 
@@ -396,31 +400,41 @@ document.body.appendChild(unlockButton);`
 - Added the `padding:1.5rem;` to the CORS button for the mobile screens.
   ![Cors Button - After](assets/media/ui-cors-btn.png)
 
-- Increase readability of footer elements.
-  ![Footer - Larger Text](assets/media/ui-footer.png)
+|                                          |                                                     |
+| ---------------------------------------- | --------------------------------------------------- |
+| Increase readability of footer elements. | ![Footer - Larger Text](assets/media/ui-footer.png) |
 
-  - Increased to `font-size: .75rem;`
+- Increased to `font-size: .75rem;`
 
-- Fix Header for better readability and contrast.
-  ![Header - Text Shadow](assets/media/ui-header-after.png)
+|                                                 |                                                           |
+| ----------------------------------------------- | --------------------------------------------------------- |
+| Fix Header for better readability and contrast. | ![Header - Text Shadow](assets/media/ui-header-after.png) |
 
-  - Added `text-shadow: 4px 4px 4px var(--primary-color);`
+- Added `text-shadow: 4px 4px 4px var(--primary-color);`
 
-- Default Side Bar to open in order to fill white space when the page is first loaded.
-  ![Side Bar - Mobile View](assets/media/feat-side-bar-mobile.png)
+|                                                                                      |                                                                  |
+| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| Default Side Bar to open in order to fill white space when the page is first loaded. | ![Side Bar - Mobile View](assets/media/feat-side-bar-mobile.png) |
 
-  - Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
+- Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
 
-- Added padding to :hover elements in Favorites and History
-  ![Hover effect](assets/media/ui-hover-after.png)
-  - Added `padding: 0.75rem` to both Favorites and History elements when hovered.
-- Shorter Animation intro
-  ![Animation Intro - Update](assets/media/ui-intro.gif)
+|                                                           |                                                  |
+| --------------------------------------------------------- | ------------------------------------------------ |
+| Added padding to :hover elements in Favorites and History | ![Hover effect](assets/media/ui-hover-after.png) |
 
-  - Reduced the delay from `gsap.delayedCall(curLayout === 0 ? 3.5 : 1.5, nextState);` to `gsap.delayedCall(curLayout === 0 ? 0.25 : 0.9, nextState);`
+- Added `padding: 0.75rem` to both Favorites and History elements when hovered.
 
-- Fix toggle buttons
-  ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png)
+|                         |                                                        |
+| ----------------------- | ------------------------------------------------------ |
+| Shorter Animation intro | ![Animation Intro - Update](assets/media/ui-intro.gif) |
+
+- Reduced the delay from `gsap.delayedCall(curLayout === 0 ? 3.5 : 1.5, nextState);` to `gsap.delayedCall(curLayout === 0 ? 0.25 : 0.9, nextState);`
+
+|                    |                                                                 |
+| ------------------ | --------------------------------------------------------------- |
+| Fix toggle buttons | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png) |
+
+<!-- TODO -->
 
 ## Future Improvements
 
