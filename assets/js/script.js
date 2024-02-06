@@ -96,6 +96,7 @@ async function getWeather(location) {
       });
       document.body.appendChild(unlockButton);
     }
+    unlockButton.style.display = "flex";
   }
   // 429 error handling
   if (response.status === 429) {
