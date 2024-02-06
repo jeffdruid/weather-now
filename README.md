@@ -152,7 +152,7 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Current Weather:
 
-- Get real-time weather information such asn current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
+- Get real-time weather information such as current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
 
 |                                                                   |                                                                                                                                                                                |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -292,27 +292,33 @@ Weather Now is a web application that provides real-time weather information for
 
 #### HTML
 
-![Validator - HTML](assets/media/validator-html.png)
+- W3C HTML Validator: No errors were found in the HTML.
+  ![Validator - HTML](assets/media/validator-html.png)
 
 #### CSS
 
-![Validator - CSS](assets/media/validator-css.png)
+- W3C CSS Validator: No errors were found in the CSS.
+  ![Validator - CSS](assets/media/validator-css.png)
 
 #### JavaScript
 
-![Validator - JavaScript](assets/media/validator-js.png)
+- JSHint: No major issues were found in the JavaScript code.
+  ![Validator - JavaScript](assets/media/validator-js.png)
 
 #### Accessibility
 
-![LightHouse - Results](assets/media/validator-accessibility.png)
+- Tested accessibility using Lighthouse: Achieved a score of 100 for accessibility.
+  ![LightHouse - Results](assets/media/validator-accessibility.png)
 
 #### Lighthouse
 
-![LightHouse - Report](assets/media/validator-lighthouse.png)
+- Lighthouse audits were performed to ensure performance, accessibility, best practices, and SEO optimization.
+  ![LightHouse - Report](assets/media/validator-lighthouse.png)
 
 ### Responsiveness
 
-![Main Page in Different Screen Sizes](assets/media/responsive-hero.png)
+- Tested responsiveness across various devices and screen sizes, including desktops, tablets, and mobile phones.
+  ![Main Page in Different Screen Sizes](assets/media/responsive-hero.png)
 
 ### Manual Testing
 
@@ -362,6 +368,8 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 ### Fixed Bugs
 
+- Detailed various bugs encountered during development and their resolutions.
+
 |                                            |                                                           |
 | ------------------------------------------ | --------------------------------------------------------- |
 | Dark Mode not toggling properly on mobile. | ![Side Bar - Blocked](assets/media/ui-side-bar-after.png) |
@@ -393,6 +401,7 @@ document.body.appendChild(unlockButton);`
 
 ## UI Improvements
 
+- Suggested enhancements to the user interface to improve usability, accessibility, and visual appeal:
 <!-- TODO -->
 
 - Fix Padding on the Mobile screens for the CORS Button.
@@ -438,6 +447,8 @@ document.body.appendChild(unlockButton);`
 <!-- TODO -->
 
 ## Future Improvements
+
+- Outlined potential future enhancements and features to be implemented in subsequent versions of the application:
 
 ### Map Integration:
 
