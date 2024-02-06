@@ -204,8 +204,8 @@ Weather Now is a web application that provides real-time weather information for
 |                                                                |                                                                                                                 |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | ![Side Bar Button](assets/media/feat-side-bar-btn.png)         | The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and a Github link. |
-| ![Side Bar on Desktop](assets/media/feat-side-bar-desktop.png) |                                                                                                                 |
-| ![Side Bar on Mobile](assets/media/feat-side-bar-mobile.png)   |                                                                                                                 |
+| ![Side Bar on Desktop](assets/media/feat-side-bar-desktop.png) | Desktop View                                                                                                    |
+| ![Side Bar on Mobile](assets/media/feat-side-bar-mobile.png)   | Mobile View                                                                                                     |
 
 ### Chart:
 
@@ -231,7 +231,7 @@ Weather Now is a web application that provides real-time weather information for
 
 |                                                                             |                                                                                                                                    |
 | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| ![Error 429 Message](assets/media/error-429.png)                            | Error 429                                                                                                                          |
+| ![Error 429 Message](assets/media/error-429.png)                            | Error Message displayed when user exceeds the request rate limit imposed by the server.                                            |
 | ![Unlock Server Access Button](assets/media/error-cors-access.png)          | Using Cors-Anywhere to provide cors access to the weatherKey flask app, where the API key is hidden.                               |
 | ![Error Message - Location Access](assets/media/error-location-access.png)  | Error message displayed when user has not allowed location, user still able to use the functions of this website after this error. |
 | ![Error Message - No Favorites Found ](assets/media/error-no-favorites.png) | Error message displayed when localStorage does not have any favorites saved.                                                       |
@@ -281,8 +281,8 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Remove User's Current Weather Information
 
-- TODO
-- Replaced the information with the most recent search, also avoiding sending to many API requests.
+- In consideration of user privacy and to optimize the application's performance by minimizing unnecessary API requests, the recent search feature has been enhanced to replace the user's current weather information with the most recent search.
+<!-- - TODO -screenshot -->
 
 ## Testing
 
@@ -434,6 +434,7 @@ document.body.appendChild(unlockButton);`
 | ------------------ | --------------------------------------------------------------- |
 | Fix toggle buttons | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png) |
 
+- Ensuring the proper functionality and visual clarity of toggle buttons
 <!-- TODO -->
 
 ## Future Improvements
@@ -452,12 +453,13 @@ document.body.appendChild(unlockButton);`
 
 ### Cache Data
 
-- TODO
-- Use cache to store the weather data. (Future feature)
+- Use cache to store the weather data.
+  - This cache feature aims to optimize data retrieval processes by locally storing previously fetched weather information.
+    - By utilizing cache storage, the application can reduce reliance on external API calls and minimize response times.
 
 ### Color code the temperature.
 
-- TODO
+- Color-coded temperature representation helps the user with a better data visualization and enhancing experience within the Weather Now application.
 
 ## Deployment
 
