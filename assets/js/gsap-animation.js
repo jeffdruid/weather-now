@@ -3,7 +3,7 @@ let layouts = ["final", "plain", "columns", "grid", "final"],
   intro = document.querySelector(".intro"),
   curLayout = 0; // index of the current layout
 function nextState() {
-  const state = Flip.getState(".block", {
+  const state = Flip.getState(".block, .logo-now", {
     props: "color,backgroundColor",
     simple: true,
   }); // capture current state

@@ -415,8 +415,12 @@ document.body.appendChild(unlockButton);`
   ![Hover effect](assets/media/ui-hover-after.png)
   - Added `padding: 0.75rem` to both Favorites and History elements when hovered.
 - Shorter Animation intro
-<!-- TODO screen grab -->
+  ![Animation Intro - Update](assets/media/ui-intro.gif)
+
+  - Reduced the delay from `gsap.delayedCall(curLayout === 0 ? 3.5 : 1.5, nextState);` to `gsap.delayedCall(curLayout === 0 ? 0.25 : 0.9, nextState);`
+
 - Fix toggle buttons
+  ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png)
 
 ## Future Improvements
 
