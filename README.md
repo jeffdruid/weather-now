@@ -13,31 +13,28 @@ Weather Now is a web application that provides real-time weather information for
 3. [User Stories](#user-stories)
 4. [Wireframe](#wireframe)
 5. [Features](#features)
-
-- [Animation Intro](#animation-intro)
-- [Header](#header)
-- [Weather Container](#weather-container)
-  - [Buttons](#buttons)
-- [Current Weather](#current-weather)
-- [Search Functionality](#search-functionality)
-- [Temperature Units](#temperature-units)
-- [5-Day Forecast](#5-day-forecast)
-- [Favorites](#favorites)
-- [Dark Mode](#dark-mode)
-- [Search History](#search-history)
-- [Side Bar](#side-bar)
-- [Chart](#chart)
-- [GitHub](#github)
-- [Loading Screen](#loading-screen)
-- [Error Handling](#error-handling)
-- [Alerts](#alerts)
-- [Footer](#footer)
-
+   - [Header](#header)
+   - [Animation Intro](#animation-intro)
+   - [Weather Container](#weather-container)
+     - [Buttons](#buttons)
+   - [Current Weather](#current-weather)
+   - [Search Functionality](#search-functionality)
+   - [Temperature Units](#temperature-units)
+   - [5-Day Forecast](#5-day-forecast)
+   - [Favorites](#favorites)
+   - [Dark Mode](#dark-mode)
+   - [Search History](#search-history)
+   - [Side Bar](#side-bar)
+   - [Chart](#chart)
+   - [GitHub](#github)
+   - [Loading Screen](#loading-screen)
+   - [Error Handling](#error-handling)
+   - [Alerts](#alerts)
+   - [Footer](#footer)
 6. [Troubleshooting](#troubleshooting)
-
-- [CORS Error](#cors-error)
-- [API Key](#api-key)
-
+   - [CORS Error](#cors-error)
+   - [API Key](#api-key)
+   - [Remove User's Current Weather Information](#remove-users-current-weather-information)
 7. [Testing](#testing)
    - [Validator Testing](#validator-testing)
      - [HTML](#html)
@@ -64,17 +61,14 @@ Weather Now is a web application that provides real-time weather information for
     - [User Interface](#user-interface)
     - [Cache Data](#cache-data)
 11. [Deployment](#deployment)
-
-- [Cloning & Forking](#cloning--forking)
-- [Local Deployment](#local-deployment)
-- [Remote Deployment](#remote-deployment)
-
+    - [Cloning & Forking](#cloning--forking)
+    - [Local Deployment](#local-deployment)
+    - [Remote Deployment](#remote-deployment)
 12. [Credits](#credits)
-
-- [Source Code](#source-code)
-- [Icons](#icons)
-- [Images](#images)
-- [Useful links](#useful-links)
+    - [Source Code](#source-code)
+    - [Icons](#icons)
+    - [Images](#images)
+    - [Useful links](#useful-links)
 
 ## Introduction
 
@@ -340,6 +334,10 @@ Weather Now is a web application that provides real-time weather information for
 
 - Verified that all text content and fonts used on the page are legible, clear, and easy to understand.
 
+#### Acceptance Test
+
+- Verified that the application meets the specified user stories and acceptance criteria.
+
 The manual testing confirms that the page operates smoothly across multiple browsers, adapts well to different devices, ensures accurate link navigation, and maintains clear readability for users interacting with the content.
 
 #### Desktop
@@ -513,27 +511,34 @@ You can access the live link here : [Weather Now](https://jeffdruid.github.io/we
 
 ### Source code
 
-<!-- TODO - Categorize -->
-
-- [Open Weather Map](https://openweathermap.org/)
 - [Google Charts](https://developers.google.com/chart)
-- [Free Frontend](https://freefrontend.com/css-input-text/)
-- [Yusuf önaldı](https://freedesignresources.net/34-weather-icon-pack/)
 - [Glass Effect](https://webdesign.tutsplus.com/how-to-create-a-frosted-glass-effect-in-css--cms-32535t)
-- [Font Awesome](https://fontawesome.com)
 - [Search Icon inside input box](https://nikitahl.com/search-icon-inside-input)
-- [How to Convert Celsius to Fahrenheit (°C to °F)](https://www.thoughtco.com/celcius-to-farenheit-formula-609227)
-- [Convert temperatures to and from celsius, fahrenheit](https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-11.php)
 - [Openweather API, time always in my local time zone](https://stackoverflow.com/questions/60627245/openweather-api-time-always-in-my-local-time-zone)
 - [localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
-- [HTML Web Storage API](https://www.w3schools.com/html/html5_webstorage.asp)
-- [Country Flags](https://flagsapi.com/)
-- [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
-- [Marquee feature](https://codepen.io/notkieran/pen/jVmWNY)
-- [Hide API key](https://jessicawatts-95014.medium.com/hiding-api-keys-js-656290a1132c)
-- [Dave Gray - Hiding API Keys in Javascript Netlify](https://www.youtube.com/watch?v=2J3xbMkH2K4)
 - [Handle CORS Client-side](https://gist.github.com/jesperorb/6ca596217c8dfba237744966c2b5ab1e)
 - [Flip for GSAP](https://codepen.io/GreenSock/pen/eYdyVVe)
-- [Placeholder - image from pngtree.com](https://pngtree.com/element/down?id=NjM5ODI2Ng==&type=1&time=1706706114&token=MTZmZDg0ZWMzNzQ0NDYwNWI5ZmE0MGRkMmNkOWZjZjk=&t=0)
 - [Dan Hamilton](https://github.com/dlhamilton/weatherAPITest/blob/main/run.py)
 - [Cors-Anywhere](https://github.com/Rob--W/cors-anywhere)
+- [HTML Web Storage API](https://www.w3schools.com/html/html5_webstorage.asp)
+- [Marquee feature](https://codepen.io/notkieran/pen/jVmWNY)
+
+### Icons
+
+- [Yusuf önaldı](https://freedesignresources.net/34-weather-icon-pack/)
+- [Font Awesome](https://fontawesome.com)
+
+### Images
+
+- [Placeholder - image from pngtree.com](https://pngtree.com/element/down?id=NjM5ODI2Ng==&type=1&time=1706706114&token=MTZmZDg0ZWMzNzQ0NDYwNWI5ZmE0MGRkMmNkOWZjZjk=&t=0)
+
+### Useful Links
+
+- [Open Weather Map](https://openweathermap.org/)
+- [Country Flags](https://flagsapi.com/)
+- [How to Convert Celsius to Fahrenheit (°C to °F)](https://www.thoughtco.com/celcius-to-farenheit-formula-609227)
+- [Convert temperatures to and from celsius, fahrenheit](https://www.w3resource.com/javascript-exercises/javascript-basic-exercise-11.php)
+- [Hide API key](https://jessicawatts-95014.medium.com/hiding-api-keys-js-656290a1132c)
+- [Dave Gray - Hiding API Keys in Javascript Netlify](https://www.youtube.com/watch?v=2J3xbMkH2K4)
+- [Free Frontend](https://freefrontend.com/css-input-text/)
+- [JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
