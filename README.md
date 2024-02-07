@@ -513,7 +513,6 @@ You can access the live link here : [Weather Now](https://jeffdruid.github.io/we
 - [localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
 - [Handle CORS Client-side](https://gist.github.com/jesperorb/6ca596217c8dfba237744966c2b5ab1e)
 - [Flip for GSAP](https://codepen.io/GreenSock/pen/eYdyVVe)
--
 - [Dan Hamilton](https://github.com/dlhamilton/weatherAPITest/blob/main/run.py)
 - [Cors-Anywhere](https://github.com/Rob--W/cors-anywhere)
 - [HTML Web Storage API](https://www.w3schools.com/html/html5_webstorage.asp)
