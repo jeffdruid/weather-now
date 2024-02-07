@@ -59,6 +59,7 @@ main {
 }
 
 .container h1 {
+    
     font-size: 1.75rem;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
@@ -71,6 +72,7 @@ main {
     padding: 1.25rem;
     border-radius: 5px;
     width: 100vw;
+    background-color: rgba(0, 0, 0, .1);
 }
 
 /* Main styles */
@@ -642,6 +644,7 @@ footer {
 
     /* Header styles */
     .container h1 {
+        width: 90%;
         font-size: 2rem;
     }
 
@@ -672,6 +675,7 @@ footer {
     /* Forecast styles */
     #forecast div {
         width: 90%;
+        font-size: .75rem;
     }
 
     #forecast {
@@ -692,6 +696,7 @@ footer {
 
     /* Header styles */
     .container h1 {
+        width: 75%;
         font-size: 3rem;
     }
 
@@ -726,6 +731,7 @@ footer {
 
     /* Forecast styles */
     #forecast div {
+        font-size: 1rem; 
         width: 75%;
     }
 
