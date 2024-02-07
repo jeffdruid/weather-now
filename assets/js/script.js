@@ -91,7 +91,11 @@ async function getWeather(location) {
       unlockButton.id = "unlock-button";
       unlockButton.textContent = "Unlock Server Access";
       unlockButton.addEventListener("click", function () {
-        window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
+        window.open(
+          "https://cors-anywhere.herokuapp.com/corsdemo",
+          "_blank",
+          "width=500,height=500"
+        );
         unlockButton.style.display = "none";
       });
       document.body.appendChild(unlockButton);
