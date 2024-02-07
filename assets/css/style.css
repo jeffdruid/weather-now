@@ -30,6 +30,7 @@
 body {
     font-family: 'Merriweather', sans-serif;
     background-color: var(--background-color);
+    cursor: default;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -78,6 +79,7 @@ main {
 
 #side-bar-close-btn {
     position: absolute;
+    cursor: pointer;
     display: none;
     top: 50%;
     right: -1.5rem;
@@ -484,8 +486,8 @@ body>button {
 }
 
 #temperature-toggle-btn {
-    background: 0;
-    padding: .35rem;
+    background: rgba(0, 0, 0, .02);
+    padding: .25rem;
     border: 0;
     margin: .4rem;
     cursor: pointer;
@@ -545,7 +547,7 @@ body>button {
 }
 
 #forecast div:hover {
-    background: var(--secondary-color);
+    background: rgba(255, 255, 255, .5)
 }
 
 .forecastF,

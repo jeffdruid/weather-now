@@ -105,8 +105,6 @@ Weather Now is a web application that provides real-time weather information for
 
 ## Wireframe
 
-<!-- TODO Update All alts -->
-
 ![Wireframe Intro](assets/media/Wireframe-2.png)
 
 ![Wireframe Main Page](assets/media/Wireframe-1.png)
@@ -274,7 +272,7 @@ Weather Now is a web application that provides real-time weather information for
 ### Remove User's Current Weather Information
 
 - In consideration of user privacy and to optimize the application's performance by minimizing unnecessary API requests, the recent search feature has been enhanced to replace the user's current weather information with the most recent search.
-<!-- - TODO -screenshot -->
+  - ![Footer - Weather Information](assets/media/ui-footer.png)
 
 ## Testing
 
@@ -398,7 +396,6 @@ document.body.appendChild(unlockButton);`
 ## UI Improvements
 
 - Suggested enhancements to the user interface to improve usability, accessibility, and visual appeal:
-<!-- TODO -->
 
 - Fix Padding on the Mobile screens for the CORS Button.
   ![Cors Button - Before](assets/media/ui-cors-btn-before.png)
