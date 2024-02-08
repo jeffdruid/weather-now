@@ -27,6 +27,7 @@ function nextState() {
           document.querySelector(".container").style.display = "flex";
           document.querySelector("main").style.height = "100%";
           document.querySelector(".search").style.display = "flex";
+          document.querySelector("#unlock-button").style.display = "flex";
           document.getElementById("scrolling-container").style.display =
             "flex";
           document.body.style.background =

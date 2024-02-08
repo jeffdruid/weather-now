@@ -253,10 +253,11 @@ input::placeholder {
 body>button {
     width: 50%;
     height: 2rem;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
+    margin-top: -2rem;
     background: var(--red-color-2);
     color: white;
     text-transform: uppercase;
@@ -265,6 +266,7 @@ body>button {
     border: 0;
     border-radius: 10px;
     padding: 1.5rem;
+    z-index: 9;
 }
 
 .error-message {
@@ -736,7 +738,7 @@ footer {
     #search-history {
         width: 75%;
     }
-    
+
     /* Tour Styles */
     .tour-container {
     margin: 3rem 5rem;

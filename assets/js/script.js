@@ -74,6 +74,25 @@ function hideSpinner() {
   spinner.style.display = "none";
 }
 
+// Add the unlock CORS access button
+const unlockButton =
+  document.querySelector("#unlock-button") || document.createElement("button");
+// if (!document.querySelector("#unlock-button")) {
+// unlockButton.style.display = "none";
+unlockButton.id = "unlock-button";
+unlockButton.textContent = "Unlock Server Access";
+unlockButton.addEventListener("click", function () {
+  window.open(
+    "https://cors-anywhere.herokuapp.com/corsdemo",
+    "_blank",
+    "width=500,height=500"
+  );
+  unlockButton.style.display = "none";
+});
+document.body.appendChild(unlockButton);
+// }
+// unlockButton.style.display = "flex";
+
 /**
  * Get the weather data from the API.
  */
@@ -83,23 +102,6 @@ async function getWeather(location) {
   if (response.status === 403) {
     document.getElementById("favorite-weather").style.display = "none";
     document.getElementById("search-history").style.display = "none";
-    // Add the unlock CORS access button
-    const unlockButton =
-      document.querySelector("#unlock-button") ||
-      document.createElement("button");
-    if (!document.querySelector("#unlock-button")) {
-      unlockButton.id = "unlock-button";
-      unlockButton.textContent = "Unlock Server Access";
-      unlockButton.addEventListener("click", function () {
-        window.open(
-          "https://cors-anywhere.herokuapp.com/corsdemo",
-          "_blank",
-          "width=500,height=500"
-        );
-        unlockButton.style.display = "none";
-      });
-      document.body.appendChild(unlockButton);
-    }
     unlockButton.style.display = "flex";
   }
   // 429 error handling
