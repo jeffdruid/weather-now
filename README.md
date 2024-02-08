@@ -441,6 +441,11 @@ document.body.appendChild(unlockButton);`
 - Ensuring the proper functionality and visual clarity of toggle buttons
 <!-- TODO -->
 
+- Add instructions to help the user how to start using the app.
+  - ![Tour Page](assets/media/feat-tour.png)
+    - Also added a button to easy access in the side bar.
+    - ![alt text](assets/media/btn-instructions.png)
+
 ## Future Improvements
 
 - Outlined potential future enhancements and features to be implemented in subsequent versions of the application:

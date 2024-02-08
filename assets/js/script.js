@@ -485,6 +485,7 @@ function displayWeatherForFavorites() {
 
   // Close all other containers
   document.querySelector(".tour-container").style.display = "none";
+  document.getElementById("unlock-button").style.display = "none";
   // close searchHistory
   document.getElementById("search-history").style.display = "none";
 
@@ -875,6 +876,7 @@ function displaySearchHistory() {
 
   // Close the tour container
   document.querySelector(".tour-container").style.display = "none";
+  document.getElementById("unlock-button").style.display = "none";
 
   // Retrieve search history from local storage
   const searchHistory =
@@ -1030,6 +1032,7 @@ const tourContainer = document.querySelector(".tour-container");
 if (instructionBtn) {
   instructionBtn.addEventListener("click", () => {
     tourContainer.style.display = "flex";
+    document.getElementById("unlock-button").style.display = "flex";
 
     // Close all other containers
     document.getElementById("favorite-weather").style.display = "none";
