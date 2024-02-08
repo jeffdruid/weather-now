@@ -103,6 +103,10 @@ async function getWeather(location) {
     document.getElementById("favorite-weather").style.display = "none";
     document.getElementById("search-history").style.display = "none";
     unlockButton.style.display = "flex";
+    document.querySelector(".tour-container").style.display = "flex";
+    alert(
+      "Please unlock server access to use the weather app. Click the 'Unlock Server Access' button."
+    );
   }
   // 429 error handling
   if (response.status === 429) {
