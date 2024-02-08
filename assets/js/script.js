@@ -1021,6 +1021,29 @@ function moveMarquee() {
   }
 }
 
+const instructionBtn = document.querySelector("#instruction-btn");
+const tourContainer = document.querySelector(".tour-container");
+if (instructionBtn) {
+  instructionBtn.addEventListener("click", () => {
+    tourContainer.style.display = "flex";
+
+    // Close all other containers
+    document.getElementById("favorite-weather").style.display = "none";
+    document.getElementById("forecast").style.display = "none";
+    document.getElementById("chart_div").style.display = "none";
+    document.getElementById("search-history").style.display = "none";
+    document.getElementById("side-bar").style.left = "-25%";
+    document.getElementById("side-bar-close-btn").style.transform =
+      "rotate(360deg)";
+    console.log("Close favorites, " + location + " selected.");
+    isForecastOpen = false;
+    isChartOpen = false;
+    isCelsius = true;
+    isSideBarOpen = false;
+    isHistoryOpen = false;
+  });
+}
+
 setInterval(moveMarquee, 10);
 // localStorage.clear();
 // localStorage.removeItem("searchHistory");
