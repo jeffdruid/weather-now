@@ -126,6 +126,7 @@ async function getWeather(location) {
     document.getElementById("forecast").style.display = "none";
     document.getElementById("search-history").style.display = "none";
     document.getElementById("chart_div").style.display = "none";
+    document.querySelector(".tour-container").style.display = "none";
     return;
   }
   // Close all other containers
@@ -133,6 +134,7 @@ async function getWeather(location) {
   document.getElementById("forecast").style.display = "none";
   document.getElementById("chart_div").style.display = "none";
   document.getElementById("search-history").style.display = "none";
+  document.querySelector(".tour-container").style.display = "none";
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
@@ -477,6 +479,8 @@ function displayWeatherForFavorites() {
   weatherFavorites.style.display = "flex";
   weatherFavorites.style.animation = "fadeIn .3s ease-in";
 
+  // Close all other containers
+  document.querySelector(".tour-container").style.display = "none";
   // close searchHistory
   document.getElementById("search-history").style.display = "none";
 
@@ -864,6 +868,9 @@ function displaySearchHistory() {
   // Close favorites
   document.getElementById("favorite-weather").style.display = "none";
   isFavoritesOpen = false;
+
+  // Close the tour container
+  document.querySelector(".tour-container").style.display = "none";
 
   // Retrieve search history from local storage
   const searchHistory =
