@@ -743,6 +743,9 @@ footer {
     #search-history {
         width: 75%;
     }
+    body>button {
+        font-size: 1rem;
+    }
 
     /* Tour Styles */
     .tour-container {
