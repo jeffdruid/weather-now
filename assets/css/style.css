@@ -100,7 +100,7 @@ main {
     margin: 0 auto; 
     font-size: .65rem;
     text-align: center;
-    color: var(--primary-color);
+    color: rgba(0, 0, 0, 1);
     margin: .1rem;
     padding: .2rem;
     border-radius: 5px;
@@ -262,7 +262,7 @@ body>button {
     left: 50%;
     /* margin: 0 auto; */
     margin-top: 1rem;
-    background: var(--red-color-2);
+    background: var(--red-color-1);
     color: white;
     text-transform: uppercase;
     font-size: .75rem;
