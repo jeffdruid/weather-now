@@ -86,7 +86,7 @@ main {
     padding: .5rem;
     background-color: rgba(0, 0, 0, .2);
     border-radius: 5px;
-    margin: 2rem 2rem 1rem 2rem;
+    margin: 0;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -98,11 +98,11 @@ main {
     justify-content: center;
     align-items: center;
     margin: 0 auto; 
-    font-size: .75rem;
+    font-size: .65rem;
     text-align: center;
     color: var(--primary-color);
-    margin: .3rem;
-    padding: .5rem;
+    margin: .1rem;
+    padding: .4rem;
     border-radius: 5px;
 }
 /* Side Bar  styles */
@@ -735,6 +735,14 @@ footer {
 
     #search-history {
         width: 75%;
+    }
+    
+    /* Tour Styles */
+    .tour-container {
+    margin: 3rem 5rem;
+    }
+    .tour-container h2, .tour-container p{
+        font-size: 1rem;
     }
 
     /* Side Bar styles */
