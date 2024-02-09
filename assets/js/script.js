@@ -1062,6 +1062,13 @@ if (instructionBtn) {
     isCelsius = true;
     isSideBarOpen = false;
     isHistoryOpen = false;
+
+    // Apply fade-in animation
+    tourContainer.style.opacity = "0";
+    tourContainer.style.transition = "opacity 0.5s";
+    setTimeout(function () {
+      tourContainer.style.opacity = "1";
+    }, 0);
   });
 }
 
