@@ -1028,6 +1028,7 @@ function moveMarquee() {
   }
 }
 
+// Instruction button
 const instructionBtn = document.querySelector("#instruction-btn");
 const tourContainer = document.querySelector(".tour-container");
 if (instructionBtn) {
@@ -1056,3 +1057,34 @@ if (instructionBtn) {
 setInterval(moveMarquee, 10);
 // localStorage.clear();
 // localStorage.removeItem("searchHistory");
+
+// Information button
+const infoBtn = document.getElementById("info-btn");
+infoBtn.addEventListener("click", function () {
+  // Create overlay element
+  const overlay = document.createElement("div");
+  overlay.id = "overlay";
+  document.body.appendChild(overlay);
+
+  // Create image element
+  const image = document.createElement("img");
+  image.src = "assets/media/feat-tour-info.png";
+  image.alt = "Information Page";
+  overlay.appendChild(image);
+
+  // Apply fade-in animation
+  overlay.style.opacity = "0";
+  overlay.style.transition = "opacity 0.5s";
+  setTimeout(function () {
+    overlay.style.opacity = "1";
+  }, 0);
+
+  // Close overlay when clicked
+  overlay.addEventListener("click", function () {
+    overlay.style.transition = "opacity 0.5s";
+    overlay.style.opacity = "0";
+    setTimeout(function () {
+      overlay.remove();
+    }, 500);
+  });
+});
