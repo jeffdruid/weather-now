@@ -29,6 +29,7 @@ Weather Now is a web application that provides real-time weather information for
    - [Error Handling](#error-handling)
    - [Alerts](#alerts)
    - [Footer](#footer)
+   - [APIs](#apis)
 6. [Troubleshooting](#troubleshooting)
    - [CORS Error](#cors-error)
    - [API Key](#api-key)
@@ -244,6 +245,14 @@ Weather Now is a web application that provides real-time weather information for
 |                                         |                                                        |
 | --------------------------------------- | ------------------------------------------------------ |
 | ![Footer](assets/media/feat-footer.png) | The footer of the page displaying website information. |
+
+### APIs
+
+<!-- TODO Create a table -->
+
+![OpenWeatherMap - API Code](assets/media/feat-api-openweathermap.png)
+![Flags - API Code](assets/media/feat-api-flags.png)
+![Google Charts - API Code](assets/media/feat-api-chart.png)
 
 ## Troubleshooting
 
