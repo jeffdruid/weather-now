@@ -1036,6 +1036,7 @@ if (instructionBtn) {
     document.getElementById("unlock-button").style.display = "flex";
 
     // Close all other containers
+    document.getElementById("weather").style.display = "none";
     document.getElementById("favorite-weather").style.display = "none";
     document.getElementById("forecast").style.display = "none";
     document.getElementById("chart_div").style.display = "none";

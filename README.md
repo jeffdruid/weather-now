@@ -449,12 +449,17 @@ document.body.appendChild(unlockButton);`
 | Fix toggle buttons | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png) |
 
 - Ensuring the proper functionality and visual clarity of toggle buttons
-<!-- TODO -->
+  <!-- TODO -->
+  <!-- TODO - create table -->
+- Added instructions to help the user how to start using the app.
 
-- Add instructions to help the user how to start using the app.
   - ![Tour Page](assets/media/feat-tour.png)
     - Also added a button to easy access in the side bar.
-    - ![alt text](assets/media/btn-instructions.png)
+    - ![Tour Button](assets/media/btn-instructions.png)
+
+- Added Information section to help user to navigate the page
+  - ![Information Page](assets/media/feat-tour-info.png)
+    - ![Information Button](assets/media/btn-info.png)
 
 ## Future Improvements
 

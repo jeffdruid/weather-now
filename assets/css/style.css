@@ -173,6 +173,8 @@ main {
 }
 
 #favorites-btn:hover,
+#instruction-btn:hover,
+#info-btn:hover,
 #show-history-btn:hover,
 #dark-mode-btn:hover,
 #github-link-btn:hover {
