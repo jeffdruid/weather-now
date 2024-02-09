@@ -249,6 +249,7 @@ Weather Now is a web application that provides real-time weather information for
 ### APIs
 
 <!-- TODO Create a table -->
+<!-- Explain Code -->
 
 ![OpenWeatherMap - API Code](assets/media/feat-api-openweathermap.png)
 ![Flags - API Code](assets/media/feat-api-flags.png)
@@ -401,8 +402,6 @@ The manual testing confirms that the page operates smoothly across multiple brow
 });
 document.body.appendChild(unlockButton);`
 
-<!-- TODO -->
-
 - Update current time in the footer to display location's current time instead of user's current time.
   - ![Location Current Time - Code](assets/media/bug-time.png)
     - Updated the code to display the location's current time instead of user current location.
@@ -450,18 +449,16 @@ document.body.appendChild(unlockButton);`
 | ------------------ | --------------------------------------------------------------- |
 | Fix toggle buttons | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png) |
 
-- Ensuring the proper functionality and visual clarity of toggle buttons
   <!-- TODO -->
-  <!-- TODO - create table -->
-- Added instructions to help the user how to start using the app.
 
-  - ![Tour Page](assets/media/feat-tour.png)
-    - Also added a button to easy access in the side bar.
-    - ![Tour Button](assets/media/btn-instructions.png)
+- Ensuring the proper functionality and visual clarity of toggle buttons
 
-- Added Information section to help user to navigate the page
-  - ![Information Page](assets/media/feat-tour-info.png)
-    - ![Information Button](assets/media/btn-info.png)
+  |                                                                 |                                                      |
+  | --------------------------------------------------------------- | ---------------------------------------------------- |
+  | Added instructions to help the user how to start using the app. | ![Tour Page](assets/media/feat-tour.png)             |
+  | Also added a button to easy access in the side bar.             | ![Tour Button](assets/media/btn-instructions.png)    |
+  | Added Information section to help user to navigate the page     | ![Information Page](assets/media/feat-tour-info.png) |
+  | Also added a button to easy access in the side bar.             | ![Information Button](assets/media/btn-info.png)     |
 
 ## Future Improvements
 
