@@ -16,18 +16,18 @@ let lastUpdatedTime = "";
 /**
  * Get the current time and display it.
  */
-function showCurrentTime() {
-  setInterval(function () {
-    let currentTime = new Date();
-    let formattedTime = currentTime.toLocaleTimeString("en-US", {
-      hour: "numeric",
-      hour12: true,
-      minute: "numeric",
-    });
-    document.getElementById("current-time").innerHTML =
-      "Time: " + formattedTime;
-  }, 1000);
-}
+// function showCurrentTime() {
+//   setInterval(function () {
+//     let currentTime = new Date();
+//     let formattedTime = currentTime.toLocaleTimeString("en-US", {
+//       hour: "numeric",
+//       hour12: true,
+//       minute: "numeric",
+//     });
+//     document.getElementById("current-time").innerHTML =
+//       "Time: " + formattedTime;
+//   }, 1000);
+// }
 
 /**
  * Get the user's current location and display the weather.
@@ -156,6 +156,17 @@ async function getWeather(location) {
   document.getElementById("weather").style.animation = "fadeIn .3s ease-in";
 
   // Weather Description
+  // Calculate current time with location's time zone
+  const currentTime = new Date(
+    Date.now() + data.timezone * 1000
+  ).toLocaleTimeString("en-US", {
+    hour: "numeric",
+    hour12: true,
+    minute: "numeric",
+  });
+  console.log("Current time for location: " + currentTime);
+  // Update current time for location
+  document.getElementById("current-time").innerHTML = "Time: " + currentTime;
   document.getElementById("location").innerHTML = data.name;
   document.getElementById("temperature").innerHTML =
     "Temperature: " + Math.round(data.main.temp) + "°C";
@@ -1008,7 +1019,7 @@ sideBarBtn.addEventListener("click", function () {
   isSideBarOpen = !isSideBarOpen;
 });
 
-showCurrentTime();
+// showCurrentTime();
 // Avoid making too many API call for the user's current location
 // getWeatherForCurrentLocation();
 
