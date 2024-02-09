@@ -232,11 +232,12 @@ Weather Now is a web application that provides real-time weather information for
 
 - Displays alerts for scenarios like attempting to refresh when already updated, trying to clear all favorites, and sending too many requests in a short amount of time.
 
-|                                                                        |                                                                       |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| ![Alert - Already Updated](assets/media/alert-already-updated.png)     | If user refresher the page and the page is already up to date.        |
-| ![Alert - Clear All Favorites](assets/media/alert-clear-favorites.png) | Alert displayed when user tries to clear all favorites.               |
-| ![Alert - Too Many Requests](assets/media/alert-too-many-requests.png) | If user has sent too many request requests in a short amount of time. |
+|                                                                        |                                                                                                   |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| ![Alert - Already Updated](assets/media/alert-already-updated.png)     | If user refresher the page and the page is already up to date.                                    |
+| ![Alert - Clear All Favorites](assets/media/alert-clear-favorites.png) | Alert displayed when user tries to clear all favorites.                                           |
+| ![Alert - Too Many Requests](assets/media/alert-too-many-requests.png) | If user has sent too many request requests in a short amount of time.                             |
+| ![Alert - Unlock Server](assets/media/alert-unlock.png)                | Alert displayed when user tries to search access weather information without unlocking the server |
 
 ### Footer
 
