@@ -107,7 +107,7 @@ Weather Now is a web application that provides real-time weather information for
 ## Wireframe
 
 ![Wireframe Intro](assets/media/Wireframe-2.png)
-
+![Wireframe Mobile](assets/media/Wireframe-3.png)
 ![Wireframe Main Page](assets/media/Wireframe-1.png)
 
 ## Features
@@ -404,6 +404,8 @@ document.body.appendChild(unlockButton);`
 <!-- TODO -->
 
 - Update current time in the footer to display location's current time instead of user's current time.
+  - ![Location Current Time - Code](assets/media/bug-time.png)
+    - Updated the code to display the location's current time instead of user current location.
 
 ## UI Improvements
 
