@@ -712,7 +712,10 @@ footer {
     input {
         width: 90%;
     }
-
+    /* Tour Styes */
+    .tour-container {
+        margin: 1rem 4rem;
+    }
     /* Side Bar styles */
     .button-container p {
         font-size: 1.25rem;
@@ -775,9 +778,12 @@ footer {
 
     /* Tour Styles */
     .tour-container {
-    margin: 3rem 5rem;
+        margin: 3rem 15%;
+        padding: 1rem;
     }
     .tour-container h2, .tour-container p{
+        margin: .25rem;
+        padding: .75rem;
         font-size: 1rem;
     }
 
