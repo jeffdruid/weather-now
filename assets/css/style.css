@@ -77,7 +77,8 @@ main {
     padding: 1.25rem;
     border-radius: 5px;
     width: 100%;
-    background-color: rgba(0, 0, 0, .05);
+    background-color: rgba(0, 0, 0, .5);
+    width: 90%;
 }
 
 /* Main styles */
@@ -769,16 +770,11 @@ footer {
 @media screen and (min-width: 1024px) {
 
     /* Header styles */
-    .container{
-        background-image: url(../images/banner2.png);
-        background-size: 1700px 200px;
-        background-repeat: repeat;
-        /* margin: 0 10%; */
-    }
+    
     .container h1 {
-        width: 50%;
-        /* font-size: 2.5rem;
-        height: 8rem; */
+        width: 61%;
+        font-size: 2.5rem;
+        /* height: 8rem; */
     }
 
     /* Main styles */
