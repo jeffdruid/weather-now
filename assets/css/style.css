@@ -771,9 +771,9 @@ footer {
     /* Header styles */
     .container{
         background-image: url(../images/banner2.png);
-        background-size: 1440px 200px;
-        background-repeat: no-repeat;
-        margin: 0 10%;
+        background-size: 1700px 200px;
+        background-repeat: repeat;
+        /* margin: 0 10%; */
     }
     .container h1 {
         width: 50%;
