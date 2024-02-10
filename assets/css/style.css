@@ -91,7 +91,7 @@ main {
     padding: .5rem;
     background-color: rgba(255, 255, 255, .1);
     border-radius: 5px;
-    margin: 0;
+    margin: -1rem auto 1rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -718,11 +718,11 @@ footer {
 
     /* Main styles */
     input {
-        width: 70%;
+        width: 90%;
     }
     /* Tour Styes */
     .tour-container {
-        margin: 1rem 4rem;
+        margin: -1rem 4rem 1rem;
     }
     /* Side Bar styles */
     .button-container p {
@@ -768,17 +768,20 @@ footer {
 
     /* Header styles */
     .container{
-        background-size: 1570px 350px;
+        background-image: url(../images/banner2.png);
+        background-size: 1440px 200px;
+        background-repeat: no-repeat;
+        margin: 0 10%;
     }
     .container h1 {
-        width: 75%;
+        width: 50%;
         /* font-size: 2.5rem;
         height: 8rem; */
     }
 
     /* Main styles */
     input {
-        width: 60%;
+        width: 61%;
     }
 
     #search-history {
@@ -790,8 +793,9 @@ footer {
 
     /* Tour Styles */
     .tour-container {
-        margin: 3rem 15%;
+        margin: -1rem 20% 1rem;
         padding: 1rem;
+        border-radius: 20px;
     }
     .tour-container h2, .tour-container p{
         margin: .25rem;
