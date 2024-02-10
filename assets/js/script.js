@@ -978,6 +978,9 @@ function toggleDarkMode() {
     root.style.setProperty("--gradient-start-color", "slategray");
     root.style.setProperty("--gradient-end-color", "black");
     root.style.setProperty("--text-color", "lightgray");
+    document.getElementById("side-bar").style.background =
+      "rgba(0, 0, 0, 0.1)";
+    document.querySelector(".container").style.filter = "brightness(0.75)";
   } else {
     root.style.setProperty("--primary-color", "rgba(22, 0, 0, 1)");
     root.style.setProperty("--secondary-color", "rgba(255, 255, 255, 0.7)");
@@ -985,6 +988,9 @@ function toggleDarkMode() {
     root.style.setProperty("--gradient-start-color", "rgba(238, 174, 202, 1)");
     root.style.setProperty("--gradient-end-color", "rgba(148, 187, 233, 1)");
     root.style.setProperty("--text-color", "rgba(0, 0, 0, 0.8");
+    document.getElementById("side-bar").style.background =
+      "rgba(255, 255, 255, 0.1)";
+    document.querySelector(".container").style.filter = "brightness(1)";
   }
 }
 
@@ -1014,7 +1020,7 @@ sideBarBtn.addEventListener("click", function () {
     document.getElementById("side-bar-close-btn").style.transition = "0.5s";
     document.getElementById("side-bar").style.transition = "0.75s";
     document.getElementById("side-bar").style.background =
-      "rgba(0, 0, 0, 0.1)";
+      "rgba(255, 255, 255, 0.1)";
     document.getElementById("side-bar").style.backdropFilter = "blur(2px)";
   }
   isSideBarOpen = !isSideBarOpen;
