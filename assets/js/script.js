@@ -90,7 +90,8 @@ unlockButton.addEventListener("click", function () {
   );
   unlockButton.style.display = "none";
 });
-document.body.appendChild(unlockButton);
+document.querySelector("main").appendChild(unlockButton);
+
 // }
 // unlockButton.style.display = "flex";
 

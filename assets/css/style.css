@@ -54,8 +54,12 @@ main {
     display: none;
     justify-content: center;
     align-items: center;
-    padding: 2rem .75rem 1rem .75rem;
-    background-image: radial-gradient(circle, var(--gradient-start-color) 0%, var(--gradient-end-color) 100%);
+    padding: 2rem .75rem 2rem .75rem;
+    background-image: url(../images/banner2.png);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    /* background-color: rgba(0, 0, 0, .8); */
 }
 
 .container h1 {
@@ -66,12 +70,12 @@ main {
     text-transform: uppercase;
     letter-spacing: .2rem;
     text-align: center;
-    color: var(--secondary-color-h1);
-    box-shadow: 0 16px 20px rgba(0, 0, 0, .3);
-    text-shadow: 4px 4px 4px var(--primary-color);
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 1);
+    /* text-shadow: 4px 4px 4px rgba(0, 0, 0, .8); */
     padding: 1.25rem;
     border-radius: 5px;
-    width: 100vw;
+    width: 100%;
     background-color: rgba(0, 0, 0, .05);
 }
 
@@ -84,7 +88,7 @@ main {
     align-items: center;
     flex-direction: column;
     padding: .5rem;
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, .1);
     border-radius: 5px;
     margin: 0;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -219,6 +223,7 @@ main {
     align-items: center;
     padding: 1rem;
     flex-direction: column;
+    margin-top: 2rem;
 }
 
 input {
@@ -276,18 +281,18 @@ input::placeholder {
 }
 
 /* Error Messages */
-body>button {
+main>button {
     width: 50%;
     height: 2rem;
     display: none;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    /* position: fixed;
     bottom: 2.75rem;
     transform: translateX(-50%);
-    left: 50%;
-    /* margin: 0 auto; */
-    margin-top: 1rem;
+    left: 50%; */
+    margin: 0 auto;
+    /* margin-top: 1rem; */
     background: var(--red-color-1);
     color: white;
     text-transform: uppercase;
@@ -706,11 +711,12 @@ footer {
     .container h1 {
         width: 90%;
         font-size: 2rem;
+        height: 5rem;
     }
 
     /* Main styles */
     input {
-        width: 90%;
+        width: 70%;
     }
     /* Tour Styes */
     .tour-container {
@@ -726,7 +732,7 @@ footer {
         width: 75%;
     }
 
-    body>button {
+    main>button {
         bottom: 4rem;
         width: 25%;
     }
@@ -761,18 +767,19 @@ footer {
     /* Header styles */
     .container h1 {
         width: 75%;
-        font-size: 3rem;
+        font-size: 2.5rem;
+        height: 8rem;
     }
 
     /* Main styles */
     input {
-        width: 75%;
+        width: 60%;
     }
 
     #search-history {
         width: 75%;
     }
-    body>button {
+    main>button {
         font-size: 1rem;
     }
 
