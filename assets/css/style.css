@@ -506,7 +506,7 @@ main>button {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    display: none;
+    display: flex;
     z-index: 9;
 }
 
@@ -639,17 +639,17 @@ main>button {
     background: 0;
     border: 0;
     margin: 0 auto;
-    margin-right: 2rem;
+    margin-right: 2.25rem;
     bottom: -.35rem;
     cursor: pointer;
     position: absolute;
     font-size: 1.25rem;
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.986);
+    background-color: rgba(255, 255, 255, 0.3);
     padding: 0.25rem .5rem;
     height: 2rem;
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
 }
 
 #forecast-btn:hover {
@@ -690,10 +690,10 @@ main>button {
     font-size: 1.25rem;
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
-    background-color: rgba(255, 255, 255, 0.315);
+    background-color: rgba(255, 255, 255, 0.3);
     padding: .5rem;
     height: 2rem;
-    border-radius: 5px;
+    border-radius: 0 5px 5px 0;
 }
 
 #chart-btn:hover {

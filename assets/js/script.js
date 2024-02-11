@@ -753,8 +753,12 @@ forecastBtn.addEventListener("click", async function () {
     document.getElementById("forecast").style.animation = "fadeIn .3s ease-in";
     document.getElementById("forecast-btn").style.color =
       "rgba(255, 0, 0, 1) ";
+    document.getElementById("forecast-btn").style.backgroundColor =
+      "rgba(255, 255, 255, 1) ";
     document.getElementById("chart-btn").style.color =
-      "rgba(255, 255, 255, .9) ";
+      "rgba(255, 255, 255, 1) ";
+    document.getElementById("chart-btn").style.backgroundColor =
+      "rgba(255, 255, 255, .3) ";
     document.getElementById("chart_div").style.display = "none";
     await getFiveDayForecast(location);
   }
@@ -863,8 +867,12 @@ chartBtn.addEventListener("click", async function () {
     console.log("Chart opened");
     document.getElementById("chart_div").style.display = "flex";
     document.getElementById("chart-btn").style.color = "rgba(255, 0, 0, 1) ";
+    document.getElementById("chart-btn").style.backgroundColor =
+      "rgba(255, 255, 255, 1) ";
     document.getElementById("forecast-btn").style.color =
       "rgba(255, 255, 255, 1) ";
+    document.getElementById("forecast-btn").style.backgroundColor =
+      "rgba(255, 255, 255, .3) ";
     document.getElementById("forecast").style.display = "none";
 
     showSpinner();
