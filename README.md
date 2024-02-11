@@ -118,31 +118,31 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Header
 
-|                                                 |                                                 |
-| ----------------------------------------------- | ----------------------------------------------- |
-| ![Header Section](assets/media/feat-header.png) | Displays the header section of the application. |
+|                                                 |                                                              |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| ![Header Section](assets/media/feat-header.png) | Displays the header section of the application and branding. |
 
 ### Animation Intro
 
-|                                                      |                                                                                               |
-| ---------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| ![Animation-Intro](assets/media/Animation-intro.gif) | A quick animation intro using the GSAP library.                                               |
-| ![GSAP code](assets/media/Animation-code.png)        | The animation was made by FLIP for GSAP - [CodePen](https://codepen.io/GreenSock/pen/eYdyVVe) |
+|                                                      |                                                                                                     |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ![Animation-Intro](assets/media/Animation-intro.gif) | A quick animation intro using the GSAP library to enhance the user experience upon loading he page. |
+| ![GSAP code](assets/media/Animation-code.png)        | The animation was made by FLIP for GSAP - [CodePen](https://codepen.io/GreenSock/pen/eYdyVVe)       |
 
 ### Weather Container
 
-|                                                               |                              |
-| ------------------------------------------------------------- | ---------------------------- |
-| ![Weather Container](assets/media/feat-weather-container.png) | Contains Weather information |
+|                                                               |                                                                                                        |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| ![Weather Container](assets/media/feat-weather-container.png) | Contains real-time Weather information, including temperature, humidity, wind speed and weather icons. |
 
-|                                                          |                                                                                                                              |
-| -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| ![Heart Icon](assets/media/feat-favorite-icon.png)       | Add/Remove favorites                                                                                                         |
-| ![Location Flag](assets/media/feat-flags-api.png)        | Flags API provides flags icons.                                                                                              |
-| ![Last Updated Time](assets/media/feat-last-updated.png) | Display when the weather was last updated.                                                                                   |
-| ![Refresh Button](assets/media/feat-refresh-btn.png)     | Refresh weather information.                                                                                                 |
-| ![Forecast Button](assets/media/btn-forecast-chart.png)  | Additional weather information, including a 5-day forecast and a forecast chart displaying temperatures and humidity levels. |
-| ![Temperature Toggle](assets/media/btn-temp-toggle.png)  | Allows users to toggle between Celsius and Fahrenheit units to view temperature information according to their preference.   |
+|                                                          |                                                                                           |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| ![Heart Icon](assets/media/feat-favorite-icon.png)       | Allows users to add or remove locations from their favorites list. favorites              |
+| ![Location Flag](assets/media/feat-flags-api.png)        | Flags API provides flags icons corresponding to the location's country..                  |
+| ![Last Updated Time](assets/media/feat-last-updated.png) | Displays when the weather data was last updated.                                          |
+| ![Refresh Button](assets/media/feat-refresh-btn.png)     | Allows user's to manually refresh weather information.                                    |
+| ![Forecast Button](assets/media/btn-forecast-chart.png)  | Provides additional weather information, including a 5-day forecast and a forecast chart. |
+| ![Temperature Toggle](assets/media/btn-temp-toggle.png)  | Enables user's to switch between Celsius and Fahrenheit temperature units.                |
 
 ### Current Weather:
 
