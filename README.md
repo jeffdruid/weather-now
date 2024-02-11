@@ -107,8 +107,13 @@ Weather Now is a web application that provides real-time weather information for
 ## Wireframe
 
 ![Wireframe Intro](assets/media/Wireframe-2.png)
-![Wireframe Mobile](assets/media/Wireframe-3.png)
-![Wireframe Main Page](assets/media/Wireframe-1.png)
+|Mobile View|
+|-|
+|![Wireframe Mobile](assets/media/Wireframe-3.png)|
+
+| Desktop View                                         |
+| ---------------------------------------------------- |
+| ![Wireframe Main Page](assets/media/Wireframe-1.png) |
 
 ## Features
 
@@ -421,17 +426,21 @@ document.body.appendChild(unlockButton);`
 
 - Increased to `font-size: .75rem;`
 
-|                                                 |                                                           |
-| ----------------------------------------------- | --------------------------------------------------------- |
-| Fix Header for better readability and contrast. | ![Header - Text Shadow](assets/media/ui-header-after.png) |
+|                                                  |                                                           |
+| ------------------------------------------------ | --------------------------------------------------------- |
+| Fix Header for better readability and contrast.  | ![Header - Text Shadow](assets/media/ui-header-after.png) |
+| Updated header with a banner to look more modern | ![Header - Update](assets/media/ui-header-update.png)     |
 
 - Added `text-shadow: 4px 4px 4px var(--primary-color);`
+- Added `box-shadow: 0 8px 10px rgba(0, 0, 0, 1);`
+- Added `background-color: rgba(0, 0, 0, .5);`
 
 |                                                                                      |                                                                  |
 | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | Default Side Bar to open in order to fill white space when the page is first loaded. | ![Side Bar - Mobile View](assets/media/feat-side-bar-mobile.png) |
 
 - Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
+  - This update was reverted to original state as instruction page was added.
 
 |                                                           |                                                  |
 | --------------------------------------------------------- | ------------------------------------------------ |
@@ -445,20 +454,17 @@ document.body.appendChild(unlockButton);`
 
 - Reduced the delay from `gsap.delayedCall(curLayout === 0 ? 3.5 : 1.5, nextState);` to `gsap.delayedCall(curLayout === 0 ? 0.25 : 0.9, nextState);`
 
-|                    |                                                                 |
-| ------------------ | --------------------------------------------------------------- |
-| Fix toggle buttons | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png) |
+|                                                            |                                                                       |
+| ---------------------------------------------------------- | --------------------------------------------------------------------- |
+| Fix toggle buttons                                         | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png)       |
+| Update buttons to improve visual clarity of toggle buttons | ![Forecast/Chart - Button Update](assets/media/ui-buttons-update.png) |
 
-  <!-- TODO -->
-
-- Ensuring the proper functionality and visual clarity of toggle buttons
-
-  |                                                                 |                                                      |
-  | --------------------------------------------------------------- | ---------------------------------------------------- |
-  | Added instructions to help the user how to start using the app. | ![Tour Page](assets/media/feat-tour.png)             |
-  | Also added a button to easy access in the side bar.             | ![Tour Button](assets/media/btn-instructions.png)    |
-  | Added Information section to help user to navigate the page     | ![Information Page](assets/media/feat-tour-info.png) |
-  | Also added a button to easy access in the side bar.             | ![Information Button](assets/media/btn-info.png)     |
+|                                                                 |                                                      |
+| --------------------------------------------------------------- | ---------------------------------------------------- |
+| Added instructions to help the user how to start using the app. | ![Tour Page](assets/media/feat-tour.png)             |
+| Also added a button to easy access in the side bar.             | ![Tour Button](assets/media/btn-instructions.png)    |
+| Added Information section to help user to navigate the page     | ![Information Page](assets/media/feat-tour-info.png) |
+| Also added a button to easy access in the side bar.             | ![Information Button](assets/media/btn-info.png)     |
 
 ## Future Improvements
 
@@ -547,6 +553,7 @@ You can access the live link here : [Weather Now](https://jeffdruid.github.io/we
 ### Images
 
 - [Placeholder - image from pngtree.com](https://pngtree.com/element/down?id=NjM5ODI2Ng==&type=1&time=1706706114&token=MTZmZDg0ZWMzNzQ0NDYwNWI5ZmE0MGRkMmNkOWZjZjk=&t=0)
+- [Banner2 - Canva AI](https://www.canva.com/)
 
 ### Useful Links
 
