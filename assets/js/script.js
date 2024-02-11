@@ -1102,9 +1102,9 @@ infoBtn.addEventListener("click", function () {
   const image = document.createElement("img");
 
   if (window.innerWidth < 767) {
-    image.src = "assets/media/feat-tour-info-mobile.png";
+    image.src = "assets/media/feat-tour-info-mobile.webp";
   } else {
-    image.src = "assets/media/feat-tour-info.png";
+    image.src = "assets/media/feat-tour-info.webp";
   }
   image.alt = "Information Page";
   overlay.appendChild(image);
