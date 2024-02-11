@@ -198,7 +198,6 @@ async function getWeather(location) {
   document.getElementById("country").innerHTML = data.sys.country;
 
   // Display the weather data on the Footer with animation
-  // TODO - Update current time for location
   document.getElementById("temperature-now").innerHTML =
     "Temp: " + Math.round(data.main.temp) + "°C";
   document.getElementById("current-location").innerHTML = data.name;
@@ -466,7 +465,7 @@ function toggleTemperatureUnit() {
 
     document.getElementById("temperature-toggle-btn").innerHTML = "°F";
     document.getElementById("temperature-toggle-btn").style.color =
-      "rgba(0, 0, 0, 1)";
+      "rgba(255, 255, 255, 1)";
   }
 
   // Toggle the temperature unit

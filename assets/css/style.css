@@ -559,7 +559,7 @@ main>button {
 
 #temperature-toggle-btn {
     background: rgba(0, 0, 0, .02);
-    padding: .25rem;
+    padding: .5rem;
     border: 0;
     margin: .4rem;
     cursor: pointer;
@@ -568,12 +568,12 @@ main>button {
     left: 0;
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 30%;
-    color: var(--primary-color);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 1);
 }
 
 #temperature-toggle-btn:hover {
-    background-color: rgba(0, 0, 0, .1);
+    background-color: rgba(255, 255, 255, .3);
 }
 
 /* Forecast styles */
@@ -645,7 +645,7 @@ main>button {
     position: absolute;
     font-size: 1.25rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 1);
 }
 
 #forecast-btn:hover {
@@ -685,7 +685,7 @@ main>button {
     position: absolute;
     font-size: 1.25rem;
     font-weight: normal;
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 1);
 }
 
 #chart-btn:hover {
