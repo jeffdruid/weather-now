@@ -175,23 +175,23 @@ Weather Now is a web application that provides real-time weather information for
 
 |                                                                  |                                                                               |
 | ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| ![Favorites Button](assets/media/feat-favorite-btn.png)          | Allow users to save favorite locations and easily check the weather for them. |
-| ![Favorites Container](assets/media/feat-favorite-container.png) |                                                                               |
+| ![Favorites Button](assets/media/feat-favorite-btn.png)          | Favorite Button                                                               |
+| ![Favorites Container](assets/media/feat-favorite-container.png) | Allow users to save favorite locations and easily check the weather for them. |
 | ![Clear All Button](assets/media/btn-clear-favorites.png)        | Clear all favorites from favorites container.                                 |
 
 ### Dark Mode:
 
 |                                                                       |                                                                          |
 | --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| ![Dark Mode Button](assets/media/feat-dark-mode-btn.png)              | Allow users to toggle between light and dark mode for better visibility. |
-| ![Dark Mode - Main Page View](assets/media/feat-dark-mode-screen.png) |                                                                          |
+| ![Dark Mode Button](assets/media/feat-dark-mode-btn.png)              | Dark Mode Button                                                         |
+| ![Dark Mode - Main Page View](assets/media/feat-dark-mode-screen.png) | Allow users to toggle between light and dark mode for better visibility. |
 
 ### Search History:
 
 |                                                               |                                                                                 |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| ![History Button](assets/media/feat-history-btn.png)          | Allow users to view their search history to quickly revisit previous locations. |
-| ![History Container](assets/media/feat-history-container.png) |                                                                                 |
+| ![History Button](assets/media/feat-history-btn.png)          | History Button                                                                  |
+| ![History Container](assets/media/feat-history-container.png) | Allow users to view their search history to quickly revisit previous locations. |
 
 ### Side Bar:
 
