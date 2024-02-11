@@ -146,7 +146,7 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Current Weather:
 
-- Get real-time weather information such as current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed, humidity, and more.
+- Displays real-time weather information such as current temperature, feels-like temperature, maximum and minimum temperatures, sunrise, sunset, wind speed and humidity. Requires location access to provide accurate data.
 
 |                                                                   |                                                                                                                                                                                |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -155,57 +155,57 @@ Weather Now is a web application that provides real-time weather information for
 
 ### Search Functionality:
 
-|                                                  |                                                                                                           |
-| ------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| ![Search Feature](/assets/media/feat-search.png) | Allows user to enter a city name in the search box to retrieve weather details for any specific location. |
+|                                                  |                                                                                            |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| ![Search Feature](/assets/media/feat-search.png) | Enables users to search for weather information by entering a city name in the search box. |
 
 ### Temperature Units:
 
-|                                                         |                                                                                                                            |
-| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| ![Temperature Toggle](assets/media/btn-temp-toggle.png) | Allows users to toggle between Celsius and Fahrenheit units to view temperature information according to their preference. |
+|                                                         |                                                                                                    |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| ![Temperature Toggle](assets/media/btn-temp-toggle.png) | Allows users to toggle between Celsius and Fahrenheit temperature units based on their preference. |
 
 ### 5-Day Forecast:
 
-|                                                       |                                                                                |
-| ----------------------------------------------------- | ------------------------------------------------------------------------------ |
-| ![Forecast Container](assets/media/feat-forecast.png) | Provides a 5-day weather forecast, displaying temperature and humidity trends. |
+|                                                       |                                                                                                         |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| ![Forecast Container](assets/media/feat-forecast.png) | Provides a 5-day weather forecast, displaying temperature and humidity trends over the specific period. |
 
 ### Favorites:
 
-|                                                                  |                                                                               |
-| ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| ![Favorites Button](assets/media/feat-favorite-btn.png)          | Favorite Button                                                               |
-| ![Favorites Container](assets/media/feat-favorite-container.png) | Allow users to save favorite locations and easily check the weather for them. |
-| ![Clear All Button](assets/media/btn-clear-favorites.png)        | Clear all favorites from favorites container.                                 |
+|                                                                  |                                                                                                |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| ![Favorites Button](assets/media/feat-favorite-btn.png)          | Favorite Button                                                                                |
+| ![Favorites Container](assets/media/feat-favorite-container.png) | Allow users to save favorite locations for quick access and easily check the weather for them. |
+| ![Clear All Button](assets/media/btn-clear-favorites.png)        | Users can also clear all favorites from favorites container.                                   |
 
 ### Dark Mode:
 
-|                                                                       |                                                                          |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| ![Dark Mode Button](assets/media/feat-dark-mode-btn.png)              | Dark Mode Button                                                         |
-| ![Dark Mode - Main Page View](assets/media/feat-dark-mode-screen.png) | Allow users to toggle between light and dark mode for better visibility. |
+|                                                                       |                                                                                                              |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| ![Dark Mode Button](assets/media/feat-dark-mode-btn.png)              | Dark Mode Button                                                                                             |
+| ![Dark Mode - Main Page View](assets/media/feat-dark-mode-screen.png) | Allow users to toggle between light and dark mode for better visibility and personalized viewing experience. |
 
 ### Search History:
 
-|                                                               |                                                                                 |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| ![History Button](assets/media/feat-history-btn.png)          | History Button                                                                  |
-| ![History Container](assets/media/feat-history-container.png) | Allow users to view their search history to quickly revisit previous locations. |
+|                                                               |                                                                                          |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| ![History Button](assets/media/feat-history-btn.png)          | History Button                                                                           |
+| ![History Container](assets/media/feat-history-container.png) | Displays user's search history, enabling quick reference to previous searched locations. |
 
 ### Side Bar:
 
-|                                                                |                                                                                                                 |
-| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| ![Side Bar Button](assets/media/feat-side-bar-btn.png)         | The side bar contains additional options such as Favorites, Dark Mode toggle, Search History and a Github link. |
-| ![Side Bar on Desktop](assets/media/feat-side-bar-desktop.png) | Desktop View                                                                                                    |
-| ![Side Bar on Mobile](assets/media/feat-side-bar-mobile.png)   | Mobile View                                                                                                     |
+|                                                                |                                                                                                                                   |
+| -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| ![Side Bar Button](assets/media/feat-side-bar-btn.png)         | Contains additional options such as Favorites, Dark Mode toggle, Search History and a Github link for easy navigation and access. |
+| ![Side Bar on Desktop](assets/media/feat-side-bar-desktop.png) | Desktop View                                                                                                                      |
+| ![Side Bar on Mobile](assets/media/feat-side-bar-mobile.png)   | Mobile View                                                                                                                       |
 
 ### Chart:
 
-|                                                |                                                                                                                                                                                          |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Forecast Chart](assets/media/feat-chart.png) | Visualize temperature and humidity trends with an interactive chart. Clicking on the "Chart" button displays a graphical representation of temperature and humidity for the next 5 days. |
+|                                                |                                                                                                                                                                                           |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Forecast Chart](assets/media/feat-chart.png) | Visualizes temperature and humidity trends with an interactive chart. Clicking on the "Chart" button displays a graphical representation of temperature and humidity for the next 5 days. |
 
 ### GitHub:
 
@@ -222,6 +222,7 @@ Weather Now is a web application that provides real-time weather information for
 ### Error Handling
 
 - Handles various error scenarios, including CORS issues, location access denial, and invalid or non-existent locations.
+  - Displays informative error messages to guide users.
 
 |                                                                             |                                                                                                                                    |
 | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
