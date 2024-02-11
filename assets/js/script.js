@@ -1093,7 +1093,12 @@ infoBtn.addEventListener("click", function () {
 
   // Create image element
   const image = document.createElement("img");
-  image.src = "assets/media/feat-tour-info.png";
+
+  if (window.innerWidth < 767) {
+    image.src = "assets/media/feat-tour-info-mobile.png";
+  } else {
+    image.src = "assets/media/feat-tour-info.png";
+  }
   image.alt = "Information Page";
   overlay.appendChild(image);
 
