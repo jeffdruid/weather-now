@@ -646,6 +646,10 @@ main>button {
     font-size: 1.25rem;
     font-weight: bold;
     color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.986);
+    padding: 0.25rem .5rem;
+    height: 2rem;
+    border-radius: 5px;
 }
 
 #forecast-btn:hover {
@@ -680,12 +684,16 @@ main>button {
     border: 0;
     margin: 0 auto;
     margin-left: 2rem;
-    bottom: 0rem;
+    bottom: -.35rem;
     cursor: pointer;
     position: absolute;
     font-size: 1.25rem;
-    font-weight: normal;
+    font-weight: bold;
     color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.315);
+    padding: .5rem;
+    height: 2rem;
+    border-radius: 5px;
 }
 
 #chart-btn:hover {
