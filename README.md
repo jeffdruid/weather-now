@@ -14,7 +14,6 @@ Weather Now is a web application that provides real-time weather information for
    - [Header](#header)
    - [Animation Intro](#animation-intro)
    - [Weather Container](#weather-container)
-     - [Buttons](#buttons)
    - [Current Weather](#current-weather)
    - [Search Functionality](#search-functionality)
    - [Temperature Units](#temperature-units)
@@ -136,8 +135,6 @@ Weather Now is a web application that provides real-time weather information for
 | ------------------------------------------------------------- | ---------------------------- |
 | ![Weather Container](assets/media/feat-weather-container.png) | Contains Weather information |
 
-#### Buttons
-
 |                                                          |                                                                                                                              |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | ![Heart Icon](assets/media/feat-favorite-icon.png)       | Add/Remove favorites                                                                                                         |
@@ -145,6 +142,7 @@ Weather Now is a web application that provides real-time weather information for
 | ![Last Updated Time](assets/media/feat-last-updated.png) | Display when the weather was last updated.                                                                                   |
 | ![Refresh Button](assets/media/feat-refresh-btn.png)     | Refresh weather information.                                                                                                 |
 | ![Forecast Button](assets/media/btn-forecast-chart.png)  | Additional weather information, including a 5-day forecast and a forecast chart displaying temperatures and humidity levels. |
+| ![Temperature Toggle](assets/media/btn-temp-toggle.png)  | Allows users to toggle between Celsius and Fahrenheit units to view temperature information according to their preference.   |
 
 ### Current Weather:
 
@@ -459,12 +457,13 @@ document.body.appendChild(unlockButton);`
 | Fix toggle buttons                                         | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png)       |
 | Update buttons to improve visual clarity of toggle buttons | ![Forecast/Chart - Button Update](assets/media/ui-buttons-update.png) |
 
-|                                                                 |                                                      |
-| --------------------------------------------------------------- | ---------------------------------------------------- |
-| Added instructions to help the user how to start using the app. | ![Tour Page](assets/media/feat-tour.png)             |
-| Also added a button to easy access in the side bar.             | ![Tour Button](assets/media/btn-instructions.png)    |
-| Added Information section to help user to navigate the page     | ![Information Page](assets/media/feat-tour-info.png) |
-| Also added a button to easy access in the side bar.             | ![Information Button](assets/media/btn-info.png)     |
+|                                                                            |                                                             |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Added instructions to help the user how to start using the app.            | ![Tour Page](assets/media/feat-tour.png)                    |
+| Also added a button to easy access in the side bar.                        | ![Tour Button](assets/media/btn-instructions.png)           |
+| Added Information section to help user to navigate the page - Desktop View | ![Information Page](assets/media/feat-tour-info.png)        |
+| Added Information section to help user to navigate the page - Mobile View  | ![Information Page](assets/media/feat-tour-info-mobile.png) |
+| Also added a button to easy access in the side bar.                        | ![Information Button](assets/media/btn-info.png)            |
 
 ## Future Improvements
 
