@@ -374,7 +374,7 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 <!-- TODO -->
 
-- Temperature not displaying the correct unit when toggle is activated.
+- Temperature not displaying the correct unit when toggle is activated. Error occurs when temperature is F and user search for a new location.
 
 ### Fixed Bugs
 
