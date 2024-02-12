@@ -276,12 +276,23 @@ Weather Now is a web application that provides real-time weather information for
     - The base URL for the Flags API is https://www.flagsapi.com/, followed by the country code obtained from the data.sys.country property in the weather data.
     - The URL also specifies the desired shape and size of the flag icon. In this case, the URL ends with /flat/32.png, which indicates a flat design with a size of 32x32 pixels.
   - Setting the Flag Icon Source:
-    - The src attribute of the selected <img> element is set to the dynamically generated URL. This tells the browser where to fetch the flag icon image from.
+    - The src attribute of the selected `<img>` element is set to the dynamically generated URL. This tells the browser where to fetch the flag icon image from.
       ![Flags - API Code](assets/media/feat-api-flags.png)
 
 #### Google Charts
 
-![Google Charts - API Code](assets/media/feat-api-chart.png)
+- Google Charts is used to visualize forecast data obtained from an API call.
+
+  - Loading Google Charts Library:
+
+    - The code dynamically creates a `<script>` element and sets its source attribute to load the Google Charts library from the URL https://www.gstatic.com/charts/loader.js.
+
+    - Once the script is loaded, it triggers the onload event, which initializes the Google Charts library and specifies the packages to be loaded (corechart in this case) using `google.charts.load()`.
+
+  - Fetching Forecast Data: - After the Google Charts library is loaded, it invokes the `google.charts.setOnLoadCallback()` function to execute the provided callback function.
+  - Inside the callback function, it retrieves the location from the HTML element with the id location.
+  - Then, it makes an API call to fetch the forecast data using the fetch() function with the specified API URL constructed based on the location.
+    ![Google Charts - API Code](assets/media/feat-api-chart.png)
 
 ## Troubleshooting
 
