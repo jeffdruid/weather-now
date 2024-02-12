@@ -329,7 +329,7 @@ Weather Now is a web application that provides real-time weather information for
 
 #### HTML
 
-- W3C HTML Validator: No errors were found in the HTML.
+- [W3C HTML Validator: No errors were found in the HTML.](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjeffdruid.github.io%2Fweather-now%2F)
   ![Validator - HTML](assets/media/validator-html.png)
 
 #### CSS
