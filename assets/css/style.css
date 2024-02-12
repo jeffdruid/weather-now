@@ -33,8 +33,6 @@ body {
     cursor: default;
     display: flex;
     flex-direction: column;
-    /* min-height: 100vh; */
-    /* background: rgba(0, 0, 0, 1); */
     background: radial-gradient(circle, rgba(238, 174, 202) 0%, rgba(148, 187, 233) 100%);
     padding: 0;
     margin: 0;
@@ -60,7 +58,6 @@ main {
     background-position: center;
     height: 150px;
     filter: brightness(1);
-    /* background-color: rgba(0, 0, 0, .8); */
 }
 
 .container h1 {
@@ -73,7 +70,6 @@ main {
     text-align: center;
     color: rgba(255, 255, 255, 1);
     box-shadow: 0 8px 10px rgba(0, 0, 0, 1);
-    /* text-shadow: 4px 4px 4px rgba(0, 0, 0, .8); */
     padding: 1.25rem;
     border-radius: 5px;
     width: 100%;
@@ -143,7 +139,6 @@ main {
     right: -1.5rem;
     font-size: 2rem;
     color: var(--primary-color);
-    /* -webkit-text-stroke: .75px rgba(255, 255, 255, 1); */
     z-index: 9;
 }
 
@@ -290,12 +285,7 @@ main>button {
     display: none;
     align-items: center;
     justify-content: center;
-    /* position: fixed;
-    bottom: 2.75rem;
-    transform: translateX(-50%);
-    left: 50%; */
     margin: 0 auto;
-    /* margin-top: 1rem; */
     background: var(--red-color-1);
     color: white;
     text-transform: uppercase;
@@ -652,7 +642,7 @@ main>button {
     border-radius: 5px 0 0 5px;
 }
 
-#forecast-btn:hover {
+#forecast-btn i:hover {
     color: var(--red-color-1);
 }
 
@@ -696,7 +686,7 @@ main>button {
     border-radius: 0 5px 5px 0;
 }
 
-#chart-btn:hover {
+#chart-btn i:hover {
     color: var(--red-color-1);
 }
 
@@ -782,7 +772,6 @@ footer {
     .container h1 {
         width: 61%;
         font-size: 2.5rem;
-        /* height: 8rem; */
     }
 
     /* Main styles */
