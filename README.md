@@ -334,7 +334,7 @@ Weather Now is a web application that provides real-time weather information for
 
 #### CSS
 
-- W3C CSS Validator: No errors were found in the CSS.
+- [W3C CSS Validator: No errors were found in the CSS.](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjeffdruid.github.io%2Fweather-now&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   ![Validator - CSS](assets/media/validator-css.png)
 
 #### JavaScript
