@@ -266,9 +266,6 @@ Weather Now is a web application that provides real-time weather information for
 - Parsing Response Data: Once the response is received, it is parsed as JSON using response.json() to extract the weather data.
   ![Response - JSON](assets/media/feat-api-json.png)
 
-<!-- TODO Create a table -->
-<!-- Explain Code -->
-
 #### Flags Api
 
 - the Flags API is utilized to display the flag icon corresponding to the country code obtained from the weather data.
@@ -408,9 +405,10 @@ The manual testing confirms that the page operates smoothly across multiple brow
 
 ## Bugs
 
-<!-- TODO -->
-
-- Temperature not displaying the correct unit when toggle is activated. Error occurs when temperature is F and user search for a new location.
+|                                                                                                                                                    |                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Temperature not displaying the correct unit when toggle is activated. Error occurs when temperature is F and the user searches for a new location. | ![Bug - Temperature units](assets/media/bug-temp-unit.png) |
+|                                                                                                                                                    |
 
 ### Fixed Bugs
 
