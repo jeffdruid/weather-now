@@ -414,32 +414,32 @@ document.body.appendChild(unlockButton);`
 
 - Suggested enhancements to the user interface to improve usability, accessibility, and visual appeal:
 
-- Fix Padding on the Mobile screens for the CORS Button.
+- Fixed Padding on mobile screens for the CORS Button.
   ![Cors Button - Before](assets/media/ui-cors-btn-before.png)
-- Added the `padding:1.5rem;` to the CORS button for the mobile screens.
+- Added the `padding:1.5rem;` to the CORS button for mobile screens.
   ![Cors Button - After](assets/media/ui-cors-btn.png)
 
-|                                          |                                                     |
-| ---------------------------------------- | --------------------------------------------------- |
-| Increase readability of footer elements. | ![Footer - Larger Text](assets/media/ui-footer.png) |
+|                                           |                                                     |
+| ----------------------------------------- | --------------------------------------------------- |
+| Increased readability of footer elements. | ![Footer - Larger Text](assets/media/ui-footer.png) |
 
 - Increased to `font-size: .75rem;`
 
-|                                                  |                                                           |
-| ------------------------------------------------ | --------------------------------------------------------- |
-| Fix Header for better readability and contrast.  | ![Header - Text Shadow](assets/media/ui-header-after.png) |
-| Updated header with a banner to look more modern | ![Header - Update](assets/media/ui-header-update.png)     |
+|                                                                                                          |                                                           |
+| -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Fixed Header for better readability and contrast.                                                        | ![Header - Text Shadow](assets/media/ui-header-after.png) |
+| Updated header with a modern banner design created using Canva AI for a refreshed and contemporary look. | ![Header - Update](assets/media/ui-header-update.png)     |
 
 - Added `text-shadow: 4px 4px 4px var(--primary-color);`
 - Added `box-shadow: 0 8px 10px rgba(0, 0, 0, 1);`
 - Added `background-color: rgba(0, 0, 0, .5);`
 
-|                                                                                      |                                                                  |
-| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
-| Default Side Bar to open in order to fill white space when the page is first loaded. | ![Side Bar - Mobile View](assets/media/feat-side-bar-mobile.png) |
+|                                                                                          |                                                                  |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| ~~Default Side Bar to open in order to fill white space when the page is first loaded.~~ | ![Side Bar - Mobile View](assets/media/feat-side-bar-mobile.png) |
 
-- Modify Side Bar to `display: none;` and after the animation intro `display:flex;`
-  - This update was reverted to original state as instruction page was added.
+- ~~Modified Side Bar to `display: none;` and after the animation intro `display:flex;`~~
+  - This update was reverted to the original state as the instruction page was added.
 
 |                                                           |                                                  |
 | --------------------------------------------------------- | ------------------------------------------------ |
@@ -453,18 +453,18 @@ document.body.appendChild(unlockButton);`
 
 - Reduced the delay from `gsap.delayedCall(curLayout === 0 ? 3.5 : 1.5, nextState);` to `gsap.delayedCall(curLayout === 0 ? 0.25 : 0.9, nextState);`
 
-|                                                            |                                                                       |
-| ---------------------------------------------------------- | --------------------------------------------------------------------- |
-| Fix toggle buttons                                         | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png)       |
-| Update buttons to improve visual clarity of toggle buttons | ![Forecast/Chart - Button Update](assets/media/ui-buttons-update.png) |
+|                                                                 |                                                                       |
+| --------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Fixed toggle buttons                                            | ![Forecast/Chart - Button](assets/media/btn-forecast-chart.png)       |
+| Updated buttons to improve the visual clarity of toggle buttons | ![Forecast/Chart - Button Update](assets/media/ui-buttons-update.png) |
 
-|                                                                            |                                                             |
-| -------------------------------------------------------------------------- | ----------------------------------------------------------- |
-| Added instructions to help the user how to start using the app.            | ![Tour Page](assets/media/feat-tour.png)                    |
-| Also added a button to easy access in the side bar.                        | ![Tour Button](assets/media/btn-instructions.png)           |
-| Added Information section to help user to navigate the page - Desktop View | ![Information Page](assets/media/feat-tour-info.png)        |
-| Added Information section to help user to navigate the page - Mobile View  | ![Information Page](assets/media/feat-tour-info-mobile.png) |
-| Also added a button to easy access in the side bar.                        | ![Information Button](assets/media/btn-info.png)            |
+|                                                                               |                                                             |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Added instructions to help the user understand how to start using the app.    | ![Tour Page](assets/media/feat-tour.png)                    |
+| Also added a button for easy access in the side bar.                          | ![Tour Button](assets/media/btn-instructions.png)           |
+| Added an Information section to help user to navigate the page - Desktop View | ![Information Page](assets/media/feat-tour-info.png)        |
+| Added an Information section to help user to navigate the page - Mobile View  | ![Information Page](assets/media/feat-tour-info-mobile.png) |
+| Also added a button for easy access in the side bar.                          | ![Information Button](assets/media/btn-info.png)            |
 
 ## Future Improvements
 
