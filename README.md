@@ -290,9 +290,9 @@ Weather Now is a web application that provides real-time weather information for
     - Once the script is loaded, it triggers the onload event, which initializes the Google Charts library and specifies the packages to be loaded (corechart in this case) using `google.charts.load()`.
 
   - Fetching Forecast Data: - After the Google Charts library is loaded, it invokes the `google.charts.setOnLoadCallback()` function to execute the provided callback function.
-  - Inside the callback function, it retrieves the location from the HTML element with the id location.
-  - Then, it makes an API call to fetch the forecast data using the fetch() function with the specified API URL constructed based on the location.
-    ![Google Charts - API Code](assets/media/feat-api-chart.png)
+    - Inside the callback function, it retrieves the location from the HTML element with the id location.
+    - Then, it makes an API call to fetch the forecast data using the fetch() function with the specified API URL constructed based on the location.
+      ![Google Charts - API Code](assets/media/feat-api-chart.png)
 
 ## Troubleshooting
 
