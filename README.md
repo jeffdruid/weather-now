@@ -271,7 +271,13 @@ Weather Now is a web application that provides real-time weather information for
 
 #### Flags Api
 
-![Flags - API Code](assets/media/feat-api-flags.png)
+- the Flags API is utilized to display the flag icon corresponding to the country code obtained from the weather data.
+  - Constructing the Flag Icon URL:
+    - The base URL for the Flags API is https://www.flagsapi.com/, followed by the country code obtained from the data.sys.country property in the weather data.
+    - The URL also specifies the desired shape and size of the flag icon. In this case, the URL ends with /flat/32.png, which indicates a flat design with a size of 32x32 pixels.
+  - Setting the Flag Icon Source:
+    - The src attribute of the selected <img> element is set to the dynamically generated URL. This tells the browser where to fetch the flag icon image from.
+      ![Flags - API Code](assets/media/feat-api-flags.png)
 
 #### Google Charts
 
