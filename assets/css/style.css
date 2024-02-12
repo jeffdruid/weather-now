@@ -61,7 +61,7 @@ main {
 }
 
 .container h1 {
-    
+
     font-size: 1.75rem;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
@@ -95,11 +95,12 @@ main {
     z-index: 9;
 }
 
-.tour-container h2, .tour-container p{
+.tour-container h2,
+.tour-container p {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto; 
+    margin: 0 auto;
     font-size: .65rem;
     text-align: center;
     color: rgba(0, 0, 0, 1);
@@ -107,6 +108,7 @@ main {
     padding: .2rem;
     border-radius: 5px;
 }
+
 #info-btn {
     cursor: pointer;
 }
@@ -140,6 +142,8 @@ main {
     font-size: 2rem;
     color: var(--primary-color);
     z-index: 9;
+    background: transparent;
+    border: none;
 }
 
 #side-bar {
@@ -721,10 +725,12 @@ footer {
     input {
         width: 90%;
     }
+
     /* Tour Styes */
     .tour-container {
         margin: -1rem 4rem 1rem;
     }
+
     /* Side Bar styles */
     .button-container p {
         font-size: 1.25rem;
@@ -768,7 +774,7 @@ footer {
 @media screen and (min-width: 1024px) {
 
     /* Header styles */
-    
+
     .container h1 {
         width: 61%;
         font-size: 2.5rem;
@@ -782,6 +788,7 @@ footer {
     #search-history {
         width: 61%;
     }
+
     main>button {
         font-size: 1rem;
     }
@@ -792,7 +799,9 @@ footer {
         padding: 1rem;
         border-radius: 20px;
     }
-    .tour-container h2, .tour-container p{
+
+    .tour-container h2,
+    .tour-container p {
         margin: .25rem;
         padding: .75rem;
         font-size: 1rem;
@@ -820,7 +829,7 @@ footer {
 
     /* Forecast styles */
     #forecast div {
-        font-size: 1rem; 
+        font-size: 1rem;
         width: 75%;
     }
 
