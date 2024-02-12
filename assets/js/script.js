@@ -5,29 +5,12 @@
 /* jshint -W085 */
 
 // API call
-// https://api.openweathermap.org/data/2.5/{endpoint}?q={cityname}&appid={API key}
 const apiUrl =
   "https://cors-anywhere.herokuapp.com/" +
   "https://weather-key-160275f00837.herokuapp.com/myapi?";
 
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = "";
-
-/**
- * Get the current time and display it.
- */
-// function showCurrentTime() {
-//   setInterval(function () {
-//     let currentTime = new Date();
-//     let formattedTime = currentTime.toLocaleTimeString("en-US", {
-//       hour: "numeric",
-//       hour12: true,
-//       minute: "numeric",
-//     });
-//     document.getElementById("current-time").innerHTML =
-//       "Time: " + formattedTime;
-//   }, 1000);
-// }
 
 /**
  * Get the user's current location and display the weather.
@@ -44,7 +27,6 @@ document.addEventListener("click", function () {
   document.getElementById("error-message-user-forecast").style.display =
     "none";
   document.getElementById("location404").style.display = "none";
-  // document.getElementById("search-history").style.display = "none";
 });
 
 /**
@@ -62,7 +44,6 @@ function showSpinner() {
       setTimeout(rotateSpinner, 100);
     }
   };
-
   let spinnerRotation = 0;
   rotateSpinner();
 }
@@ -78,8 +59,6 @@ function hideSpinner() {
 // Add the unlock CORS access button
 const unlockButton =
   document.querySelector("#unlock-button") || document.createElement("button");
-// if (!document.querySelector("#unlock-button")) {
-// unlockButton.style.display = "none";
 unlockButton.id = "unlock-button";
 unlockButton.textContent = "Unlock Server Access";
 unlockButton.addEventListener("click", function () {
@@ -91,9 +70,6 @@ unlockButton.addEventListener("click", function () {
   unlockButton.style.display = "none";
 });
 document.querySelector("main").appendChild(unlockButton);
-
-// }
-// unlockButton.style.display = "flex";
 
 /**
  * Get the weather data from the API.
@@ -311,7 +287,6 @@ refreshButton.addEventListener("click", function () {
 if (searchBox) {
   searchBox.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
-      // document.querySelector(".weather-container").style.display = "flex";
       if (isCelsius === !isCelsius) {
         isCelsius = false;
         document.getElementById("temperature-toggle-btn").innerHTML = "°C";
@@ -680,7 +655,6 @@ favoritesBtn.addEventListener("click", function () {
  * 5 Day Forecast
  */
 async function getFiveDayForecast(location) {
-  //'https://api.openweathermap.org/data/2.5/forecast?units=metric&';
   const response = await fetch(
     `${apiUrl}location=${location}&endpoint=forecast`
   );
@@ -749,7 +723,6 @@ forecastBtn.addEventListener("click", async function () {
     document.getElementById("forecast").style.display = "none";
   } else {
     console.log("Forecast opened");
-    // document.getElementById("forecast").style.display = "flex";
     document.getElementById("forecast").style.animation = "fadeIn .3s ease-in";
     document.getElementById("forecast-btn").style.color =
       "rgba(255, 0, 0, 1) ";
@@ -1033,25 +1006,23 @@ sideBarBtn.addEventListener("click", function () {
   isSideBarOpen = !isSideBarOpen;
 });
 
-// showCurrentTime();
-// Avoid making too many API call for the user's current location
-// getWeatherForCurrentLocation();
-
 const marqueeText = document.getElementById("scrolling-text");
 let position = 0;
 const speed = 0.5;
+
 /**
  * Move the marquee text.
  */
 function moveMarquee() {
   position -= speed;
   marqueeText.style.transform = `translateX(${position}px)`;
-
   // Reset the position when the text has moved off the screen
   if (position <= -marqueeText.offsetWidth) {
     position = window.innerWidth;
   }
 }
+
+setInterval(moveMarquee, 10);
 
 // Instruction button
 const instructionBtn = document.querySelector("#instruction-btn");
@@ -1085,10 +1056,6 @@ if (instructionBtn) {
     }, 0);
   });
 }
-
-setInterval(moveMarquee, 10);
-// localStorage.clear();
-// localStorage.removeItem("searchHistory");
 
 // Information button
 const infoBtn = document.getElementById("info-btn");
