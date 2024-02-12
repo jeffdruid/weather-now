@@ -291,7 +291,7 @@ Weather Now is a web application that provides real-time weather information for
 
 ## Testing
 
-- A series of testing was made by using different online validators such as JigSaw, W3C nd JSLint.
+- A series of testing was made by using different online validators such as JigSaw, W3C, WAVE and JSLint.
 
 ### Validator Testing
 
@@ -385,30 +385,30 @@ The manual testing confirms that the page operates smoothly across multiple brow
 | ------------------------------------------ | --------------------------------------------------------- |
 | Dark Mode not toggling properly on mobile. | ![Side Bar - Blocked](assets/media/ui-side-bar-after.png) |
 
-- Increased the `z-index: 9;` in order to display Side Bar Button on top of Side Bar.
+- Increased the `z-index: 9;` to ensure the Side Bar Button displays on top of the Side Bar.
 
 |                                                       |                                                            |
 | ----------------------------------------------------- | ---------------------------------------------------------- |
 | Animation not in full screen after page is refreshed. | ![Animation - Bug](assets/media/bug-animation-refresh.png) |
 
-- Set Header container and Main container to default `display: none`, and updated the their `display: flex` at the end of the animation.
+- Adjust the Header and Main container properties to default `display: none`, setting them to `display: flex` at the end of the animation.
 
-  - Also default Main `height: 0;` and at the end of animation to `height: 100%`.
+  - Also, set Main container default `height: 0;` and adjusted it to `height: 100%` at the end of animation.
 
 |                                                  |                                                                    |
 | ------------------------------------------------ | ------------------------------------------------------------------ |
 | Display CORS button only when status 403 occurs. | ![Unlock Server Access Button](assets/media/error-cors-access.png) |
 
-- Moved the following code inside the getWeather function in order to check `if (response.status === 403)`.
+- Moved the following code inside the getWeather function to check `if (response.status === 403)`.
   `unlockButton.addEventListener("click", function () {
   window.open("https://cors-anywhere.herokuapp.com/corsdemo", "_blank");
   unlockButton.style.display = "none";
 });
 document.body.appendChild(unlockButton);`
 
-- Update current time in the footer to display location's current time instead of user's current time.
+- Update the current time displayed in the footer to show the location's current time instead of the user's current time.
   - ![Location Current Time - Code](assets/media/bug-time.png)
-    - Updated the code to display the location's current time instead of user current location.
+    - Modified the code to display the location's current time instead of the user current location.
 
 ## UI Improvements
 
