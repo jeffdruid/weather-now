@@ -2,7 +2,7 @@
 
 Weather Now is a web application that provides real-time weather information for any location worldwide.
 
-![Animation-Intro](assets/media/Animation-intro.gif)
+![Animation-Intro](assets/media/ui-intro.gif)
 
 ## Table of Contents
 
@@ -29,6 +29,9 @@ Weather Now is a web application that provides real-time weather information for
    - [Alerts](#alerts)
    - [Footer](#footer)
    - [APIs](#apis)
+     - [OpenWeatherMap](#openweathermap)
+     - [Flags API](#flags-api)
+     - [Google Charts](#google-charts)
 6. [Troubleshooting](#troubleshooting)
    - [CORS Error](#cors-error)
    - [API Key](#api-key)
@@ -252,11 +255,26 @@ Weather Now is a web application that provides real-time weather information for
 
 ### APIs
 
+#### OpenWeatherMap
+
+- The OpenWeatherMap API is utilized to fetch weather data for various locations.
+  ![OpenWeatherMap - API Code](assets/media/feat-api-openweathermap.png)
+
+- Fetching Weather Data: The function sends a fetch request to the OpenWeatherMap API endpoint (apiUrl) with the specified location.  
+  ![Response - Fetch](assets/media/feat-api-fetch.png)
+
+- Parsing Response Data: Once the response is received, it is parsed as JSON using response.json() to extract the weather data.
+  ![Response - JSON](assets/media/feat-api-json.png)
+
 <!-- TODO Create a table -->
 <!-- Explain Code -->
 
-![OpenWeatherMap - API Code](assets/media/feat-api-openweathermap.png)
+#### Flags Api
+
 ![Flags - API Code](assets/media/feat-api-flags.png)
+
+#### Google Charts
+
 ![Google Charts - API Code](assets/media/feat-api-chart.png)
 
 ## Troubleshooting
