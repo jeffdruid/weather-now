@@ -75,7 +75,8 @@ async function getWeather(location) {
     unlockButton.style.display = "flex";
     document.querySelector(".tour-container").style.display = "flex";
     alert(
-      "Please unlock server access to use the weather app. Click the 'Unlock Server Access' button."
+      `Please unlock server access to use the weather app.
+      Click the 'Unlock Server Access' button.`
     );
   }
   // 429 error handling
@@ -128,7 +129,7 @@ async function getWeather(location) {
   ).toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
-    minute: "numeric",
+    minute: "numeric"
   });
   // Update current time for location
   document.getElementById("current-time").innerHTML = "Time: " + currentTime;
@@ -181,7 +182,7 @@ async function getWeather(location) {
       {
         hour: "numeric",
         hour12: true,
-        minute: "numeric",
+        minute: "numeric"
       }
     );
   document.getElementById("current-sunset").innerHTML =
@@ -191,7 +192,7 @@ async function getWeather(location) {
       {
         hour: "numeric",
         hour12: true,
-        minute: "numeric",
+        minute: "numeric"
       }
     );
   document.getElementById("current-desc").innerHTML =
@@ -225,7 +226,7 @@ async function getWeather(location) {
   lastUpdatedTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
-    minute: "numeric",
+    minute: "numeric"
   });
   document.getElementById("last-updated").innerHTML =
     "Last Updated: " + lastUpdatedTime;
@@ -256,7 +257,7 @@ refreshButton.addEventListener("click", function () {
   const currentTime = new Date().toLocaleTimeString("en-US", {
     hour: "numeric",
     hour12: true,
-    minute: "numeric",
+    minute: "numeric"
   });
   if (currentTime === lastUpdatedTime) {
     alert("Weather data is already up to date.");
@@ -470,7 +471,7 @@ function displayWeatherForFavorites() {
     // Add the "Delete favorite" button
     const clearBtn = document.createElement("div");
     clearBtn.id = "clear-favorites-btn";
-    clearBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+    clearBtn.innerHTML = "<i class='fa fa-trash' aria-hidden='true'></i>";
     favoriteWeatherContainer.appendChild(clearBtn);
     document.getElementById("clear-favorites-btn").style.display = "flex";
     document
@@ -640,7 +641,7 @@ async function getFiveDayForecast(location) {
     const dateTime = new Date(data.list[i].dt_txt);
     if (dateTime.getHours() === 0) {
       const dayOfWeek = dateTime.toLocaleDateString(undefined, {
-        weekday: "long",
+        weekday: "long"
       });
       forecastData += `<div>${dayOfWeek}`;
 
@@ -733,7 +734,7 @@ async function drawChart() {
             dataTable.addRow([
               `${day} ${month} ${year}`,
               temperature,
-              humidity,
+              humidity
             ]);
           });
 
