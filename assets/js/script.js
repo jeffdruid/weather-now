@@ -12,14 +12,6 @@ const apiUrl =
 const searchBox = document.querySelector(".search input");
 let lastUpdatedTime = "";
 
-/**
- * Get the user's current location and display the weather.
- */
-function displayWeatherData(data) {
-  // Display weather data on the UI
-  console.log(data);
-}
-
 // Hide error message when clicking anywhere on the screen
 document.addEventListener("click", function () {
   document.getElementById("error-message-user-location").style.display =
@@ -93,7 +85,6 @@ async function getWeather(location) {
       "Too many requests. Please try again later.";
     document.getElementById("location404").style.display = "flex";
     document.querySelector(".spinner").style.display = "none";
-    console.log(response);
     return;
   }
 
@@ -120,14 +111,12 @@ async function getWeather(location) {
   document.getElementById("side-bar").style.left = "-25%";
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
-  console.log("Close favorites, " + location + " selected.");
   isForecastOpen = false;
   isChartOpen = false;
   isCelsius = true;
   isSideBarOpen = false;
   isHistoryOpen = false;
   showSpinner();
-  console.log(data);
 
   // Display the weather data on the UI with animation
   document.getElementById("weather").style.animation = "fadeIn .3s ease-in";
@@ -141,7 +130,6 @@ async function getWeather(location) {
     hour12: true,
     minute: "numeric",
   });
-  console.log("Current time for location: " + currentTime);
   // Update current time for location
   document.getElementById("current-time").innerHTML = "Time: " + currentTime;
   document.getElementById("location").innerHTML = data.name;
@@ -227,14 +215,10 @@ async function getWeather(location) {
   if (favoriteLocations && favoriteLocations.includes(locationString)) {
     // Set the heart icon to red
     document.querySelector(".fa-heart").style.color = "rgba(255, 0, 0, 0.9)";
-    console.log("Favorite icon set to red.");
-    console.log("Location is a favorite: " + locationString);
   } else {
     // Set the heart icon to white
     const favoriteIcon = document.querySelector(".fa-heart");
     favoriteIcon.style.color = "rgba(255, 255, 255, 0.7)";
-
-    console.log("Location is not a favorite: " + locationString);
   }
 
   //Last updated time
@@ -280,7 +264,6 @@ refreshButton.addEventListener("click", function () {
   }
   const location = document.getElementById("location").innerHTML;
   getWeather(location);
-  console.log("Weather data refreshed for location:", location);
 });
 
 // Search box event listener
@@ -307,7 +290,6 @@ searchButton.addEventListener("click", function () {
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
   isSideBarOpen = false;
-  console.log("Search button clicked, Side bar closed");
 });
 
 // Temperature unit toggle button
@@ -445,9 +427,6 @@ function toggleTemperatureUnit() {
 
   // Toggle the temperature unit
   isCelsius = !isCelsius;
-  console.log(
-    "Temperature unit changed to " + (isCelsius ? "Celsius" : "Fahrenheit")
-  );
 }
 
 // Add the button click event listener
@@ -481,7 +460,6 @@ function displayWeatherForFavorites() {
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
   isSideBarOpen = false;
-  console.log("Favorites button clicked, Side bar closed");
 
   // Close the history
   document.getElementById("search-history").style.display = "none";
@@ -489,8 +467,6 @@ function displayWeatherForFavorites() {
 
   // Check if there are favorite locations
   if (favoriteLocations && favoriteLocations.length > 0) {
-    console.log(favoriteLocations);
-
     // Add the "Delete favorite" button
     const clearBtn = document.createElement("div");
     clearBtn.id = "clear-favorites-btn";
@@ -533,7 +509,6 @@ function displayWeatherForFavorites() {
     });
   } else {
     // Display a message if no favorite locations are found
-    console.log("No favorite locations found.");
     document.getElementById("favorite-weather").innerHTML =
       "<span style='color: rgba(255, 0, 0, 0.7);'>" +
       "No favorite locations found.</span>";
@@ -547,7 +522,6 @@ function displayWeatherForFavorites() {
     );
     if (confirmation) {
       localStorage.removeItem("favoriteLocations");
-      console.log("All favorites cleared.");
       document.getElementById("favorite-weather").innerHTML =
         "<span style='color: rgba(255, 0, 0, 0.7);'>" +
         "No favorite locations found.</span>";
@@ -561,7 +535,6 @@ function displayWeatherForFavorites() {
 function setFavoriteLocation(location) {
   // Avoid adding empty locations
   if (location.trim() === "") {
-    console.log("Empty location cannot be set as a favorite.");
     return;
   }
   // Get the favorite locations from local storage
@@ -576,13 +549,11 @@ function setFavoriteLocation(location) {
 
   // Check if the location is already a favorite
   if (favoriteLocations.includes(location)) {
-    console.log("Location is already a favorite: " + location);
     return;
   }
   // Add the location to the favorite locations
   favoriteLocations.push(location);
   localStorage.setItem("favoriteLocations", JSON.stringify(favoriteLocations));
-  console.log("Location set as favorite: " + location);
 }
 
 // Add the button click event listener to set a location as a favorite
@@ -605,8 +576,6 @@ setFavoriteBtn.addEventListener("click", function () {
       "favoriteLocations",
       JSON.stringify(updatedFavoriteLocations)
     );
-    console.log("Location removed from favorites: " + location);
-
     // Set the heart icon to white
     const favoriteIconToRemove = document.querySelector(".fa-heart");
     favoriteIconToRemove.style.color = "rgba(255, 255, 255, 0.7)";
@@ -631,17 +600,13 @@ favoritesBtn.addEventListener("click", function () {
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
   isSideBarOpen = false;
-  console.log("History button clicked, Side bar closed");
-
   // Display the favorites if the favorites button is clicked
   if (
     isFavoritesOpen &&
     document.getElementById("favorite-weather").style.display === "flex"
   ) {
-    console.log("Favorites closed");
     document.getElementById("favorite-weather").style.display = "none";
   } else {
-    console.log("Favorites opened");
     document.getElementById("favorite-weather").style.display = "flex";
     document.getElementById("weather").style.display = "none";
     document.getElementById("forecast").style.display = "none";
@@ -658,9 +623,7 @@ async function getFiveDayForecast(location) {
   const response = await fetch(
     `${apiUrl}location=${location}&endpoint=forecast`
   );
-  console.log(response);
   const data = await response.json();
-  console.log(data);
   hideSpinner();
 
   let forecastData = "";
@@ -687,13 +650,11 @@ async function getFiveDayForecast(location) {
             ${temperatureCelsius}°C</span>`;
         forecastData += `<span class="forecastF" style="display: none;">
             ${temperatureFahrenheit}°F</span>`;
-        console.log("Celsius " + isCelsius);
       } else {
         forecastData += `<span class="forecastC" style="display: none;">
             ${temperatureCelsius}°C</span>`;
         forecastData += `<span class="forecastF" style="display: inline;">
             ${temperatureFahrenheit}°F</span>`;
-        console.log("Fahrenheit " + isCelsius);
       }
       forecastData += `${description}</div>`;
     }
@@ -711,18 +672,14 @@ let isForecastOpen = false;
 const forecastBtn = document.getElementById("forecast-btn");
 forecastBtn.addEventListener("click", async function () {
   showSpinner();
-
-  console.log(isCelsius);
   const location = document.getElementById("location").innerHTML;
   isChartOpen = false;
   if (
     isForecastOpen &&
     document.getElementById("forecast").style.display === "flex"
   ) {
-    console.log("Forecast closed");
     document.getElementById("forecast").style.display = "none";
   } else {
-    console.log("Forecast opened");
     document.getElementById("forecast").style.animation = "fadeIn .3s ease-in";
     document.getElementById("forecast-btn").style.color =
       "rgba(255, 0, 0, 1) ";
@@ -814,7 +771,6 @@ async function drawChart() {
           );
           errorMessage.textContent =
             "Error fetching forecast data. Please try again.";
-          console.error(location, error);
         });
     });
   };
@@ -834,10 +790,8 @@ chartBtn.addEventListener("click", async function () {
     isChartOpen &&
     document.getElementById("chart_div").style.display === "flex"
   ) {
-    console.log("Chart closed");
     document.getElementById("chart_div").style.display = "none";
   } else {
-    console.log("Chart opened");
     document.getElementById("chart_div").style.display = "flex";
     document.getElementById("chart-btn").style.color = "rgba(255, 0, 0, 1) ";
     document.getElementById("chart-btn").style.backgroundColor =
@@ -907,7 +861,6 @@ function displaySearchHistory() {
     });
     historyContainer.appendChild(historyItem);
   });
-  console.log(searchHistory);
 }
 
 let isHistoryOpen = false;
@@ -919,7 +872,6 @@ showHistoryBtn.addEventListener("click", function () {
   document.getElementById("side-bar-close-btn").style.transform =
     "rotate(360deg)";
   isSideBarOpen = false;
-  console.log("History button clicked, Side bar closed");
 
   // Display the search history
   document.getElementById("search-history").style.display = "flex";
@@ -931,11 +883,9 @@ showHistoryBtn.addEventListener("click", function () {
     isHistoryOpen &&
     document.getElementById("search-history").style.display === "flex"
   ) {
-    console.log("History closed");
     isHistoryOpen = !isHistoryOpen;
     document.getElementById("search-history").style.display = "none";
   } else {
-    console.log("History opened");
     isHistoryOpen = !isHistoryOpen;
     document.getElementById("search-history").style.display = "flex";
   }
@@ -984,7 +934,6 @@ let isSideBarOpen = false;
 const sideBarBtn = document.getElementById("side-bar-close-btn");
 sideBarBtn.addEventListener("click", function () {
   if (isSideBarOpen) {
-    console.log("Side bar closed");
     document.getElementById("side-bar").style.left = "-25%";
     document.getElementById("side-bar-close-btn").style.transform =
       "rotate(360deg)";
@@ -993,7 +942,6 @@ sideBarBtn.addEventListener("click", function () {
     document.getElementById("side-bar").style.background = "rgba(0, 0, 0, 0)";
     document.getElementById("side-bar").style.backdropFilter = "blur(0px)";
   } else {
-    console.log("Side bar opened");
     document.getElementById("side-bar").style.left = "0%";
     document.getElementById("side-bar-close-btn").style.transform =
       "rotate(180deg)";
@@ -1041,7 +989,6 @@ if (instructionBtn) {
     document.getElementById("side-bar").style.left = "-25%";
     document.getElementById("side-bar-close-btn").style.transform =
       "rotate(360deg)";
-    console.log("Close favorites, " + location + " selected.");
     isForecastOpen = false;
     isChartOpen = false;
     isCelsius = true;
