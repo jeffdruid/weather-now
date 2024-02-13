@@ -75,7 +75,7 @@ Weather Now is a web application that provides real-time weather information for
 
 - Weather Now is an application that allows users to get the current weather and 5-day forecast for a specific location. The application provides information such as temperature, humidity, wind speed, sunrise, sunset, and weather description.
 
-[<img src="assets/media/responsive-hero.png" alt="Weather Icon">](https://jeffdruid.github.io/weather-now/)
+[<img src="assets/media/responsive-hero-update.png" alt="Weather Icon">](https://jeffdruid.github.io/weather-now/)
 
 ## Technologies Used
 
