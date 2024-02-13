@@ -346,6 +346,10 @@ main>button {
 }
 
 /* Favorites styles */
+#set-favorite-btn {
+    border: none;
+}
+
 .fa-heart {
     color: var(--secondary-color);
     font-size: 1.25rem;

@@ -700,6 +700,7 @@ forecastBtn.addEventListener("click", async function () {
  * Draw the chart.
  */
 async function drawChart() {
+  await showSpinner();
   // Load Google Charts
   let script = document.createElement("script");
   script.src = "https://www.gstatic.com/charts/loader.js";
@@ -745,15 +746,15 @@ async function drawChart() {
             title: `Forecast - ${location}`,
             seriesType: "bars",
             series: {
-              0: { targetAxisIndex: 0 },
-              1: { targetAxisIndex: 1, type: "line" },
+              "0": { targetAxisIndex: 0 },
+              "1": { targetAxisIndex: 1, type: "line" }
             },
             vAxes: {
-              0: { title: "Temperature (°C)" },
-              1: { title: "Humidity (%)" },
+              "0": { title: "Temperature (°C)" },
+              "1": { title: "Humidity (%)" }
             },
             hAxis: { title: "Day" },
-            legend: { position: "bottom" },
+            legend: { position: "bottom" }
           };
 
           // Instantiate and draw the chart
@@ -762,7 +763,7 @@ async function drawChart() {
           );
           chart.draw(dataTable, options);
         })
-        .catch(function (error) {
+        .catch(function () {
           // Display an error message on the UI
           document.getElementById(
             "error-message-user-forecast"
