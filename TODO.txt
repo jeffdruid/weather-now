@@ -1,6 +1,0 @@
-// TODO - Double check error handling.
-// TODO - Remove console logs. ???
-// TODO - Remove unused code.
-// TODO - Add links to validators, redo tests.
-// TODO - Features - APIs and how they work in the project
-// TODO - remove user location error
