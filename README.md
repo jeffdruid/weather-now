@@ -408,7 +408,7 @@ The manual testing confirms that the page operates smoothly across multiple brow
 |                                                                                                                                                    |                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | Temperature not displaying the correct unit when toggle is activated. Error occurs when temperature is F and the user searches for a new location. | ![Bug - Temperature units](assets/media/bug-temp-unit.png) |
-|                                                                                                                                                    |
+|Previous chart being displayed while current chart is being load|![Bug - Chart Load](assets/media/bug-chart-load.gif)|
 
 ### Fixed Bugs
 
