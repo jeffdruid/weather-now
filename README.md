@@ -294,9 +294,7 @@ Weather Now is a web application that provides real-time weather information for
 ## Troubleshooting
 
 ### CORS Error
-
-- ![Error 403](assets/media/error-403.png)
-
+![Error - CORS](assets/media/error-cors.png)
 - During the development of the application, CORS (Cross-Origin Resource Sharing) issues were encountered when making requests from the frontend to the backend.
 
   - Addressing CORS issues during the development of this JavaScript project proved to be a valuable learning experience. The use of CORS-anywhere as a workaround provided a practical solution to enable smooth communication between the frontend and backend during the initial stages of development.
