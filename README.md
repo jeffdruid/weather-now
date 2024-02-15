@@ -344,7 +344,7 @@ Weather Now is a web application that provides real-time weather information for
 
 - Tested accessibility using Lighthouse: Achieved a score of 100 for accessibility.
   ![LightHouse - Results](assets/media/validator-accessibility.png)
-  - Tested accessibility using WAVE tool with no errors detected.
+  - [Tested accessibility using WAVE tool with no errors detected.](https://wave.webaim.org/report#/https://jeffdruid.github.io/weather-now/)
     ![WAVE - Results](assets/media/validator-wave.png)
 
 #### Lighthouse

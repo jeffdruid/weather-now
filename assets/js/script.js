@@ -1,10 +1,7 @@
 /* global google */
-/* jshint -W117 */
-/* jshint -W074 */
-/* jshint -W074 */
-/* jshint -W085 */
+/*jshint esversion: 8*/
 
-// API call
+// API call 
 const apiUrl =
   "https://cors-anywhere.herokuapp.com/" +
   "https://weather-key-160275f00837.herokuapp.com/myapi?";
@@ -271,7 +268,7 @@ refreshButton.addEventListener("click", function () {
 if (searchBox) {
   searchBox.addEventListener("keyup", function (event) {
     if (event.key === "Enter") {
-      if (isCelsius === !isCelsius) {
+      if (isCelsius) {
         isCelsius = false;
         document.getElementById("temperature-toggle-btn").innerHTML = "°C";
       } else {
@@ -485,7 +482,7 @@ function displayWeatherForFavorites() {
 
     // Display the temperature in Celsius or Fahrenheit
     favoriteLocations.forEach(function (location) {
-      if (isCelsius === !isCelsius) {
+      if (isCelsius) {
         isCelsius = false;
         document.getElementById("temperature-toggle-btn").innerHTML = "°C";
       } else {
@@ -621,6 +618,7 @@ favoritesBtn.addEventListener("click", function () {
  * 5 Day Forecast
  */
 async function getFiveDayForecast(location) {
+  showSpinner();
   const response = await fetch(
     `${apiUrl}location=${location}&endpoint=forecast`
   );
@@ -646,7 +644,7 @@ async function getFiveDayForecast(location) {
       forecastData += `<div>${dayOfWeek}`;
 
       // Display the forecast's initial temperature in Celsius or Fahrenheit
-      if (!isCelsius) {
+      if (isCelsius) {
         forecastData += `<span class="forecastC" style="display: inline;">
             ${temperatureCelsius}°C</span>`;
         forecastData += `<span class="forecastF" style="display: none;">
@@ -672,7 +670,6 @@ let isForecastOpen = false;
 // Add the button click event listener to display the forecast
 const forecastBtn = document.getElementById("forecast-btn");
 forecastBtn.addEventListener("click", async function () {
-  showSpinner();
   const location = document.getElementById("location").innerHTML;
   isChartOpen = false;
   if (
@@ -739,8 +736,6 @@ async function drawChart() {
             ]);
           });
 
-          /* jshint -W074 */
-          /* jshint -W085 */
           // Set chart options
           let options = {
             title: `Forecast - ${location}`,
