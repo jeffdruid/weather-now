@@ -339,6 +339,13 @@ Weather Now is a web application that provides real-time weather information for
 
 - JSHint: No major issues were found in the JavaScript code.
   ![Validator - JavaScript](assets/media/validator-js.png)
+  - Adding an Exception for Google Maps in JSLint
+    - To prevent JSLint from flagging the `google` variable used in Google Maps code as an undeclared variable, the `/*global google*/` was used as directive.
+
+-  JSHint: No major issues were found in the JavaScript code.
+  ![Validator - JSHint](assets/media/validator-jshint.png)
+    - Added `/*jshint esversion: 8*/`
+      - This directive informs JSHint to recognize and allow ES8 syntax, preventing it from raising errors for features introduced in ES8.
 
 #### Accessibility
 
