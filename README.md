@@ -61,6 +61,7 @@ Weather Now is a web application that provides real-time weather information for
     - [Autocomplete](#autocomplete)
     - [User Interface](#user-interface)
     - [Cache Data](#cache-data)
+    - [Color Code the Temperature](#color-code-the-temperature)
 11. [Deployment](#deployment)
     - [Cloning & Forking](#cloning--forking)
     - [Local Deployment](#local-deployment)
